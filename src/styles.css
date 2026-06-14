@@ -66,7 +66,8 @@ main {
 
 #about,
 #projects,
-#advantages {
+#advantages,
+#contact {
   scroll-margin-top: 112px;
 }
 
@@ -1475,15 +1476,36 @@ main {
 }
 
 @media (max-width: 760px) {
+  body {
+    overflow-x: hidden;
+  }
+
   .section-pad {
-    padding: 86px 0;
+    padding: 76px 0;
+  }
+
+  .container,
+  .site-header {
+    width: calc(100% - 28px);
+  }
+
+  #about,
+  #projects,
+  #advantages,
+  #contact {
+    scroll-margin-top: 86px;
   }
 
   .site-header {
     top: 12px;
     height: auto;
-    min-height: 58px;
-    grid-template-columns: 68px 1fr;
+    min-height: 54px;
+    grid-template-columns: 74px minmax(0, 1fr);
+  }
+
+  .brand-mark img {
+    width: 58px;
+    max-height: 27px;
   }
 
   .header-cta {
@@ -1492,36 +1514,65 @@ main {
 
   .nav-links {
     justify-content: end;
-    gap: 16px;
-    padding-right: 14px;
-    font-size: 13px;
+    gap: 14px;
+    padding-right: 12px;
+    font-size: 12px;
   }
 
   .hero-inner {
-    padding: 104px 0 28px;
+    min-height: 100svh;
+    grid-template-rows: auto auto auto;
+    padding: 98px 0 24px;
   }
 
   .hero-kicker {
     gap: 18px;
     font-size: 10px;
+    letter-spacing: 0.2em;
+  }
+
+  .hero-layout {
+    gap: 34px;
+    margin-top: 54px;
   }
 
   .hero h1 {
-    font-size: 76px;
+    font-size: 70px;
   }
 
   .hero h1 span {
     margin-top: 18px;
-    font-size: 31px;
+    font-size: 30px;
   }
 
   .hero-copy,
   .lead {
-    font-size: 19px;
+    font-size: 18px;
+  }
+
+  .hero-copy {
+    margin-top: 30px;
+    line-height: 1.72;
   }
 
   .hero-panel {
-    padding-left: 20px;
+    border-left-color: rgba(243, 245, 244, 0.2);
+    padding: 0 0 0 18px;
+  }
+
+  .hero-panel p {
+    font-size: 15px;
+  }
+
+  .hero-actions {
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: 24px;
+  }
+
+  .primary-link {
+    height: 46px;
+    padding: 0 18px;
   }
 
   .about-cinematic {
@@ -1553,55 +1604,120 @@ main {
   }
 
   .about-spread-top {
-    min-height: 66px;
-    padding: 0 22px;
+    min-height: 62px;
+    gap: 14px;
+    padding: 0 18px;
+    font-size: 9px;
+    letter-spacing: 0.16em;
   }
 
   .about-spread-main {
-    padding: 44px 24px 44px;
+    padding: 32px 20px 30px;
   }
 
   .about-spread-main h3 {
-    margin-top: 24px;
-    font-size: 34px;
+    margin-top: 20px;
+    font-size: 29px;
+    line-height: 1.15;
   }
 
-  .about-spread-main > p:last-child {
-    font-size: 16px;
+  .about-spread-main > p:last-child,
+  .section-head p {
+    font-size: 15px;
+    line-height: 1.82;
   }
 
   .about-spread-stats {
-    grid-template-columns: 1fr;
-    width: calc(100% - 48px);
-    margin-left: 24px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    width: calc(100% - 40px);
+    margin-left: 20px;
   }
 
   .about-spread-stats div {
-    border-right: 0;
+    min-height: 112px;
     border-bottom: 1px solid var(--line);
+    padding: 22px 20px;
   }
 
-  .about-spread-stats div:last-child {
+  .about-spread-stats div:nth-child(odd) {
+    border-right: 1px solid var(--line);
+  }
+
+  .about-spread-stats div:nth-last-child(-n + 2) {
     border-bottom: 0;
   }
 
+  .about-spread-stats strong {
+    font-size: 40px;
+  }
+
+  .about-spread-stats span {
+    margin-top: 12px;
+    font-size: 12px;
+  }
+
+  .about-spread-stats div:last-child {
+    border-right: 0;
+  }
+
   .about-spread-lower {
-    margin: 24px;
+    margin: 22px 20px 20px;
   }
 
   .about-spread-timeline article {
     grid-template-columns: 1fr;
     gap: 14px;
-    padding: 26px 24px;
+    min-height: 0;
+    padding: 24px 20px;
+  }
+
+  .about-index,
+  .about-spread-timeline time,
+  .about-spread-timeline article > div {
+    grid-column: auto;
+  }
+
+  .about-index {
+    grid-row: auto;
+    font-size: 28px;
+  }
+
+  .about-spread-timeline h3 {
+    margin-top: 10px;
+    font-size: 21px;
+  }
+
+  .about-spread-timeline p {
+    font-size: 13px;
   }
 
   .about-panel-title {
+    min-height: 52px;
     padding-inline: 22px;
+    font-size: 9px;
+    letter-spacing: 0.16em;
   }
 
   .about-focus-list,
   .about-tool-list {
-    padding-inline: 22px;
+    gap: 8px;
+    padding-inline: 18px;
+  }
+
+  .about-focus-list span,
+  .about-tool-list span {
+    min-height: 38px;
+    padding: 9px 12px;
+    font-size: 12px;
+  }
+
+  .about-contact-line {
+    padding: 20px 18px;
+  }
+
+  .about-contact-line a,
+  .about-contact-line > span {
+    font-size: 13px;
   }
 
   .about-metrics,
@@ -1620,13 +1736,36 @@ main {
     grid-template-columns: 1fr;
   }
 
+  .hero-bottom {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    margin-top: 38px;
+  }
+
   .stat {
-    border-right: 0;
+    min-height: 96px;
+    padding: 20px 18px;
     border-bottom: 1px solid var(--line);
   }
 
+  .stat:nth-child(odd) {
+    border-right: 1px solid var(--line);
+  }
+
+  .stat:nth-last-child(-n + 2) {
+    border-bottom: 0;
+  }
+
+  .stat strong {
+    font-size: 38px;
+  }
+
+  .stat span {
+    margin-top: 10px;
+    font-size: 12px;
+  }
+
   .section-label h2 {
-    font-size: 44px;
+    font-size: 42px;
   }
 
   .experience-item {
@@ -1636,6 +1775,7 @@ main {
 
   .project-meta {
     display: block;
+    padding: 22px 22px 0;
   }
 
   .project-meta time {
@@ -1643,8 +1783,59 @@ main {
     margin-top: 14px;
   }
 
+  .project-meta h3 {
+    font-size: 24px;
+  }
+
+  .project-summary {
+    margin: 16px 22px 0;
+    font-size: 14px;
+    line-height: 1.76;
+  }
+
+  .tag-row {
+    padding: 20px 22px 24px;
+  }
+
+  .tag-row span {
+    padding: 8px 11px;
+    font-size: 12px;
+  }
+
+  .advantage-card {
+    min-height: 0;
+    padding: 26px 24px;
+  }
+
+  .advantage-card h3 {
+    margin-top: 28px;
+    font-size: 23px;
+  }
+
+  .advantage-card p {
+    font-size: 14px;
+    line-height: 1.78;
+  }
+
+  .contact-inner {
+    gap: 52px;
+    padding: 112px 0 62px;
+  }
+
+  .contact h2 {
+    font-size: 34px;
+    line-height: 1.18;
+  }
+
   .contact-panel a,
   .contact-panel p {
+    min-height: 72px;
+    gap: 16px;
     font-size: 17px;
+  }
+
+  .contact-panel span {
+    min-width: 0;
+    overflow-wrap: anywhere;
   }
 }
