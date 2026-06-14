@@ -121,13 +121,9 @@ function About() {
             alt="李维侧光肖像"
           />
 
-          <div className="about-spread-top">
-            <span>LIWEI.DESIGN</span>
-            <span>PROFILE / 2013-2025</span>
-          </div>
+          <div className="about-display-word" aria-hidden="true">VISUAL DESIGNER</div>
 
           <div className="about-spread-main">
-            <p className="eyebrow">VISUAL DESIGNER / COMMERCIAL SYSTEM</p>
             <h3>把商业信息整理成清晰、有辨识度、能落地的视觉表达。</h3>
             <p>
               具备扎实的视觉传达与品牌设计基础，擅长建立富有辨识度的品牌视觉系统。
@@ -136,27 +132,11 @@ function About() {
             </p>
           </div>
 
-          <div className="about-spread-stats">
-            {stats.map((item) => (
-              <div key={item.label}>
-                <strong>{item.value}</strong>
-                <span>{item.label}</span>
-              </div>
-            ))}
-          </div>
-
           <div className="about-spread-lower">
             <div className="about-spread-experience">
-              <div className="about-panel-title">
-                <span>WORK EXPERIENCE</span>
-                <span>CAREER PATH</span>
-              </div>
               <div className="about-spread-timeline">
-                {experiences.map((item, index) => (
+                {experiences.map((item) => (
                   <article key={item.company}>
-                    <span className="about-index">
-                      {String(index + 1).padStart(2, "0")}
-                    </span>
                     <time>{item.period}</time>
                     <div>
                       <h3>{item.company}</h3>
@@ -168,21 +148,6 @@ function About() {
             </div>
 
             <div className="about-spread-side">
-              <div className="about-panel-title">
-                <span>CONTACT</span>
-                <span>SKILLS</span>
-              </div>
-              <div className="about-contact-line">
-                <a href={`mailto:${contacts.email}`}>
-                  <Mail size={17} />
-                  <span>{contacts.email}</span>
-                </a>
-                <a href={`tel:${contacts.phone}`}>
-                  <Phone size={17} />
-                  <span>{contacts.phone}</span>
-                </a>
-                <span>{contacts.location}</span>
-              </div>
               <div className="about-focus-list">
                 {focusAreas.map(({ icon: Icon, label }) => (
                   <span key={label}>
