@@ -64,6 +64,54 @@ main {
   min-height: 100vh;
 }
 
+[data-reveal] {
+  opacity: 0;
+  transform: translate3d(0, 30px, 0);
+  filter: blur(10px);
+  transition:
+    opacity 900ms cubic-bezier(0.2, 0.8, 0.2, 1),
+    transform 900ms cubic-bezier(0.2, 0.8, 0.2, 1),
+    filter 900ms cubic-bezier(0.2, 0.8, 0.2, 1);
+  transition-delay: var(--reveal-delay, 0ms);
+  will-change: opacity, transform, filter;
+}
+
+[data-reveal].is-visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+  filter: blur(0);
+}
+
+[data-glow] {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  --mx: 50%;
+  --my: 50%;
+}
+
+[data-glow]::before {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  content: "";
+  background:
+    radial-gradient(320px circle at var(--mx) var(--my), rgba(155, 213, 229, 0.15), transparent 42%),
+    linear-gradient(115deg, rgba(255, 255, 255, 0.08), transparent 34% 76%, rgba(212, 189, 122, 0.08));
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 260ms ease;
+}
+
+[data-glow]:hover::before {
+  opacity: 1;
+}
+
+[data-glow] > * {
+  position: relative;
+  z-index: 1;
+}
+
 #about,
 #projects,
 #advantages,
@@ -99,6 +147,7 @@ main {
   background: rgba(3, 5, 7, 0.72);
   backdrop-filter: blur(22px);
   transform: translateX(-50%);
+  animation: headerDrop 820ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
 }
 
 .brand-mark {
@@ -158,6 +207,56 @@ main {
   overflow: hidden;
 }
 
+.motion-field {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  opacity: 0.78;
+  pointer-events: none;
+}
+
+.motion-band,
+.motion-ribbon {
+  position: absolute;
+  pointer-events: none;
+  will-change: transform, opacity;
+}
+
+.motion-band {
+  width: min(74vw, 980px);
+  height: min(24vh, 270px);
+  border-radius: 999px;
+  background: linear-gradient(90deg, transparent, rgba(155, 213, 229, 0.16), rgba(212, 189, 122, 0.08), transparent);
+  filter: blur(28px);
+}
+
+.motion-band-one {
+  right: -16%;
+  top: 10%;
+  transform: rotate(-20deg);
+  animation: motionBandFloat 18s ease-in-out infinite;
+}
+
+.motion-band-two {
+  left: 24%;
+  bottom: 4%;
+  height: min(18vh, 220px);
+  opacity: 0.58;
+  transform: rotate(16deg);
+  animation: motionBandFloatAlt 22s ease-in-out infinite;
+}
+
+.motion-ribbon {
+  inset: -18% -8%;
+  background:
+    repeating-linear-gradient(112deg, transparent 0 210px, rgba(155, 213, 229, 0.045) 211px 212px, transparent 213px 430px),
+    linear-gradient(112deg, transparent 10%, rgba(255, 255, 255, 0.04) 46%, transparent 62%);
+  mask-image: linear-gradient(90deg, transparent, #000 22% 78%, transparent);
+  opacity: 0.7;
+  animation: scanDrift 24s linear infinite;
+}
+
 .hero-bg,
 .hero-shade {
   position: absolute;
@@ -171,6 +270,7 @@ main {
   object-fit: cover;
   object-position: center;
   background: #030507;
+  animation: heroBreath 18s ease-in-out infinite alternate;
 }
 
 .hero-shade {
@@ -265,6 +365,18 @@ main {
   background: rgba(155, 213, 229, 0.1);
   color: var(--accent);
   font-weight: 700;
+  transition:
+    border-color 240ms ease,
+    box-shadow 240ms ease,
+    transform 240ms ease,
+    background 240ms ease;
+}
+
+.primary-link:hover {
+  border-color: rgba(155, 213, 229, 0.72);
+  background: rgba(155, 213, 229, 0.16);
+  box-shadow: 0 0 28px rgba(155, 213, 229, 0.18);
+  transform: translateY(-2px);
 }
 
 .text-link {
@@ -637,6 +749,7 @@ main {
   object-position: right center;
   opacity: 0.72;
   filter: contrast(1.08) saturate(0.78);
+  animation: portraitBreath 16s ease-in-out infinite alternate;
 }
 
 .about-spread-main,
@@ -990,7 +1103,9 @@ main {
   background: var(--panel-strong);
   transition:
     border-color 180ms ease,
-    transform 180ms ease;
+    box-shadow 240ms ease,
+    transform 240ms ease;
+  will-change: transform;
 }
 
 .project-card.wide {
@@ -1003,7 +1118,8 @@ main {
 
 .project-card:hover {
   border-color: rgba(155, 213, 229, 0.34);
-  transform: translateY(-3px);
+  box-shadow: 0 26px 70px rgba(0, 0, 0, 0.38), 0 0 46px rgba(155, 213, 229, 0.1);
+  transform: translateY(-7px);
 }
 
 .project-image {
@@ -1018,11 +1134,14 @@ main {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 360ms ease;
+  transition:
+    opacity 560ms ease,
+    transform 900ms cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
 .project-card:hover .project-image img {
-  transform: scale(1.025);
+  opacity: 0.96;
+  transform: scale(1.045);
 }
 
 .project-image span {
@@ -1095,6 +1214,21 @@ main {
     linear-gradient(135deg, rgba(155, 213, 229, 0.075), transparent 44%),
     rgba(255, 255, 255, 0.032);
   padding: 34px;
+  transition:
+    border-color 240ms ease,
+    box-shadow 240ms ease,
+    transform 240ms ease,
+    background 240ms ease;
+  will-change: transform;
+}
+
+.advantage-card:hover {
+  border-color: rgba(155, 213, 229, 0.32);
+  background:
+    linear-gradient(135deg, rgba(155, 213, 229, 0.12), transparent 48%),
+    rgba(255, 255, 255, 0.045);
+  box-shadow: 0 24px 66px rgba(0, 0, 0, 0.34), 0 0 44px rgba(155, 213, 229, 0.09);
+  transform: translateY(-6px);
 }
 
 .advantage-card svg {
@@ -1163,6 +1297,74 @@ main {
 
 .contact-panel a:hover {
   color: var(--text);
+}
+
+@keyframes headerDrop {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
+
+@keyframes heroBreath {
+  from {
+    transform: scale(1);
+  }
+
+  to {
+    transform: scale(1.035);
+  }
+}
+
+@keyframes portraitBreath {
+  from {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+
+  to {
+    transform: translate3d(1.2%, -1%, 0) scale(1.025);
+  }
+}
+
+@keyframes motionBandFloat {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) rotate(-20deg);
+    opacity: 0.68;
+  }
+
+  50% {
+    transform: translate3d(-5%, 8%, 0) rotate(-12deg);
+    opacity: 0.92;
+  }
+}
+
+@keyframes motionBandFloatAlt {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) rotate(16deg);
+    opacity: 0.46;
+  }
+
+  50% {
+    transform: translate3d(8%, -6%, 0) rotate(8deg);
+    opacity: 0.72;
+  }
+}
+
+@keyframes scanDrift {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    transform: translate3d(-8%, 0, 0);
+  }
 }
 
 @media (max-width: 1400px) {
@@ -1708,5 +1910,22 @@ main {
   .contact-panel span {
     min-width: 0;
     overflow-wrap: anywhere;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 1ms !important;
+  }
+
+  [data-reveal] {
+    opacity: 1;
+    transform: none;
+    filter: none;
   }
 }
