@@ -270,15 +270,19 @@ main {
   object-fit: cover;
   object-position: center;
   background: #030507;
-  animation: heroBreath 18s ease-in-out infinite alternate;
+  transform: translateZ(0);
+}
+
+video.hero-bg {
+  animation: none;
 }
 
 .hero-shade {
   z-index: -2;
   background:
-    linear-gradient(90deg, rgba(3, 5, 7, 0.94), rgba(3, 5, 7, 0.45) 58%, rgba(3, 5, 7, 0.86)),
-    linear-gradient(0deg, rgba(3, 5, 7, 0.98), transparent 42%),
-    repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.07) 0 1px, transparent 1px 160px);
+    linear-gradient(90deg, rgba(3, 5, 7, 0.96) 0%, rgba(3, 5, 7, 0.8) 38%, rgba(3, 5, 7, 0.36) 68%, rgba(3, 5, 7, 0.78) 100%),
+    linear-gradient(0deg, rgba(3, 5, 7, 0.98) 0%, rgba(3, 5, 7, 0.46) 42%, rgba(3, 5, 7, 0.76) 100%),
+    radial-gradient(circle at 72% 42%, rgba(155, 213, 229, 0.08), transparent 28%);
 }
 
 .hero-inner {
@@ -307,28 +311,33 @@ main {
 
 .hero h1 {
   margin: 0;
-  max-width: 980px;
-  font-size: 190px;
+  max-width: 1180px;
+  font-size: 96px;
   font-weight: 900;
   letter-spacing: 0;
-  line-height: 0.86;
+  line-height: 1.06;
 }
 
 .hero h1 span {
   display: block;
-  margin-top: 28px;
-  color: transparent;
-  font-size: 76px;
-  line-height: 1;
-  -webkit-text-stroke: 1px rgba(243, 245, 244, 0.72);
+  margin-top: 0;
+  color: var(--text);
+  font-size: inherit;
+  line-height: inherit;
+  white-space: nowrap;
+  -webkit-text-stroke: 0;
+}
+
+.hero h1 span + span {
+  margin-top: 10px;
 }
 
 .hero-copy {
-  max-width: 760px;
-  margin: 44px 0 0;
-  color: var(--muted);
-  font-size: 25px;
-  line-height: 1.75;
+  max-width: 680px;
+  margin: 34px 0 0;
+  color: rgba(243, 245, 244, 0.72);
+  font-size: 24px;
+  line-height: 1.72;
 }
 
 .hero-panel {
@@ -1408,11 +1417,11 @@ main {
   }
 
   .hero h1 {
-    font-size: 150px;
+    font-size: 88px;
   }
 
   .hero h1 span {
-    font-size: 62px;
+    font-size: inherit;
   }
 
   .lead {
@@ -1454,11 +1463,11 @@ main {
   }
 
   .hero h1 {
-    font-size: 108px;
+    font-size: 68px;
   }
 
   .hero h1 span {
-    font-size: 44px;
+    font-size: inherit;
   }
 
   .hero-panel,
@@ -1644,12 +1653,17 @@ main {
   }
 
   .hero h1 {
-    font-size: 70px;
+    font-size: 42px;
+    line-height: 1.12;
   }
 
   .hero h1 span {
-    margin-top: 18px;
-    font-size: 30px;
+    margin-top: 0;
+    font-size: inherit;
+  }
+
+  .hero h1 span + span {
+    margin-top: 8px;
   }
 
   .hero-copy,

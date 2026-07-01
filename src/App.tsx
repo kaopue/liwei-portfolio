@@ -67,12 +67,18 @@ function Hero() {
         <span className="motion-band motion-band-two" />
         <span className="motion-ribbon" />
       </div>
-      <img
+      <video
         className="hero-bg"
-        src="/portfolio/hero-gpt-image2.png"
-        alt=""
+        poster="/portfolio/hero-gpt-image2.png"
         aria-hidden="true"
-      />
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="auto"
+      >
+        <source src="/portfolio/hero-cinemagraph.mp4" type="video/mp4" />
+      </video>
       <div className="hero-shade" />
       <div className="container hero-inner">
         <div className="hero-kicker" data-reveal>
@@ -82,11 +88,11 @@ function Hero() {
         <div className="hero-layout">
           <div data-reveal>
             <h1>
-              李维
-              <span>视觉设计师</span>
+              <span>让视觉更有秩序，</span>
+              <span>也更有情绪</span>
             </h1>
             <p className="hero-copy">
-              十年商业视觉设计经验，覆盖画册、品牌 VI、Logo、海报、活动与包装设计。
+              聚焦品牌设计、视觉系统与 AI 视觉表达
             </p>
           </div>
           <div className="hero-panel" data-reveal data-glow>
