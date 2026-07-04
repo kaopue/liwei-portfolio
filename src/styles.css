@@ -288,7 +288,7 @@ video.hero-bg {
 .hero-inner {
   display: grid;
   min-height: 100vh;
-  grid-template-rows: 1fr auto auto;
+  grid-template-rows: 1fr auto;
   padding: 150px 0 48px;
 }
 
@@ -307,6 +307,7 @@ video.hero-bg {
   grid-template-columns: minmax(0, 1fr) 420px;
   align-items: end;
   gap: 80px;
+  align-self: end;
 }
 
 .hero h1 {
@@ -413,15 +414,18 @@ video.hero-bg {
 .stat strong {
   display: block;
   color: var(--text);
-  font-size: 56px;
+  font-size: clamp(38px, 3.2vw, 56px);
   line-height: 1;
+  white-space: nowrap;
 }
 
 .stat span {
   display: block;
   margin-top: 16px;
   color: var(--muted);
-  font-size: 14px;
+  font-size: 13px;
+  line-height: 1.55;
+  max-width: 340px;
 }
 
 .about,
@@ -1287,6 +1291,7 @@ video.hero-bg {
   justify-content: space-between;
   gap: 24px;
   margin: 0;
+  border-bottom: 1px solid rgba(243, 245, 244, 0.16);
   color: var(--muted);
   font-size: 22px;
 }

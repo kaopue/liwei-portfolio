@@ -37,8 +37,8 @@ export const navItems = [
 
 export const stats = [
   { value: "10+", label: "年视觉设计经验" },
-  { value: "43", label: "页作品集内容" },
-  { value: "6", label: "类项目方向" },
+  { value: "视觉系统", label: "品牌、版式与规范建立" },
+  { value: "多行业", label: "品牌项目经验" },
   { value: "100%", label: "真实落地案例" },
 ];
 

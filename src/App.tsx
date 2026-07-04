@@ -81,10 +81,6 @@ function Hero() {
       </video>
       <div className="hero-shade" />
       <div className="container hero-inner">
-        <div className="hero-kicker" data-reveal>
-          <span>VISUAL DESIGN PORTFOLIO</span>
-          <span>2025</span>
-        </div>
         <div className="hero-layout">
           <div data-reveal>
             <h1>
@@ -274,7 +270,7 @@ function Contact() {
           <p className="eyebrow">CONTACT</p>
           <h2>让下一个项目，从更清晰的视觉判断开始。</h2>
         </div>
-        <div className="contact-panel" data-reveal data-glow>
+        <div className="contact-panel" data-reveal>
           <a href={`mailto:${contacts.email}`}>
             <span>{contacts.email}</span>
             <Send size={20} />
