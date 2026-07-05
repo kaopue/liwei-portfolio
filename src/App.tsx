@@ -27,8 +27,57 @@ import type { Project } from "./data/portfolio";
 const revealDelay = (delay: string): CSSProperties =>
   ({ "--reveal-delay": delay }) as CSSProperties;
 
+type HashRoute = { kind: "home" } | { kind: "work"; slug: string };
+
+const getHashRoute = (): HashRoute => {
+  if (typeof window === "undefined") {
+    return { kind: "home" };
+  }
+
+  const hash = decodeURIComponent(window.location.hash.replace(/^#/, ""));
+
+  if (hash.startsWith("work/")) {
+    return { kind: "work", slug: hash.replace("work/", "") };
+  }
+
+  return { kind: "home" };
+};
+
+function useHashRoute() {
+  const [route, setRoute] = useState<HashRoute>(() => getHashRoute());
+
+  useEffect(() => {
+    const syncRoute = () => setRoute(getHashRoute());
+
+    syncRoute();
+    window.addEventListener("hashchange", syncRoute);
+    return () => window.removeEventListener("hashchange", syncRoute);
+  }, []);
+
+  return route;
+}
+
 function App() {
   usePortfolioMotion();
+  const route = useHashRoute();
+  const routeProject = route.kind === "work"
+    ? projects.find((project) => project.slug === route.slug) ?? null
+    : null;
+
+  useEffect(() => {
+    if (route.kind === "work") {
+      window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+    }
+  }, [route]);
+
+  if (route.kind === "work") {
+    return (
+      <main>
+        <SiteHeader />
+        {routeProject ? <WorkDetailPage project={routeProject} /> : <WorkNotFound slug={route.slug} />}
+      </main>
+    );
+  }
 
   return (
     <main>
@@ -195,7 +244,6 @@ function About() {
 
 function Projects() {
   const [activeCategory, setActiveCategory] = useState("all");
-  const [selectedSlug, setSelectedSlug] = useState<string | null>(null);
 
   const featuredProjects = useMemo(
     () =>
@@ -228,10 +276,6 @@ function Projects() {
     [],
   );
 
-  const selectedProject = selectedSlug
-    ? projects.find((project) => project.slug === selectedSlug) ?? null
-    : null;
-
   useEffect(() => {
     const syncFromHash = () => {
       const hash = decodeURIComponent(window.location.hash.replace(/^#/, ""));
@@ -240,23 +284,11 @@ function Projects() {
         const categorySlug = hash.replace("category/", "");
         const hasCategory = projectCategories.some((category) => category.slug === categorySlug);
         setActiveCategory(hasCategory ? categorySlug : "all");
-        setSelectedSlug(null);
-        return;
-      }
-
-      if (hash.startsWith("work/")) {
-        const slug = hash.replace("work/", "");
-        const project = projects.find((item) => item.slug === slug);
-        if (project) {
-          setActiveCategory("all");
-          setSelectedSlug(project.slug);
-        }
         return;
       }
 
       if (hash === "projects" || hash === "") {
         setActiveCategory("all");
-        setSelectedSlug(null);
       }
     };
 
@@ -265,24 +297,9 @@ function Projects() {
     return () => window.removeEventListener("hashchange", syncFromHash);
   }, []);
 
-  useEffect(() => {
-    if (!selectedProject) {
-      return;
-    }
-
-    window.setTimeout(() => {
-      document.getElementById("project-detail")?.scrollIntoView({ behavior: "smooth", block: "start" });
-    }, 0);
-  }, [selectedProject]);
-
   const handleCategoryChange = (categorySlug: string) => {
     setActiveCategory(categorySlug);
-    setSelectedSlug(null);
     window.history.replaceState(null, "", categorySlug === "all" ? "#projects" : `#category/${categorySlug}`);
-  };
-
-  const handleProjectOpen = (slug: string) => {
-    setSelectedSlug(slug);
   };
 
   return (
@@ -302,7 +319,6 @@ function Projects() {
               project={project}
               index={index}
               eager={index < 2}
-              onOpen={handleProjectOpen}
             />
           ))}
         </div>
@@ -347,13 +363,10 @@ function Projects() {
                 key={project.slug}
                 project={project}
                 index={index}
-                onOpen={handleProjectOpen}
               />
             ))}
           </div>
         </div>
-
-        {selectedProject ? <ProjectDetail project={selectedProject} /> : null}
       </div>
     </section>
   );
@@ -363,19 +376,16 @@ function ProjectCard({
   project,
   index,
   eager = false,
-  onOpen,
 }: {
   project: Project;
   index: number;
   eager?: boolean;
-  onOpen: (slug: string) => void;
 }) {
   return (
     <article className={`project-card ${project.layout ?? ""}`} data-glow>
       <a
         href={`#work/${project.slug}`}
         aria-label={`查看 ${project.title}`}
-        onClick={() => onOpen(project.slug)}
       >
         <div className="project-image">
           <img src={project.cover} alt={project.title} loading={eager ? "eager" : "lazy"} />
@@ -391,7 +401,7 @@ function ProjectCard({
       </div>
       <p className="project-summary">{project.summary}</p>
       <div className="project-actions">
-        <a href={`#work/${project.slug}`} onClick={() => onOpen(project.slug)}>
+        <a href={`#work/${project.slug}`}>
           查看详情
           <ArrowUpRight size={16} />
         </a>
@@ -405,25 +415,22 @@ function ProjectCard({
   );
 }
 
-function ProjectDetail({ project }: { project: Project }) {
+function WorkDetailPage({ project }: { project: Project }) {
   return (
-    <section className="project-detail" id="project-detail" aria-label={`${project.title} 详情`}>
-      <div className="project-detail-head">
-        <div>
-          <p className="eyebrow">{project.category}</p>
-          <h3>{project.title}</h3>
+    <section className="work-detail-page section-pad" id="work-detail" aria-label={`${project.title} 详情`}>
+      <div className="container">
+        <div className="project-detail-head">
+          <div>
+            <p className="eyebrow">{project.category}</p>
+            <h1>{project.title}</h1>
+          </div>
+          <a className="detail-back" href="#projects">
+            返回作品列表
+          </a>
         </div>
-        <a className="detail-back" href="#projects">
-          返回列表
-        </a>
-      </div>
 
-      <div className="project-detail-layout">
-        <div className="project-detail-cover">
-          <img src={project.cover} alt={`${project.title} 封面`} />
-        </div>
-        <div className="project-detail-info">
-          <p>{project.description}</p>
+        <div className="work-detail-hero">
+          <p>{project.summary}</p>
           <dl>
             <div>
               <dt>Year</dt>
@@ -438,20 +445,73 @@ function ProjectDetail({ project }: { project: Project }) {
               <dd>{project.images.length}</dd>
             </div>
           </dl>
-          <div className="tag-row">
-            {project.tags.map((tag) => (
-              <span key={tag}>{tag}</span>
-            ))}
+        </div>
+
+        <div className="project-detail-layout">
+          <div className="project-detail-cover">
+            <img src={project.cover} alt={`${project.title} 封面`} />
+          </div>
+          <div className="project-detail-info">
+            <p>{project.description}</p>
+            <div className="tag-row">
+              {project.tags.map((tag) => (
+                <span key={tag}>{tag}</span>
+              ))}
+            </div>
           </div>
         </div>
-      </div>
 
-      <div className="detail-gallery">
-        {project.images.map((image, index) => (
-          <figure key={image}>
-            <img src={image} alt={`${project.title} 详情图 ${index + 1}`} loading="lazy" />
-          </figure>
-        ))}
+        <div className="case-study-sections">
+          {project.detailSections.map((section) => (
+            <article key={section.title}>
+              <p className="eyebrow">{section.title}</p>
+              <p>{section.body}</p>
+            </article>
+          ))}
+        </div>
+
+        <div className="detail-gallery-head">
+          <p className="eyebrow">PROCESS / DISPLAY</p>
+          <h2>项目过程 / 展示图</h2>
+        </div>
+
+        <div className="detail-gallery">
+          {project.images.map((image, index) => (
+            <figure key={image}>
+              <img src={image} alt={`${project.title} 详情图 ${index + 1}`} loading="lazy" />
+            </figure>
+          ))}
+        </div>
+
+        <div className="detail-footer-actions">
+          <a className="detail-back" href="#projects">
+            返回作品列表
+          </a>
+          <a className="detail-back secondary" href="#top">
+            返回首页
+          </a>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function WorkNotFound({ slug }: { slug: string }) {
+  return (
+    <section className="work-detail-page section-pad work-not-found" aria-label="项目不存在">
+      <div className="container">
+        <div className="project-detail-head">
+          <div>
+            <p className="eyebrow">WORK NOT FOUND</p>
+            <h1>项目不存在</h1>
+          </div>
+          <a className="detail-back" href="#projects">
+            返回作品列表
+          </a>
+        </div>
+        <p>
+          没有找到 slug 为 <span>{slug}</span> 的项目。你可以返回作品列表，重新选择一个作品集项目。
+        </p>
       </div>
     </section>
   );

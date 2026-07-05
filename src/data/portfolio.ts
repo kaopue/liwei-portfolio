@@ -23,11 +23,17 @@ export type Project = {
   summary: string;
   description: string;
   tags: string[];
+  detailSections: ProjectDetailSection[];
   images: string[];
   type: string;
   featured: boolean;
   priority: number;
   layout?: "wide" | "tall";
+};
+
+export type ProjectDetailSection = {
+  title: string;
+  body: string;
 };
 
 export type ProjectCategory = {
@@ -142,7 +148,26 @@ const workImage = (slug: string, index = 1) =>
 const workImages = (slug: string, count: number) =>
   Array.from({ length: count }, (_, index) => workImage(slug, index + 1));
 
-export const projects: Project[] = [
+type ProjectRecord = Omit<Project, "detailSections"> & {
+  detailSections?: ProjectDetailSection[];
+};
+
+const defaultDetailSections = (project: ProjectRecord): ProjectDetailSection[] => [
+  {
+    title: "项目背景",
+    body: project.description,
+  },
+  {
+    title: "设计目标",
+    body: `以${project.type}为主要设计场景，围绕${project.tags.slice(0, 2).join("、")}建立清晰的信息层级与视觉秩序，保证项目在识别、传播和落地应用中的一致性。`,
+  },
+  {
+    title: "设计亮点",
+    body: "通过封面、系列延展图和展示图之间的统一关系，控制色彩、版式、材质与媒介节奏，让项目从单张视觉延展为完整的作品集 case study。",
+  },
+];
+
+const projectRecords: ProjectRecord[] = [
   {
     title: "小鸟鲜燕节日海报系列",
     slug: "xiao-niao-xian-yan-festival-posters",
@@ -507,6 +532,11 @@ export const projects: Project[] = [
     layout: "wide",
   },
 ];
+
+export const projects: Project[] = projectRecords.map((project) => ({
+  ...project,
+  detailSections: project.detailSections ?? defaultDetailSections(project),
+}));
 
 export const advantages: Advantage[] = [
   {
