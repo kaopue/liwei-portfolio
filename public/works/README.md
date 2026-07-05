@@ -1,9 +1,12 @@
-把真实作品图片放在这个文件夹内，然后更新 `src/data/works.ts` 中每个作品的 `image` 字段。
+Portfolio image assets for the website live under `public/works/organized/`.
 
-示例：
+The project data is configured in `src/data/portfolio.ts`.
+
+Use web paths such as:
 
 ```ts
-image: "/works/nature-origin.jpg"
+cover: "/works/organized/example-project/example-project-01.jpg"
 ```
 
-如果图片比例不同，同时调整 `aspectRatio`，例如 `"16 / 9"`、`"4 / 5"` 或 `"1 / 1"`。
+The source design files and original sorted folders remain outside `public`.
+Only web display copies should be placed here.
