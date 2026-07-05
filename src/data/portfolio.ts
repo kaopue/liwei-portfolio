@@ -107,37 +107,37 @@ export const experiences = [
 export const projectCategories: ProjectCategory[] = [
   {
     slug: "brand-logo",
-    label: "Brand / Logo",
+    label: "品牌标识",
     description: "品牌标识、VI 系统、字体组合与应用规范。",
   },
   {
     slug: "poster-kv",
-    label: "Poster / KV",
+    label: "海报主视觉",
     description: "海报、主视觉与传播画面。",
   },
   {
     slug: "packaging",
-    label: "Packaging",
+    label: "包装设计",
     description: "包装结构、礼盒、产品外观与系列包装。",
   },
   {
     slug: "cultural-creative",
-    label: "Cultural Creative",
+    label: "文创产品",
     description: "文创产品、徽章、冰箱贴与纪念品视觉。",
   },
   {
     slug: "brochure",
-    label: "Brochure",
+    label: "画册设计",
     description: "画册、期刊、纪念册与宣传册。",
   },
   {
     slug: "event-material",
-    label: "Event Material",
+    label: "活动物料",
     description: "活动物料、陈列系统与现场落地应用。",
   },
   {
     slug: "other",
-    label: "Other",
+    label: "其他作品",
     description: "其他暂未归入主类的作品。",
   },
 ];

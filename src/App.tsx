@@ -57,9 +57,12 @@ function useHashRoute() {
   return route;
 }
 
+const getProjectCategoryLabel = (project: Project) =>
+  projectCategories.find((category) => category.slug === project.categorySlug)?.label ?? project.category;
+
 function App() {
-  usePortfolioMotion();
   const route = useHashRoute();
+  usePortfolioMotion(route.kind === "work" ? `work:${route.slug}` : "home");
   const routeProject = route.kind === "work"
     ? projects.find((project) => project.slug === route.slug) ?? null
     : null;
@@ -122,13 +125,13 @@ function Hero() {
       </div>
       <video
         className="hero-bg"
-        poster="/portfolio/hero-gpt-image2.png"
+        poster="/portfolio/hero-poster.jpg"
         aria-hidden="true"
         autoPlay
         muted
         loop
         playsInline
-        preload="auto"
+        preload="metadata"
       >
         <source src="/portfolio/hero-cinemagraph.mp4" type="video/mp4" />
       </video>
@@ -188,6 +191,8 @@ function About() {
             className="about-spread-image"
             src="/portfolio/about-profile-cinematic.png"
             alt="李维侧光肖像"
+            loading="lazy"
+            decoding="async"
           />
 
           <div className="about-display-word" aria-hidden="true" data-reveal>
@@ -245,15 +250,6 @@ function About() {
 function Projects() {
   const [activeCategory, setActiveCategory] = useState("all");
 
-  const featuredProjects = useMemo(
-    () =>
-      projects
-        .filter((project) => project.featured)
-        .sort((left, right) => left.priority - right.priority)
-        .slice(0, 9),
-    [],
-  );
-
   const sortedProjects = useMemo(
     () => [...projects].sort((left, right) => left.priority - right.priority),
     [],
@@ -305,31 +301,13 @@ function Projects() {
   return (
     <section className="projects section-pad" id="projects">
       <div className="container">
-        <div className="section-head" data-reveal>
-          <SectionLabel eyebrow="SELECTED WORKS" title="精选项目" />
-          <p>
-            覆盖品牌识别、商业画册、活动传播、包装系统与多类型平面物料，强调清晰的信息层级和可落地的视觉表达。
-          </p>
-        </div>
-
-        <div className="featured-work-grid">
-          {featuredProjects.map((project, index) => (
-            <ProjectCard
-              key={project.slug}
-              project={project}
-              index={index}
-              eager={index < 2}
-            />
-          ))}
-        </div>
-
         <div className="work-index" aria-label="作品列表">
           <div className="work-index-head">
             <div>
-              <p className="eyebrow">WORK INDEX</p>
-              <h3>全部作品</h3>
+              <p className="eyebrow">SELECTED WORKS</p>
+              <h3>精选项目</h3>
             </div>
-            <p>按分类查看已经整理好的项目，点击任意卡片可进入详情并浏览同组图片。</p>
+            <p>覆盖品牌识别、商业画册、活动传播、包装系统与多类型平面物料。按分类查看已经整理好的项目，点击任意卡片可进入详情。</p>
           </div>
 
           <div className="category-filters" aria-label="作品分类筛选">
@@ -338,7 +316,7 @@ function Projects() {
               type="button"
               onClick={() => handleCategoryChange("all")}
             >
-              All
+              全部
               <span>{projects.length}</span>
             </button>
             {projectCategories
@@ -363,6 +341,7 @@ function Projects() {
                 key={project.slug}
                 project={project}
                 index={index}
+                eager={index < 2}
               />
             ))}
           </div>
@@ -381,6 +360,8 @@ function ProjectCard({
   index: number;
   eager?: boolean;
 }) {
+  const categoryLabel = getProjectCategoryLabel(project);
+
   return (
     <article className={`project-card ${project.layout ?? ""}`} data-glow>
       <a
@@ -388,13 +369,13 @@ function ProjectCard({
         aria-label={`查看 ${project.title}`}
       >
         <div className="project-image">
-          <img src={project.cover} alt={project.title} loading={eager ? "eager" : "lazy"} />
+          <img src={project.cover} alt={project.title} loading={eager ? "eager" : "lazy"} decoding="async" />
           <span>{String(index + 1).padStart(2, "0")}</span>
         </div>
       </a>
       <div className="project-meta">
         <div>
-          <p>{project.category}</p>
+          <p>{categoryLabel}</p>
           <h3>{project.title}</h3>
         </div>
         <time>{project.year}</time>
@@ -416,12 +397,14 @@ function ProjectCard({
 }
 
 function WorkDetailPage({ project }: { project: Project }) {
+  const categoryLabel = getProjectCategoryLabel(project);
+
   return (
     <section className="work-detail-page section-pad" id="work-detail" aria-label={`${project.title} 详情`}>
       <div className="container">
         <div className="project-detail-head">
           <div>
-            <p className="eyebrow">{project.category}</p>
+            <p className="eyebrow">{categoryLabel}</p>
             <h1>{project.title}</h1>
           </div>
           <a className="detail-back" href="#projects">
@@ -449,7 +432,7 @@ function WorkDetailPage({ project }: { project: Project }) {
 
         <div className="project-detail-layout">
           <div className="project-detail-cover">
-            <img src={project.cover} alt={`${project.title} 封面`} />
+            <img src={project.cover} alt={`${project.title} 封面`} loading="eager" decoding="async" />
           </div>
           <div className="project-detail-info">
             <p>{project.description}</p>
@@ -478,7 +461,7 @@ function WorkDetailPage({ project }: { project: Project }) {
         <div className="detail-gallery">
           {project.images.map((image, index) => (
             <figure key={image}>
-              <img src={image} alt={`${project.title} 详情图 ${index + 1}`} loading="lazy" />
+              <img src={image} alt={`${project.title} 详情图 ${index + 1}`} loading="lazy" decoding="async" />
             </figure>
           ))}
         </div>
@@ -581,13 +564,27 @@ function SectionLabel({ eyebrow, title }: { eyebrow: string; title: string }) {
   );
 }
 
-function usePortfolioMotion() {
+function usePortfolioMotion(routeKey: string) {
   useEffect(() => {
     const revealItems = Array.from(document.querySelectorAll<HTMLElement>("[data-reveal]"));
     const glowItems = Array.from(document.querySelectorAll<HTMLElement>("[data-glow]"));
     const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const supportsRevealObserver = "IntersectionObserver" in window;
 
-    if (!reduceMotion) {
+    const cleanups = glowItems.map((item) => {
+      const handlePointerMove = (event: PointerEvent) => {
+        const rect = item.getBoundingClientRect();
+        item.style.setProperty("--mx", `${event.clientX - rect.left}px`);
+        item.style.setProperty("--my", `${event.clientY - rect.top}px`);
+      };
+
+      item.addEventListener("pointermove", handlePointerMove);
+      return () => item.removeEventListener("pointermove", handlePointerMove);
+    });
+
+    if (!reduceMotion && supportsRevealObserver && revealItems.length > 0) {
+      document.documentElement.classList.add("reveal-motion");
+
       const observer = new IntersectionObserver(
         (entries) => {
           entries.forEach((entry) => {
@@ -602,25 +599,35 @@ function usePortfolioMotion() {
 
       revealItems.forEach((item) => observer.observe(item));
 
-      const cleanups = glowItems.map((item) => {
-        const handlePointerMove = (event: PointerEvent) => {
+      window.requestAnimationFrame(() => {
+        revealItems.forEach((item) => {
           const rect = item.getBoundingClientRect();
-          item.style.setProperty("--mx", `${event.clientX - rect.left}px`);
-          item.style.setProperty("--my", `${event.clientY - rect.top}px`);
-        };
 
-        item.addEventListener("pointermove", handlePointerMove);
-        return () => item.removeEventListener("pointermove", handlePointerMove);
+          if (rect.top < window.innerHeight * 0.92 && rect.bottom > 0) {
+            item.classList.add("is-visible");
+          }
+        });
       });
 
+      const revealFallback = window.setTimeout(() => {
+        revealItems.forEach((item) => item.classList.add("is-visible"));
+      }, 1600);
+
       return () => {
+        window.clearTimeout(revealFallback);
         observer.disconnect();
         cleanups.forEach((cleanup) => cleanup());
+        document.documentElement.classList.remove("reveal-motion");
       };
     }
 
     revealItems.forEach((item) => item.classList.add("is-visible"));
-  }, []);
+    document.documentElement.classList.remove("reveal-motion");
+
+    return () => {
+      cleanups.forEach((cleanup) => cleanup());
+    };
+  }, [routeKey]);
 }
 
 export default App;
