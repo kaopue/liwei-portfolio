@@ -217,15 +217,13 @@ function About() {
           </div>
 
           <div className="about-spread-side">
-            <div className="about-focus-list" data-reveal style={revealDelay("180ms")}>
+            <div className="about-tag-list" data-reveal style={revealDelay("180ms")}>
               {focusAreas.map(({ icon: Icon, label }, index) => (
                 <span key={label} data-glow style={revealDelay(`${index * 45}ms`)}>
                   <Icon size={16} />
                   {label}
                 </span>
               ))}
-            </div>
-            <div className="about-tool-list" data-reveal style={revealDelay("240ms")}>
               {skills.slice(0, 6).map((skill, index) => (
                 <span key={skill} data-glow style={revealDelay(`${index * 35}ms`)}>
                   {skill}
