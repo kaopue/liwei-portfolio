@@ -140,11 +140,11 @@ function Hero() {
         <div className="hero-layout">
           <div data-reveal>
             <h1>
-              <span>让视觉更有秩序，</span>
-              <span>也更有情绪</span>
+              <span>用秩序梳理信息，</span>
+              <span>用情绪建立感知。</span>
             </h1>
             <p className="hero-copy">
-              聚焦品牌设计、视觉系统与 AI 视觉表达
+              专注品牌视觉、包装设计、活动主视觉与 AI 辅助创意表达。擅长在商业目标、视觉美感与落地执行之间建立秩序，让设计不仅好看，也能被理解、被传播、被使用。
             </p>
           </div>
           <div className="hero-panel" data-reveal data-glow>
@@ -178,14 +178,6 @@ function About() {
   return (
     <section className="about section-pad" id="about">
       <div className="container">
-        <div className="section-head about-head" data-reveal>
-          <SectionLabel eyebrow="ABOUT LIWEI" title="个人经历" />
-          <p>
-            十年商业视觉设计经验，覆盖画册、品牌 VI、Logo、海报、活动与包装设计，
-            以清晰的信息层级和可落地的视觉系统服务真实项目。
-          </p>
-        </div>
-
         <div className="about-spread" data-reveal>
           <img
             className="about-spread-image"
@@ -222,23 +214,23 @@ function About() {
                 ))}
               </div>
             </div>
+          </div>
 
-            <div className="about-spread-side">
-              <div className="about-focus-list" data-reveal style={revealDelay("180ms")}>
-                {focusAreas.map(({ icon: Icon, label }, index) => (
-                  <span key={label} data-glow style={revealDelay(`${index * 45}ms`)}>
-                    <Icon size={16} />
-                    {label}
-                  </span>
-                ))}
-              </div>
-              <div className="about-tool-list" data-reveal style={revealDelay("240ms")}>
-                {skills.slice(0, 6).map((skill, index) => (
-                  <span key={skill} data-glow style={revealDelay(`${index * 35}ms`)}>
-                    {skill}
-                  </span>
-                ))}
-              </div>
+          <div className="about-spread-side">
+            <div className="about-focus-list" data-reveal style={revealDelay("180ms")}>
+              {focusAreas.map(({ icon: Icon, label }, index) => (
+                <span key={label} data-glow style={revealDelay(`${index * 45}ms`)}>
+                  <Icon size={16} />
+                  {label}
+                </span>
+              ))}
+            </div>
+            <div className="about-tool-list" data-reveal style={revealDelay("240ms")}>
+              {skills.slice(0, 6).map((skill, index) => (
+                <span key={skill} data-glow style={revealDelay(`${index * 35}ms`)}>
+                  {skill}
+                </span>
+              ))}
             </div>
           </div>
         </div>
