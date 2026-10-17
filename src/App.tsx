@@ -7,10 +7,13 @@ import {
 import {
   ArrowUpRight,
   Mail,
+  Moon,
   Phone,
   Send,
   SquareArrowOutUpRight,
+  Sun,
 } from "lucide-react";
+import { useTheme } from "./useTheme";
 import {
   advantages,
   contacts,
@@ -61,6 +64,7 @@ const getProjectCategoryLabel = (project: Project) =>
   projectCategories.find((category) => category.slug === project.categorySlug)?.label ?? project.category;
 
 function App() {
+  const { theme, toggleTheme } = useTheme();
   const route = useHashRoute();
   usePortfolioMotion(route.kind === "work" ? `work:${route.slug}` : "home");
   const routeProject = route.kind === "work"
@@ -76,7 +80,7 @@ function App() {
   if (route.kind === "work") {
     return (
       <main>
-        <SiteHeader />
+        <SiteHeader theme={theme} onToggleTheme={toggleTheme} />
         {routeProject ? <WorkDetailPage project={routeProject} /> : <WorkNotFound slug={route.slug} />}
       </main>
     );
@@ -84,7 +88,7 @@ function App() {
 
   return (
     <main>
-      <SiteHeader />
+      <SiteHeader theme={theme} onToggleTheme={toggleTheme} />
       <Hero />
       <About />
       <Projects />
@@ -94,7 +98,12 @@ function App() {
   );
 }
 
-function SiteHeader() {
+function SiteHeader({ theme, onToggleTheme }: {
+  theme: "light" | "dark";
+  onToggleTheme: () => void;
+}) {
+  const nextThemeLabel = theme === "dark" ? "白天模式" : "暗黑模式";
+
   return (
     <header className="site-header">
       <a href="#top" className="brand-mark" aria-label="回到首页">
@@ -107,10 +116,25 @@ function SiteHeader() {
           </a>
         ))}
       </nav>
-      <a className="header-cta" href={`mailto:${contacts.email}`}>
-        <Mail size={16} />
-        联系我
-      </a>
+      <div className="header-actions">
+        <button
+          className="theme-toggle"
+          type="button"
+          onClick={onToggleTheme}
+          aria-label={`切换到${nextThemeLabel}`}
+          title={`切换到${nextThemeLabel}`}
+        >
+          {theme === "dark" ? <Sun size={18} aria-hidden="true" /> : <Moon size={18} aria-hidden="true" />}
+          <span>{nextThemeLabel}</span>
+        </button>
+        <a className="header-cta" href={`mailto:${contacts.email}`}>
+          <Mail size={16} />
+          联系我
+        </a>
+      </div>
+      <span className="sr-only" role="status" aria-live="polite">
+        {theme === "dark" ? "已启用暗黑模式" : "已启用白天模式"}
+      </span>
     </header>
   );
 }
@@ -520,10 +544,30 @@ function Advantages() {
 function Contact() {
   return (
     <footer className="contact section-screen" id="contact">
+      <div className="contact-scenery" aria-hidden="true">
+        <img
+          className="contact-city contact-city-night"
+          src="/portfolio/contact-city-night.webp"
+          alt=""
+          width={1672}
+          height={941}
+          loading="lazy"
+          decoding="async"
+        />
+        <img
+          className="contact-city contact-city-day"
+          src="/portfolio/contact-city-day.webp"
+          alt=""
+          width={1672}
+          height={941}
+          loading="lazy"
+          decoding="async"
+        />
+      </div>
       <div className="container contact-inner">
-        <div data-reveal>
+        <div className="contact-copy" data-reveal>
           <p className="eyebrow">CONTACT</p>
-          <h2>让下一个项目，从更清晰的视觉判断开始。</h2>
+          <h2>让下一个项目，<br />从更清晰的视觉<br />判断开始。</h2>
         </div>
         <div className="contact-panel" data-reveal>
           <a href={`mailto:${contacts.email}`}>
@@ -538,7 +582,7 @@ function Contact() {
             <span>{contacts.behance}</span>
             <SquareArrowOutUpRight size={20} />
           </a>
-          <p>{contacts.location}</p>
+          <p><span>{contacts.location}</span></p>
         </div>
       </div>
     </footer>

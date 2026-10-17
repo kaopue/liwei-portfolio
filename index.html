@@ -1,8 +1,31 @@
 <!doctype html>
-<html lang="zh-CN">
+<html lang="zh-CN" data-theme="dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#030507" />
+    <script>
+      (() => {
+        let theme;
+
+        try {
+          theme = window.localStorage.getItem("liwei-portfolio-theme");
+        } catch {
+          // System preference is still available when storage is blocked.
+        }
+
+        if (theme !== "light" && theme !== "dark") {
+          theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+        }
+
+        const color = theme === "dark" ? "#030507" : "#f5f6f4";
+        const root = document.documentElement;
+        root.dataset.theme = theme;
+        root.style.colorScheme = theme;
+        root.style.backgroundColor = color;
+        document.querySelector('meta[name="theme-color"]').setAttribute("content", color);
+      })();
+    </script>
     <meta
       name="description"
       content="李维，视觉设计师，十年设计经验，作品涵盖画册、品牌 VI、Logo、海报、活动与包装设计。"
