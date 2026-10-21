@@ -55,13 +55,6 @@ export const navItems = [
   { label: "联系", href: "#contact" },
 ];
 
-export const stats = [
-  { value: "10+", label: "年视觉设计经验" },
-  { value: "视觉系统", label: "品牌、版式与规范建立" },
-  { value: "多行业", label: "品牌项目经验" },
-  { value: "100%", label: "真实落地案例" },
-];
-
 export const contacts = {
   name: "李维",
   role: "视觉设计师",
