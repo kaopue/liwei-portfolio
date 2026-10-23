@@ -2,6 +2,7 @@ import {
   type CSSProperties,
   useEffect,
   useMemo,
+  useRef,
   useState,
 } from "react";
 import {
@@ -23,9 +24,9 @@ import {
   projectCategories,
   projects,
   skills,
-  stats,
 } from "./data/portfolio";
 import type { Project } from "./data/portfolio";
+import homepageImages from "./data/homepageImages.json";
 
 const revealDelay = (delay: string): CSSProperties =>
   ({ "--reveal-delay": delay }) as CSSProperties;
@@ -106,8 +107,15 @@ function SiteHeader({ theme, onToggleTheme }: {
 
   return (
     <header className="site-header">
-      <a href="#top" className="brand-mark" aria-label="回到首页">
-        <img src="/portfolio/logo-liwei-mark.png" alt="李维个人 Logo" />
+      <a href="#top" className="brand-mark" aria-label="李维个人 Logo，回到首页">
+        <img
+          className="brand-logo"
+          src="/portfolio/logo-liwei-mark.png"
+          alt=""
+          width={1425}
+          height={724}
+          decoding="async"
+        />
       </a>
       <nav className="nav-links" aria-label="主导航">
         {navItems.map((item) => (
@@ -139,60 +147,134 @@ function SiteHeader({ theme, onToggleTheme }: {
   );
 }
 
+const heroProjects = [
+  "zhangshuntang-yunnan-tea-packaging",
+  "leebeer-german-craft-beer-packaging",
+  "ch9-aerospace-cultural-creative",
+  "yunshang-kangyuan-eye-patch-packaging",
+  "zhangshuntang-tea-gift-packaging",
+  "daerle-calcium-zinc-oral-solution-packaging",
+  "tongren-dual-surface-defocus-lens-packaging",
+  "caaa-aerospace-commemorative-badges",
+].map((slug) => projects.find((project) => project.slug === slug)!);
+
 function Hero() {
+  const posterRef = useRef<HTMLImageElement>(null);
+  const [videoMode, setVideoMode] = useState<"mobile" | "desktop" | null>(null);
+
+  useEffect(() => {
+    const motion = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const mobile = window.matchMedia("(max-width: 767px)");
+    let cancelled = false;
+    let painted = false;
+    let firstFrame = 0;
+    let secondFrame = 0;
+    const update = () => {
+      if (!cancelled) {
+        setVideoMode(painted && !motion.matches ? (mobile.matches ? "mobile" : "desktop") : null);
+      }
+    };
+
+    // Let the high-priority poster paint before requesting any video bytes.
+    void posterRef.current?.decode().catch(() => {}).then(() => {
+      if (cancelled) return;
+      firstFrame = window.requestAnimationFrame(() => {
+        secondFrame = window.requestAnimationFrame(() => {
+          painted = true;
+          update();
+        });
+      });
+    });
+    motion.addEventListener("change", update);
+    mobile.addEventListener("change", update);
+    return () => {
+      cancelled = true;
+      window.cancelAnimationFrame(firstFrame);
+      window.cancelAnimationFrame(secondFrame);
+      motion.removeEventListener("change", update);
+      mobile.removeEventListener("change", update);
+    };
+  }, []);
+
   return (
-    <section className="hero section-screen" id="top">
-      <div className="motion-field" aria-hidden="true">
-        <span className="motion-band motion-band-one" />
-        <span className="motion-band motion-band-two" />
-        <span className="motion-ribbon" />
+    <section className="hero" id="top" aria-labelledby="hero-title">
+      <div className="hero-media" aria-hidden="true">
+        <picture>
+          <source media="(max-width: 767px)" type="image/webp" srcSet="/hero/hero-rooftop-poster-mobile.webp" />
+          <source type="image/webp" srcSet="/hero/hero-rooftop-poster.webp" />
+          <img
+            ref={posterRef}
+            className="hero-poster"
+            src="/hero/hero-rooftop-poster.jpg"
+            alt=""
+            width={1920}
+            height={1080}
+            fetchPriority="high"
+          />
+        </picture>
+        {videoMode && (
+          <video
+            key={videoMode}
+            className="hero-video"
+            poster="/hero/hero-rooftop-poster.jpg"
+            aria-hidden="true"
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="metadata"
+          >
+            {videoMode === "mobile" ? (
+              <source src="/hero/hero-rooftop-loop-720p.mp4" type="video/mp4" />
+            ) : (
+              <>
+                <source src="/hero/hero-rooftop-loop-1080p.webm" type="video/webm" />
+                <source src="/hero/hero-rooftop-loop-1080p.mp4" type="video/mp4" />
+              </>
+            )}
+          </video>
+        )}
       </div>
-      <video
-        className="hero-bg"
-        poster="/portfolio/hero-poster.jpg"
-        aria-hidden="true"
-        autoPlay
-        muted
-        loop
-        playsInline
-        preload="metadata"
-      >
-        <source src="/portfolio/hero-cinemagraph.mp4" type="video/mp4" />
-      </video>
-      <div className="hero-shade" />
+      <div className="hero-shade" aria-hidden="true" />
       <div className="container hero-inner">
-        <div className="hero-layout">
-          <div data-reveal>
-            <h1>
-              <span>用秩序梳理信息，</span>
-              <span>用情绪建立感知。</span>
-            </h1>
-            <p className="hero-copy">
-              专注品牌视觉、包装设计、活动主视觉与 AI 辅助创意表达。擅长在商业目标、视觉美感与落地执行之间建立秩序，让设计不仅好看，也能被理解、被传播、被使用。
-            </p>
-          </div>
-          <div className="hero-panel" data-reveal data-glow>
-            <p>均为真实案例，无临摹作品、非培训机构套模板。</p>
-            <div className="hero-actions">
-              <a href="#projects" className="primary-link">
-                查看项目
-                <ArrowUpRight size={18} />
-              </a>
-              <a href={`https://${contacts.behance}`} className="text-link" target="_blank">
-                Behance
-                <SquareArrowOutUpRight size={15} />
-              </a>
-            </div>
+        <div className="hero-content">
+          <h1 id="hero-title">
+            <span>用秩序梳理信息，</span>
+            <span>用情绪建立感知。</span>
+          </h1>
+          <p className="hero-copy">
+            <span>专注品牌视觉、包装设计、活动主视觉与 AI 辅助创意表达。</span>
+            <span>擅长在商业目标、视觉美感与落地执行之间建立秩序，</span>
+            <span>让设计不仅好看，也能被理解、被传播、被使用。</span>
+          </p>
+          <div className="hero-actions">
+            <a href="#projects" className="hero-button hero-button-primary">
+              查看项目 <ArrowUpRight size={17} aria-hidden="true" />
+            </a>
+            <a href={`https://${contacts.behance}`} className="hero-button hero-button-secondary" target="_blank" rel="noopener noreferrer">
+              Behance <ArrowUpRight size={17} aria-hidden="true" />
+              <span className="sr-only">（在新窗口打开）</span>
+            </a>
+            <p className="hero-note">均为真实案例，无临摹作品、非培训机构套模板。</p>
           </div>
         </div>
-        <div className="hero-bottom">
-          {stats.map((item, index) => (
-            <div className="stat" key={item.label} data-reveal data-glow style={revealDelay(`${index * 70}ms`)}>
-              <strong>{item.value}</strong>
-              <span>{item.label}</span>
-            </div>
+        <nav className="hero-work-strip" aria-label="精选作品快捷入口">
+          {heroProjects.map((project) => (
+            <a className="hero-work-card" href={`#work/${project.slug}`} key={project.slug} aria-label={`查看${project.title}`}>
+              <img
+                src={`/hero/covers/${project.slug}-thumb.webp`}
+                srcSet={`/hero/covers/${project.slug}-thumb-small.webp 160w, /hero/covers/${project.slug}-thumb.webp 320w`}
+                sizes="(max-width: 600px) 76px, (max-width: 900px) 100px, (max-width: 1180px) 12vw, (max-width: 1920px) calc((100vw - 178px) / 8), 224px"
+                alt=""
+                width={320}
+                height={400}
+                loading="lazy"
+                decoding="async"
+              />
+              <span>{project.title}<ArrowUpRight size={14} aria-hidden="true" /></span>
+            </a>
           ))}
-        </div>
+        </nav>
       </div>
     </section>
   );
@@ -200,60 +282,61 @@ function Hero() {
 
 function About() {
   return (
-    <section className="about section-pad" id="about">
-      <div className="container">
-        <div className="about-spread" data-reveal>
-          <img
-            className="about-spread-image"
-            src="/portfolio/about-profile-cinematic.png"
-            alt="李维侧光肖像"
-            loading="lazy"
-            decoding="async"
-          />
-
-          <div className="about-display-word" aria-hidden="true" data-reveal>
-            VISUAL DESIGNER
-          </div>
-
-          <div className="about-spread-main" data-reveal style={revealDelay("90ms")}>
-            <h3>把商业信息整理成清晰、有辨识度、能落地的视觉表达。</h3>
-            <p>
-              具备扎实的视觉传达与品牌设计基础，擅长建立富有辨识度的品牌视觉系统。
-              拥有丰富实际项目经验，曾独立完成 Logo、VI 系统及品牌宣传物料设计，
-              注重沟通、提案与高质量落地。
+    <section className="about" id="about" aria-labelledby="about-name">
+      <div className="container about-inner">
+        <div className="about-composition">
+          <div className="about-copy">
+            <p className="eyebrow about-section-label">
+              <span aria-hidden="true">02</span>
+              <span>ABOUT · 关于我</span>
             </p>
-          </div>
-
-          <div className="about-spread-lower">
-            <div className="about-spread-experience">
-              <div className="about-spread-timeline">
-                {experiences.map((item, index) => (
-                  <article key={item.company} data-reveal style={revealDelay(`${index * 80 + 120}ms`)}>
-                    <time>{item.period}</time>
-                    <div>
-                      <h3>{item.company}</h3>
-                      <p>{item.points[0]}</p>
-                    </div>
-                  </article>
-                ))}
+            <div className="about-identity">
+              <h2 id="about-name">{contacts.name}</h2>
+              <div className="about-identity-english">
+                <p>LI WEI</p>
+                <p className="eyebrow">VISUAL DESIGNER</p>
               </div>
             </div>
+            <p className="about-statement">
+              把商业信息整理成<br />
+              <span>清晰、有辨识度、能落地</span>的视觉表达。
+            </p>
+            <p className="about-summary">
+              具备扎实的视觉传达与品牌设计基础，擅长建立富有辨识度的品牌视觉系统。
+              独立完成过 Logo、VI 与整套品牌宣传物料，注重沟通、提案与高质量落地。
+            </p>
           </div>
-
-          <div className="about-spread-side">
-            <div className="about-tag-list" data-reveal style={revealDelay("180ms")}>
-              {focusAreas.map(({ icon: Icon, label }, index) => (
-                <span key={label} data-glow style={revealDelay(`${index * 45}ms`)}>
-                  <Icon size={16} />
-                  {label}
-                </span>
-              ))}
-              {skills.slice(0, 6).map((skill, index) => (
-                <span key={skill} data-glow style={revealDelay(`${index * 35}ms`)}>
-                  {skill}
-                </span>
-              ))}
-            </div>
+          <figure className="about-portrait">
+            <img
+              src="/hero/about-profile.webp"
+              width={1400}
+              height={788}
+              alt="李维的黑白侧光肖像"
+              loading="lazy"
+              decoding="async"
+            />
+            <div className="about-portrait-frame" aria-hidden="true" />
+            <figcaption aria-hidden="true">LI WEI — VISUAL DESIGNER — SINCE 2013</figcaption>
+          </figure>
+        </div>
+        <div className="about-facts">
+          <div className="about-tenure">
+            <p><strong>12</strong><span>年</span></p>
+            <p>视觉设计经验</p>
+          </div>
+          {experiences.map((item) => (
+            <article className="about-experience" key={item.company}>
+              <p className="eyebrow about-period">{item.period}</p>
+              <h3>{item.company}</h3>
+              <p>{item.points[0]}</p>
+            </article>
+          ))}
+          <div className="about-capabilities">
+            <p className="eyebrow">CAPABILITIES</p>
+            <ul>
+              {focusAreas.map(({ label }) => <li key={label}>{label}</li>)}
+            </ul>
+            <p className="about-tools">{skills.slice(0, 6).join(" · ")}</p>
           </div>
         </div>
       </div>
@@ -319,7 +402,7 @@ function Projects() {
           <div className="work-index-head">
             <div>
               <p className="eyebrow">SELECTED WORKS</p>
-              <h3>精选项目</h3>
+              <h2>精选项目</h2>
             </div>
             <p>覆盖品牌识别、商业画册、活动传播、包装系统与多类型平面物料。按分类查看已经整理好的项目，点击任意卡片可进入详情。</p>
           </div>
@@ -355,7 +438,6 @@ function Projects() {
                 key={project.slug}
                 project={project}
                 index={index}
-                eager={index < 2}
               />
             ))}
           </div>
@@ -368,22 +450,21 @@ function Projects() {
 function ProjectCard({
   project,
   index,
-  eager = false,
 }: {
   project: Project;
   index: number;
-  eager?: boolean;
 }) {
   const categoryLabel = getProjectCategoryLabel(project);
+  const cover = homepageImages[project.slug as keyof typeof homepageImages];
 
   return (
     <article className={`project-card ${project.layout ?? ""}`} data-glow>
       <a
         href={`#work/${project.slug}`}
-        aria-label={`查看 ${project.title}`}
+        aria-label={`查看 ${String(index + 1).padStart(2, "0")} ${project.title}`}
       >
         <div className="project-image">
-          <img src={project.cover} alt={project.title} loading={eager ? "eager" : "lazy"} decoding="async" />
+          <img src={cover?.src ?? project.cover} width={cover?.width} height={cover?.height} alt={project.title} loading="lazy" decoding="async" />
           <span>{String(index + 1).padStart(2, "0")}</span>
         </div>
       </a>
