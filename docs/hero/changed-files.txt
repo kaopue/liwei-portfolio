@@ -1,10 +1,14 @@
-docs/hero/README.md
+docs/about/README.md
+docs/about/recommendations.md
 docs/hero/changed-files.txt
 docs/hero/hero-1440-day.png
 docs/hero/hero-1440-night.png
 docs/hero/hero-390-day.png
 docs/hero/hero-390-night.png
 docs/hero/lighthouse-summary.json
+docs/hero/README.md
+docs/hero/review-2026-10-21.md
+docs/releases/2026-10-23-personal-logo.md
 index.html
 public/hero/about-profile.webp
 public/hero/covers/airport-outdoor-key-visual.webp

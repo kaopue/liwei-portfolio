@@ -107,8 +107,15 @@ function SiteHeader({ theme, onToggleTheme }: {
 
   return (
     <header className="site-header">
-      <a href="#top" className="brand-mark" aria-label="LW，回到首页">
-        <span className="brand-monogram" aria-hidden="true">LW</span>
+      <a href="#top" className="brand-mark" aria-label="李维个人 Logo，回到首页">
+        <img
+          className="brand-logo"
+          src="/portfolio/logo-liwei-mark.png"
+          alt=""
+          width={1425}
+          height={724}
+          decoding="async"
+        />
       </a>
       <nav className="nav-links" aria-label="主导航">
         {navItems.map((item) => (
@@ -275,62 +282,61 @@ function Hero() {
 
 function About() {
   return (
-    <section className="about section-pad" id="about">
-      <div className="container">
-        <div className="about-spread" data-reveal>
-          <img
-            className="about-spread-image"
-            src="/hero/about-profile.webp"
-            width={1400}
-            height={788}
-            alt="李维侧光肖像"
-            loading="lazy"
-            decoding="async"
-          />
-
-          <div className="about-display-word" aria-hidden="true" data-reveal>
-            VISUAL DESIGNER
-          </div>
-
-          <div className="about-spread-main" data-reveal style={revealDelay("90ms")}>
-            <h2>把商业信息整理成清晰、有辨识度、能落地的视觉表达。</h2>
-            <p>
-              具备扎实的视觉传达与品牌设计基础，擅长建立富有辨识度的品牌视觉系统。
-              拥有丰富实际项目经验，曾独立完成 Logo、VI 系统及品牌宣传物料设计，
-              注重沟通、提案与高质量落地。
+    <section className="about" id="about" aria-labelledby="about-name">
+      <div className="container about-inner">
+        <div className="about-composition">
+          <div className="about-copy">
+            <p className="eyebrow about-section-label">
+              <span aria-hidden="true">02</span>
+              <span>ABOUT · 关于我</span>
             </p>
-          </div>
-
-          <div className="about-spread-lower">
-            <div className="about-spread-experience">
-              <div className="about-spread-timeline">
-                {experiences.map((item, index) => (
-                  <article key={item.company} data-reveal style={revealDelay(`${index * 80 + 120}ms`)}>
-                    <time>{item.period}</time>
-                    <div>
-                      <h3>{item.company}</h3>
-                      <p>{item.points[0]}</p>
-                    </div>
-                  </article>
-                ))}
+            <div className="about-identity">
+              <h2 id="about-name">{contacts.name}</h2>
+              <div className="about-identity-english">
+                <p>LI WEI</p>
+                <p className="eyebrow">VISUAL DESIGNER</p>
               </div>
             </div>
+            <p className="about-statement">
+              把商业信息整理成<br />
+              <span>清晰、有辨识度、能落地</span>的视觉表达。
+            </p>
+            <p className="about-summary">
+              具备扎实的视觉传达与品牌设计基础，擅长建立富有辨识度的品牌视觉系统。
+              独立完成过 Logo、VI 与整套品牌宣传物料，注重沟通、提案与高质量落地。
+            </p>
           </div>
-
-          <div className="about-spread-side">
-            <div className="about-tag-list" data-reveal style={revealDelay("180ms")}>
-              {focusAreas.map(({ icon: Icon, label }, index) => (
-                <span key={label} data-glow style={revealDelay(`${index * 45}ms`)}>
-                  <Icon size={16} />
-                  {label}
-                </span>
-              ))}
-              {skills.slice(0, 6).map((skill, index) => (
-                <span key={skill} data-glow style={revealDelay(`${index * 35}ms`)}>
-                  {skill}
-                </span>
-              ))}
-            </div>
+          <figure className="about-portrait">
+            <img
+              src="/hero/about-profile.webp"
+              width={1400}
+              height={788}
+              alt="李维的黑白侧光肖像"
+              loading="lazy"
+              decoding="async"
+            />
+            <div className="about-portrait-frame" aria-hidden="true" />
+            <figcaption aria-hidden="true">LI WEI — VISUAL DESIGNER — SINCE 2013</figcaption>
+          </figure>
+        </div>
+        <div className="about-facts">
+          <div className="about-tenure">
+            <p><strong>12</strong><span>年</span></p>
+            <p>视觉设计经验</p>
+          </div>
+          {experiences.map((item) => (
+            <article className="about-experience" key={item.company}>
+              <p className="eyebrow about-period">{item.period}</p>
+              <h3>{item.company}</h3>
+              <p>{item.points[0]}</p>
+            </article>
+          ))}
+          <div className="about-capabilities">
+            <p className="eyebrow">CAPABILITIES</p>
+            <ul>
+              {focusAreas.map(({ label }) => <li key={label}>{label}</li>)}
+            </ul>
+            <p className="about-tools">{skills.slice(0, 6).join(" · ")}</p>
           </div>
         </div>
       </div>
