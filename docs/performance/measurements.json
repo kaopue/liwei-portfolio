@@ -1,0 +1,504 @@
+{
+  "comparison": {
+    "beforeBytes": 4252987,
+    "afterBytes": 1672625,
+    "transferReductionPct": 60.67,
+    "lcpBeforeMs": 2372.70615,
+    "lcpAfterMs": 2133.93945,
+    "lcpReductionPct": 10.06,
+    "notes": [
+      "Frozen final mobile build index-DDKZX_1l.js/index-CHfV6zxX.css retested; preceding mobile reports preserved as interim",
+      "Comparable loopback preview and same mobile throttle flags; single final run, no best-score selection",
+      "Desktop and reduced-motion functional checks from preceding build unchanged media; not repeated",
+      "Reduced motion audit is functional verification, not comparable performance score",
+      "No GPU smoothness or real user network claim"
+    ]
+  },
+  "runs": {
+    "before-local-mobile": {
+      "fetchTime": "2026-10-23T14:04:08.309Z",
+      "lighthouseVersion": "13.5.0",
+      "url": "http://127.0.0.1:4174/",
+      "performanceScore": 98.0,
+      "runtimeError": null,
+      "warnings": [],
+      "metrics": {
+        "first-contentful-paint": {
+          "value": 1381.8041,
+          "displayValue": "1.4 s"
+        },
+        "largest-contentful-paint": {
+          "value": 2372.70615,
+          "displayValue": "2.4 s"
+        },
+        "speed-index": {
+          "value": 1381.8041,
+          "displayValue": "1.4 s"
+        },
+        "total-blocking-time": {
+          "value": 46,
+          "displayValue": "50 ms"
+        },
+        "cumulative-layout-shift": {
+          "value": 0,
+          "displayValue": "0"
+        },
+        "server-response-time": {
+          "value": 3,
+          "displayValue": "Root document took 0 ms"
+        },
+        "mainthread-work-breakdown": {
+          "value": 2413.30799999999,
+          "displayValue": "2.4 s"
+        }
+      },
+      "resources": [
+        {
+          "resourceType": "total",
+          "label": "Total",
+          "requestCount": 17,
+          "transferSize": 4252987
+        },
+        {
+          "resourceType": "media",
+          "label": "Media",
+          "requestCount": 1,
+          "transferSize": 3508527
+        },
+        {
+          "resourceType": "image",
+          "label": "Image",
+          "requestCount": 12,
+          "transferSize": 654479
+        },
+        {
+          "resourceType": "script",
+          "label": "Script",
+          "requestCount": 1,
+          "transferSize": 77929
+        },
+        {
+          "resourceType": "stylesheet",
+          "label": "Stylesheet",
+          "requestCount": 1,
+          "transferSize": 7746
+        },
+        {
+          "resourceType": "other",
+          "label": "Other",
+          "requestCount": 1,
+          "transferSize": 2776
+        },
+        {
+          "resourceType": "document",
+          "label": "Document",
+          "requestCount": 1,
+          "transferSize": 1530
+        },
+        {
+          "resourceType": "font",
+          "label": "Font",
+          "requestCount": 0,
+          "transferSize": 0
+        },
+        {
+          "resourceType": "third-party",
+          "label": "Third-party",
+          "requestCount": 0,
+          "transferSize": 0
+        }
+      ],
+      "mediaRequestCount": 1,
+      "jpgPosterCount": 1,
+      "lazyDetailScriptCount": 0,
+      "throttlingMethod": "simulate",
+      "throttling": {
+        "rttMs": 150,
+        "throughputKbps": 1638.4,
+        "requestLatencyMs": 562.5,
+        "downloadThroughputKbps": 1474.5600000000002,
+        "uploadThroughputKbps": 675,
+        "cpuSlowdownMultiplier": 4
+      },
+      "screenEmulation": {
+        "mobile": true,
+        "width": 412,
+        "height": 823,
+        "deviceScaleFactor": 1.75,
+        "disabled": false
+      }
+    },
+    "after-local-mobile": {
+      "fetchTime": "2026-10-23T14:28:56.314Z",
+      "lighthouseVersion": "13.5.0",
+      "url": "http://127.0.0.1:4173/",
+      "performanceScore": 98.0,
+      "runtimeError": null,
+      "warnings": [],
+      "metrics": {
+        "first-contentful-paint": {
+          "value": 1372.6263,
+          "displayValue": "1.4 s"
+        },
+        "largest-contentful-paint": {
+          "value": 2133.93945,
+          "displayValue": "2.1 s"
+        },
+        "speed-index": {
+          "value": 1434.4466203756788,
+          "displayValue": "1.4 s"
+        },
+        "total-blocking-time": {
+          "value": 28.5,
+          "displayValue": "30 ms"
+        },
+        "cumulative-layout-shift": {
+          "value": 0,
+          "displayValue": "0"
+        },
+        "server-response-time": {
+          "value": 4,
+          "displayValue": "Root document took 0 ms"
+        },
+        "mainthread-work-breakdown": {
+          "value": 1688.7920000000024,
+          "displayValue": "1.7 s"
+        }
+      },
+      "resources": [
+        {
+          "resourceType": "total",
+          "label": "Total",
+          "requestCount": 16,
+          "transferSize": 1672625
+        },
+        {
+          "resourceType": "media",
+          "label": "Media",
+          "requestCount": 1,
+          "transferSize": 1421404
+        },
+        {
+          "resourceType": "image",
+          "label": "Image",
+          "requestCount": 11,
+          "transferSize": 160246
+        },
+        {
+          "resourceType": "script",
+          "label": "Script",
+          "requestCount": 1,
+          "transferSize": 79015
+        },
+        {
+          "resourceType": "stylesheet",
+          "label": "Stylesheet",
+          "requestCount": 1,
+          "transferSize": 7655
+        },
+        {
+          "resourceType": "other",
+          "label": "Other",
+          "requestCount": 1,
+          "transferSize": 2776
+        },
+        {
+          "resourceType": "document",
+          "label": "Document",
+          "requestCount": 1,
+          "transferSize": 1529
+        },
+        {
+          "resourceType": "font",
+          "label": "Font",
+          "requestCount": 0,
+          "transferSize": 0
+        },
+        {
+          "resourceType": "third-party",
+          "label": "Third-party",
+          "requestCount": 0,
+          "transferSize": 0
+        }
+      ],
+      "mediaRequestCount": 1,
+      "jpgPosterCount": 0,
+      "throttlingMethod": "simulate",
+      "throttling": {
+        "rttMs": 150,
+        "throughputKbps": 1638.4,
+        "requestLatencyMs": 562.5,
+        "downloadThroughputKbps": 1474.5600000000002,
+        "uploadThroughputKbps": 675,
+        "cpuSlowdownMultiplier": 4
+      },
+      "screenEmulation": {
+        "mobile": true,
+        "width": 412,
+        "height": 823,
+        "deviceScaleFactor": 1.75,
+        "disabled": false
+      }
+    },
+    "after-local-desktop": {
+      "fetchTime": "2026-10-23T14:15:09.002Z",
+      "lighthouseVersion": "13.5.0",
+      "url": "http://127.0.0.1:4173/",
+      "performanceScore": 100,
+      "runtimeError": null,
+      "warnings": [],
+      "metrics": {
+        "first-contentful-paint": {
+          "value": 331.1332,
+          "displayValue": "0.3 s"
+        },
+        "largest-contentful-paint": {
+          "value": 691.1332,
+          "displayValue": "0.7 s"
+        },
+        "speed-index": {
+          "value": 477.35714043019755,
+          "displayValue": "0.5 s"
+        },
+        "total-blocking-time": {
+          "value": 18.5,
+          "displayValue": "20 ms"
+        },
+        "cumulative-layout-shift": {
+          "value": 0,
+          "displayValue": "0"
+        },
+        "server-response-time": {
+          "value": 2,
+          "displayValue": "Root document took 0 ms"
+        },
+        "mainthread-work-breakdown": {
+          "value": 492.15099999999876,
+          "displayValue": "0.5 s"
+        }
+      },
+      "resources": [
+        {
+          "resourceType": "total",
+          "label": "Total",
+          "requestCount": 25,
+          "transferSize": 2548554
+        },
+        {
+          "resourceType": "media",
+          "label": "Media",
+          "requestCount": 1,
+          "transferSize": 2020432
+        },
+        {
+          "resourceType": "image",
+          "label": "Image",
+          "requestCount": 20,
+          "transferSize": 437510
+        },
+        {
+          "resourceType": "script",
+          "label": "Script",
+          "requestCount": 1,
+          "transferSize": 78642
+        },
+        {
+          "resourceType": "stylesheet",
+          "label": "Stylesheet",
+          "requestCount": 1,
+          "transferSize": 7669
+        },
+        {
+          "resourceType": "other",
+          "label": "Other",
+          "requestCount": 1,
+          "transferSize": 2776
+        },
+        {
+          "resourceType": "document",
+          "label": "Document",
+          "requestCount": 1,
+          "transferSize": 1525
+        },
+        {
+          "resourceType": "font",
+          "label": "Font",
+          "requestCount": 0,
+          "transferSize": 0
+        },
+        {
+          "resourceType": "third-party",
+          "label": "Third-party",
+          "requestCount": 0,
+          "transferSize": 0
+        }
+      ],
+      "mediaRequestCount": 1,
+      "jpgPosterCount": 0,
+      "lazyDetailScriptCount": 0,
+      "throttlingMethod": "simulate",
+      "throttling": {
+        "rttMs": 40,
+        "throughputKbps": 10240,
+        "requestLatencyMs": 0,
+        "downloadThroughputKbps": 0,
+        "uploadThroughputKbps": 0,
+        "cpuSlowdownMultiplier": 1
+      },
+      "screenEmulation": {
+        "mobile": false,
+        "width": 1350,
+        "height": 940,
+        "deviceScaleFactor": 1,
+        "disabled": false
+      }
+    },
+    "after-local-reduced-motion": {
+      "fetchTime": "2026-10-23T14:15:44.773Z",
+      "lighthouseVersion": "13.5.0",
+      "url": "http://127.0.0.1:4173/",
+      "performanceScore": 99.0,
+      "runtimeError": null,
+      "warnings": [],
+      "metrics": {
+        "first-contentful-paint": {
+          "value": 1363.07,
+          "displayValue": "1.4 s"
+        },
+        "largest-contentful-paint": {
+          "value": 2119.6049999999996,
+          "displayValue": "2.1 s"
+        },
+        "speed-index": {
+          "value": 1363.07,
+          "displayValue": "1.4 s"
+        },
+        "total-blocking-time": {
+          "value": 24,
+          "displayValue": "20 ms"
+        },
+        "cumulative-layout-shift": {
+          "value": 0,
+          "displayValue": "0"
+        },
+        "server-response-time": {
+          "value": 2,
+          "displayValue": "Root document took 0 ms"
+        },
+        "mainthread-work-breakdown": {
+          "value": 1365.6559999999997,
+          "displayValue": "1.4 s"
+        }
+      },
+      "resources": [
+        {
+          "resourceType": "total",
+          "label": "Total",
+          "requestCount": 15,
+          "transferSize": 250858
+        },
+        {
+          "resourceType": "image",
+          "label": "Image",
+          "requestCount": 11,
+          "transferSize": 160246
+        },
+        {
+          "resourceType": "script",
+          "label": "Script",
+          "requestCount": 1,
+          "transferSize": 78642
+        },
+        {
+          "resourceType": "stylesheet",
+          "label": "Stylesheet",
+          "requestCount": 1,
+          "transferSize": 7669
+        },
+        {
+          "resourceType": "other",
+          "label": "Other",
+          "requestCount": 1,
+          "transferSize": 2776
+        },
+        {
+          "resourceType": "document",
+          "label": "Document",
+          "requestCount": 1,
+          "transferSize": 1525
+        },
+        {
+          "resourceType": "media",
+          "label": "Media",
+          "requestCount": 0,
+          "transferSize": 0
+        },
+        {
+          "resourceType": "font",
+          "label": "Font",
+          "requestCount": 0,
+          "transferSize": 0
+        },
+        {
+          "resourceType": "third-party",
+          "label": "Third-party",
+          "requestCount": 0,
+          "transferSize": 0
+        }
+      ],
+      "mediaRequestCount": 0,
+      "jpgPosterCount": 0,
+      "lazyDetailScriptCount": 0,
+      "throttlingMethod": "simulate",
+      "throttling": {
+        "rttMs": 150,
+        "throughputKbps": 1638.4,
+        "requestLatencyMs": 562.5,
+        "downloadThroughputKbps": 1474.5600000000002,
+        "uploadThroughputKbps": 675,
+        "cpuSlowdownMultiplier": 4
+      },
+      "screenEmulation": {
+        "mobile": true,
+        "width": 412,
+        "height": 823,
+        "deviceScaleFactor": 1.75,
+        "disabled": false
+      }
+    }
+  },
+  "media": {
+    "desktopWebm": {
+      "src": "/hero/optimized/hero-rooftop-1080p-160d50368938.webm",
+      "frames": 288,
+      "duration": "00:00:12.00",
+      "fps": 24.0,
+      "width": 1920,
+      "height": 1080,
+      "audio": false,
+      "bytes": 2020085
+    },
+    "desktopMp4": {
+      "src": "/hero/optimized/hero-rooftop-1080p-e28f37d8adeb.mp4",
+      "frames": 288,
+      "duration": "00:00:12.00",
+      "fps": 24.0,
+      "width": 1920,
+      "height": 1080,
+      "audio": false,
+      "bytes": 2424615,
+      "faststart": true
+    },
+    "mobileMp4": {
+      "src": "/hero/optimized/hero-rooftop-720p-ada396bdb836.mp4",
+      "frames": 288,
+      "duration": "00:00:12.00",
+      "fps": 24.0,
+      "width": 1280,
+      "height": 720,
+      "audio": false,
+      "bytes": 1421058,
+      "faststart": true
+    }
+  }
+}
