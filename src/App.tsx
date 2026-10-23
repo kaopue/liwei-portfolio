@@ -1,8 +1,9 @@
 import {
   type CSSProperties,
+  lazy,
+  Suspense,
   useEffect,
   useMemo,
-  useRef,
   useState,
 } from "react";
 import {
@@ -15,6 +16,8 @@ import {
   Sun,
 } from "lucide-react";
 import { useTheme } from "./useTheme";
+import { useHeroVideo } from "./useHeroVideo";
+import { WorkDetailBoundary } from "./WorkDetailBoundary";
 import {
   advantages,
   contacts,
@@ -27,6 +30,9 @@ import {
 } from "./data/portfolio";
 import type { Project } from "./data/portfolio";
 import homepageImages from "./data/homepageImages.json";
+import optimizedVideos from "./data/optimizedVideos.json";
+
+const WorkDetailPage = lazy(() => import("./WorkDetailPage"));
 
 const revealDelay = (delay: string): CSSProperties =>
   ({ "--reveal-delay": delay }) as CSSProperties;
@@ -82,7 +88,17 @@ function App() {
     return (
       <main>
         <SiteHeader theme={theme} onToggleTheme={toggleTheme} />
-        {routeProject ? <WorkDetailPage project={routeProject} /> : <WorkNotFound slug={route.slug} />}
+        {routeProject ? (
+          <WorkDetailBoundary key={routeProject.slug}>
+            <Suspense fallback={
+              <section className="work-detail-page section-pad" aria-label="正在加载项目" aria-busy="true">
+                <div className="container" role="status">正在加载项目…</div>
+              </section>
+            }>
+              <WorkDetailPage project={routeProject} categoryLabel={getProjectCategoryLabel(routeProject)} />
+            </Suspense>
+          </WorkDetailBoundary>
+        ) : <WorkNotFound slug={route.slug} />}
       </main>
     );
   }
@@ -94,7 +110,7 @@ function App() {
       <About />
       <Projects />
       <Advantages />
-      <Contact />
+      <Contact theme={theme} />
     </main>
   );
 }
@@ -110,10 +126,10 @@ function SiteHeader({ theme, onToggleTheme }: {
       <a href="#top" className="brand-mark" aria-label="李维个人 Logo，回到首页">
         <img
           className="brand-logo"
-          src="/portfolio/logo-liwei-mark.png"
+          src="/optimized/logo-liwei-mark-d0d9b6c835bc-160.webp"
           alt=""
-          width={1425}
-          height={724}
+          width={160}
+          height={81}
           decoding="async"
         />
       </a>
@@ -159,45 +175,10 @@ const heroProjects = [
 ].map((slug) => projects.find((project) => project.slug === slug)!);
 
 function Hero() {
-  const posterRef = useRef<HTMLImageElement>(null);
-  const [videoMode, setVideoMode] = useState<"mobile" | "desktop" | null>(null);
-
-  useEffect(() => {
-    const motion = window.matchMedia("(prefers-reduced-motion: reduce)");
-    const mobile = window.matchMedia("(max-width: 767px)");
-    let cancelled = false;
-    let painted = false;
-    let firstFrame = 0;
-    let secondFrame = 0;
-    const update = () => {
-      if (!cancelled) {
-        setVideoMode(painted && !motion.matches ? (mobile.matches ? "mobile" : "desktop") : null);
-      }
-    };
-
-    // Let the high-priority poster paint before requesting any video bytes.
-    void posterRef.current?.decode().catch(() => {}).then(() => {
-      if (cancelled) return;
-      firstFrame = window.requestAnimationFrame(() => {
-        secondFrame = window.requestAnimationFrame(() => {
-          painted = true;
-          update();
-        });
-      });
-    });
-    motion.addEventListener("change", update);
-    mobile.addEventListener("change", update);
-    return () => {
-      cancelled = true;
-      window.cancelAnimationFrame(firstFrame);
-      window.cancelAnimationFrame(secondFrame);
-      motion.removeEventListener("change", update);
-      mobile.removeEventListener("change", update);
-    };
-  }, []);
+  const { heroRef, posterRef, videoRef, videoMode } = useHeroVideo();
 
   return (
-    <section className="hero" id="top" aria-labelledby="hero-title">
+    <section ref={heroRef} className="hero" id="top" aria-labelledby="hero-title">
       <div className="hero-media" aria-hidden="true">
         <picture>
           <source media="(max-width: 767px)" type="image/webp" srcSet="/hero/hero-rooftop-poster-mobile.webp" />
@@ -214,9 +195,10 @@ function Hero() {
         </picture>
         {videoMode && (
           <video
+            ref={videoRef}
             key={videoMode}
             className="hero-video"
-            poster="/hero/hero-rooftop-poster.jpg"
+            poster={videoMode === "mobile" ? "/hero/hero-rooftop-poster-mobile.webp" : "/hero/hero-rooftop-poster.webp"}
             aria-hidden="true"
             autoPlay
             muted
@@ -225,11 +207,11 @@ function Hero() {
             preload="metadata"
           >
             {videoMode === "mobile" ? (
-              <source src="/hero/hero-rooftop-loop-720p.mp4" type="video/mp4" />
+              <source src={optimizedVideos.mobileMp4} type="video/mp4" />
             ) : (
               <>
-                <source src="/hero/hero-rooftop-loop-1080p.webm" type="video/webm" />
-                <source src="/hero/hero-rooftop-loop-1080p.mp4" type="video/mp4" />
+                <source src={optimizedVideos.desktopWebm} type="video/webm" />
+                <source src={optimizedVideos.desktopMp4} type="video/mp4" />
               </>
             )}
           </video>
@@ -491,89 +473,6 @@ function ProjectCard({
   );
 }
 
-function WorkDetailPage({ project }: { project: Project }) {
-  const categoryLabel = getProjectCategoryLabel(project);
-
-  return (
-    <section className="work-detail-page section-pad" id="work-detail" aria-label={`${project.title} 详情`}>
-      <div className="container">
-        <div className="project-detail-head">
-          <div>
-            <p className="eyebrow">{categoryLabel}</p>
-            <h1>{project.title}</h1>
-          </div>
-          <a className="detail-back" href="#projects">
-            返回作品列表
-          </a>
-        </div>
-
-        <div className="work-detail-hero">
-          <p>{project.summary}</p>
-          <dl>
-            <div>
-              <dt>Year</dt>
-              <dd>{project.year}</dd>
-            </div>
-            <div>
-              <dt>Type</dt>
-              <dd>{project.type}</dd>
-            </div>
-            <div>
-              <dt>Images</dt>
-              <dd>{project.images.length}</dd>
-            </div>
-          </dl>
-        </div>
-
-        <div className="project-detail-layout">
-          <div className="project-detail-cover">
-            <img src={project.cover} alt={`${project.title} 封面`} loading="eager" decoding="async" />
-          </div>
-          <div className="project-detail-info">
-            <p>{project.description}</p>
-            <div className="tag-row">
-              {project.tags.map((tag) => (
-                <span key={tag}>{tag}</span>
-              ))}
-            </div>
-          </div>
-        </div>
-
-        <div className="case-study-sections">
-          {project.detailSections.map((section) => (
-            <article key={section.title}>
-              <p className="eyebrow">{section.title}</p>
-              <p>{section.body}</p>
-            </article>
-          ))}
-        </div>
-
-        <div className="detail-gallery-head">
-          <p className="eyebrow">PROCESS / DISPLAY</p>
-          <h2>项目过程 / 展示图</h2>
-        </div>
-
-        <div className="detail-gallery">
-          {project.images.map((image, index) => (
-            <figure key={image}>
-              <img src={image} alt={`${project.title} 详情图 ${index + 1}`} loading="lazy" decoding="async" />
-            </figure>
-          ))}
-        </div>
-
-        <div className="detail-footer-actions">
-          <a className="detail-back" href="#projects">
-            返回作品列表
-          </a>
-          <a className="detail-back secondary" href="#top">
-            返回首页
-          </a>
-        </div>
-      </div>
-    </section>
-  );
-}
-
 function WorkNotFound({ slug }: { slug: string }) {
   return (
     <section className="work-detail-page section-pad work-not-found" aria-label="项目不存在">
@@ -622,22 +521,14 @@ function Advantages() {
   );
 }
 
-function Contact() {
+function Contact({ theme }: { theme: "light" | "dark" }) {
   return (
     <footer className="contact section-screen" id="contact">
       <div className="contact-scenery" aria-hidden="true">
         <img
-          className="contact-city contact-city-night"
-          src="/portfolio/contact-city-night.webp"
-          alt=""
-          width={1672}
-          height={941}
-          loading="lazy"
-          decoding="async"
-        />
-        <img
-          className="contact-city contact-city-day"
-          src="/portfolio/contact-city-day.webp"
+          key={theme}
+          className="contact-city"
+          src={`/portfolio/contact-city-${theme === "dark" ? "night" : "day"}.webp`}
           alt=""
           width={1672}
           height={941}
@@ -682,65 +573,45 @@ function SectionLabel({ eyebrow, title }: { eyebrow: string; title: string }) {
 function usePortfolioMotion(routeKey: string) {
   useEffect(() => {
     const revealItems = Array.from(document.querySelectorAll<HTMLElement>("[data-reveal]"));
-    const glowItems = Array.from(document.querySelectorAll<HTMLElement>("[data-glow]"));
-    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const motion = window.matchMedia("(prefers-reduced-motion: reduce)");
     const supportsRevealObserver = "IntersectionObserver" in window;
+    let observer: IntersectionObserver | null = null;
 
-    const cleanups = glowItems.map((item) => {
-      const handlePointerMove = (event: PointerEvent) => {
-        const rect = item.getBoundingClientRect();
-        item.style.setProperty("--mx", `${event.clientX - rect.left}px`);
-        item.style.setProperty("--my", `${event.clientY - rect.top}px`);
-      };
+    const updateMotion = () => {
+      observer?.disconnect();
+      observer = null;
 
-      item.addEventListener("pointermove", handlePointerMove);
-      return () => item.removeEventListener("pointermove", handlePointerMove);
-    });
+      const pendingItems = revealItems.filter((item) => !item.classList.contains("is-visible"));
+      if (motion.matches || !supportsRevealObserver || pendingItems.length === 0) {
+        revealItems.forEach((item) => item.classList.add("is-visible"));
+        document.documentElement.classList.remove("reveal-motion");
+        return;
+      }
 
-    if (!reduceMotion && supportsRevealObserver && revealItems.length > 0) {
       document.documentElement.classList.add("reveal-motion");
 
-      const observer = new IntersectionObserver(
+      observer = new IntersectionObserver(
         (entries) => {
           entries.forEach((entry) => {
             if (entry.isIntersecting) {
               entry.target.classList.add("is-visible");
-              observer.unobserve(entry.target);
+              observer?.unobserve(entry.target);
             }
           });
         },
         { rootMargin: "0px 0px -12% 0px", threshold: 0.14 },
       );
 
-      revealItems.forEach((item) => observer.observe(item));
+      pendingItems.forEach((item) => observer?.observe(item));
+    };
 
-      window.requestAnimationFrame(() => {
-        revealItems.forEach((item) => {
-          const rect = item.getBoundingClientRect();
-
-          if (rect.top < window.innerHeight * 0.92 && rect.bottom > 0) {
-            item.classList.add("is-visible");
-          }
-        });
-      });
-
-      const revealFallback = window.setTimeout(() => {
-        revealItems.forEach((item) => item.classList.add("is-visible"));
-      }, 1600);
-
-      return () => {
-        window.clearTimeout(revealFallback);
-        observer.disconnect();
-        cleanups.forEach((cleanup) => cleanup());
-        document.documentElement.classList.remove("reveal-motion");
-      };
-    }
-
-    revealItems.forEach((item) => item.classList.add("is-visible"));
-    document.documentElement.classList.remove("reveal-motion");
+    updateMotion();
+    motion.addEventListener("change", updateMotion);
 
     return () => {
-      cleanups.forEach((cleanup) => cleanup());
+      observer?.disconnect();
+      motion.removeEventListener("change", updateMotion);
+      document.documentElement.classList.remove("reveal-motion");
     };
   }, [routeKey]);
 }

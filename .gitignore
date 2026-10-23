@@ -26,6 +26,7 @@
 *.pem
 .tmp/
 backups/
+__pycache__/
 
 # debug
 npm-debug.log*
