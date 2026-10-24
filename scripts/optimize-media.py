@@ -197,33 +197,48 @@ def mp4_faststart(path: Path) -> bool:
     return atoms[b"moov"] < atoms[b"mdat"]
 
 
-def verify_video(ffmpeg: Path, path: Path) -> dict:
+def inspect_video(ffmpeg: Path, path: Path, report_dir: Path) -> dict:
+    """Decode every frame and inspect the input stream without an ffprobe install."""
     result = subprocess.run(
-        [str(ffmpeg), "-hide_banner", "-threads", "2", "-i", str(path), "-map", "0:v:0", "-f", "null", "-"],
+        [str(ffmpeg), "-hide_banner", "-nostats", "-progress", "pipe:1", "-threads", "2", "-i", str(path), "-map", "0:v:0", "-an", "-sn", "-dn", "-f", "null", "-"],
         check=True,
         capture_output=True,
         text=True,
         encoding="utf-8",
     )
     log = result.stderr
-    (REPORT_DIR / f"{path.name}.decode.log").write_text(log, encoding="utf-8")
-    frames = int(re.findall(r"frame=\s*(\d+)", log)[-1])
+    (report_dir / f"{path.name}.decode.log").write_text(log + "\n" + result.stdout, encoding="utf-8")
+    frames = int(re.findall(r"^frame=(\d+)", result.stdout, flags=re.MULTILINE)[-1])
     duration = re.search(r"Duration: ([\d:.]+)", log).group(1)
-    frame_rate = re.search(r", ([\d.]+) fps", log).group(1)
-    dimensions = re.search(r"yuv420p[^\n]*?, (\d+)x(\d+)", log)
-    if frames != 288 or duration != "00:00:12.00" or frame_rate != "24":
-        raise ValueError(f"Timing changed: {path}: {frames} frames, {duration}, {frame_rate} fps")
+    video_stream = re.search(r"Stream #[^\n]*?Video: ([^\n]+)", log).group(1)
+    frame_rate = re.search(r", ([\d.]+) fps", video_stream).group(1)
+    dimensions = re.search(r"(?:,|\s)(\d{2,})x(\d{2,})(?:[ ,\[])", video_stream)
+    hours, minutes, seconds = [float(value) for value in duration.split(":")]
     report = {
         "frames": frames,
         "duration": duration,
+        "durationSeconds": hours * 3600 + minutes * 60 + seconds,
         "fps": float(frame_rate),
         "width": int(dimensions.group(1)),
         "height": int(dimensions.group(2)),
         "audio": bool(re.search(r"Stream #0:\d+.*Audio:", log)),
         "bytes": path.stat().st_size,
+        "pixelFormat": "yuv420p" if "yuv420p" in video_stream else video_stream,
     }
+    return report
+
+
+def verify_video(ffmpeg: Path, path: Path, source: dict, report_dir: Path) -> dict:
+    report = inspect_video(ffmpeg, path, report_dir)
+    tolerance = 1 / source["fps"] + 0.01
+    if (report["frames"] != source["frames"]
+            or abs(report["durationSeconds"] - source["durationSeconds"]) > tolerance
+            or abs(report["fps"] - source["fps"]) > 0.01):
+        raise ValueError(f"Timing changed: {path}: source={source}, output={report}")
     if report["audio"]:
         raise ValueError(f"Unexpected audio stream: {path}")
+    if report["pixelFormat"] != "yuv420p":
+        raise ValueError(f"Unexpected pixel format: {path}")
     if path.suffix == ".mp4":
         report["faststart"] = mp4_faststart(path)
         if not report["faststart"]:
@@ -231,50 +246,121 @@ def verify_video(ffmpeg: Path, path: Path) -> dict:
     return report
 
 
-def optimize_videos(ffmpeg: Path, webm_crf: int = 40, desktop_webm_only: bool = False) -> dict:
+def save_poster(image: Image.Image, output_dir: Path, basename: str, extension: str, **options) -> dict:
+    with tempfile.SpooledTemporaryFile(max_size=8 * 1024 * 1024) as buffer:
+        image.save(buffer, **options)
+        buffer.seek(0)
+        data = buffer.read()
+    output = output_dir / f"{basename}-{content_hash(data)}{extension}"
+    output.write_bytes(data)
+    return {"src": "/" + output.relative_to(PUBLIC).as_posix(), "bytes": len(data), "width": image.width, "height": image.height}
+
+
+def optimize_posters(ffmpeg: Path, source: Path, output_dir: Path, report_dir: Path, desktop_width: int, mobile_poster_width: int, frames: int, mobile_poster_quality: int = 78) -> dict:
+    """Use frame zero and the same uncropped aspect ratio for poster and video.
+
+    The browser applies object-fit and object-position to both, so a narrow
+    viewport does not jump from a pre-cropped poster to a different video crop.
+    """
+    frame_path = report_dir / "poster-first-frame.png"
+    subprocess.run(
+        [str(ffmpeg), "-y", "-hide_banner", "-loglevel", "error", "-threads", "2", "-i", str(source), "-map", "0:v:0", "-vf", f"scale={desktop_width}:-2:flags=lanczos,setsar=1", "-frames:v", "1", "-update", "1", str(frame_path)],
+        check=True, capture_output=True,
+    )
+    with Image.open(frame_path) as raw:
+        desktop = raw.convert("RGB")
+        mobile = desktop.resize((mobile_poster_width, round(desktop.height * mobile_poster_width / desktop.width)), Image.Resampling.LANCZOS)
+        records = {
+            "posterWebp": save_poster(desktop, output_dir, f"hero-rooftop-poster-{desktop.width}", ".webp", format="WEBP", quality=86, method=6),
+            "posterJpg": save_poster(desktop, output_dir, f"hero-rooftop-poster-{desktop.width}", ".jpg", format="JPEG", quality=88, optimize=True, progressive=True),
+            "posterMobile": save_poster(mobile, output_dir, f"hero-rooftop-poster-{mobile.width}", ".webp", format="WEBP", quality=mobile_poster_quality, method=6),
+        }
+    indices = [min(frames - 1, round(frames * index / 4)) for index in range(4)]
+    selection = "+".join(f"eq(n,{index})" for index in indices)
+    subprocess.run(
+        [str(ffmpeg), "-y", "-hide_banner", "-loglevel", "error", "-threads", "2", "-i", str(source), "-vf", f"select='{selection}',scale=640:-2:flags=lanczos,tile=2x2", "-frames:v", "1", "-update", "1", str(report_dir / "source-contact-sheet.jpg")],
+        check=True, capture_output=True,
+    )
+    return records
+
+
+def optimize_videos(ffmpeg: Path, source: Path, report_dir: Path, webm_crf: int = 36, mp4_crf: int = 26, mobile_mp4_crf: int = 28, desktop_width: int = 1920, mobile_width: int = 1280, desktop_webm_only: bool = False, mobile_poster_width: int = 960, mobile_poster_quality: int = 78) -> dict:
     output_dir = PUBLIC / "hero/optimized"
     output_dir.mkdir(parents=True, exist_ok=True)
-    source = PUBLIC / "hero/hero-rooftop-loop-1080p.mp4"
+    report_dir.mkdir(parents=True, exist_ok=True)
+    source = source.resolve(strict=True)
+    source_report = {"path": str(source), "sha256": hashlib.sha256(source.read_bytes()).hexdigest(), **inspect_video(ffmpeg, source, report_dir)}
+    # Avoid upscaling and use even dimensions for browser-compatible yuv420p.
+    desktop_width = min(desktop_width, source_report["width"]) // 2 * 2
+    mobile_width = min(mobile_width, desktop_width) // 2 * 2
+    mobile_poster_width = min(mobile_poster_width, desktop_width) // 2 * 2
     variants = [
-        ("desktopWebm", "hero-rooftop-1080p", ".webm", ["-c:v", "libvpx-vp9", "-b:v", "0", "-crf", str(webm_crf), "-deadline", "good", "-cpu-used", "4", "-row-mt", "1"]),
-        ("desktopMp4", "hero-rooftop-1080p", ".mp4", ["-c:v", "libx264", "-preset", "slow", "-crf", "28", "-movflags", "+faststart"]),
-        ("mobileMp4", "hero-rooftop-720p", ".mp4", ["-vf", "scale=1280:720:flags=lanczos", "-c:v", "libx264", "-preset", "slow", "-crf", "28", "-movflags", "+faststart"]),
+        ("desktopWebm", desktop_width, ".webm", ["-c:v", "libvpx-vp9", "-b:v", "0", "-crf", str(webm_crf), "-deadline", "good", "-cpu-used", "4", "-row-mt", "1"]),
+        ("desktopMp4", desktop_width, ".mp4", ["-c:v", "libx264", "-preset", "slow", "-crf", str(mp4_crf), "-movflags", "+faststart"]),
+        ("mobileMp4", mobile_width, ".mp4", ["-c:v", "libx264", "-preset", "slow", "-crf", str(mobile_mp4_crf), "-movflags", "+faststart"]),
     ]
     records = {}
     if desktop_webm_only:
-        records = json.loads((REPORT_DIR / "video-report.json").read_text(encoding="utf-8"))
+        previous = json.loads((report_dir / "video-report.json").read_text(encoding="utf-8"))
+        if previous.get("source", {}).get("sha256") != source_report["sha256"]:
+            raise ValueError("Source differs from the previous report; re-encode all variants")
+        records = previous["variants"]
         variants = variants[:1]
-    for key, basename, extension, options in variants:
-        temporary_output = REPORT_DIR / (basename + extension)
-        print(f"Encoding {key}: 2 threads, 12 seconds at 24 fps", flush=True)
+    for key, width, extension, options in variants:
+        basename = f"hero-rooftop-{width}"
+        temporary_output = report_dir / (basename + extension)
+        print(f"Encoding {key}: {width}px, {source_report['durationSeconds']} seconds at {source_report['fps']} fps; preserving all {source_report['frames']} frames", flush=True)
         result = subprocess.run(
-            [str(ffmpeg), "-y", "-hide_banner", "-threads", "2", "-i", str(source), "-map", "0:v:0", "-an", "-sn", "-dn", "-map_metadata", "-1", *options, "-threads", "2", "-pix_fmt", "yuv420p", "-frames:v", "288", str(temporary_output)],
+            [str(ffmpeg), "-y", "-hide_banner", "-threads", "2", "-i", str(source), "-map", "0:v:0", "-an", "-sn", "-dn", "-map_metadata", "-1", "-vf", f"scale={width}:-2:flags=lanczos,setsar=1", *options, "-threads", "2", "-pix_fmt", "yuv420p", "-fps_mode", "passthrough", str(temporary_output)],
             check=True,
             capture_output=True,
             text=True,
             encoding="utf-8",
         )
-        (REPORT_DIR / f"{key}.encode.log").write_text(result.stderr, encoding="utf-8")
-        verification = verify_video(ffmpeg, temporary_output)
+        (report_dir / f"{key}.encode.log").write_text(result.stderr, encoding="utf-8")
+        verification = verify_video(ffmpeg, temporary_output, source_report, report_dir)
         data = temporary_output.read_bytes()
         output = output_dir / f"{basename}-{content_hash(data)}{extension}"
         output.write_bytes(data)
         records[key] = {"src": "/" + output.relative_to(PUBLIC).as_posix(), **verification}
         print(json.dumps({key: records[key]}, ensure_ascii=False), flush=True)
 
-    write_json(REPORT_DIR / "video-report.json", records)
-    write_json(ROOT / "src/data/optimizedVideos.json", {key: value["src"] for key, value in records.items()})
-    return records
+    posters = optimize_posters(ffmpeg, source, output_dir, report_dir, desktop_width, mobile_poster_width, source_report["frames"], mobile_poster_quality)
+    report = {"source": source_report, "settings": {"webmCrf": webm_crf, "mp4Crf": mp4_crf, "mobileMp4Crf": mobile_mp4_crf, "desktopWidth": desktop_width, "mobileWidth": mobile_width, "mobilePosterWidth": mobile_poster_width, "mobilePosterQuality": mobile_poster_quality, "posterFrame": 0, "posterCrop": "none; match video object-fit/object-position"}, "variants": records, "posters": posters, "contactSheet": str(report_dir / "source-contact-sheet.jpg")}
+    write_json(report_dir / "video-report.json", report)
+    write_json(ROOT / "src/data/optimizedVideos.json", {
+        **{key: value["src"] for key, value in records.items()},
+        **{key: value["src"] for key, value in posters.items()},
+        "posterWidth": posters["posterWebp"]["width"],
+        "posterHeight": posters["posterWebp"]["height"],
+        "posterMobileWidth": posters["posterMobile"]["width"],
+        "posterMobileHeight": posters["posterMobile"]["height"],
+    })
+    return report
 
 
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--images", action="store_true", help="Create responsive project images and manifest")
     parser.add_argument("--videos", action="store_true", help="Create and verify optimized Hero videos")
-    parser.add_argument("--webm-crf", type=int, default=40, help="VP9 quality setting; higher means smaller")
+    parser.add_argument("--video-source", type=Path, default=PUBLIC / "hero/hero-rooftop-loop-1080p.mp4", help="Original complete Hero loop to optimize; its timing is preserved")
+    parser.add_argument("--report-dir", type=Path, default=REPORT_DIR, help="Directory for video metadata, decode logs, and visual contact sheet")
+    parser.add_argument("--desktop-width", type=int, default=1920)
+    parser.add_argument("--mobile-width", type=int, default=1280)
+    parser.add_argument("--mobile-poster-width", type=int, default=960, help="Independent mobile poster width; preserves the video aspect ratio")
+    parser.add_argument("--mobile-poster-quality", type=int, default=78, help="Mobile WebP poster quality (0-100)")
+    parser.add_argument("--webm-crf", type=int, default=36, help="VP9 quality setting (0-63); higher means smaller")
+    parser.add_argument("--mp4-crf", type=int, default=26, help="H.264 quality setting (0-51); higher means smaller")
+    parser.add_argument("--mobile-mp4-crf", type=int, default=28, help="Mobile H.264 quality setting (0-51)")
     parser.add_argument("--desktop-webm-only", action="store_true", help="Re-encode only VP9 and keep existing MP4 records")
     parser.add_argument("--ffmpeg", type=Path, default=Path(os.environ.get("FFMPEG_BINARY", FFMPEG_DEFAULT)))
     args = parser.parse_args()
+    if not (0 <= args.webm_crf <= 63 and 0 <= args.mp4_crf <= 51 and 0 <= args.mobile_mp4_crf <= 51):
+        parser.error("CRF must be between 0-63 for WebM and 0-51 for MP4")
+    if not 0 <= args.mobile_poster_quality <= 100:
+        parser.error("Mobile poster quality must be between 0-100")
+    if min(args.desktop_width, args.mobile_width, args.mobile_poster_width) < 2:
+        parser.error("Video widths must be at least 2 pixels")
     REPORT_DIR.mkdir(parents=True, exist_ok=True)
     if not (args.images or args.videos):
         parser.error("Select --images, --videos, or both")
@@ -283,7 +369,7 @@ def main() -> None:
     if args.videos:
         if not args.ffmpeg.is_file():
             raise FileNotFoundError("Provide an FFmpeg executable with --ffmpeg or FFMPEG_BINARY")
-        optimize_videos(args.ffmpeg, args.webm_crf, args.desktop_webm_only)
+        optimize_videos(args.ffmpeg, args.video_source, args.report_dir, args.webm_crf, args.mp4_crf, args.mobile_mp4_crf, args.desktop_width, args.mobile_width, args.desktop_webm_only, args.mobile_poster_width, args.mobile_poster_quality)
 
 
 if __name__ == "__main__":
