@@ -273,6 +273,9 @@ main {
 }
 
 .nav-links a {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
   transition: color 180ms ease;
 }
 
@@ -337,6 +340,35 @@ main {
   object-fit: cover;
   object-position: right center;
 }
+
+.hero-video {
+  opacity: 0;
+  transition: opacity 450ms ease;
+}
+
+.hero-video.is-ready { opacity: 1; }
+
+.hero-playback {
+  position: absolute;
+  z-index: 2;
+  top: 108px;
+  right: max(40px, calc((100% - var(--max)) / 2));
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  gap: 8px;
+  padding: 0 14px;
+  border: 1px solid rgba(255, 255, 255, .3);
+  border-radius: 999px;
+  background: rgba(3, 12, 20, .72);
+  color: #f1f5f6;
+  font: inherit;
+  font-size: 11px;
+  cursor: pointer;
+  transition: background 180ms ease;
+}
+
+.hero-playback:hover { background: #132833; }
 
 .hero-shade {
   z-index: -1;
@@ -480,6 +512,7 @@ main {
   .hero-inner { padding-block: 100px 22px; gap: 22px; }
   .hero-content { align-self: end; padding-bottom: 0; }
   .hero-poster, .hero-video { object-position: 82% center; }
+  .hero-playback { top: 102px; right: 24px; }
   .hero-shade {
     background:
       linear-gradient(0deg, rgba(3, 12, 20, .97) 0%, rgba(3, 12, 20, .85) 35%, rgba(3, 12, 20, .55) 47%, transparent 65%),
@@ -504,6 +537,7 @@ main {
 }
 
 @media (max-width: 600px) {
+  .hero-playback { top: 88px; right: 18px; }
   .hero-inner { width: calc(100% - 36px); gap: 18px; }
   .hero h1 { font-size: clamp(28px, 8.2vw, 45px); }
   .hero-copy { font-size: 12px; line-height: 1.85; max-width: 360px; }
@@ -1679,7 +1713,7 @@ main {
     top: 12px;
     height: auto;
     min-height: 54px;
-    grid-template-columns: 48px minmax(0, 1fr) 82px;
+    grid-template-columns: 48px minmax(0, 1fr) 88px;
   }
 
   .brand-logo {
@@ -1687,7 +1721,7 @@ main {
   }
 
   .header-cta {
-    width: 38px;
+    width: 44px;
     padding: 0;
     font-size: 0;
   }

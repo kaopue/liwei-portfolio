@@ -1,0 +1,161 @@
+{
+  "date": "2026-10-24",
+  "environment": "Local production preview; single simulated-throttling Lighthouse run per mode; not field data",
+  "desktopNote": "Desktop tested before mobile-only poster refinement; desktop video/poster/CSS/playback unchanged",
+  "media": {
+    "source": {
+      "sha256": "033d1f40b5e65ad3630d5d12c4d184b416403ea75bdb4cf09d6a2eefa799a607",
+      "frames": 288,
+      "duration": "00:00:12.00",
+      "durationSeconds": 12.0,
+      "fps": 24.0,
+      "width": 3840,
+      "height": 2160,
+      "audio": false,
+      "bytes": 14794566,
+      "pixelFormat": "yuv420p"
+    },
+    "settings": {
+      "webmCrf": 36,
+      "mp4Crf": 26,
+      "desktopWidth": 1920,
+      "mobileWidth": 1280,
+      "posterFrame": 0,
+      "posterCrop": "none; match video object-fit/object-position",
+      "mobileMp4Crf": 28,
+      "mobilePosterWidth": 960,
+      "mobilePosterQuality": 78
+    },
+    "variants": {
+      "desktopWebm": {
+        "src": "/hero/optimized/hero-rooftop-1920-6553b7a87add.webm",
+        "frames": 288,
+        "duration": "00:00:12.00",
+        "durationSeconds": 12.0,
+        "fps": 24.0,
+        "width": 1920,
+        "height": 1080,
+        "audio": false,
+        "bytes": 3543637,
+        "pixelFormat": "yuv420p"
+      },
+      "desktopMp4": {
+        "src": "/hero/optimized/hero-rooftop-1920-7c1023ecb4f0.mp4",
+        "frames": 288,
+        "duration": "00:00:12.00",
+        "durationSeconds": 12.0,
+        "fps": 24.0,
+        "width": 1920,
+        "height": 1080,
+        "audio": false,
+        "bytes": 3773682,
+        "pixelFormat": "yuv420p",
+        "faststart": true
+      },
+      "mobileMp4": {
+        "src": "/hero/optimized/hero-rooftop-1280-c57ddaa29963.mp4",
+        "frames": 288,
+        "duration": "00:00:12.00",
+        "durationSeconds": 12.0,
+        "fps": 24.0,
+        "width": 1280,
+        "height": 720,
+        "audio": false,
+        "bytes": 1623339,
+        "pixelFormat": "yuv420p",
+        "faststart": true
+      }
+    },
+    "posters": {
+      "posterWebp": {
+        "src": "/hero/optimized/hero-rooftop-poster-1920-a5c263273e56.webp",
+        "bytes": 269956,
+        "width": 1920,
+        "height": 1080
+      },
+      "posterJpg": {
+        "src": "/hero/optimized/hero-rooftop-poster-1920-235f367b700c.jpg",
+        "bytes": 423234,
+        "width": 1920,
+        "height": 1080
+      },
+      "posterMobile": {
+        "src": "/hero/optimized/hero-rooftop-poster-960-cfa0e35289a8.webp",
+        "bytes": 68762,
+        "width": 960,
+        "height": 540
+      }
+    }
+  },
+  "lighthouse": [
+    {
+      "mode": "mobile",
+      "fetchTime": "2026-10-24T13:33:23.798Z",
+      "lighthouseVersion": "13.5.0",
+      "formFactor": "mobile",
+      "throttlingMethod": "simulate",
+      "scores": {
+        "performance": 99,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "lcpMs": 2091.3078,
+      "cls": 0,
+      "totalTransferBytes": 1875268,
+      "requestCount": 16,
+      "videoRequests": [
+        {
+          "url": "http://localhost:4173/hero/optimized/hero-rooftop-1280-c57ddaa29963.mp4",
+          "transferSize": 1623685,
+          "statusCode": 206
+        }
+      ],
+      "runWarnings": []
+    },
+    {
+      "mode": "desktop",
+      "fetchTime": "2026-10-24T13:30:18.921Z",
+      "lighthouseVersion": "13.5.0",
+      "formFactor": "desktop",
+      "throttlingMethod": "simulate",
+      "scores": {
+        "performance": 100,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "lcpMs": 777.5934,
+      "cls": 0,
+      "totalTransferBytes": 4173342,
+      "requestCount": 25,
+      "videoRequests": [
+        {
+          "url": "http://localhost:4173/hero/optimized/hero-rooftop-1920-6553b7a87add.webm",
+          "transferSize": 3543984,
+          "statusCode": 206
+        }
+      ],
+      "runWarnings": []
+    },
+    {
+      "mode": "reduced-motion",
+      "fetchTime": "2026-10-24T13:33:43.970Z",
+      "lighthouseVersion": "13.5.0",
+      "formFactor": "mobile",
+      "throttlingMethod": "simulate",
+      "scores": {
+        "performance": 99,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "lcpMs": 2040.1495499999999,
+      "cls": 0,
+      "totalTransferBytes": 251583,
+      "requestCount": 15,
+      "videoRequests": [],
+      "runWarnings": []
+    }
+  ]
+}

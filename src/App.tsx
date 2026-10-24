@@ -10,7 +10,9 @@ import {
   ArrowUpRight,
   Mail,
   Moon,
+  Pause,
   Phone,
+  Play,
   Send,
   SquareArrowOutUpRight,
   Sun,
@@ -18,6 +20,7 @@ import {
 import { useTheme } from "./useTheme";
 import { useHeroVideo } from "./useHeroVideo";
 import { WorkDetailBoundary } from "./WorkDetailBoundary";
+import { decodeHash } from "./hash";
 import {
   advantages,
   contacts,
@@ -44,7 +47,7 @@ const getHashRoute = (): HashRoute => {
     return { kind: "home" };
   }
 
-  const hash = decodeURIComponent(window.location.hash.replace(/^#/, ""));
+  const hash = decodeHash(window.location.hash);
 
   if (hash.startsWith("work/")) {
     return { kind: "work", slug: hash.replace("work/", "") };
@@ -175,21 +178,25 @@ const heroProjects = [
 ].map((slug) => projects.find((project) => project.slug === slug)!);
 
 function Hero() {
-  const { heroRef, posterRef, videoRef, videoMode } = useHeroVideo();
+  const {
+    heroRef, posterRef, videoRef, videoMode, videoReady,
+    isPlaying, hasVideoError, togglePlayback,
+    onVideoPlaying, onVideoPause, onVideoError,
+  } = useHeroVideo();
 
   return (
     <section ref={heroRef} className="hero" id="top" aria-labelledby="hero-title">
       <div className="hero-media" aria-hidden="true">
         <picture>
-          <source media="(max-width: 767px)" type="image/webp" srcSet="/hero/hero-rooftop-poster-mobile.webp" />
-          <source type="image/webp" srcSet="/hero/hero-rooftop-poster.webp" />
+          <source media="(max-width: 767px)" type="image/webp" srcSet={optimizedVideos.posterMobile} />
+          <source type="image/webp" srcSet={optimizedVideos.posterWebp} />
           <img
             ref={posterRef}
             className="hero-poster"
-            src="/hero/hero-rooftop-poster.jpg"
+            src={optimizedVideos.posterJpg}
             alt=""
-            width={1920}
-            height={1080}
+            width={optimizedVideos.posterWidth}
+            height={optimizedVideos.posterHeight}
             fetchPriority="high"
           />
         </picture>
@@ -197,14 +204,16 @@ function Hero() {
           <video
             ref={videoRef}
             key={videoMode}
-            className="hero-video"
-            poster={videoMode === "mobile" ? "/hero/hero-rooftop-poster-mobile.webp" : "/hero/hero-rooftop-poster.webp"}
+            className={`hero-video${videoReady ? " is-ready" : ""}`}
+            poster={videoMode === "mobile" ? optimizedVideos.posterMobile : optimizedVideos.posterWebp}
             aria-hidden="true"
-            autoPlay
             muted
             loop
             playsInline
             preload="metadata"
+            onPlaying={onVideoPlaying}
+            onPause={onVideoPause}
+            onError={onVideoError}
           >
             {videoMode === "mobile" ? (
               <source src={optimizedVideos.mobileMp4} type="video/mp4" />
@@ -218,6 +227,18 @@ function Hero() {
         )}
       </div>
       <div className="hero-shade" aria-hidden="true" />
+      {videoMode && !hasVideoError && (
+        <button
+          className="hero-playback"
+          type="button"
+          onClick={togglePlayback}
+          aria-label={isPlaying ? "暂停背景视频" : "播放背景视频"}
+          title={isPlaying ? "暂停背景视频" : "播放背景视频"}
+        >
+          {isPlaying ? <Pause size={14} aria-hidden="true" /> : <Play size={14} aria-hidden="true" />}
+          <span>{isPlaying ? "暂停背景" : "播放背景"}</span>
+        </button>
+      )}
       <div className="container hero-inner">
         <div className="hero-content">
           <h1 id="hero-title">
@@ -352,13 +373,19 @@ function Projects() {
   );
 
   useEffect(() => {
+    let scrollFrame = 0;
+
     const syncFromHash = () => {
-      const hash = decodeURIComponent(window.location.hash.replace(/^#/, ""));
+      window.cancelAnimationFrame(scrollFrame);
+      const hash = decodeHash(window.location.hash);
 
       if (hash.startsWith("category/")) {
         const categorySlug = hash.replace("category/", "");
         const hasCategory = projectCategories.some((category) => category.slug === categorySlug);
         setActiveCategory(hasCategory ? categorySlug : "all");
+        scrollFrame = window.requestAnimationFrame(() => {
+          document.getElementById("projects")?.scrollIntoView({ block: "start" });
+        });
         return;
       }
 
@@ -369,7 +396,10 @@ function Projects() {
 
     syncFromHash();
     window.addEventListener("hashchange", syncFromHash);
-    return () => window.removeEventListener("hashchange", syncFromHash);
+    return () => {
+      window.cancelAnimationFrame(scrollFrame);
+      window.removeEventListener("hashchange", syncFromHash);
+    };
   }, []);
 
   const handleCategoryChange = (categorySlug: string) => {
@@ -393,6 +423,7 @@ function Projects() {
             <button
               className={activeCategory === "all" ? "is-active" : ""}
               type="button"
+              aria-pressed={activeCategory === "all"}
               onClick={() => handleCategoryChange("all")}
             >
               全部
@@ -405,6 +436,7 @@ function Projects() {
                   className={activeCategory === category.slug ? "is-active" : ""}
                   key={category.slug}
                   type="button"
+                  aria-pressed={activeCategory === category.slug}
                   onClick={() => handleCategoryChange(category.slug)}
                   title={category.description}
                 >
@@ -550,8 +582,9 @@ function Contact({ theme }: { theme: "light" | "dark" }) {
             <span>{contacts.phone}</span>
             <Phone size={20} />
           </a>
-          <a href={`https://${contacts.behance}`} target="_blank">
+          <a href={`https://${contacts.behance}`} target="_blank" rel="noopener noreferrer">
             <span>{contacts.behance}</span>
+            <span className="sr-only">（在新标签页打开）</span>
             <SquareArrowOutUpRight size={20} />
           </a>
           <p><span>{contacts.location}</span></p>

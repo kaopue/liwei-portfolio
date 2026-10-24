@@ -1,5 +1,12 @@
 {
-  "desktopWebm": "/hero/optimized/hero-rooftop-1080p-160d50368938.webm",
-  "desktopMp4": "/hero/optimized/hero-rooftop-1080p-e28f37d8adeb.mp4",
-  "mobileMp4": "/hero/optimized/hero-rooftop-720p-ada396bdb836.mp4"
+  "desktopWebm": "/hero/optimized/hero-rooftop-1920-6553b7a87add.webm",
+  "desktopMp4": "/hero/optimized/hero-rooftop-1920-7c1023ecb4f0.mp4",
+  "mobileMp4": "/hero/optimized/hero-rooftop-1280-c57ddaa29963.mp4",
+  "posterWebp": "/hero/optimized/hero-rooftop-poster-1920-a5c263273e56.webp",
+  "posterJpg": "/hero/optimized/hero-rooftop-poster-1920-235f367b700c.jpg",
+  "posterMobile": "/hero/optimized/hero-rooftop-poster-960-cfa0e35289a8.webp",
+  "posterWidth": 1920,
+  "posterHeight": 1080,
+  "posterMobileWidth": 960,
+  "posterMobileHeight": 540
 }

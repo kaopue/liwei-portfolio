@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 
 type VideoMode = "mobile" | "desktop";
 type NetworkInformation = EventTarget & {
@@ -11,7 +11,12 @@ export function useHeroVideo() {
   const posterRef = useRef<HTMLImageElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
   const playbackAllowed = useRef(false);
+  const pausedByUser = useRef(false);
+  const syncPlayback = useRef<(() => void) | null>(null);
   const [videoMode, setVideoMode] = useState<VideoMode | null>(null);
+  const [readyMode, setReadyMode] = useState<VideoMode | null>(null);
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [hasVideoError, setHasVideoError] = useState(false);
 
   useEffect(() => {
     const motion = window.matchMedia("(prefers-reduced-motion: reduce)");
@@ -29,21 +34,23 @@ export function useHeroVideo() {
       if (cancelled) return;
       const restricted = motion.matches || connection?.saveData || /(^|-)2g$/.test(connection?.effectiveType ?? "");
       const enteredHero = !window.location.hash || window.location.hash === "#top" || hasLeftHero;
-      const active = ready && enteredHero && inView && document.visibilityState === "visible" && !restricted;
+      const eligible = ready && enteredHero && inView && document.visibilityState === "visible" && !restricted;
+      const active = eligible && !pausedByUser.current;
       playbackAllowed.current = active;
 
       if (restricted) {
         setVideoMode(null);
-      } else if (active) {
+      } else if (eligible) {
         setVideoMode(mobile.matches ? "mobile" : "desktop");
       }
 
       const video = videoRef.current;
       if (video) {
-        if (active && video.paused) void video.play().catch(() => {});
+        if (active && video.paused && !video.error) void video.play().catch(() => {});
         if (!active && !video.paused) video.pause();
       }
     };
+    syncPlayback.current = update;
 
     // Wait for critical images and the first page load before using bandwidth for motion.
     const scheduleVideo = () => {
@@ -81,6 +88,7 @@ export function useHeroVideo() {
     return () => {
       cancelled = true;
       playbackAllowed.current = false;
+      syncPlayback.current = null;
       observer?.disconnect();
       window.removeEventListener("load", scheduleVideo);
       if (idleHandle !== undefined) window.cancelIdleCallback(idleHandle);
@@ -101,5 +109,32 @@ export function useHeroVideo() {
     return () => video.pause();
   }, [videoMode]);
 
-  return { heroRef, posterRef, videoRef, videoMode };
+  const onVideoPlaying = useCallback(() => {
+    setReadyMode(videoMode);
+    setIsPlaying(true);
+    setHasVideoError(false);
+  }, [videoMode]);
+
+  const onVideoPause = useCallback(() => setIsPlaying(false), []);
+
+  const onVideoError = useCallback(() => {
+    setReadyMode(null);
+    setIsPlaying(false);
+    setHasVideoError(true);
+  }, []);
+
+  const togglePlayback = useCallback(() => {
+    const video = videoRef.current;
+    if (!video) return;
+    pausedByUser.current = !video.paused;
+    // Run in the click gesture so browsers that block autoplay can also resume.
+    syncPlayback.current?.();
+  }, []);
+
+  return {
+    heroRef, posterRef, videoRef, videoMode,
+    videoReady: videoMode !== null && readyMode === videoMode,
+    isPlaying, hasVideoError, togglePlayback,
+    onVideoPlaying, onVideoPause, onVideoError,
+  };
 }
