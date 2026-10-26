@@ -32,7 +32,7 @@ import {
   skills,
 } from "./data/portfolio";
 import type { Project } from "./data/portfolio";
-import homepageImages from "./data/homepageImages.json";
+import homepageImages from "./data/curatedCovers.json";
 import optimizedVideos from "./data/optimizedVideos.json";
 
 const WorkDetailPage = lazy(() => import("./WorkDetailPage"));
@@ -83,8 +83,19 @@ function App() {
 
   useEffect(() => {
     if (route.kind === "work") {
-      window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+      window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+      return;
     }
+
+    // Home sections mount after the hash changes when leaving a case study.
+    // Restore the anchor after React commits so return and direct links land correctly.
+    const hash = decodeHash(window.location.hash);
+    const targetId = hash.startsWith("category/") ? "projects" : hash;
+    if (!["top", "about", "projects", "advantages", "contact"].includes(targetId)) return;
+    const frame = window.requestAnimationFrame(() => {
+      document.getElementById(targetId)?.scrollIntoView({ block: "start", behavior: "instant" });
+    });
+    return () => window.cancelAnimationFrame(frame);
   }, [route]);
 
   if (route.kind === "work") {
@@ -166,16 +177,10 @@ function SiteHeader({ theme, onToggleTheme }: {
   );
 }
 
-const heroProjects = [
-  "zhangshuntang-yunnan-tea-packaging",
-  "leebeer-german-craft-beer-packaging",
-  "ch9-aerospace-cultural-creative",
-  "yunshang-kangyuan-eye-patch-packaging",
-  "zhangshuntang-tea-gift-packaging",
-  "daerle-calcium-zinc-oral-solution-packaging",
-  "tongren-dual-surface-defocus-lens-packaging",
-  "caaa-aerospace-commemorative-badges",
-].map((slug) => projects.find((project) => project.slug === slug)!);
+const heroProjects = [...projects]
+  .filter((project) => project.featured)
+  .sort((left, right) => left.priority - right.priority)
+  .slice(0, 8);
 
 function Hero() {
   const {
@@ -265,8 +270,8 @@ function Hero() {
           {heroProjects.map((project) => (
             <a className="hero-work-card" href={`#work/${project.slug}`} key={project.slug} aria-label={`查看${project.title}`}>
               <img
-                src={`/hero/covers/${project.slug}-thumb.webp`}
-                srcSet={`/hero/covers/${project.slug}-thumb-small.webp 160w, /hero/covers/${project.slug}-thumb.webp 320w`}
+                src={homepageImages[project.slug as keyof typeof homepageImages]?.thumbSrc ?? project.cover}
+                srcSet={`${homepageImages[project.slug as keyof typeof homepageImages]?.smallThumbSrc} 160w, ${homepageImages[project.slug as keyof typeof homepageImages]?.thumbSrc} 320w`}
                 sizes="(max-width: 600px) 76px, (max-width: 900px) 100px, (max-width: 1180px) 12vw, (max-width: 1920px) calc((100vw - 178px) / 8), 224px"
                 alt=""
                 width={320}
@@ -416,7 +421,7 @@ function Projects() {
               <p className="eyebrow">SELECTED WORKS</p>
               <h2>精选项目</h2>
             </div>
-            <p>覆盖品牌识别、商业画册、活动传播、包装系统与多类型平面物料。按分类查看已经整理好的项目，点击任意卡片可进入详情。</p>
+            <p>从品牌标志、字体与包装，到活动视觉、航天文创与折页。按分类浏览 {projects.length} 个项目，查看各方案的细节与完整呈现。</p>
           </div>
 
           <div className="category-filters" aria-label="作品分类筛选">
@@ -487,7 +492,7 @@ function ProjectCard({
           <p>{categoryLabel}</p>
           <h3>{project.title}</h3>
         </div>
-        <time>{project.year}</time>
+        {project.year && <time>{project.year}</time>}
       </div>
       <p className="project-summary">{project.summary}</p>
       <div className="project-actions">
@@ -495,11 +500,6 @@ function ProjectCard({
           查看详情
           <ArrowUpRight size={16} />
         </a>
-      </div>
-      <div className="tag-row">
-        {project.tags.map((tag) => (
-          <span key={tag}>{tag}</span>
-        ))}
       </div>
     </article>
   );
