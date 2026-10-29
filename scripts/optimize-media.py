@@ -329,6 +329,7 @@ def optimize_videos(ffmpeg: Path, source: Path, report_dir: Path, webm_crf: int 
     report = {"source": source_report, "settings": {"webmCrf": webm_crf, "mp4Crf": mp4_crf, "mobileMp4Crf": mobile_mp4_crf, "desktopWidth": desktop_width, "mobileWidth": mobile_width, "mobilePosterWidth": mobile_poster_width, "mobilePosterQuality": mobile_poster_quality, "posterFrame": 0, "posterCrop": "none; match video object-fit/object-position"}, "variants": records, "posters": posters, "contactSheet": str(report_dir / "source-contact-sheet.jpg")}
     write_json(report_dir / "video-report.json", report)
     write_json(ROOT / "src/data/optimizedVideos.json", {
+        "videoMp4": records["desktopMp4"]["src"],
         **{key: value["src"] for key, value in records.items()},
         **{key: value["src"] for key, value in posters.items()},
         "posterWidth": posters["posterWebp"]["width"],

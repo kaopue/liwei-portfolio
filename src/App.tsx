@@ -220,14 +220,7 @@ function Hero() {
             onPause={onVideoPause}
             onError={onVideoError}
           >
-            {videoMode === "mobile" ? (
-              <source src={optimizedVideos.mobileMp4} type="video/mp4" />
-            ) : (
-              <>
-                <source src={optimizedVideos.desktopWebm} type="video/webm" />
-                <source src={optimizedVideos.desktopMp4} type="video/mp4" />
-              </>
-            )}
+            <source src={optimizedVideos.videoMp4} type="video/mp4" />
           </video>
         )}
       </div>
