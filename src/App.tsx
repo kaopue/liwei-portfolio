@@ -177,10 +177,17 @@ function SiteHeader({ theme, onToggleTheme }: {
   );
 }
 
-const heroProjects = [...projects]
-  .filter((project) => project.featured)
-  .sort((left, right) => left.priority - right.priority)
-  .slice(0, 8);
+const heroProjectSlugs = [
+  "zhangshuntang-tea-tin-packaging",
+  "yixinhe-agriculture-identity",
+  "ch9-uae-badge-keychain",
+  "leebeer-craft-beer-packaging",
+  "caaa-aerospace-badge-collection",
+];
+
+const heroProjects = heroProjectSlugs
+  .map((slug) => projects.find((project) => project.slug === slug))
+  .filter((project): project is Project => Boolean(project));
 
 function Hero() {
   const {
@@ -263,12 +270,10 @@ function Hero() {
           {heroProjects.map((project) => (
             <a className="hero-work-card" href={`#work/${project.slug}`} key={project.slug} aria-label={`查看${project.title}`}>
               <img
-                src={homepageImages[project.slug as keyof typeof homepageImages]?.thumbSrc ?? project.cover}
-                srcSet={`${homepageImages[project.slug as keyof typeof homepageImages]?.smallThumbSrc} 160w, ${homepageImages[project.slug as keyof typeof homepageImages]?.thumbSrc} 320w`}
-                sizes="(max-width: 600px) 76px, (max-width: 900px) 100px, (max-width: 1180px) 12vw, (max-width: 1920px) calc((100vw - 178px) / 8), 224px"
+                src={homepageImages[project.slug as keyof typeof homepageImages]?.src ?? project.cover}
                 alt=""
-                width={320}
-                height={400}
+                width={960}
+                height={540}
                 loading="lazy"
                 decoding="async"
               />
@@ -553,7 +558,9 @@ function Contact({ theme }: { theme: "light" | "dark" }) {
         <img
           key={theme}
           className="contact-city"
-          src={`/portfolio/contact-city-${theme === "dark" ? "night" : "day"}.webp`}
+          src={theme === "dark"
+            ? "/portfolio/contact-city-night-46f2f41d95ae.png"
+            : "/portfolio/contact-city-day-d349ef1b34cb.png"}
           alt=""
           width={1672}
           height={941}
