@@ -9,15 +9,12 @@ import {
 import {
   ArrowUpRight,
   Mail,
-  Moon,
   Pause,
   Phone,
   Play,
   Send,
   SquareArrowOutUpRight,
-  Sun,
 } from "lucide-react";
-import { useTheme } from "./useTheme";
 import { useHeroVideo } from "./useHeroVideo";
 import { WorkDetailBoundary } from "./WorkDetailBoundary";
 import { decodeHash } from "./hash";
@@ -74,7 +71,6 @@ const getProjectCategoryLabel = (project: Project) =>
   projectCategories.find((category) => category.slug === project.categorySlug)?.label ?? project.category;
 
 function App() {
-  const { theme, toggleTheme } = useTheme();
   const route = useHashRoute();
   usePortfolioMotion(route.kind === "work" ? `work:${route.slug}` : "home");
   const routeProject = route.kind === "work"
@@ -101,7 +97,7 @@ function App() {
   if (route.kind === "work") {
     return (
       <main>
-        <SiteHeader theme={theme} onToggleTheme={toggleTheme} />
+        <SiteHeader />
         {routeProject ? (
           <WorkDetailBoundary key={routeProject.slug}>
             <Suspense fallback={
@@ -119,22 +115,17 @@ function App() {
 
   return (
     <main>
-      <SiteHeader theme={theme} onToggleTheme={toggleTheme} />
+      <SiteHeader />
       <Hero />
       <About />
       <Projects />
       <Advantages />
-      <Contact theme={theme} />
+      <Contact />
     </main>
   );
 }
 
-function SiteHeader({ theme, onToggleTheme }: {
-  theme: "light" | "dark";
-  onToggleTheme: () => void;
-}) {
-  const nextThemeLabel = theme === "dark" ? "白天模式" : "暗黑模式";
-
+function SiteHeader() {
   return (
     <header className="site-header">
       <a href="#top" className="brand-mark" aria-label="李维个人 Logo，回到首页">
@@ -154,25 +145,10 @@ function SiteHeader({ theme, onToggleTheme }: {
           </a>
         ))}
       </nav>
-      <div className="header-actions">
-        <button
-          className="theme-toggle"
-          type="button"
-          onClick={onToggleTheme}
-          aria-label={`切换到${nextThemeLabel}`}
-          title={`切换到${nextThemeLabel}`}
-        >
-          {theme === "dark" ? <Sun size={18} aria-hidden="true" /> : <Moon size={18} aria-hidden="true" />}
-          <span>{nextThemeLabel}</span>
-        </button>
-        <a className="header-cta" href={`mailto:${contacts.email}`}>
-          <Mail size={16} />
-          联系我
-        </a>
-      </div>
-      <span className="sr-only" role="status" aria-live="polite">
-        {theme === "dark" ? "已启用暗黑模式" : "已启用白天模式"}
-      </span>
+      <a className="header-cta" href={`mailto:${contacts.email}`} aria-label="联系我">
+        <Mail size={16} aria-hidden="true" />
+        联系我
+      </a>
     </header>
   );
 }
@@ -551,27 +527,30 @@ function Advantages() {
   );
 }
 
-function Contact({ theme }: { theme: "light" | "dark" }) {
+function Contact() {
   return (
-    <footer className="contact section-screen" id="contact">
-      <div className="contact-scenery" aria-hidden="true">
+    <footer className="contact" id="contact">
+      <picture className="contact-scenery">
+        <source
+          media="(max-width: 760px)"
+          srcSet="/portfolio/contact-hutuo-river-hd-mobile.webp"
+          width={941}
+          height={1672}
+        />
         <img
-          key={theme}
-          className="contact-city"
-          src={theme === "dark"
-            ? "/portfolio/contact-city-night-46f2f41d95ae.png"
-            : "/portfolio/contact-city-day-d349ef1b34cb.png"}
+          className="contact-landscape"
+          src="/portfolio/contact-hutuo-river-hd.webp"
           alt=""
           width={1672}
           height={941}
           loading="lazy"
           decoding="async"
         />
-      </div>
+      </picture>
       <div className="container contact-inner">
         <div className="contact-copy" data-reveal>
           <p className="eyebrow">CONTACT</p>
-          <h2>让下一个项目，<br />从更清晰的视觉<br />判断开始。</h2>
+          <h2>设计<br />让信息被看见</h2>
         </div>
         <div className="contact-panel" data-reveal>
           <a href={`mailto:${contacts.email}`}>

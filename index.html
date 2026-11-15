@@ -1,31 +1,9 @@
 <!doctype html>
-<html lang="zh-CN" data-theme="dark">
+<html lang="zh-CN">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#030507" />
-    <script>
-      (() => {
-        let theme;
-
-        try {
-          theme = window.localStorage.getItem("liwei-portfolio-theme");
-        } catch {
-          // System preference is still available when storage is blocked.
-        }
-
-        if (theme !== "light" && theme !== "dark") {
-          theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
-        }
-
-        const color = theme === "dark" ? "#030507" : "#f5f6f4";
-        const root = document.documentElement;
-        root.dataset.theme = theme;
-        root.style.colorScheme = theme;
-        root.style.backgroundColor = color;
-        document.querySelector('meta[name="theme-color"]').setAttribute("content", color);
-      })();
-    </script>
     <meta
       name="description"
       content="李维，拥有十余年经验的视觉设计师。专注品牌视觉、包装设计、活动主视觉与 AI 辅助创意表达，用秩序梳理信息，用情绪建立感知。真实商业案例与完整项目呈现。"
