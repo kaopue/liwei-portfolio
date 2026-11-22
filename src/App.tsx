@@ -26,7 +26,6 @@ import {
   navItems,
   projectCategories,
   projects,
-  skills,
 } from "./data/portfolio";
 import type { Project } from "./data/portfolio";
 import homepageImages from "./data/curatedCovers.json";
@@ -264,63 +263,45 @@ function Hero() {
 
 function About() {
   return (
-    <section className="about" id="about" aria-labelledby="about-name">
+    <section className="about" id="about" aria-labelledby="about-title">
+      <picture className="about-portrait">
+        <source media="(max-width: 760px)" srcSet="/hero/about-liwei-profile-small.webp" />
+        <img
+          src="/hero/about-liwei-profile.webp"
+          width={2720}
+          height={1554}
+          alt="李维的黑白侧面肖像"
+          loading="lazy"
+          decoding="async"
+        />
+      </picture>
       <div className="container about-inner">
-        <div className="about-composition">
-          <div className="about-copy">
-            <p className="eyebrow about-section-label">
-              <span aria-hidden="true">02</span>
-              <span>ABOUT · 关于我</span>
-            </p>
-            <div className="about-identity">
-              <h2 id="about-name">{contacts.name}</h2>
-              <div className="about-identity-english">
-                <p>LI WEI</p>
-                <p className="eyebrow">VISUAL DESIGNER</p>
-              </div>
-            </div>
-            <p className="about-statement">
-              把商业信息整理成<br />
-              <span>清晰、有辨识度、能落地</span>的视觉表达。
-            </p>
-            <p className="about-summary">
-              具备扎实的视觉传达与品牌设计基础，擅长建立富有辨识度的品牌视觉系统。
-              独立完成过 Logo、VI 与整套品牌宣传物料，注重沟通、提案与高质量落地。
-            </p>
-          </div>
-          <figure className="about-portrait">
-            <img
-              src="/hero/about-profile.webp"
-              width={1400}
-              height={788}
-              alt="李维的黑白侧光肖像"
-              loading="lazy"
-              decoding="async"
-            />
-            <div className="about-portrait-frame" aria-hidden="true" />
-            <figcaption aria-hidden="true">LI WEI — VISUAL DESIGNER — SINCE 2013</figcaption>
-          </figure>
+        <p className="about-identity">
+          <strong>{contacts.name}</strong>
+          <span lang="en">— LIWEI · BRAND&amp;VISUAL DESIGNER <span className="about-years">| &nbsp;12 YEARS EXPERIENGE</span></span>
+        </p>
+        <h2 id="about-title" className="about-statement">
+          <span>让商业策略转化为</span>
+          <span>清晰、克制、</span>
+          <span>极具辨识度的<wbr /><span className="about-ending">视觉系统。</span></span>
+        </h2>
+        <div className="about-summary">
+          <p>具备扎实的视觉传达与品牌设计基础，擅长建立富有辨识度的品牌视觉系统。</p>
+          <p>习惯从商业逻辑出发，以克制的网格排版与精准的视觉语言解决传播问题，并结合 AI 创意工作流，确保项目从概念提案到印刷落地的全链路高水准交付。</p>
         </div>
-        <div className="about-facts">
-          <div className="about-tenure">
-            <p><strong>12</strong><span>年</span></p>
-            <p>视觉设计经验</p>
-          </div>
-          {experiences.map((item) => (
-            <article className="about-experience" key={item.company}>
-              <p className="eyebrow about-period">{item.period}</p>
-              <h3>{item.company}</h3>
-              <p>{item.points[0]}</p>
-            </article>
+        <ul className="about-specialties" aria-label="设计方向">
+          {focusAreas.map((label) => <li key={label}>{label}</li>)}
+        </ul>
+        <ol className="about-timeline" aria-label="职业经历">
+          {experiences.map(({ period, company, role, description }) => (
+            <li key={period}>
+              <p className="about-period">{period}</p>
+              <h3>{company}</h3>
+              {role && <p className="about-role">{role}</p>}
+              <p className="about-experience-copy">{description}</p>
+            </li>
           ))}
-          <div className="about-capabilities">
-            <p className="eyebrow">CAPABILITIES</p>
-            <ul>
-              {focusAreas.map(({ label }) => <li key={label}>{label}</li>)}
-            </ul>
-            <p className="about-tools">{skills.slice(0, 6).join(" · ")}</p>
-          </div>
-        </div>
+        </ol>
       </div>
     </section>
   );
@@ -529,30 +510,29 @@ function Advantages() {
 
 function Contact() {
   return (
-    <footer className="contact" id="contact">
-      <picture className="contact-scenery">
+    <footer className="contact" id="contact" aria-labelledby="contact-title">
+      <picture className="contact-scenery" aria-hidden="true">
         <source
           media="(max-width: 760px)"
-          srcSet="/portfolio/contact-hutuo-river-hd-mobile.webp"
-          width={941}
-          height={1672}
+          srcSet="/portfolio/contact-sand-rider-25075a11-mobile.webp"
+          width={1600}
+          height={914}
         />
         <img
           className="contact-landscape"
-          src="/portfolio/contact-hutuo-river-hd.webp"
+          src="/portfolio/contact-sand-rider-25075a11.webp"
           alt=""
-          width={1672}
-          height={941}
+          width={2720}
+          height={1554}
           loading="lazy"
           decoding="async"
         />
       </picture>
       <div className="container contact-inner">
-        <div className="contact-copy" data-reveal>
-          <p className="eyebrow">CONTACT</p>
-          <h2>设计<br />让信息被看见</h2>
+        <div className="contact-copy">
+          <h2 id="contact-title">期待下一次<br />有价值的商业视觉合作。</h2>
         </div>
-        <div className="contact-panel" data-reveal>
+        <div className="contact-panel">
           <a href={`mailto:${contacts.email}`}>
             <span>{contacts.email}</span>
             <Send size={20} />

@@ -2,14 +2,10 @@ import curatedProjects from "./curatedProjects.json";
 import {
   BadgeCheck,
   Bot,
-  BriefcaseBusiness,
   FileStack,
   Handshake,
   Layers3,
-  Palette,
-  PenTool,
   Presentation,
-  Sparkles,
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 
@@ -65,36 +61,25 @@ export const contacts = {
   behance: "www.behance.net/zhaozhao0812",
 };
 
-export const skills = [
-  "Photoshop",
-  "Illustrator",
-  "InDesign",
-  "Premiere",
-  "After Effects",
-  "Cinema 4D",
-  "Midjourney",
-  "Stable Diffusion",
-  "即梦 AI",
-];
+export const focusAreas = ["品牌VI", "商业包装", "高端画册", "AI创意"];
 
 export const experiences = [
   {
-    period: "2013.10 - 2016.03",
+    period: "2013.10 — 2016.03",
     company: "石家庄海印设计品牌策划",
     role: "视觉设计师",
-    points: [
-      "根据客户需求完成产品包装、海报、画册及线下物料的创意设计与完稿制作。",
-      "参与企业宣传册、项目广告及活动推广设计，提升品牌形象与市场传播效率。",
-    ],
+    description: "负责品牌包装、企业画册及线下传播物料的创意设计与印前落地，建立扎实的商业执行与工艺把控能力。",
   },
   {
-    period: "2016.05 - 2025.10",
+    period: "2016.05 — 2025.10",
     company: "北京佳禾广告传媒股份有限公司",
-    role: "视觉设计师",
-    points: [
-      "负责图册、项目汇报 PPT、Logo、VI、画册、产品包装、促销物料与展览展示设计。",
-      "带领设计小组完成多个品牌全案项目，确保设计质量、品牌一致性与落地效果。",
-    ],
+    role: "资深视觉设计师",
+    description: "主导企业品牌全案（Logo/VI）、核心产品包装、高端画册及展览空间视觉设计，深度参与客户提案与商业视觉策略落地。",
+  },
+  {
+    period: "2025.11 — 至今",
+    company: "独立视觉设计师",
+    description: "专注品牌视觉升级、文创与消费品包装设计，探索传统美学、现代网格系统与 AI 视觉生成的商业融合。",
   },
 ];
 
@@ -164,11 +149,4 @@ export const advantages: Advantage[] = [
     description: "熟练使用 PS、AI、ID、PR、AE、C4D，覆盖平面、影像与基础三维表达。",
     icon: BadgeCheck,
   },
-];
-
-export const focusAreas = [
-  { icon: Palette, label: "视觉识别" },
-  { icon: PenTool, label: "平面版式" },
-  { icon: BriefcaseBusiness, label: "商业落地" },
-  { icon: Sparkles, label: "AI 创意" },
 ];

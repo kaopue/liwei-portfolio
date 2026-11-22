@@ -265,7 +265,8 @@ function verifyStatic() {
   const necessary = [
     "/optimized/logo-liwei-mark-d0d9b6c835bc-160.webp",
     videos.posterWebp,
-    "/hero/about-profile.webp",
+    "/hero/about-liwei-profile.webp",
+    "/hero/about-liwei-profile-small.webp",
   ];
   for (const url of necessary) verifyImage(url, null, "Required non-work image");
   for (const [url, asset] of assets) {
