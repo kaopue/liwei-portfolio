@@ -512,15 +512,9 @@ function Contact() {
   return (
     <footer className="contact" id="contact" aria-labelledby="contact-title">
       <picture className="contact-scenery" aria-hidden="true">
-        <source
-          media="(max-width: 760px)"
-          srcSet="/portfolio/contact-sand-rider-411f02b1-mobile.webp"
-          width={1600}
-          height={914}
-        />
         <img
           className="contact-landscape"
-          src="/portfolio/contact-sand-rider-411f02b1.webp"
+          src="/portfolio/contact-rider-original-98c28d4e7785.jpg"
           alt=""
           width={2720}
           height={1554}
