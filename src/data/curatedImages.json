@@ -2908,5 +2908,95 @@
     "smallHeight": 263,
     "largeSrc": "/selected/liulichang-gift-guide/image-002-2400-1bd767d7abdc.webp",
     "aspectRatio": 3.0364420062695925
+  },
+  "/selected/tsinghua-energy-album-gift-box/image-001-1600-95b6894b704a.webp": {
+    "src": "/selected/tsinghua-energy-album-gift-box/image-001-1600-95b6894b704a.webp",
+    "smallSrc": "/selected/tsinghua-energy-album-gift-box/image-001-800-7807ef7fcdbe.webp",
+    "width": 1600,
+    "height": 900,
+    "smallWidth": 800,
+    "smallHeight": 450,
+    "largeSrc": "/selected/tsinghua-energy-album-gift-box/image-001-1920-8fdf0a1d8625.webp",
+    "aspectRatio": 1.7777777777777777
+  },
+  "/selected/tsinghua-energy-album-gift-box/image-002-1600-81ad03eb36b9.webp": {
+    "src": "/selected/tsinghua-energy-album-gift-box/image-002-1600-81ad03eb36b9.webp",
+    "smallSrc": "/selected/tsinghua-energy-album-gift-box/image-002-800-5634240326b6.webp",
+    "width": 1600,
+    "height": 900,
+    "smallWidth": 800,
+    "smallHeight": 450,
+    "largeSrc": "/selected/tsinghua-energy-album-gift-box/image-002-1920-5817c0fa8436.webp",
+    "aspectRatio": 1.7777777777777777
+  },
+  "/selected/tsinghua-energy-album-gift-box/image-003-1600-e051a603a261.webp": {
+    "src": "/selected/tsinghua-energy-album-gift-box/image-003-1600-e051a603a261.webp",
+    "smallSrc": "/selected/tsinghua-energy-album-gift-box/image-003-800-f5710e8212b3.webp",
+    "width": 1600,
+    "height": 900,
+    "smallWidth": 800,
+    "smallHeight": 450,
+    "largeSrc": "/selected/tsinghua-energy-album-gift-box/image-003-1920-574e08f11db2.webp",
+    "aspectRatio": 1.7777777777777777
+  },
+  "/selected/tsinghua-energy-album-gift-box/image-004-1600-9fc15fdc31b6.webp": {
+    "src": "/selected/tsinghua-energy-album-gift-box/image-004-1600-9fc15fdc31b6.webp",
+    "smallSrc": "/selected/tsinghua-energy-album-gift-box/image-004-800-cddc3ed3d6f9.webp",
+    "width": 1600,
+    "height": 900,
+    "smallWidth": 800,
+    "smallHeight": 450,
+    "largeSrc": "/selected/tsinghua-energy-album-gift-box/image-004-1920-1f212e6e4e9b.webp",
+    "aspectRatio": 1.7777777777777777
+  },
+  "/selected/ch4-pakistan-arm-patches/image-001-1600-06bce4cb6615.webp": {
+    "src": "/selected/ch4-pakistan-arm-patches/image-001-1600-06bce4cb6615.webp",
+    "smallSrc": "/selected/ch4-pakistan-arm-patches/image-001-800-73f3ad07640d.webp",
+    "width": 1600,
+    "height": 900,
+    "smallWidth": 800,
+    "smallHeight": 450,
+    "largeSrc": "/selected/ch4-pakistan-arm-patches/image-001-2400-9ac98a17560d.webp",
+    "aspectRatio": 1.77734375
+  },
+  "/selected/ch4-pakistan-arm-patches/image-002-1600-382dadd9400f.webp": {
+    "src": "/selected/ch4-pakistan-arm-patches/image-002-1600-382dadd9400f.webp",
+    "smallSrc": "/selected/ch4-pakistan-arm-patches/image-002-800-1556db7d9fb5.webp",
+    "width": 1600,
+    "height": 900,
+    "smallWidth": 800,
+    "smallHeight": 450,
+    "largeSrc": "/selected/ch4-pakistan-arm-patches/image-002-2400-472943e126a9.webp",
+    "aspectRatio": 1.77734375
+  },
+  "/selected/haiyi-palliative-care-meeting-visuals/image-001-1600-c64694a77a1e.webp": {
+    "src": "/selected/haiyi-palliative-care-meeting-visuals/image-001-1600-c64694a77a1e.webp",
+    "smallSrc": "/selected/haiyi-palliative-care-meeting-visuals/image-001-800-62da18e97a28.webp",
+    "width": 1600,
+    "height": 900,
+    "smallWidth": 800,
+    "smallHeight": 450,
+    "largeSrc": "/selected/haiyi-palliative-care-meeting-visuals/image-001-1920-7ab4c9c350ee.webp",
+    "aspectRatio": 1.7777777777777777
+  },
+  "/selected/haiyi-palliative-care-meeting-visuals/image-002-1080-6800b829f889.webp": {
+    "src": "/selected/haiyi-palliative-care-meeting-visuals/image-002-1080-6800b829f889.webp",
+    "smallSrc": "/selected/haiyi-palliative-care-meeting-visuals/image-002-800-638d35b8cff5.webp",
+    "width": 1080,
+    "height": 1920,
+    "smallWidth": 800,
+    "smallHeight": 1422,
+    "largeSrc": "/selected/haiyi-palliative-care-meeting-visuals/image-002-1080-6800b829f889.webp",
+    "aspectRatio": 0.5625
+  },
+  "/selected/haiyi-palliative-care-meeting-visuals/image-003-1080-6e4efec0e633.webp": {
+    "src": "/selected/haiyi-palliative-care-meeting-visuals/image-003-1080-6e4efec0e633.webp",
+    "smallSrc": "/selected/haiyi-palliative-care-meeting-visuals/image-003-800-9337c9eb5109.webp",
+    "width": 1080,
+    "height": 1920,
+    "smallWidth": 800,
+    "smallHeight": 1422,
+    "largeSrc": "/selected/haiyi-palliative-care-meeting-visuals/image-003-1080-6e4efec0e633.webp",
+    "aspectRatio": 0.5625
   }
 }

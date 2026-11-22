@@ -97,7 +97,22 @@ class Display:
 def prepare(source: Path, plan: dict[str, Any]) -> tuple[list[dict], list[dict], dict, dict, dict]:
     if not source.is_dir():
         raise ImportFailure(f"Source directory does not exist: {source}")
-    source_files = sorted((p for p in source.rglob("*") if p.is_file()), key=lambda p: p.relative_to(source).as_posix())
+    directories = plan.get("sourceDirectories")
+    if directories is None:
+        roots = [source]
+    else:
+        if not isinstance(directories, list) or not directories:
+            raise ImportFailure("sourceDirectories must be a non-empty list of relative directories")
+        roots = []
+        for value in directories:
+            directory = source / normalized_relative(value)
+            resolved = directory.resolve()
+            if not resolved.is_relative_to(source) or not directory.is_dir():
+                raise ImportFailure(f"Source directory is missing or escapes --source: {value}")
+            if any(resolved.is_relative_to(root.resolve()) or root.resolve().is_relative_to(resolved) for root in roots):
+                raise ImportFailure(f"sourceDirectories overlap: {value}")
+            roots.append(directory)
+    source_files = sorted((p for directory in roots for p in directory.rglob("*") if p.is_file()), key=lambda p: p.relative_to(source).as_posix())
     actual = {p.relative_to(source).as_posix(): p for p in source_files}
     lookup = {name.casefold(): name for name in actual}
     if len(lookup) != len(actual):
@@ -205,6 +220,84 @@ def prepare(source: Path, plan: dict[str, Any]) -> tuple[list[dict], list[dict],
             record.update(status="duplicate", **{key: value for key, value in exclusions[name].items() if key != "file"})
         inventory.append(record)
     return projects, inventory, labels, actual, exclusions
+
+
+def read_existing() -> tuple[list[dict], dict, dict, dict]:
+    def read(path: Path) -> Any:
+        return json.loads(path.read_text(encoding="utf-8-sig"))
+
+    records = read(ROOT / "src/data/curatedProjects.json")
+    images = read(ROOT / "src/data/curatedImages.json")
+    covers = read(ROOT / "src/data/curatedCovers.json")
+    report = read(INVENTORY)
+    if not isinstance(records, list) or not isinstance(images, dict) or not isinstance(covers, dict) or not isinstance(report, dict):
+        raise ImportFailure("Existing application manifests or inventory have invalid shapes")
+    slugs = {record["slug"] for record in records}
+    if len(slugs) != len(records) or slugs != set(covers):
+        raise ImportFailure("Existing project slugs and cover manifest disagree")
+    for key in ("files", "sourceDisplays", "assets", "categories"):
+        if not isinstance(report.get(key), list):
+            raise ImportFailure(f"Existing inventory lacks {key}")
+    if not isinstance(report.get("coverSources"), dict) or set(report["coverSources"]) != slugs:
+        raise ImportFailure("Existing cover provenance and projects disagree")
+    if set(images) != {display["image"] for display in report["sourceDisplays"]}:
+        raise ImportFailure("Existing image manifest and display provenance disagree")
+    if report.get("pipeline") != PIPELINE:
+        raise ImportFailure("Cannot append to an inventory produced by a different image pipeline")
+    return records, images, covers, report
+
+
+def validate_append(existing: tuple[list[dict], dict, dict, dict], projects: list[dict], files: list[dict], labels: dict) -> None:
+    records, _, covers, report = existing
+    old_slugs = {record["slug"] for record in records} | set(covers) | set(report["coverSources"])
+    duplicate_slugs = old_slugs & {project["slug"] for project in projects}
+    if duplicate_slugs:
+        raise ImportFailure(f"Append would replace existing project slugs: {', '.join(sorted(duplicate_slugs))}")
+    old_files = {record["file"].casefold() for record in report["files"]}
+    old_hashes = {record["sha256"] for record in report["files"]}
+    for record in files:
+        if record["file"].casefold() in old_files or record["sha256"] in old_hashes:
+            raise ImportFailure(f"Append source conflicts with an existing source path or hash: {record['file']}")
+    old_labels = {category["slug"]: category["label"] for category in report["categories"]}
+    for slug, label in labels.items():
+        if slug in old_labels and label != old_labels[slug]:
+            raise ImportFailure(f"Append changes an existing category label: {slug}")
+    for project in projects:
+        if "priority" not in project:
+            raise ImportFailure(f"Append requires an explicit project priority: {project['slug']}")
+
+
+def merge_append(existing: tuple[list[dict], dict, dict, dict], records: list[dict], images: dict, covers: dict, report: dict) -> tuple[list[dict], dict, dict, dict]:
+    old_records, old_images, old_covers, old_report = existing
+    old_assets = {asset["image"] for asset in old_report["assets"]}
+    new_assets = {asset["image"] for asset in report["assets"]}
+    if set(old_images) & set(images) or set(old_covers) & set(covers) or old_assets & new_assets:
+        raise ImportFailure("Append would replace an existing image, cover or generated asset URL")
+    imports = old_report.get("imports")
+    if imports is None:
+        imports = [{key: old_report[key] for key in ("sourceRoot", "plan", "planSha256")} | {"projects": [record["slug"] for record in old_records]}]
+    if not isinstance(imports, list) or not imports:
+        raise ImportFailure("Existing inventory imports must be a non-empty list")
+    merged_records = old_records + records
+    categories = {category["slug"]: category for category in old_report["categories"]}
+    for category in report["categories"]:
+        categories.setdefault(category["slug"], category)
+    merged = {
+        **old_report,
+        "imports": imports + report["imports"],
+        "files": old_report["files"] + report["files"],
+        "sourceDisplays": old_report["sourceDisplays"] + report["sourceDisplays"],
+        "coverSources": {**old_report["coverSources"], **report["coverSources"]},
+        "assets": sorted(old_report["assets"] + report["assets"], key=lambda asset: asset["image"]),
+        "categories": [{**category, "count": sum(record["categorySlug"] == slug for record in merged_records)} for slug, category in categories.items()],
+    }
+    merged.update(
+        sourceFileCount=len(merged["files"]), projectCount=len(merged_records),
+        displayCount=len(merged["sourceDisplays"]),
+        duplicateSourceCount=sum(record["status"] == "duplicate" for record in merged["files"]),
+        assetCount=len(merged["assets"]), assetBytes=sum(asset["bytes"] for asset in merged["assets"]),
+    )
+    return merged_records, {**old_images, **images}, {**old_covers, **covers}, merged
 
 
 def srgb_image(path: Path) -> tuple[Image.Image, dict]:
@@ -405,6 +498,7 @@ def main() -> None:
     parser.add_argument("--plan", required=True, type=Path)
     parser.add_argument("--workers", type=int, default=2, help="Parallel image workers, 1..4 (default: 2)")
     parser.add_argument("--check-only", action="store_true", help="Validate coverage and PDF duplicate mappings without writing outputs")
+    parser.add_argument("--append", action="store_true", help="Add a reviewed batch without replacing existing projects or assets")
     args = parser.parse_args()
     if not 1 <= args.workers <= 4:
         raise ImportFailure("--workers must be between 1 and 4")
@@ -412,7 +506,10 @@ def main() -> None:
     plan_path = args.plan if args.plan.is_absolute() else ROOT / args.plan
     plan_bytes = plan_path.read_bytes()
     plan = json.loads(plan_bytes.decode("utf-8-sig"))
+    existing = read_existing() if args.append else None
     projects, inventory, labels, actual, exclusions = prepare(source, plan)
+    if existing is not None:
+        validate_append(existing, projects, inventory, labels)
     displays, pdf_records = expand_displays(projects, actual)
     print(f"Validated {len(actual)} source files, {len(projects)} projects, {len(displays)} unique image/page displays, {len(exclusions)} duplicate source mappings.", flush=True)
     if args.check_only:
@@ -468,7 +565,7 @@ def main() -> None:
             "categorySlug": project["categorySlug"], "year": "", "image": cover,
             "cover": cover, "summary": project["summary"], "description": project["description"],
             "tags": project.get("tags") or [category], "detailSections": [], "images": images,
-            "type": category, "featured": index < 8, "priority": project.get("priority", index + 1),
+            "type": category, "featured": not args.append and index < 8, "priority": project.get("priority", index + 1),
         })
 
     source_displays = [result["sourceDisplay"] for result in results]
@@ -489,16 +586,19 @@ def main() -> None:
         "coverSources": cover_sources,
         "assets": [{"image": url, "bytes": count} for url, count in sorted(assets.items())],
     }
+    report["imports"] = [{key: report[key] for key in ("sourceRoot", "plan", "planSha256")} | {"projects": [record["slug"] for record in records]}]
     if len(inventory) != len(actual) or len({record["file"] for record in inventory}) != len(actual):
         raise ImportFailure("Internal audit failed: source inventory does not match all source files")
     for url in assets:
         if not (PUBLIC / url.lstrip("/")).is_file():
             raise ImportFailure(f"Generated asset is missing: {url}")
+    if existing is not None:
+        records, image_manifest, covers, report = merge_append(existing, records, image_manifest, covers, report)
     write_json(ROOT / "src/data/curatedProjects.json", records)
     write_json(ROOT / "src/data/curatedImages.json", image_manifest)
     write_json(ROOT / "src/data/curatedCovers.json", covers)
     write_json(INVENTORY, report)
-    print(f"Import complete: {len(records)} projects / {len(source_displays)} displays / {len(actual)} source files fully accounted for / {sum(assets.values()) / 1048576:.2f} MiB generated.", flush=True)
+    print(f"Import complete: {len(records)} projects / {report['displayCount']} displays / {report['sourceFileCount']} source files fully accounted for / {report['assetBytes'] / 1048576:.2f} MiB generated.", flush=True)
 
 
 if __name__ == "__main__":

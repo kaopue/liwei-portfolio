@@ -889,5 +889,74 @@
     "type": "折页设计",
     "featured": false,
     "priority": 30
+  },
+  {
+    "title": "清华能源互联网相册礼盒",
+    "slug": "tsinghua-energy-album-gift-box",
+    "category": "包装设计",
+    "categorySlug": "packaging",
+    "year": "",
+    "image": "/selected/tsinghua-energy-album-gift-box/image-001-1600-95b6894b704a.webp",
+    "cover": "/selected/tsinghua-energy-album-gift-box/image-001-1600-95b6894b704a.webp",
+    "summary": "以深蓝与金色线描连接清华校门、能源设施和地球意象，统一相册、礼盒与内衬视觉。",
+    "description": "围绕能源互联网产业领军计划第六期，将清华校门、风电、光伏与地球经纬线融入深蓝盒面，以金色线描和圆形徽记建立层级。四幅展示图呈现礼盒闭合、开启及相册组合，让外盒、内衬与相册封面形成完整的蓝金视觉。",
+    "tags": [
+      "包装设计"
+    ],
+    "detailSections": [],
+    "images": [
+      "/selected/tsinghua-energy-album-gift-box/image-001-1600-95b6894b704a.webp",
+      "/selected/tsinghua-energy-album-gift-box/image-002-1600-81ad03eb36b9.webp",
+      "/selected/tsinghua-energy-album-gift-box/image-003-1600-e051a603a261.webp",
+      "/selected/tsinghua-energy-album-gift-box/image-004-1600-9fc15fdc31b6.webp"
+    ],
+    "type": "包装设计",
+    "featured": false,
+    "priority": 31
+  },
+  {
+    "title": "CH-4 巴基斯坦主题臂章",
+    "slug": "ch4-pakistan-arm-patches",
+    "category": "徽章与文创",
+    "categorySlug": "cultural-creative",
+    "year": "",
+    "image": "/selected/ch4-pakistan-arm-patches/image-001-1600-06bce4cb6615.webp",
+    "cover": "/selected/ch4-pakistan-arm-patches/image-001-1600-06bce4cb6615.webp",
+    "summary": "将 CH-4 飞行器、捻角山羊与地域建筑融入两款臂章，以深绿、白色和金色组织刺绣层次。",
+    "description": "两款臂章分别以捻角山羊和地域建筑为主题，结合 CH-4 飞行器、新月星形、山脉与枝叶纹样，形成不同的外轮廓和文字编排。深绿底色搭配白色描边与金色点缀，通过服装场景呈现臂章的刺绣质感及佩戴比例。",
+    "tags": [
+      "徽章与文创"
+    ],
+    "detailSections": [],
+    "images": [
+      "/selected/ch4-pakistan-arm-patches/image-001-1600-06bce4cb6615.webp",
+      "/selected/ch4-pakistan-arm-patches/image-002-1600-382dadd9400f.webp"
+    ],
+    "type": "徽章与文创",
+    "featured": false,
+    "priority": 32
+  },
+  {
+    "title": "海医安宁工作例会与案例大赛视觉",
+    "slug": "haiyi-palliative-care-meeting-visuals",
+    "category": "海报与视觉传播",
+    "categorySlug": "visual-communication",
+    "year": "",
+    "image": "/selected/haiyi-palliative-care-meeting-visuals/image-001-1600-c64694a77a1e.webp",
+    "cover": "/selected/haiyi-palliative-care-meeting-visuals/image-001-1600-c64694a77a1e.webp",
+    "summary": "以通透花瓣、粉橙渐变与流动色带建立活动识别，延展横版主视觉和两款竖版电子海报。",
+    "description": "围绕海淀区安宁疗护质量控制和改进中心活动，以花瓣与柔和光感连接工作例会和案例大赛。横版主视觉突出主题，竖版海报通过标题、时间、地点与报名信息的分区编排，在统一的粉橙紫色系中区分两类活动。",
+    "tags": [
+      "海报与视觉传播"
+    ],
+    "detailSections": [],
+    "images": [
+      "/selected/haiyi-palliative-care-meeting-visuals/image-001-1600-c64694a77a1e.webp",
+      "/selected/haiyi-palliative-care-meeting-visuals/image-002-1080-6800b829f889.webp",
+      "/selected/haiyi-palliative-care-meeting-visuals/image-003-1080-6e4efec0e633.webp"
+    ],
+    "type": "海报与视觉传播",
+    "featured": false,
+    "priority": 33
   }
 ]

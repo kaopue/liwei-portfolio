@@ -9,10 +9,11 @@
  */
 import fs from "node:fs";
 import path from "node:path";
+import { createHash } from "node:crypto";
 import { fileURLToPath } from "node:url";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
-const EXPECTED = { projects: 30, sourceFiles: 217, displays: 291 };
+const EXPECTED = { projects: 33, sourceFiles: 226, displays: 300 };
 const errors = [];
 const warnings = [];
 const metadataCache = new Map();
@@ -23,7 +24,7 @@ function check(condition, message) {
 }
 
 function readJson(relative) {
-  const absolute = path.join(ROOT, relative);
+  const absolute = path.resolve(ROOT, relative);
   try {
     return JSON.parse(fs.readFileSync(absolute, "utf8").replace(/^\uFEFF/, ""));
   } catch (error) {
@@ -167,12 +168,38 @@ function verifyStatic() {
   const images = readJson("src/data/curatedImages.json");
   const covers = readJson("src/data/curatedCovers.json");
   const inventory = readJson("docs/content/curated-inventory-2026-10-26.json");
-  const plan = readJson("docs/content/curated-plan-2026-10-26.json");
   const videos = readJson("src/data/optimizedVideos.json");
   if (!Array.isArray(projects) || !Array.isArray(inventory.files) || !Array.isArray(inventory.sourceDisplays) || !Array.isArray(inventory.assets)) {
     throw new Error("Curated projects and inventory arrays are malformed.");
   }
-  const categories = new Map(plan.categories.map((category) => [category.slug, category.label]));
+  const imports = inventory.imports ?? [{
+    sourceRoot: inventory.sourceRoot,
+    plan: inventory.plan ?? "docs/content/curated-plan-2026-10-26.json",
+    planSha256: inventory.planSha256,
+    projects: projects.map((project) => project.slug),
+  }];
+  if (!Array.isArray(imports) || imports.length === 0) throw new Error("Inventory imports must be a non-empty array.");
+  const categories = new Map();
+  const planProjects = new Map();
+  for (const batch of imports) {
+    if (typeof batch.plan !== "string" || typeof batch.sourceRoot !== "string" || !Array.isArray(batch.projects)) {
+      throw new Error("Inventory import is missing its plan, sourceRoot or project slugs.");
+    }
+    const plan = readJson(batch.plan);
+    if (!Array.isArray(plan.projects) || !Array.isArray(plan.categories)) throw new Error(`Malformed reviewed plan: ${batch.plan}`);
+    const planHash = createHash("sha256").update(fs.readFileSync(path.resolve(ROOT, batch.plan))).digest("hex");
+    check(batch.planSha256 === planHash, `Reviewed plan hash differs from inventory import: ${batch.plan}`);
+    const batchSlugs = new Set(batch.projects);
+    check(batchSlugs.size === batch.projects.length && batchSlugs.size === plan.projects.length && plan.projects.every((project) => batchSlugs.has(project.slug)), `Import project slugs differ from reviewed plan: ${batch.plan}`);
+    for (const category of plan.categories) {
+      check(!categories.has(category.slug) || categories.get(category.slug) === category.label, `Reviewed plans disagree on category ${category.slug}.`);
+      categories.set(category.slug, category.label);
+    }
+    for (const project of plan.projects) {
+      check(!planProjects.has(project.slug), `Reviewed imports repeat project ${project.slug}.`);
+      planProjects.set(project.slug, project);
+    }
+  }
   const projectMap = new Map(projects.map((project) => [project.slug, project]));
   check(projects.length === EXPECTED.projects && projectMap.size === EXPECTED.projects, `Expected ${EXPECTED.projects} unique projects; found ${projects.length} records / ${projectMap.size} unique slugs.`);
   check(inventory.projectCount === projects.length, `Inventory projectCount ${inventory.projectCount} differs from metadata count ${projects.length}.`);
@@ -185,7 +212,7 @@ function verifyStatic() {
   const assets = new Map(inventory.assets.map((asset) => [asset.image, asset]));
   check(assets.size === inventory.assets.length && inventory.assetCount === assets.size, "Inventory assetCount or duplicate asset URLs disagree with its assets list.");
   check(inventory.assetBytes === inventory.assets.reduce((total, asset) => total + asset.bytes, 0), "Inventory assetBytes does not equal the assets byte sum.");
-  const planProjects = new Map(plan.projects.map((project) => [project.slug, project]));
+  check(planProjects.size === projectMap.size && [...planProjects.keys()].every((slug) => projectMap.has(slug)), "Reviewed imports and application projects do not match exactly.");
   const allImages = [];
   for (const project of projects) {
     const context = `Project ${project.slug}`;
