@@ -514,13 +514,13 @@ function Contact() {
       <picture className="contact-scenery" aria-hidden="true">
         <source
           media="(max-width: 760px)"
-          srcSet="/portfolio/contact-sand-rider-25075a11-mobile.webp"
+          srcSet="/portfolio/contact-sand-rider-411f02b1-mobile.webp"
           width={1600}
           height={914}
         />
         <img
           className="contact-landscape"
-          src="/portfolio/contact-sand-rider-25075a11.webp"
+          src="/portfolio/contact-sand-rider-411f02b1.webp"
           alt=""
           width={2720}
           height={1554}
