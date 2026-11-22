@@ -4,12 +4,12 @@
   "sourceRoot": "F:\\作品集  精选文件",
   "plan": "docs/content/curated-plan-2026-10-26.json",
   "planSha256": "d697aab97708b9bd68a5385558a74f58b8b514f649b5fd2bef9757d72a8bda4c",
-  "sourceFileCount": 217,
-  "projectCount": 30,
-  "displayCount": 291,
+  "sourceFileCount": 226,
+  "projectCount": 33,
+  "displayCount": 300,
   "duplicateSourceCount": 4,
-  "assetCount": 959,
-  "assetBytes": 138004501,
+  "assetCount": 993,
+  "assetBytes": 143714509,
   "categories": [
     {
       "slug": "brand-identity",
@@ -21,19 +21,19 @@
       "slug": "packaging",
       "label": "包装设计",
       "description": "茶礼、食品、日用与健康产品包装。",
-      "count": 8
+      "count": 9
     },
     {
       "slug": "visual-communication",
       "label": "海报与视觉传播",
       "description": "活动主视觉、屏幕演示、招聘长图与形象墙。",
-      "count": 8
+      "count": 9
     },
     {
       "slug": "cultural-creative",
       "label": "徽章与文创",
       "description": "航天主题徽章、钥匙扣与配套物料。",
-      "count": 5
+      "count": 6
     },
     {
       "slug": "type-design",
@@ -3301,6 +3301,123 @@
       "displays": [
         {
           "image": "/selected/song-gift-four-seasons-concert/image-001-1600-5c8654f862c4.webp"
+        }
+      ]
+    },
+    {
+      "file": "巴基斯坦 臂章/Gemini_Generated_Image_kp9gcekp9gcekp9g.png",
+      "sha256": "84864c914897e5ad0788a6b6b95d4f008cddbf4e85c0a09ce2a54b7dab7bd414",
+      "bytes": 10129513,
+      "extension": ".png",
+      "status": "project",
+      "project": "ch4-pakistan-arm-patches",
+      "displays": [
+        {
+          "image": "/selected/ch4-pakistan-arm-patches/image-001-1600-06bce4cb6615.webp"
+        }
+      ]
+    },
+    {
+      "file": "巴基斯坦 臂章/Gemini_Generated_Image_oxnz3doxnz3doxnz.png",
+      "sha256": "39f214a371ad37856fada86dd42c170807249d4218a1319bc97239e59d0e0c3b",
+      "bytes": 10197133,
+      "extension": ".png",
+      "status": "project",
+      "project": "ch4-pakistan-arm-patches",
+      "displays": [
+        {
+          "image": "/selected/ch4-pakistan-arm-patches/image-002-1600-382dadd9400f.webp"
+        }
+      ]
+    },
+    {
+      "file": "海医安宁 工作例会海报/主视觉 拷贝.jpg",
+      "sha256": "d219c40609075d5d6498f5b2c54b3609bb6e7e373f1b09c8098a7e1b12aab8c4",
+      "bytes": 1211820,
+      "extension": ".jpg",
+      "status": "project",
+      "project": "haiyi-palliative-care-meeting-visuals",
+      "displays": [
+        {
+          "image": "/selected/haiyi-palliative-care-meeting-visuals/image-001-1600-c64694a77a1e.webp"
+        }
+      ]
+    },
+    {
+      "file": "海医安宁 工作例会海报/工作例会 电子版海报 9x16 拷贝.jpg",
+      "sha256": "cc9c55ae4ee82db45cb60f2fd48c32385f261172e15da10740ed2b27ba2f2e24",
+      "bytes": 1213143,
+      "extension": ".jpg",
+      "status": "project",
+      "project": "haiyi-palliative-care-meeting-visuals",
+      "displays": [
+        {
+          "image": "/selected/haiyi-palliative-care-meeting-visuals/image-002-1080-6800b829f889.webp"
+        }
+      ]
+    },
+    {
+      "file": "海医安宁 工作例会海报/案例大赛 电子版海报 9x16 拷贝.jpg",
+      "sha256": "491035773d170086d0fb4e4d72b190968997c5ee46cc52302b77902e98d77b3a",
+      "bytes": 1306799,
+      "extension": ".jpg",
+      "status": "project",
+      "project": "haiyi-palliative-care-meeting-visuals",
+      "displays": [
+        {
+          "image": "/selected/haiyi-palliative-care-meeting-visuals/image-003-1080-6e4efec0e633.webp"
+        }
+      ]
+    },
+    {
+      "file": "相册礼盒包装10.30/A01 拷贝.jpg",
+      "sha256": "bdf5d0b2933d187de5052b754eb228b35e49fb842d917a95be288e389cc3d3a1",
+      "bytes": 1299832,
+      "extension": ".jpg",
+      "status": "project",
+      "project": "tsinghua-energy-album-gift-box",
+      "displays": [
+        {
+          "image": "/selected/tsinghua-energy-album-gift-box/image-001-1600-95b6894b704a.webp"
+        }
+      ]
+    },
+    {
+      "file": "相册礼盒包装10.30/A02 拷贝.jpg",
+      "sha256": "21200038585f84203d56dee42aa5fd2cb603042cefc19e7c114453b0bb7e3a0d",
+      "bytes": 1551490,
+      "extension": ".jpg",
+      "status": "project",
+      "project": "tsinghua-energy-album-gift-box",
+      "displays": [
+        {
+          "image": "/selected/tsinghua-energy-album-gift-box/image-002-1600-81ad03eb36b9.webp"
+        }
+      ]
+    },
+    {
+      "file": "相册礼盒包装10.30/A03 拷贝.jpg",
+      "sha256": "8b139116f0563d3851b5d41f076e1d08582ae413a9a5684f44091f2a5fe2e03a",
+      "bytes": 1554145,
+      "extension": ".jpg",
+      "status": "project",
+      "project": "tsinghua-energy-album-gift-box",
+      "displays": [
+        {
+          "image": "/selected/tsinghua-energy-album-gift-box/image-003-1600-e051a603a261.webp"
+        }
+      ]
+    },
+    {
+      "file": "相册礼盒包装10.30/A05 拷贝.jpg",
+      "sha256": "d17d217003876cf4102b806ff6b53346aec5241fa9bcc03c9d2efdaf0ff74eda",
+      "bytes": 1374969,
+      "extension": ".jpg",
+      "status": "project",
+      "project": "tsinghua-energy-album-gift-box",
+      "displays": [
+        {
+          "image": "/selected/tsinghua-energy-album-gift-box/image-004-1600-9fc15fdc31b6.webp"
         }
       ]
     }
@@ -6587,6 +6704,105 @@
       "sourceMode": "RGB",
       "colorConversion": "RGB assumed sRGB",
       "flattenedOnWhite": false
+    },
+    {
+      "file": "相册礼盒包装10.30/A01 拷贝.jpg",
+      "project": "tsinghua-energy-album-gift-box",
+      "image": "/selected/tsinghua-energy-album-gift-box/image-001-1600-95b6894b704a.webp",
+      "index": 1,
+      "sourceWidth": 1920,
+      "sourceHeight": 1080,
+      "sourceMode": "RGB",
+      "colorConversion": "embedded ICC to sRGB",
+      "flattenedOnWhite": false
+    },
+    {
+      "file": "相册礼盒包装10.30/A02 拷贝.jpg",
+      "project": "tsinghua-energy-album-gift-box",
+      "image": "/selected/tsinghua-energy-album-gift-box/image-002-1600-81ad03eb36b9.webp",
+      "index": 2,
+      "sourceWidth": 1920,
+      "sourceHeight": 1080,
+      "sourceMode": "RGB",
+      "colorConversion": "embedded ICC to sRGB",
+      "flattenedOnWhite": false
+    },
+    {
+      "file": "相册礼盒包装10.30/A03 拷贝.jpg",
+      "project": "tsinghua-energy-album-gift-box",
+      "image": "/selected/tsinghua-energy-album-gift-box/image-003-1600-e051a603a261.webp",
+      "index": 3,
+      "sourceWidth": 1920,
+      "sourceHeight": 1080,
+      "sourceMode": "RGB",
+      "colorConversion": "embedded ICC to sRGB",
+      "flattenedOnWhite": false
+    },
+    {
+      "file": "相册礼盒包装10.30/A05 拷贝.jpg",
+      "project": "tsinghua-energy-album-gift-box",
+      "image": "/selected/tsinghua-energy-album-gift-box/image-004-1600-9fc15fdc31b6.webp",
+      "index": 4,
+      "sourceWidth": 1920,
+      "sourceHeight": 1080,
+      "sourceMode": "RGB",
+      "colorConversion": "embedded ICC to sRGB",
+      "flattenedOnWhite": false
+    },
+    {
+      "file": "巴基斯坦 臂章/Gemini_Generated_Image_kp9gcekp9gcekp9g.png",
+      "project": "ch4-pakistan-arm-patches",
+      "image": "/selected/ch4-pakistan-arm-patches/image-001-1600-06bce4cb6615.webp",
+      "index": 1,
+      "sourceWidth": 2730,
+      "sourceHeight": 1536,
+      "sourceMode": "RGB",
+      "colorConversion": "RGB assumed sRGB",
+      "flattenedOnWhite": false
+    },
+    {
+      "file": "巴基斯坦 臂章/Gemini_Generated_Image_oxnz3doxnz3doxnz.png",
+      "project": "ch4-pakistan-arm-patches",
+      "image": "/selected/ch4-pakistan-arm-patches/image-002-1600-382dadd9400f.webp",
+      "index": 2,
+      "sourceWidth": 2730,
+      "sourceHeight": 1536,
+      "sourceMode": "RGB",
+      "colorConversion": "RGB assumed sRGB",
+      "flattenedOnWhite": false
+    },
+    {
+      "file": "海医安宁 工作例会海报/主视觉 拷贝.jpg",
+      "project": "haiyi-palliative-care-meeting-visuals",
+      "image": "/selected/haiyi-palliative-care-meeting-visuals/image-001-1600-c64694a77a1e.webp",
+      "index": 1,
+      "sourceWidth": 1920,
+      "sourceHeight": 1080,
+      "sourceMode": "RGB",
+      "colorConversion": "RGB assumed sRGB",
+      "flattenedOnWhite": false
+    },
+    {
+      "file": "海医安宁 工作例会海报/工作例会 电子版海报 9x16 拷贝.jpg",
+      "project": "haiyi-palliative-care-meeting-visuals",
+      "image": "/selected/haiyi-palliative-care-meeting-visuals/image-002-1080-6800b829f889.webp",
+      "index": 2,
+      "sourceWidth": 1080,
+      "sourceHeight": 1920,
+      "sourceMode": "RGB",
+      "colorConversion": "RGB assumed sRGB",
+      "flattenedOnWhite": false
+    },
+    {
+      "file": "海医安宁 工作例会海报/案例大赛 电子版海报 9x16 拷贝.jpg",
+      "project": "haiyi-palliative-care-meeting-visuals",
+      "image": "/selected/haiyi-palliative-care-meeting-visuals/image-003-1080-6e4efec0e633.webp",
+      "index": 3,
+      "sourceWidth": 1080,
+      "sourceHeight": 1920,
+      "sourceMode": "RGB",
+      "colorConversion": "RGB assumed sRGB",
+      "flattenedOnWhite": false
     }
   ],
   "coverSources": {
@@ -6743,6 +6959,21 @@
       "file": "折页/琉璃厂 好物手册-01.jpg",
       "mode": "contain",
       "image": "/selected/liulichang-gift-guide/cover-960-19a8cbf5b427.webp"
+    },
+    "tsinghua-energy-album-gift-box": {
+      "file": "相册礼盒包装10.30/A01 拷贝.jpg",
+      "mode": "contain",
+      "image": "/selected/tsinghua-energy-album-gift-box/cover-960-5245421e7aaf.webp"
+    },
+    "ch4-pakistan-arm-patches": {
+      "file": "巴基斯坦 臂章/Gemini_Generated_Image_kp9gcekp9gcekp9g.png",
+      "mode": "contain",
+      "image": "/selected/ch4-pakistan-arm-patches/cover-960-aedfc9708520.webp"
+    },
+    "haiyi-palliative-care-meeting-visuals": {
+      "file": "海医安宁 工作例会海报/主视觉 拷贝.jpg",
+      "mode": "contain",
+      "image": "/selected/haiyi-palliative-care-meeting-visuals/cover-960-eb883918f48e.webp"
     }
   },
   "assets": [
@@ -7247,6 +7478,42 @@
       "bytes": 20728
     },
     {
+      "image": "/selected/ch4-pakistan-arm-patches/cover-160-fc423cd98d8a.webp",
+      "bytes": 13596
+    },
+    {
+      "image": "/selected/ch4-pakistan-arm-patches/cover-320-c43d1c01f55b.webp",
+      "bytes": 48196
+    },
+    {
+      "image": "/selected/ch4-pakistan-arm-patches/cover-960-aedfc9708520.webp",
+      "bytes": 147426
+    },
+    {
+      "image": "/selected/ch4-pakistan-arm-patches/image-001-1600-06bce4cb6615.webp",
+      "bytes": 418242
+    },
+    {
+      "image": "/selected/ch4-pakistan-arm-patches/image-001-2400-9ac98a17560d.webp",
+      "bytes": 908894
+    },
+    {
+      "image": "/selected/ch4-pakistan-arm-patches/image-001-800-73f3ad07640d.webp",
+      "bytes": 93500
+    },
+    {
+      "image": "/selected/ch4-pakistan-arm-patches/image-002-1600-382dadd9400f.webp",
+      "bytes": 427168
+    },
+    {
+      "image": "/selected/ch4-pakistan-arm-patches/image-002-2400-472943e126a9.webp",
+      "bytes": 932730
+    },
+    {
+      "image": "/selected/ch4-pakistan-arm-patches/image-002-800-1556db7d9fb5.webp",
+      "bytes": 97878
+    },
+    {
       "image": "/selected/ch9-uae-badge-keychain/cover-160-78562d03b6a1.webp",
       "bytes": 5864
     },
@@ -7533,6 +7800,46 @@
     {
       "image": "/selected/daerle-calcium-zinc-packaging/image-007-800-1deab92d37e4.webp",
       "bytes": 44294
+    },
+    {
+      "image": "/selected/haiyi-palliative-care-meeting-visuals/cover-160-eed156358fb1.webp",
+      "bytes": 6574
+    },
+    {
+      "image": "/selected/haiyi-palliative-care-meeting-visuals/cover-320-efb0f9536004.webp",
+      "bytes": 15958
+    },
+    {
+      "image": "/selected/haiyi-palliative-care-meeting-visuals/cover-960-eb883918f48e.webp",
+      "bytes": 74432
+    },
+    {
+      "image": "/selected/haiyi-palliative-care-meeting-visuals/image-001-1600-c64694a77a1e.webp",
+      "bytes": 153986
+    },
+    {
+      "image": "/selected/haiyi-palliative-care-meeting-visuals/image-001-1920-7ab4c9c350ee.webp",
+      "bytes": 200698
+    },
+    {
+      "image": "/selected/haiyi-palliative-care-meeting-visuals/image-001-800-62da18e97a28.webp",
+      "bytes": 50490
+    },
+    {
+      "image": "/selected/haiyi-palliative-care-meeting-visuals/image-002-1080-6800b829f889.webp",
+      "bytes": 207962
+    },
+    {
+      "image": "/selected/haiyi-palliative-care-meeting-visuals/image-002-800-638d35b8cff5.webp",
+      "bytes": 116172
+    },
+    {
+      "image": "/selected/haiyi-palliative-care-meeting-visuals/image-003-1080-6e4efec0e633.webp",
+      "bytes": 239464
+    },
+    {
+      "image": "/selected/haiyi-palliative-care-meeting-visuals/image-003-800-9337c9eb5109.webp",
+      "bytes": 140914
     },
     {
       "image": "/selected/home-palliative-care-event/cover-160-3906860373d6.webp",
@@ -9251,6 +9558,66 @@
       "bytes": 10642
     },
     {
+      "image": "/selected/tsinghua-energy-album-gift-box/cover-160-1f8ab47d6293.webp",
+      "bytes": 5756
+    },
+    {
+      "image": "/selected/tsinghua-energy-album-gift-box/cover-320-2521f8c2ef0c.webp",
+      "bytes": 16496
+    },
+    {
+      "image": "/selected/tsinghua-energy-album-gift-box/cover-960-5245421e7aaf.webp",
+      "bytes": 37582
+    },
+    {
+      "image": "/selected/tsinghua-energy-album-gift-box/image-001-1600-95b6894b704a.webp",
+      "bytes": 91712
+    },
+    {
+      "image": "/selected/tsinghua-energy-album-gift-box/image-001-1920-8fdf0a1d8625.webp",
+      "bytes": 146152
+    },
+    {
+      "image": "/selected/tsinghua-energy-album-gift-box/image-001-800-7807ef7fcdbe.webp",
+      "bytes": 25496
+    },
+    {
+      "image": "/selected/tsinghua-energy-album-gift-box/image-002-1600-81ad03eb36b9.webp",
+      "bytes": 126138
+    },
+    {
+      "image": "/selected/tsinghua-energy-album-gift-box/image-002-1920-5817c0fa8436.webp",
+      "bytes": 227484
+    },
+    {
+      "image": "/selected/tsinghua-energy-album-gift-box/image-002-800-5634240326b6.webp",
+      "bytes": 30180
+    },
+    {
+      "image": "/selected/tsinghua-energy-album-gift-box/image-003-1600-e051a603a261.webp",
+      "bytes": 131882
+    },
+    {
+      "image": "/selected/tsinghua-energy-album-gift-box/image-003-1920-574e08f11db2.webp",
+      "bytes": 230384
+    },
+    {
+      "image": "/selected/tsinghua-energy-album-gift-box/image-003-800-f5710e8212b3.webp",
+      "bytes": 34094
+    },
+    {
+      "image": "/selected/tsinghua-energy-album-gift-box/image-004-1600-9fc15fdc31b6.webp",
+      "bytes": 106226
+    },
+    {
+      "image": "/selected/tsinghua-energy-album-gift-box/image-004-1920-1f212e6e4e9b.webp",
+      "bytes": 179636
+    },
+    {
+      "image": "/selected/tsinghua-energy-album-gift-box/image-004-800-cddc3ed3d6f9.webp",
+      "bytes": 26510
+    },
+    {
       "image": "/selected/yipinfang-identity/cover-160-0a617989312a.webp",
       "bytes": 1928
     },
@@ -10581,6 +10948,55 @@
     {
       "image": "/selected/zhengfei-construction-identity/image-003-800-d4af9df59147.webp",
       "bytes": 7720
+    }
+  ],
+  "imports": [
+    {
+      "sourceRoot": "F:\\作品集  精选文件",
+      "plan": "docs/content/curated-plan-2026-10-26.json",
+      "planSha256": "d697aab97708b9bd68a5385558a74f58b8b514f649b5fd2bef9757d72a8bda4c",
+      "projects": [
+        "zhangshuntang-tea-tin-packaging",
+        "yixinhe-agriculture-identity",
+        "ch9-uae-badge-keychain",
+        "leebeer-craft-beer-packaging",
+        "yunshang-kangyuan-visual-identity",
+        "song-gift-2025-concert",
+        "zhangshuntang-wedding-tea-packaging",
+        "caaa-aerospace-badge-collection",
+        "tiandi-xunhuang-identity",
+        "zhengfei-construction-identity",
+        "yipinfang-identity",
+        "sklvb-vegetable-laboratory-identity",
+        "zelle-link-identity",
+        "daerle-calcium-zinc-packaging",
+        "liming-tianyao-care-packaging",
+        "yunshang-kangyuan-eye-patch-packaging",
+        "zhangshuntang-shun-tea-gift-packaging",
+        "zelle-link-orodispersible-packaging",
+        "caihong-corporate-wall",
+        "aerospace-recruitment-posters",
+        "song-gift-wish-concert",
+        "song-gift-four-seasons-concert",
+        "palliative-care-forum-visuals",
+        "home-palliative-care-event",
+        "home-palliative-care-team-presentation",
+        "ch4-badges-and-accessories",
+        "pakistan-aircraft-badge-keychain",
+        "rainbow-airshow-badge-series",
+        "simu-brand-typography",
+        "liulichang-gift-guide"
+      ]
+    },
+    {
+      "sourceRoot": "C:\\Users\\zhaoz\\Downloads",
+      "plan": "docs/content/curated-plan-2026-11-22.json",
+      "planSha256": "d35603cd21dff0ba0408529314ad5e7b3b182229ef5446ff09768edc7297b19c",
+      "projects": [
+        "tsinghua-energy-album-gift-box",
+        "ch4-pakistan-arm-patches",
+        "haiyi-palliative-care-meeting-visuals"
+      ]
     }
   ]
 }

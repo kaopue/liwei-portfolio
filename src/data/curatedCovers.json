@@ -208,5 +208,26 @@
     "height": 540,
     "thumbSrc": "/selected/liulichang-gift-guide/cover-320-d4c63e1e4a65.webp",
     "smallThumbSrc": "/selected/liulichang-gift-guide/cover-160-1db373f73837.webp"
+  },
+  "tsinghua-energy-album-gift-box": {
+    "src": "/selected/tsinghua-energy-album-gift-box/cover-960-5245421e7aaf.webp",
+    "width": 960,
+    "height": 540,
+    "thumbSrc": "/selected/tsinghua-energy-album-gift-box/cover-320-2521f8c2ef0c.webp",
+    "smallThumbSrc": "/selected/tsinghua-energy-album-gift-box/cover-160-1f8ab47d6293.webp"
+  },
+  "ch4-pakistan-arm-patches": {
+    "src": "/selected/ch4-pakistan-arm-patches/cover-960-aedfc9708520.webp",
+    "width": 960,
+    "height": 540,
+    "thumbSrc": "/selected/ch4-pakistan-arm-patches/cover-320-c43d1c01f55b.webp",
+    "smallThumbSrc": "/selected/ch4-pakistan-arm-patches/cover-160-fc423cd98d8a.webp"
+  },
+  "haiyi-palliative-care-meeting-visuals": {
+    "src": "/selected/haiyi-palliative-care-meeting-visuals/cover-960-eb883918f48e.webp",
+    "width": 960,
+    "height": 540,
+    "thumbSrc": "/selected/haiyi-palliative-care-meeting-visuals/cover-320-efb0f9536004.webp",
+    "smallThumbSrc": "/selected/haiyi-palliative-care-meeting-visuals/cover-160-eed156358fb1.webp"
   }
 }

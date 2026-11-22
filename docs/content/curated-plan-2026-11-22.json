@@ -1,0 +1,90 @@
+{
+  "sourceDirectories": [
+    "相册礼盒包装10.30",
+    "巴基斯坦 臂章",
+    "海医安宁 工作例会海报"
+  ],
+  "categories": [
+    {
+      "slug": "brand-identity",
+      "label": "品牌识别",
+      "description": "标志、视觉识别系统与品牌应用。"
+    },
+    {
+      "slug": "packaging",
+      "label": "包装设计",
+      "description": "茶礼、食品、日用与健康产品包装。"
+    },
+    {
+      "slug": "visual-communication",
+      "label": "海报与视觉传播",
+      "description": "活动主视觉、屏幕演示、招聘长图与形象墙。"
+    },
+    {
+      "slug": "cultural-creative",
+      "label": "徽章与文创",
+      "description": "航天主题徽章、钥匙扣与配套物料。"
+    },
+    {
+      "slug": "type-design",
+      "label": "字体设计",
+      "description": "中英文字形与品牌字体组合。"
+    },
+    {
+      "slug": "editorial",
+      "label": "折页设计",
+      "description": "商品手册与折页的信息编排。"
+    }
+  ],
+  "projects": [
+    {
+      "title": "清华能源互联网相册礼盒",
+      "slug": "tsinghua-energy-album-gift-box",
+      "categorySlug": "packaging",
+      "summary": "以深蓝与金色线描连接清华校门、能源设施和地球意象，统一相册、礼盒与内衬视觉。",
+      "description": "围绕能源互联网产业领军计划第六期，将清华校门、风电、光伏与地球经纬线融入深蓝盒面，以金色线描和圆形徽记建立层级。四幅展示图呈现礼盒闭合、开启及相册组合，让外盒、内衬与相册封面形成完整的蓝金视觉。",
+      "files": [
+        "相册礼盒包装10.30/A01 拷贝.jpg",
+        "相册礼盒包装10.30/A02 拷贝.jpg",
+        "相册礼盒包装10.30/A03 拷贝.jpg",
+        "相册礼盒包装10.30/A05 拷贝.jpg"
+      ],
+      "coverFile": "相册礼盒包装10.30/A01 拷贝.jpg",
+      "priority": 31
+    },
+    {
+      "title": "CH-4 巴基斯坦主题臂章",
+      "slug": "ch4-pakistan-arm-patches",
+      "categorySlug": "cultural-creative",
+      "summary": "将 CH-4 飞行器、捻角山羊与地域建筑融入两款臂章，以深绿、白色和金色组织刺绣层次。",
+      "description": "两款臂章分别以捻角山羊和地域建筑为主题，结合 CH-4 飞行器、新月星形、山脉与枝叶纹样，形成不同的外轮廓和文字编排。深绿底色搭配白色描边与金色点缀，通过服装场景呈现臂章的刺绣质感及佩戴比例。",
+      "files": [
+        "巴基斯坦 臂章/Gemini_Generated_Image_kp9gcekp9gcekp9g.png",
+        "巴基斯坦 臂章/Gemini_Generated_Image_oxnz3doxnz3doxnz.png"
+      ],
+      "coverFile": "巴基斯坦 臂章/Gemini_Generated_Image_kp9gcekp9gcekp9g.png",
+      "priority": 32
+    },
+    {
+      "title": "海医安宁工作例会与案例大赛视觉",
+      "slug": "haiyi-palliative-care-meeting-visuals",
+      "categorySlug": "visual-communication",
+      "summary": "以通透花瓣、粉橙渐变与流动色带建立活动识别，延展横版主视觉和两款竖版电子海报。",
+      "description": "围绕海淀区安宁疗护质量控制和改进中心活动，以花瓣与柔和光感连接工作例会和案例大赛。横版主视觉突出主题，竖版海报通过标题、时间、地点与报名信息的分区编排，在统一的粉橙紫色系中区分两类活动。",
+      "files": [
+        "海医安宁 工作例会海报/主视觉 拷贝.jpg",
+        "海医安宁 工作例会海报/工作例会 电子版海报 9x16 拷贝.jpg",
+        "海医安宁 工作例会海报/案例大赛 电子版海报 9x16 拷贝.jpg"
+      ],
+      "coverFile": "海医安宁 工作例会海报/主视觉 拷贝.jpg",
+      "priority": 33
+    }
+  ],
+  "exclusions": [],
+  "reviewNotes": [
+    "三个文件夹共9张图片全部展示，原始图片保持不变。",
+    "新臂章与既有巴基斯坦主题徽章及钥匙扣是不同物料，独立建立案例。",
+    "标题与说明依据画面中的主题、配色、图形及物料编写，不补写客户关系、制作工艺、设计年份或商业成果。",
+    "保留已有30个案例的排序与首页5个精选入口，新增案例接续为31至33。"
+  ]
+}
