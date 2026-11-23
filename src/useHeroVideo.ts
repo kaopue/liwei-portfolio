@@ -11,12 +11,8 @@ export function useHeroVideo() {
   const posterRef = useRef<HTMLImageElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
   const playbackAllowed = useRef(false);
-  const pausedByUser = useRef(false);
-  const syncPlayback = useRef<(() => void) | null>(null);
   const [videoMode, setVideoMode] = useState<VideoMode | null>(null);
   const [readyMode, setReadyMode] = useState<VideoMode | null>(null);
-  const [isPlaying, setIsPlaying] = useState(false);
-  const [hasVideoError, setHasVideoError] = useState(false);
 
   useEffect(() => {
     const motion = window.matchMedia("(prefers-reduced-motion: reduce)");
@@ -28,14 +24,13 @@ export function useHeroVideo() {
     let fallbackHandle: number | undefined;
     const bounds = heroRef.current?.getBoundingClientRect();
     let inView = !!bounds && bounds.bottom > 0 && bounds.top < window.innerHeight;
-    let hasLeftHero = !inView;
 
     const update = () => {
       if (cancelled) return;
       const restricted = motion.matches || connection?.saveData || /(^|-)2g$/.test(connection?.effectiveType ?? "");
-      const enteredHero = !window.location.hash || window.location.hash === "#top" || hasLeftHero;
-      const eligible = ready && enteredHero && inView && document.visibilityState === "visible" && !restricted;
-      const active = eligible && !pausedByUser.current;
+      // Visibility, rather than an old section hash, determines whether the hero plays.
+      const eligible = ready && inView && document.visibilityState === "visible" && !restricted;
+      const active = eligible;
       playbackAllowed.current = active;
 
       if (restricted) {
@@ -46,11 +41,13 @@ export function useHeroVideo() {
 
       const video = videoRef.current;
       if (video) {
-        if (active && video.paused && !video.error) void video.play().catch(() => {});
+        if (active && video.paused && !video.error) {
+          video.muted = true;
+          void video.play().catch(() => {});
+        }
         if (!active && !video.paused) video.pause();
       }
     };
-    syncPlayback.current = update;
 
     // Wait for critical images and the first page load before using bandwidth for motion.
     const scheduleVideo = () => {
@@ -74,13 +71,13 @@ export function useHeroVideo() {
     const observer = "IntersectionObserver" in window
       ? new IntersectionObserver(([entry]) => {
         inView = entry.isIntersecting && entry.intersectionRatio >= 0.01;
-        if (!inView) hasLeftHero = true;
         update();
       }, { threshold: 0.01 })
       : null;
     if (heroRef.current) observer?.observe(heroRef.current);
     document.addEventListener("visibilitychange", update);
     window.addEventListener("hashchange", update);
+    window.addEventListener("pageshow", update);
     motion.addEventListener("change", update);
     mobile.addEventListener("change", update);
     connection?.addEventListener("change", update);
@@ -88,13 +85,13 @@ export function useHeroVideo() {
     return () => {
       cancelled = true;
       playbackAllowed.current = false;
-      syncPlayback.current = null;
       observer?.disconnect();
       window.removeEventListener("load", scheduleVideo);
       if (idleHandle !== undefined) window.cancelIdleCallback(idleHandle);
       if (fallbackHandle !== undefined) window.clearTimeout(fallbackHandle);
       document.removeEventListener("visibilitychange", update);
       window.removeEventListener("hashchange", update);
+      window.removeEventListener("pageshow", update);
       motion.removeEventListener("change", update);
       mobile.removeEventListener("change", update);
       connection?.removeEventListener("change", update);
@@ -110,31 +107,25 @@ export function useHeroVideo() {
   }, [videoMode]);
 
   const onVideoPlaying = useCallback(() => {
+    if (!playbackAllowed.current) {
+      videoRef.current?.pause();
+      return;
+    }
     setReadyMode(videoMode);
-    setIsPlaying(true);
-    setHasVideoError(false);
   }, [videoMode]);
 
-  const onVideoPause = useCallback(() => setIsPlaying(false), []);
+  const onVideoCanPlay = useCallback(() => {
+    const video = videoRef.current;
+    if (video && playbackAllowed.current && video.paused) void video.play().catch(() => {});
+  }, []);
 
   const onVideoError = useCallback(() => {
     setReadyMode(null);
-    setIsPlaying(false);
-    setHasVideoError(true);
-  }, []);
-
-  const togglePlayback = useCallback(() => {
-    const video = videoRef.current;
-    if (!video) return;
-    pausedByUser.current = !video.paused;
-    // Run in the click gesture so browsers that block autoplay can also resume.
-    syncPlayback.current?.();
   }, []);
 
   return {
     heroRef, posterRef, videoRef, videoMode,
     videoReady: videoMode !== null && readyMode === videoMode,
-    isPlaying, hasVideoError, togglePlayback,
-    onVideoPlaying, onVideoPause, onVideoError,
+    onVideoPlaying, onVideoCanPlay, onVideoError,
   };
 }

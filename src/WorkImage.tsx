@@ -1,10 +1,11 @@
 import optimizedImages from "./data/curatedImages.json";
 
-export function WorkImage({ src, alt, loading = "lazy", sizes }: {
+export function WorkImage({ src, alt, loading = "lazy", sizes, onOpen }: {
   src: string;
   alt: string;
   loading?: "eager" | "lazy";
   sizes: string;
+  onOpen?: () => void;
 }) {
   const image = optimizedImages[src as keyof typeof optimizedImages];
 
@@ -15,6 +16,11 @@ export function WorkImage({ src, alt, loading = "lazy", sizes }: {
       target="_blank"
       rel="noreferrer"
       aria-label={`查看大图：${alt}`}
+      onClick={onOpen ? (event) => {
+        if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+        event.preventDefault();
+        onOpen();
+      } : undefined}
     >
       <img
         src={image?.src ?? src}

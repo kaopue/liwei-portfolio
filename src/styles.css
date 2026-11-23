@@ -312,7 +312,7 @@ main {
 
 .hero-inner {
   display: grid;
-  grid-template-rows: 1fr auto;
+  grid-template-rows: minmax(0, 1fr);
   gap: 44px;
   min-height: 100vh;
   min-height: 100svh;
@@ -493,7 +493,7 @@ main {
 
 @media (max-width: 900px) and (max-height: 500px) and (orientation: landscape) {
   .hero-inner {
-    grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+    grid-template-columns: minmax(0, 1fr);
     grid-template-rows: auto;
     align-items: end;
     gap: 24px;
