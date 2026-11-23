@@ -1,96 +1,66 @@
-import type { Project } from "./data/portfolio";
+import { useState } from "react";
+import { ArrowLeft, ArrowRight, ArrowUpRight, Expand } from "lucide-react";
+import { projects, type Project } from "./data/portfolio";
 import { WorkImage } from "./WorkImage";
-import curatedImages from "./data/curatedImages.json";
+import { WorkLightbox } from "./WorkLightbox";
+import { getWorkBrowseState } from "./workBrowsing";
+import homepageImages from "./data/curatedCovers.json";
+
+const orderedProjects = [...projects].sort((a, b) => a.priority - b.priority);
 
 export default function WorkDetailPage({ project, categoryLabel }: {
   project: Project;
   categoryLabel: string;
 }) {
-  const isLongImage = (src: string) => {
-    const image = curatedImages[src as keyof typeof curatedImages];
-    return image && image.height / image.width > 3;
-  };
-  const hasLongCover = isLongImage(project.cover);
-  const galleryImages = hasLongCover
-    ? project.images
-    : project.images.filter((image) => image !== project.cover);
+  const [activeImage, setActiveImage] = useState<number | null>(null);
+  const images = [...new Set([project.cover, ...project.images])];
+  const nextProject = orderedProjects[(orderedProjects.findIndex((item) => item.slug === project.slug) + 1) % orderedProjects.length];
+  const nextCover = homepageImages[nextProject.slug as keyof typeof homepageImages];
+  const returnHash = getWorkBrowseState()?.hash ?? "#projects";
 
   return (
-    <section className="work-detail-page section-pad" id="work-detail" aria-label={`${project.title} 详情`}>
-      <div className="container">
-        <div className="project-detail-head">
-          <div>
-            <p className="eyebrow">{categoryLabel}</p>
-            <h1>{project.title}</h1>
-          </div>
-          <a className="detail-back" href="#projects">
-            返回作品列表
-          </a>
+    <section className="work-detail-page visual-case-page" id="work-detail" aria-label={`${project.title} 详情`}>
+      <div className="visual-case-header">
+        <a className="case-return" href={returnHash}><ArrowLeft size={17} aria-hidden="true" />返回作品</a>
+        <div className="visual-case-title">
+          <p className="eyebrow">{categoryLabel}</p>
+          <h1>{project.title}</h1>
+          <p className="visual-case-summary">{project.summary}</p>
         </div>
-
-        <div className="work-detail-hero">
-          <p>{project.summary}</p>
-          <dl>
-            {project.year && <div>
-              <dt>Year</dt>
-              <dd>{project.year}</dd>
-            </div>}
-            <div>
-              <dt>Type</dt>
-              <dd>{project.type}</dd>
-            </div>
-            <div>
-              <dt>Images</dt>
-              <dd>{project.images.length}</dd>
-            </div>
-          </dl>
-        </div>
-
-        <div className="project-detail-layout">
-          <div className="project-detail-cover">
-            <WorkImage src={project.cover} alt={`${project.title} 封面预览`} loading="eager" sizes="(max-width: 1180px) calc(100vw - 36px), 65vw" />
-          </div>
-          <div className="project-detail-info">
-            <p>{project.description}</p>
-            {hasLongCover && <p>下方按完整比例展示长图，可点击放大阅读。</p>}
-            {!hasLongCover && <p className="image-view-hint">点击图片查看大图与设计细节。</p>}
-          </div>
-        </div>
-
-        {project.detailSections.length > 0 && <div className="case-study-sections">
-          {project.detailSections.map((section) => (
-            <article key={section.title}>
-              <p className="eyebrow">{section.title}</p>
-              <p>{section.body}</p>
-            </article>
-          ))}
-        </div>}
-
-        {galleryImages.length > 0 && <>
-          <div className="detail-gallery-head">
-          <p className="eyebrow">PROCESS / DISPLAY</p>
-          <h2>完整作品展示</h2>
-          <p>点击图片查看大图与设计细节。</p>
-        </div>
-
-        <div className="detail-gallery">
-          {galleryImages.map((image, index) => (
-            <figure key={image}>
-              <WorkImage src={image} alt={`${project.title} 详情图 ${index + 1}`} sizes={isLongImage(image) ? "(max-width: 1180px) calc(100vw - 36px), 96vw" : "(max-width: 1180px) calc(100vw - 36px), 48vw"} />
-            </figure>
-          ))}
-        </div>
-        </>}
-
-        <div className="detail-footer-actions">
-          <a className="detail-back" href="#projects">
-            返回作品列表
-          </a>
-          <a className="detail-back secondary" href="#top">
-            返回首页
-          </a>
+        <div className="visual-case-byline">
+          <span>李维 <span className="case-byline-role">/ 视觉设计师</span></span>
+          <span>{project.year ? `${project.year} · ` : ""}{images.length} 张作品</span>
         </div>
       </div>
+
+      <div className="visual-case-gallery" aria-label="完整作品图集">
+        {images.map((src, index) => (
+          <figure key={src}>
+            <WorkImage src={src} alt={`${project.title}，第 ${index + 1} 张作品`} loading={index === 0 ? "eager" : "lazy"} sizes="(max-width: 700px) 100vw, (max-width: 1400px) 92vw, 1280px" onOpen={() => setActiveImage(index)} />
+            <span className="case-image-expand" aria-hidden="true"><Expand size={16} />放大查看</span>
+          </figure>
+        ))}
+      </div>
+
+      <div className="visual-case-notes">
+        <div><p className="eyebrow">关于项目</p><p>{project.description}</p></div>
+        {project.detailSections.map((section) => (
+          <div key={section.title}><h2>{section.title}</h2><p>{section.body}</p></div>
+        ))}
+        <a className="case-contact" href="mailto:501705971@qq.com">聊聊你的项目 <ArrowUpRight size={17} aria-hidden="true" /></a>
+      </div>
+
+      <div className="visual-case-end">
+        <p>感谢观看</p>
+        <a className="case-return" href={returnHash}><ArrowLeft size={17} aria-hidden="true" />返回作品列表</a>
+      </div>
+
+      <a className="case-next" href={`#work/${nextProject.slug}`}>
+        <div><span>继续浏览 / 下一个项目</span><h2>{nextProject.title}</h2><ArrowRight size={26} aria-hidden="true" /></div>
+        <img src={nextCover?.src ?? nextProject.cover} width={nextCover?.width} height={nextCover?.height} loading="lazy" decoding="async" alt="" />
+      </a>
+
+      {activeImage !== null && <WorkLightbox images={images} title={project.title} initialIndex={activeImage} onDismiss={() => setActiveImage(null)} />}
     </section>
   );
 }

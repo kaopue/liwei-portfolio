@@ -4,14 +4,14 @@ import {
   Suspense,
   useEffect,
   useMemo,
+  useRef,
   useState,
 } from "react";
+import { flushSync } from "react-dom";
 import {
   ArrowUpRight,
   Mail,
-  Pause,
   Phone,
-  Play,
   Send,
   SquareArrowOutUpRight,
 } from "lucide-react";
@@ -30,6 +30,8 @@ import {
 import type { Project } from "./data/portfolio";
 import homepageImages from "./data/curatedCovers.json";
 import optimizedVideos from "./data/optimizedVideos.json";
+import { getWorkBrowseState, saveWorkBrowseState } from "./workBrowsing";
+import workPreviews from "./data/workPreviews.json";
 
 const WorkDetailPage = lazy(() => import("./WorkDetailPage"));
 
@@ -71,12 +73,21 @@ const getProjectCategoryLabel = (project: Project) =>
 
 function App() {
   const route = useHashRoute();
+  const previousRoute = useRef(route.kind);
   usePortfolioMotion(route.kind === "work" ? `work:${route.slug}` : "home");
   const routeProject = route.kind === "work"
     ? projects.find((project) => project.slug === route.slug) ?? null
     : null;
 
   useEffect(() => {
+    const previous = window.history.scrollRestoration;
+    window.history.scrollRestoration = "manual";
+    return () => { window.history.scrollRestoration = previous; };
+  }, []);
+
+  useEffect(() => {
+    const returningFromWork = previousRoute.current === "work";
+    previousRoute.current = route.kind;
     if (route.kind === "work") {
       window.scrollTo({ top: 0, left: 0, behavior: "instant" });
       return;
@@ -85,6 +96,16 @@ function App() {
     // Home sections mount after the hash changes when leaving a case study.
     // Restore the anchor after React commits so return and direct links land correctly.
     const hash = decodeHash(window.location.hash);
+    const savedBrowse = getWorkBrowseState();
+    if (returningFromWork && savedBrowse && window.location.hash === savedBrowse.hash) {
+      const frame = window.requestAnimationFrame(() => {
+        window.scrollTo({ top: savedBrowse.scrollY, behavior: "instant" });
+        if (savedBrowse.slug) {
+          document.getElementById(`project-${savedBrowse.slug}`)?.focus({ preventScroll: true });
+        }
+      });
+      return () => window.cancelAnimationFrame(frame);
+    }
     const targetId = hash.startsWith("category/") ? "projects" : hash;
     if (!["top", "about", "projects", "advantages", "contact"].includes(targetId)) return;
     const frame = window.requestAnimationFrame(() => {
@@ -116,8 +137,8 @@ function App() {
     <main>
       <SiteHeader />
       <Hero />
-      <About />
       <Projects />
+      <About />
       <Advantages />
       <Contact />
     </main>
@@ -152,23 +173,10 @@ function SiteHeader() {
   );
 }
 
-const heroProjectSlugs = [
-  "zhangshuntang-tea-tin-packaging",
-  "yixinhe-agriculture-identity",
-  "ch9-uae-badge-keychain",
-  "leebeer-craft-beer-packaging",
-  "caaa-aerospace-badge-collection",
-];
-
-const heroProjects = heroProjectSlugs
-  .map((slug) => projects.find((project) => project.slug === slug))
-  .filter((project): project is Project => Boolean(project));
-
 function Hero() {
   const {
     heroRef, posterRef, videoRef, videoMode, videoReady,
-    isPlaying, hasVideoError, togglePlayback,
-    onVideoPlaying, onVideoPause, onVideoError,
+    onVideoPlaying, onVideoCanPlay, onVideoError,
   } = useHeroVideo();
 
   return (
@@ -194,12 +202,13 @@ function Hero() {
             className={`hero-video${videoReady ? " is-ready" : ""}`}
             poster={videoMode === "mobile" ? optimizedVideos.posterMobile : optimizedVideos.posterWebp}
             aria-hidden="true"
+            autoPlay
             muted
             loop
             playsInline
             preload="metadata"
             onPlaying={onVideoPlaying}
-            onPause={onVideoPause}
+            onCanPlay={onVideoCanPlay}
             onError={onVideoError}
           >
             <source src={optimizedVideos.videoMp4} type="video/mp4" />
@@ -207,18 +216,6 @@ function Hero() {
         )}
       </div>
       <div className="hero-shade" aria-hidden="true" />
-      {videoMode && !hasVideoError && (
-        <button
-          className="hero-playback"
-          type="button"
-          onClick={togglePlayback}
-          aria-label={isPlaying ? "暂停背景视频" : "播放背景视频"}
-          title={isPlaying ? "暂停背景视频" : "播放背景视频"}
-        >
-          {isPlaying ? <Pause size={14} aria-hidden="true" /> : <Play size={14} aria-hidden="true" />}
-          <span>{isPlaying ? "暂停背景" : "播放背景"}</span>
-        </button>
-      )}
       <div className="container hero-inner">
         <div className="hero-content">
           <h1 id="hero-title">
@@ -238,24 +235,8 @@ function Hero() {
               Behance <ArrowUpRight size={17} aria-hidden="true" />
               <span className="sr-only">（在新窗口打开）</span>
             </a>
-            <p className="hero-note">均为真实案例，无临摹作品、非培训机构套模板。</p>
           </div>
         </div>
-        <nav className="hero-work-strip" aria-label="精选作品快捷入口">
-          {heroProjects.map((project) => (
-            <a className="hero-work-card" href={`#work/${project.slug}`} key={project.slug} aria-label={`查看${project.title}`}>
-              <img
-                src={homepageImages[project.slug as keyof typeof homepageImages]?.src ?? project.cover}
-                alt=""
-                width={960}
-                height={540}
-                loading="lazy"
-                decoding="async"
-              />
-              <span>{project.title}<ArrowUpRight size={14} aria-hidden="true" /></span>
-            </a>
-          ))}
-        </nav>
       </div>
     </section>
   );
@@ -276,22 +257,27 @@ function About() {
         />
       </picture>
       <div className="container about-inner">
+        <div className="about-heading-row">
+        <h2 id="about-title" className="about-section-title">关于我</h2>
         <p className="about-identity">
           <strong>{contacts.name}</strong>
-          <span lang="en">— LIWEI · BRAND&amp;VISUAL DESIGNER <span className="about-years">| &nbsp;12 YEARS EXPERIENGE</span></span>
+          <span className="about-years">10<sup>+</sup> 工作经验</span>
         </p>
-        <h2 id="about-title" className="about-statement">
-          <span>让商业策略转化为</span>
-          <span>清晰、克制、</span>
-          <span>极具辨识度的<wbr /><span className="about-ending">视觉系统。</span></span>
-        </h2>
+        </div>
+        <div className="about-lead">
+        <p className="about-statement">
+          让商业策略转化为清晰、克制、极具辨识度的视觉系统。
+        </p>
+        <p className="about-intro">具备扎实的视觉传达与品牌设计基础，擅长建立富有辨识度的品牌视觉系统。</p>
+        </div>
         <div className="about-summary">
-          <p>具备扎实的视觉传达与品牌设计基础，擅长建立富有辨识度的品牌视觉系统。</p>
           <p>习惯从商业逻辑出发，以克制的网格排版与精准的视觉语言解决传播问题，并结合 AI 创意工作流，确保项目从概念提案到印刷落地的全链路高水准交付。</p>
         </div>
         <ul className="about-specialties" aria-label="设计方向">
           {focusAreas.map((label) => <li key={label}>{label}</li>)}
         </ul>
+        <div className="about-career">
+        <p className="about-career-label">职业经历</p>
         <ol className="about-timeline" aria-label="职业经历">
           {experiences.map(({ period, company, role, description }) => (
             <li key={period}>
@@ -302,6 +288,7 @@ function About() {
             </li>
           ))}
         </ol>
+        </div>
       </div>
     </section>
   );
@@ -333,19 +320,13 @@ function Projects() {
   );
 
   useEffect(() => {
-    let scrollFrame = 0;
-
     const syncFromHash = () => {
-      window.cancelAnimationFrame(scrollFrame);
       const hash = decodeHash(window.location.hash);
 
       if (hash.startsWith("category/")) {
         const categorySlug = hash.replace("category/", "");
         const hasCategory = projectCategories.some((category) => category.slug === categorySlug);
         setActiveCategory(hasCategory ? categorySlug : "all");
-        scrollFrame = window.requestAnimationFrame(() => {
-          document.getElementById("projects")?.scrollIntoView({ block: "start" });
-        });
         return;
       }
 
@@ -357,14 +338,19 @@ function Projects() {
     syncFromHash();
     window.addEventListener("hashchange", syncFromHash);
     return () => {
-      window.cancelAnimationFrame(scrollFrame);
       window.removeEventListener("hashchange", syncFromHash);
     };
   }, []);
 
   const handleCategoryChange = (categorySlug: string) => {
-    setActiveCategory(categorySlug);
-    window.history.replaceState(null, "", categorySlug === "all" ? "#projects" : `#category/${categorySlug}`);
+    if (categorySlug === activeCategory) return;
+    const update = () => {
+      flushSync(() => setActiveCategory(categorySlug));
+      window.history.replaceState(null, "", categorySlug === "all" ? "#projects" : `#category/${categorySlug}`);
+    };
+    if (document.startViewTransition && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      document.startViewTransition(update);
+    } else update();
   };
 
   return (
@@ -373,12 +359,12 @@ function Projects() {
         <div className="work-index" aria-label="作品列表">
           <div className="work-index-head">
             <div>
-              <p className="eyebrow">SELECTED WORKS</p>
-              <h2>精选项目</h2>
+              <h2>作品展示</h2>
             </div>
-            <p>从品牌标志、字体与包装，到活动视觉、航天文创与折页。按分类浏览 {projects.length} 个项目，查看各方案的细节与完整呈现。</p>
+            <p>均为真实案例，无临摹作品、非培训机构套模板。</p>
           </div>
 
+          <div className="work-browser-toolbar">
           <div className="category-filters" aria-label="作品分类筛选">
             <button
               className={activeCategory === "all" ? "is-active" : ""}
@@ -405,6 +391,8 @@ function Projects() {
                 </button>
               ))}
           </div>
+          <p className="work-results" role="status" aria-live="polite">{filteredProjects.length} 个项目</p>
+          </div>
 
           <div className="projects-grid work-list-grid">
             {filteredProjects.map((project, index) => (
@@ -430,32 +418,43 @@ function ProjectCard({
 }) {
   const categoryLabel = getProjectCategoryLabel(project);
   const cover = homepageImages[project.slug as keyof typeof homepageImages];
+  const preview = workPreviews[project.slug as keyof typeof workPreviews];
+  const [previewRequested, setPreviewRequested] = useState(false);
+  const [previewReady, setPreviewReady] = useState(false);
+
+  const requestPreview = () => {
+    if (window.matchMedia("(hover: hover) and (pointer: fine)").matches) setPreviewRequested(true);
+  };
 
   return (
-    <article className={`project-card ${project.layout ?? ""}`} data-glow>
+    <article className="project-card visual-project-card" style={{ viewTransitionName: `work-${project.slug}` }}>
       <a
+        id={`project-${project.slug}`}
+        className="visual-project-link"
         href={`#work/${project.slug}`}
         aria-label={`查看 ${String(index + 1).padStart(2, "0")} ${project.title}`}
+        onClick={(event) => {
+          if (!event.metaKey && !event.ctrlKey && !event.shiftKey && !event.altKey) saveWorkBrowseState(project.slug);
+        }}
+        onPointerEnter={requestPreview}
+        onFocus={() => setPreviewRequested(true)}
       >
-        <div className="project-image">
+        <div className={`project-image${previewReady ? " has-preview" : ""}`}>
           <img src={cover?.src ?? project.cover} width={cover?.width} height={cover?.height} alt={project.title} loading="lazy" decoding="async" />
-          <span>{String(index + 1).padStart(2, "0")}</span>
+          {previewRequested && preview && <img className="project-hover-image" src={preview.smallSrc} width={preview.smallWidth} height={preview.smallHeight} alt="" decoding="async" onLoad={() => setPreviewReady(true)} />}
+          <div className="project-image-overlay">
+            <span className="project-open-label">查看项目 <ArrowUpRight size={18} aria-hidden="true" /></span>
+            <span className="project-image-count">{project.images.length} 张作品</span>
+          </div>
         </div>
-      </a>
       <div className="project-meta">
         <div>
-          <p>{categoryLabel}</p>
           <h3>{project.title}</h3>
+          <p>{categoryLabel}</p>
         </div>
-        {project.year && <time>{project.year}</time>}
+        <ArrowUpRight className="project-meta-arrow" size={19} aria-hidden="true" />
       </div>
-      <p className="project-summary">{project.summary}</p>
-      <div className="project-actions">
-        <a href={`#work/${project.slug}`}>
-          查看详情
-          <ArrowUpRight size={16} />
-        </a>
-      </div>
+      </a>
     </article>
   );
 }
