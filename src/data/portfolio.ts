@@ -1,13 +1,5 @@
 import curatedProjects from "./curatedProjects.json";
-import {
-  BadgeCheck,
-  Bot,
-  FileStack,
-  Handshake,
-  Layers3,
-  Presentation,
-} from "lucide-react";
-import type { LucideIcon } from "lucide-react";
+import type curatedCovers from "./curatedCovers.json";
 
 export type Project = {
   title: string;
@@ -42,7 +34,8 @@ export type ProjectCategory = {
 export type Advantage = {
   title: string;
   description: string;
-  icon: LucideIcon;
+  art: string;
+  relatedProject?: keyof typeof curatedCovers;
 };
 
 export const navItems = [
@@ -122,31 +115,34 @@ export const advantages: Advantage[] = [
   {
     title: "品牌视觉系统",
     description: "从 Logo、VI 到辅助图形与应用物料，建立具备延展性的品牌识别语言。",
-    icon: Layers3,
+    art: "brand-systems",
+    relatedProject: "yunshang-kangyuan-visual-identity",
   },
   {
     title: "画册与包装落地",
     description: "熟悉画册、期刊、礼盒、产品包装的创意、排版、完稿与印刷制作流程。",
-    icon: FileStack,
+    art: "print-packaging",
+    relatedProject: "zhangshuntang-tea-tin-packaging",
   },
   {
     title: "活动与传播物料",
     description: "能围绕活动主题快速输出主视觉、海报、展板、喷绘与现场应用系统。",
-    icon: Presentation,
+    art: "event-visuals",
+    relatedProject: "song-gift-2025-concert",
   },
   {
     title: "客户沟通与提案",
     description: "能高效理解客户需求，组织设计逻辑，并以清晰方案推动项目落地。",
-    icon: Handshake,
+    art: "client-presentation",
   },
   {
     title: "AI 辅助创意",
     description: "将 MJ、SD、即梦等工具用于概念探索、气氛图和视觉方向快速验证。",
-    icon: Bot,
+    art: "ai-ideation",
   },
   {
     title: "多软件协同",
     description: "熟练使用 PS、AI、ID、PR、AE、C4D，覆盖平面、影像与基础三维表达。",
-    icon: BadgeCheck,
+    art: "creative-toolkit",
   },
 ];

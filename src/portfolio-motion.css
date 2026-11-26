@@ -1,0 +1,252 @@
+/* finesse · brand · existing charcoal + ice blue · cinematic type reveal · folder cards · CSS scroll depth + pointer tilt · SOUL=6 SPECTACLE=5 DENSITY=6 */
+
+/* Four beats: type entrance, scroll depth, cover response, expertise expansion. */
+.hero-title-line { overflow: clip; padding-bottom: .1em; margin-bottom: -.1em; }
+.hero h1 .hero-title-line > span { margin: 0; animation: title-unveil 1s cubic-bezier(.16,1,.3,1) both; }
+.hero h1 .hero-title-line + .hero-title-line > span { animation-delay: 140ms; }
+.hero-copy, .hero-actions { animation: hero-arrive 900ms cubic-bezier(.16,1,.3,1) both; }
+.hero-copy { animation-delay: 260ms; }
+.hero-actions { animation-delay: 380ms; }
+@keyframes title-unveil { from { transform: translateY(110%) rotate(2deg); } to { transform: none; } }
+@keyframes hero-arrive { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
+
+.hero-scroll-cue { position: absolute; bottom: 32px; left: 40px; display: inline-flex; align-items: center; gap: 18px; min-height: 44px; color: var(--text); font-size: 9px; letter-spacing: .18em; }
+.scroll-cue-track { position: relative; overflow: hidden; width: 64px; height: 1px; background: var(--line-strong); }
+.scroll-cue-track::after { position: absolute; inset: 0; content: ""; background: var(--accent); transform: scaleX(.45); transform-origin: left; }
+.hero-scroll-cue:hover .scroll-cue-track::after { transform: scaleX(1); transition: transform 400ms ease; }
+
+/* Native timelines do not change the user's scroll speed. Older browsers keep the still composition. */
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) and (min-width: 761px) {
+    .hero { view-timeline-name: --hero-exit; view-timeline-axis: block; }
+    .hero-media { animation: hero-depth linear both; animation-timeline: --hero-exit; animation-range: exit 0% exit 100%; }
+    .hero-content { animation: hero-depart linear both; animation-timeline: --hero-exit; animation-range: exit 0% exit 85%; }
+    .contact { view-timeline-name: --contact-entry; view-timeline-axis: block; overflow: clip; }
+    .contact-scenery { animation: contact-depth linear both; animation-timeline: --contact-entry; animation-range: entry 0% entry 100%; }
+  }
+}
+@keyframes hero-depth { from { transform: scale(1.015); } to { transform: translateY(18%) scale(1.1); } }
+@keyframes hero-depart { from { opacity: 1; transform: none; } to { opacity: 0; transform: translateY(80px); } }
+@keyframes contact-depth { from { transform: translateY(-8%) scale(1.1); } to { transform: none; } }
+
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  .visual-project-link { perspective: 1100px; }
+  .visual-project-card .project-image { transform: rotateX(var(--tilt-x, 0deg)) rotateY(var(--tilt-y, 0deg)); transition: transform 450ms cubic-bezier(.2,.8,.2,1); }
+  .visual-project-card .project-image.is-tracking { transition-duration: 110ms; }
+  .visual-project-card .project-image::after { position: absolute; z-index: 2; inset: 0; content: ""; pointer-events: none; border: 1px solid rgba(var(--accent-rgb), .24); border-radius: inherit; background: radial-gradient(340px circle at var(--light-x, 50%) var(--light-y, 50%), rgba(var(--highlight), .15), transparent 65%); opacity: 0; transition: opacity 240ms ease; }
+  .visual-project-link:hover .project-image::after { opacity: 1; }
+  .hero-button svg, .header-cta svg { transition: transform 250ms ease; }
+  .hero-button:hover svg, .header-cta:hover svg { transform: translate(2px, -2px); }
+}
+
+/* Card Folder: the front, back and artwork move within a fixed card. */
+.strength-folders {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(12px, 1.45vw, 26px);
+}
+
+.strength-folder {
+  --folder-light: 114, 174, 200;
+  --folder-face-top: 122px;
+  --folder-art-size: clamp(174px, 17.5vw, 272px);
+  --folder-lift: 0px;
+  --folder-fold: 0px;
+  --folder-glint: 0;
+  --folder-chevron: 0deg;
+  --folder-shape: polygon(0 12px, 12px 0, 30% 0, 38% 20px, calc(100% - 12px) 20px, 100% 32px, 100% 100%, 0 100%);
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  align-items: start;
+  min-width: 0;
+  min-height: 288px;
+  padding: calc(var(--folder-face-top) + 43px) clamp(19px, 2.05vw, 32px) 18px;
+  overflow: clip;
+  border-radius: 0 0 10px 10px;
+}
+
+.strength-folder[data-art="print-packaging"] { --folder-light: 203, 180, 138; }
+.strength-folder[data-art="event-visuals"] { --folder-light: 117, 145, 227; }
+.strength-folder[data-art="client-presentation"] { --folder-light: 180, 155, 118; }
+.strength-folder[data-art="ai-ideation"] { --folder-light: 164, 151, 215; }
+.strength-folder[data-art="creative-toolkit"] { --folder-light: 114, 180, 174; }
+
+@supports (clip-path: shape(from 0 0, line to 100% 0, close)) {
+  .strength-folder {
+    --folder-shape: shape(
+      from 0 12px,
+      curve to 12px 0 with 0 5px / 5px 0,
+      line to 28% 0,
+      curve to 38% 20px with 33% 0 / 33% 20px,
+      line to calc(100% - 12px) 20px,
+      curve to 100% 32px with calc(100% - 5px) 20px / 100% 25px,
+      line to 100% 100%,
+      line to 0 100%,
+      close
+    );
+  }
+}
+
+.strength-folder-back,
+.strength-folder-front {
+  position: absolute;
+  inset-inline: 0;
+  clip-path: var(--folder-shape);
+  pointer-events: none;
+}
+
+.strength-folder-back {
+  inset-block: calc(var(--folder-face-top) - 8px) 0;
+  background: linear-gradient(122deg, rgba(var(--folder-light), .4), var(--panel-strong) 83%);
+}
+
+.strength-folder-back::after {
+  position: absolute;
+  inset: 0;
+  content: "";
+  background: linear-gradient(
+    113deg,
+    rgba(var(--folder-light), .84),
+    rgba(var(--accent-rgb), .34) 44%,
+    rgba(var(--folder-light), .15) 83%
+  );
+  opacity: var(--folder-glint);
+  transition: opacity 500ms ease;
+}
+
+.strength-folder-art {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 50%;
+  width: var(--folder-art-size);
+  height: auto;
+  aspect-ratio: 1;
+  object-fit: contain;
+  transform: translate(-50%, var(--folder-lift));
+  transform-origin: center bottom;
+  filter: drop-shadow(0 14px 18px rgba(var(--bg-rgb), .45));
+  transition: transform 650ms cubic-bezier(.18,.83,.25,1.07);
+  pointer-events: none;
+}
+
+.strength-folder-front {
+  z-index: 2;
+  inset-block: var(--folder-face-top) -24px;
+  background: linear-gradient(114deg, rgba(var(--folder-light), .21), var(--line) 38%, transparent 90%);
+  transform: translateY(var(--folder-fold));
+  transition: transform 550ms cubic-bezier(.2,.72,.25,1);
+}
+
+.strength-folder-front::after {
+  position: absolute;
+  inset: 1px 1px 0;
+  clip-path: var(--folder-shape);
+  background:
+    radial-gradient(ellipse at top left, rgba(var(--folder-light), .13), transparent 73%),
+    linear-gradient(155deg, var(--panel-strong), var(--bg-soft));
+  content: "";
+}
+
+.strength-folder-content {
+  position: relative;
+  z-index: 3;
+  display: grid;
+  justify-items: start;
+  gap: 8px;
+}
+
+.strength-folder-content h3 {
+  margin: 0;
+  padding-right: 42px;
+  color: var(--text);
+  font-size: clamp(18px, 1.48vw, 26px);
+  font-weight: 630;
+  line-height: 1.3;
+  letter-spacing: -.032em;
+}
+
+.strength-folder-content p {
+  max-width: 33em;
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.75;
+}
+
+.strength-folder-toggle {
+  position: absolute;
+  z-index: 4;
+  inset-block-start: calc(var(--folder-face-top) + 27px);
+  inset-inline-end: clamp(13px, 1.65vw, 24px);
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  background: var(--panel-strong);
+  color: var(--accent);
+  cursor: pointer;
+}
+
+.strength-folder-toggle svg {
+  transform: rotate(var(--folder-chevron));
+  transition: transform 340ms ease;
+}
+
+.strength-folder-toggle:active { background: var(--bg-soft); }
+
+.strength-folder-project {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  min-height: 44px;
+  color: var(--accent);
+  font-size: 13px;
+}
+
+.strength-folder-project:hover { text-decoration: underline; text-underline-offset: 4px; }
+
+.strength-folder[data-open="true"] {
+  --folder-lift: -25px;
+  --folder-fold: 18px;
+  --folder-glint: 1;
+  --folder-chevron: 180deg;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .strength-folder:hover {
+    --folder-lift: -25px;
+    --folder-fold: 18px;
+    --folder-glint: 1;
+  }
+
+  .strength-folder-toggle:hover { border-color: var(--line-strong); }
+}
+
+@media (min-width: 1100px) {
+  .strength-folder { --folder-face-top: 148px; min-height: 322px; }
+}
+
+@media (max-width: 900px) {
+  .strength-folders { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 760px) {
+  .hero-scroll-cue { left: 20px; bottom: 15px; min-height: 36px; font-size: 8px; gap: 12px; }
+  .hero-inner { padding-bottom: 65px; }
+}
+
+@media (max-width: 510px) {
+  .strength-folders { grid-template-columns: minmax(0, 1fr); }
+  .strength-folder { --folder-art-size: 192px; min-height: 252px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero h1 .hero-title-line > span, .hero-copy, .hero-actions, .hero-content, .hero-media, .contact-scenery { animation: none; opacity: 1; transform: none; }
+  .strength-folder-art, .strength-folder-front, .strength-folder-back::after, .strength-folder-toggle svg,
+  .visual-project-card .project-image { transition: none; }
+}

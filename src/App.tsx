@@ -10,6 +10,7 @@ import {
 import { flushSync } from "react-dom";
 import {
   ArrowUpRight,
+  ChevronUp,
   Mail,
   Pause,
   Play,
@@ -18,6 +19,7 @@ import {
   SquareArrowOutUpRight,
 } from "lucide-react";
 import { useHeroVideo } from "./useHeroVideo";
+import { useCoverMotion } from "./useCoverMotion";
 import { WorkDetailBoundary } from "./WorkDetailBoundary";
 import { decodeHash } from "./hash";
 import {
@@ -76,6 +78,7 @@ const getProjectCategoryLabel = (project: Project) =>
 function App() {
   const route = useHashRoute();
   const previousRoute = useRef(route.kind);
+  useCoverMotion(route.kind);
   usePortfolioMotion(route.kind === "work" ? `work:${route.slug}` : "home");
   const routeProject = route.kind === "work"
     ? projects.find((project) => project.slug === route.slug) ?? null
@@ -255,8 +258,8 @@ function Hero() {
       <div className="container hero-inner">
         <div className="hero-content">
           <h1 id="hero-title">
-            <span>用秩序梳理信息，</span>
-            <span>用情绪建立感知。</span>
+            <span className="hero-title-line"><span>用秩序梳理信息，</span></span>
+            <span className="hero-title-line"><span>用情绪建立感知。</span></span>
           </h1>
           <p className="hero-copy">
             <span>专注品牌视觉、包装设计、活动主视觉与 AI 辅助创意表达。</span>
@@ -274,6 +277,9 @@ function Hero() {
           </div>
         </div>
       </div>
+      <a className="hero-scroll-cue" href="#projects" aria-label="向下浏览作品">
+        <span>SCROLL TO EXPLORE</span><span className="scroll-cue-track" aria-hidden="true" />
+      </a>
     </section>
   );
 }
@@ -293,14 +299,14 @@ function About() {
         />
       </picture>
       <div className="container about-inner">
-        <div className="about-heading-row">
+        <div className="about-heading-row" data-reveal>
         <h2 id="about-title" className="about-section-title">关于我</h2>
         <p className="about-identity">
           <strong>{contacts.name}</strong>
           <span className="about-years">10<sup>+</sup> 工作经验</span>
         </p>
         </div>
-        <div className="about-lead">
+        <div className="about-lead" data-reveal>
         <p className="about-statement">
           让商业策略转化为清晰、克制、极具辨识度的视觉系统。
         </p>
@@ -517,23 +523,52 @@ function WorkNotFound({ slug }: { slug: string }) {
 }
 
 function Advantages() {
+  const [openArt, setOpenArt] = useState<string | null>(null);
+
   return (
-    <section className="advantages section-pad" id="advantages">
+    <section className="advantages section-pad" id="advantages" aria-labelledby="advantages-title">
       <div className="container">
-        <div data-reveal>
-          <div className="section-label"><h2>个人优势</h2></div>
-        </div>
-        <div className="advantage-grid">
-          {advantages.map(({ title, description, icon: Icon }, index) => (
-            <article
-              className="advantage-card"
-              key={title}
-              data-reveal
-              style={revealDelay(`${index * 75}ms`)}
-            >
-              <Icon size={24} strokeWidth={1.6} />
-              <h3>{title}</h3>
-              <p>{description}</p>
+        <div className="section-label"><h2 id="advantages-title">个人优势</h2></div>
+        <div className="strength-folders">
+          {advantages.map(({ title, description, art, relatedProject }) => (
+            <article className="strength-folder" key={art} data-art={art} data-open={openArt === art}>
+              <div className="strength-folder-back" aria-hidden="true" />
+              <img
+                className="strength-folder-art"
+                src={`/advantages/${art}.webp`}
+                width={480}
+                height={480}
+                alt=""
+                loading="lazy"
+                decoding="async"
+              />
+              <div className="strength-folder-front" aria-hidden="true" />
+              <button
+                className="strength-folder-toggle"
+                type="button"
+                aria-label={`展示${title}配图`}
+                aria-pressed={openArt === art}
+                onClick={() => setOpenArt((current) => current === art ? null : art)}
+              >
+                <ChevronUp size={19} strokeWidth={1.5} aria-hidden="true" />
+              </button>
+              <div className="strength-folder-content">
+                <h3>{title}</h3>
+                <p>{description}</p>
+                {relatedProject && (
+                  <a
+                    className="strength-folder-project"
+                    href={`#work/${relatedProject}`}
+                    onClick={(event) => {
+                      if (!event.metaKey && !event.ctrlKey && !event.shiftKey && !event.altKey) {
+                        saveWorkBrowseState(relatedProject, true);
+                      }
+                    }}
+                  >
+                    查看相关项目 <ArrowUpRight size={15} aria-hidden="true" />
+                  </a>
+                )}
+              </div>
             </article>
           ))}
         </div>
@@ -557,10 +592,10 @@ function Contact() {
         />
       </picture>
       <div className="container contact-inner">
-        <div className="contact-copy">
+        <div className="contact-copy" data-reveal>
           <h2 id="contact-title">期待下一次<br />有价值的商业视觉合作。</h2>
         </div>
-        <div className="contact-panel">
+        <div className="contact-panel" data-reveal style={revealDelay("140ms")}>
           <a href={`mailto:${contacts.email}`}>
             <span>{contacts.email}</span>
             <Send size={20} />
