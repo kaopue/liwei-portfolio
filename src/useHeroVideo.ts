@@ -11,6 +11,8 @@ export function useHeroVideo() {
   const posterRef = useRef<HTMLImageElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
   const playbackAllowed = useRef(false);
+  const pausedByUser = useRef(false);
+  const [userPaused, setUserPaused] = useState(false);
   const [videoMode, setVideoMode] = useState<VideoMode | null>(null);
   const [readyMode, setReadyMode] = useState<VideoMode | null>(null);
 
@@ -41,7 +43,7 @@ export function useHeroVideo() {
 
       const video = videoRef.current;
       if (video) {
-        if (active && video.paused && !video.error) {
+        if (active && !pausedByUser.current && video.paused && !video.error) {
           video.muted = true;
           void video.play().catch(() => {});
         }
@@ -101,13 +103,13 @@ export function useHeroVideo() {
   useEffect(() => {
     const video = videoRef.current;
     if (!video) return;
-    if (playbackAllowed.current) void video.play().catch(() => {});
+    if (playbackAllowed.current && !pausedByUser.current) void video.play().catch(() => {});
     else video.pause();
     return () => video.pause();
   }, [videoMode]);
 
   const onVideoPlaying = useCallback(() => {
-    if (!playbackAllowed.current) {
+    if (!playbackAllowed.current || pausedByUser.current) {
       videoRef.current?.pause();
       return;
     }
@@ -116,14 +118,28 @@ export function useHeroVideo() {
 
   const onVideoCanPlay = useCallback(() => {
     const video = videoRef.current;
-    if (video && playbackAllowed.current && video.paused) void video.play().catch(() => {});
+    if (video && playbackAllowed.current && !pausedByUser.current && video.paused) void video.play().catch(() => {});
   }, []);
 
   const onVideoError = useCallback(() => {
     setReadyMode(null);
   }, []);
 
+  const togglePlayback = useCallback(() => {
+    const paused = !pausedByUser.current;
+    pausedByUser.current = paused;
+    setUserPaused(paused);
+    const video = videoRef.current;
+    if (!video) return;
+    if (paused) video.pause();
+    else if (playbackAllowed.current) void video.play().catch(() => {
+      pausedByUser.current = true;
+      setUserPaused(true);
+    });
+  }, []);
+
   return {
+    userPaused, togglePlayback,
     heroRef, posterRef, videoRef, videoMode,
     videoReady: videoMode !== null && readyMode === videoMode,
     onVideoPlaying, onVideoCanPlay, onVideoError,
