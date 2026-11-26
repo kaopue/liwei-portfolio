@@ -11,6 +11,8 @@ import { flushSync } from "react-dom";
 import {
   ArrowUpRight,
   Mail,
+  Pause,
+  Play,
   Phone,
   Send,
   SquareArrowOutUpRight,
@@ -146,6 +148,36 @@ function App() {
 }
 
 function SiteHeader() {
+  const [activeSection, setActiveSection] = useState("");
+  useEffect(() => {
+    const sync = () => {
+      if (decodeHash(window.location.hash).startsWith("work/")) {
+        setActiveSection("#projects");
+        return;
+      }
+      const section = navItems.map((item) => ({
+        href: item.href,
+        top: document.querySelector(item.href)?.getBoundingClientRect().top ?? Infinity,
+      })).filter((item) => item.top <= window.innerHeight * .4)
+        .sort((a, b) => b.top - a.top)[0];
+      setActiveSection(section?.href ?? "");
+    };
+    let frame = 0;
+    const schedule = () => {
+      cancelAnimationFrame(frame);
+      frame = requestAnimationFrame(sync);
+    };
+    sync();
+    window.addEventListener("scroll", schedule, { passive: true });
+    window.addEventListener("hashchange", schedule);
+    window.addEventListener("resize", schedule);
+    return () => {
+      cancelAnimationFrame(frame);
+      window.removeEventListener("scroll", schedule);
+      window.removeEventListener("hashchange", schedule);
+      window.removeEventListener("resize", schedule);
+    };
+  }, []);
   return (
     <header className="site-header">
       <a href="#top" className="brand-mark" aria-label="李维个人 Logo，回到首页">
@@ -160,7 +192,7 @@ function SiteHeader() {
       </a>
       <nav className="nav-links" aria-label="主导航">
         {navItems.map((item) => (
-          <a href={item.href} key={item.href}>
+          <a href={item.href} key={item.href} aria-current={activeSection === item.href ? "location" : undefined}>
             {item.label}
           </a>
         ))}
@@ -176,7 +208,7 @@ function SiteHeader() {
 function Hero() {
   const {
     heroRef, posterRef, videoRef, videoMode, videoReady,
-    onVideoPlaying, onVideoCanPlay, onVideoError,
+    userPaused, togglePlayback, onVideoPlaying, onVideoCanPlay, onVideoError,
   } = useHeroVideo();
 
   return (
@@ -216,6 +248,10 @@ function Hero() {
         )}
       </div>
       <div className="hero-shade" aria-hidden="true" />
+      {videoReady && <button className="hero-playback" type="button" onClick={togglePlayback} aria-label={userPaused ? "播放背景视频" : "暂停背景视频"}>
+        {userPaused ? <Play size={14} aria-hidden="true" /> : <Pause size={14} aria-hidden="true" />}
+        {userPaused ? "播放背景" : "暂停背景"}
+      </button>}
       <div className="container hero-inner">
         <div className="hero-content">
           <h1 id="hero-title">
@@ -485,7 +521,7 @@ function Advantages() {
     <section className="advantages section-pad" id="advantages">
       <div className="container">
         <div data-reveal>
-          <SectionLabel eyebrow="CAPABILITY" title="个人优势" />
+          <div className="section-label"><h2>个人优势</h2></div>
         </div>
         <div className="advantage-grid">
           {advantages.map(({ title, description, icon: Icon }, index) => (
@@ -493,7 +529,6 @@ function Advantages() {
               className="advantage-card"
               key={title}
               data-reveal
-              data-glow
               style={revealDelay(`${index * 75}ms`)}
             >
               <Icon size={24} strokeWidth={1.6} />
@@ -543,15 +578,6 @@ function Contact() {
         </div>
       </div>
     </footer>
-  );
-}
-
-function SectionLabel({ eyebrow, title }: { eyebrow: string; title: string }) {
-  return (
-    <div className="section-label">
-      <p className="eyebrow">{eyebrow}</p>
-      <h2>{title}</h2>
-    </div>
   );
 }
 

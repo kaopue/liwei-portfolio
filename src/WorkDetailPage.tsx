@@ -23,8 +23,8 @@ export default function WorkDetailPage({ project, categoryLabel }: {
       <div className="visual-case-header">
         <a className="case-return" href={returnHash}><ArrowLeft size={17} aria-hidden="true" />返回作品</a>
         <div className="visual-case-title">
-          <p className="eyebrow">{categoryLabel}</p>
           <h1>{project.title}</h1>
+          <p className="case-category">{categoryLabel}</p>
           <p className="visual-case-summary">{project.summary}</p>
         </div>
         <div className="visual-case-byline">
@@ -43,7 +43,7 @@ export default function WorkDetailPage({ project, categoryLabel }: {
       </div>
 
       <div className="visual-case-notes">
-        <div><p className="eyebrow">关于项目</p><p>{project.description}</p></div>
+        <div><h2>关于项目</h2><p>{project.description}</p></div>
         {project.detailSections.map((section) => (
           <div key={section.title}><h2>{section.title}</h2><p>{section.body}</p></div>
         ))}
