@@ -13,7 +13,7 @@ import { createHash } from "node:crypto";
 import { fileURLToPath } from "node:url";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
-const EXPECTED = { projects: 35, sourceFiles: 229, displays: 325 };
+const EXPECTED = { projects: 35, sourceFiles: 230, displays: 325 };
 const errors = [];
 const warnings = [];
 const metadataCache = new Map();
@@ -242,6 +242,14 @@ function verifyStatic() {
         check(provenance?.page === planned.listingCoverPage && provenance.image === cover.src,
           `${context}: cover page does not match the reviewed plan.`);
       }
+      if (planned?.coverArtwork) {
+        const provenance = inventory.coverSources?.[project.slug];
+        const artwork = sourceMap.get(planned.coverArtwork);
+        check(provenance?.file === planned.coverArtwork && provenance.image === cover.src &&
+          artwork?.status === "cover" && artwork.project === project.slug,
+          `${context}: cover artwork does not match the reviewed plan.`);
+      }
+      check(cover.hoverImageNumber === planned?.hoverImageNumber, `${context}: hover image choice differs from the reviewed plan.`);
       for (const [key, size] of [["src", { width: 960, height: 540 }], ["thumbSrc", { width: 320, height: 400 }], ["smallThumbSrc", { width: 160, height: 200 }]]) {
         check(assets.has(cover[key]), `${context}: ${key} is absent from inventory.assets: ${cover[key]}`);
         verifyImage(cover[key], size, `${context} ${key}`);

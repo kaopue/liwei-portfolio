@@ -152,6 +152,7 @@ def prepare(source: Path, plan: dict[str, Any]) -> tuple[list[dict], list[dict],
         labels[slug] = category["label"]
 
     assignments = {}
+    cover_artworks = {}
     seen_slugs = set()
     for project in projects:
         slug = project.get("slug", "")
@@ -169,6 +170,16 @@ def prepare(source: Path, plan: dict[str, Any]) -> tuple[list[dict], list[dict],
         project["coverFile"] = canonical(project.get("coverFile"))
         if project["coverFile"] not in project["files"]:
             raise ImportFailure(f"Cover is not assigned to its project: {slug}")
+        if "coverArtwork" in project:
+            artwork = canonical(project["coverArtwork"])
+            if artwork in cover_artworks or actual[artwork].suffix.lower() not in RASTER_TYPES:
+                raise ImportFailure(f"Invalid or repeated cover artwork: {artwork}")
+            project["coverArtwork"] = artwork
+            cover_artworks[artwork] = slug
+        if "hoverImageNumber" in project:
+            hover_number = project["hoverImageNumber"]
+            if type(hover_number) is not int or hover_number < 1:
+                raise ImportFailure(f"hoverImageNumber must be a positive integer: {slug}")
         for name in project["files"]:
             if name in assignments:
                 raise ImportFailure(f"Unexpected repeated source assignment: {name} ({assignments[name]} / {slug})")
@@ -187,6 +198,8 @@ def prepare(source: Path, plan: dict[str, Any]) -> tuple[list[dict], list[dict],
         if "priority" in project and not isinstance(project["priority"], (int, float)):
             raise ImportFailure(f"Invalid priority: {slug}")
 
+    if assignments.keys() & cover_artworks.keys():
+        raise ImportFailure("Cover artwork must be separate from gallery source files")
     exclusions = {}
     for exclusion in plan.get("exclusions", []):
         name = canonical(exclusion.get("file"))
@@ -195,13 +208,13 @@ def prepare(source: Path, plan: dict[str, Any]) -> tuple[list[dict], list[dict],
             represented = {**represented, "file": canonical(represented.get("file"))}
         else:
             represented = canonical(represented)
-        if name in assignments or name in exclusions:
+        if name in assignments or name in cover_artworks or name in exclusions:
             raise ImportFailure(f"File is assigned more than once or is also excluded: {name}")
         if not isinstance(exclusion.get("reason"), str) or not exclusion["reason"].strip():
             raise ImportFailure(f"Every excluded source needs a review reason: {name}")
         exclusions[name] = {"file": name, "representedBy": represented, "reason": exclusion["reason"]}
 
-    missing = sorted(set(actual) - assignments.keys() - exclusions.keys())
+    missing = sorted(set(actual) - assignments.keys() - cover_artworks.keys() - exclusions.keys())
     if missing:
         raise ImportFailure("Source files missing from plan:\n  " + "\n  ".join(missing))
     for name, exclusion in exclusions.items():
@@ -227,6 +240,8 @@ def prepare(source: Path, plan: dict[str, Any]) -> tuple[list[dict], list[dict],
                 raise ImportFailure(f"Exact duplicate sources both assigned for display: {included_hashes[digest]} / {name}")
             included_hashes[digest] = name
             record.update(status="project", project=assignments[name])
+        elif name in cover_artworks:
+            record.update(status="cover", project=cover_artworks[name])
         else:
             record.update(status="duplicate", **{key: value for key, value in exclusions[name].items() if key != "file"})
         inventory.append(record)
@@ -455,7 +470,7 @@ def make_display(display: Display, actual: dict[str, Path]) -> dict:
 
 
 def cover_image(project: dict, actual: dict[str, Path], pdf_records: dict) -> tuple[Image.Image, Image.Image, dict]:
-    name = project["coverFile"]
+    name = project.get("coverArtwork", project["coverFile"])
     if actual[name].suffix.lower() == ".pdf":
         page = project.get("listingCoverPage", project.get("coverPage", 1))
         if not isinstance(page, int) or not 1 <= page <= pdf_records[name]["pageCount"]:
@@ -554,6 +569,8 @@ def main() -> None:
             image.close()
             portrait.close()
         covers[project["slug"]] = {"src": url, "width": 960, "height": 540, **thumbnail_fields}
+        if "hoverImageNumber" in project:
+            covers[project["slug"]]["hoverImageNumber"] = project["hoverImageNumber"]
         cover_sources[project["slug"]] = {**treatment, "image": url}
         assets[url] = byte_count
 

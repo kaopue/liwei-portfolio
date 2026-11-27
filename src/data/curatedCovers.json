@@ -28,11 +28,12 @@
     "smallThumbSrc": "/selected/leebeer-craft-beer-packaging/cover-160-4ca1f8afe30f.webp"
   },
   "yunshang-kangyuan-visual-identity": {
-    "src": "/selected/yunshang-kangyuan-visual-identity/cover-960-a5da26593427.webp",
+    "src": "/selected/yunshang-kangyuan-visual-identity/cover-960-00258be8cac9.webp",
     "width": 960,
     "height": 540,
-    "thumbSrc": "/selected/yunshang-kangyuan-visual-identity/cover-320-d2a8c43409d1.webp",
-    "smallThumbSrc": "/selected/yunshang-kangyuan-visual-identity/cover-160-fd375e94d73a.webp"
+    "thumbSrc": "/selected/yunshang-kangyuan-visual-identity/cover-320-9875fb9118cc.webp",
+    "smallThumbSrc": "/selected/yunshang-kangyuan-visual-identity/cover-160-46a1e94771a0.webp",
+    "hoverImageNumber": 12
   },
   "song-gift-2025-concert": {
     "src": "/selected/song-gift-2025-concert/cover-960-3d425e9fd292.webp",
