@@ -1,0 +1,49 @@
+{
+  "sourceFiles": [
+    "时光印记纪念册内文.pdf",
+    "A001.png",
+    "A002.png"
+  ],
+  "categories": [
+    {
+      "slug": "packaging",
+      "label": "包装设计",
+      "description": "茶礼、食品、日用与健康产品包装。"
+    },
+    {
+      "slug": "album-design",
+      "label": "画册设计",
+      "description": "纪念册、照片书与画册的版式设计。"
+    }
+  ],
+  "projects": [
+    {
+      "slug": "time-imprints-commemorative-album",
+      "title": "「时光印记」纪念册设计",
+      "categorySlug": "album-design",
+      "summary": "以米白与浅金色串联活动、合影和人物照片，通过 23 个跨页编排共同回忆。",
+      "description": "以统一页眉和留白建立阅读节奏，交替使用整幅合影、照片网格与圆形组照。不同版式为集体活动、人物瞬间与风景留出各自的空间，按原册顺序展示全部 23 个跨页。",
+      "files": [
+        "时光印记纪念册内文.pdf"
+      ],
+      "coverFile": "时光印记纪念册内文.pdf",
+      "coverPage": 1,
+      "listingCoverPage": 4,
+      "priority": 34
+    },
+    {
+      "slug": "daerle-calcium-zinc-rocket-packaging",
+      "title": "达儿乐葡萄糖酸钙锌口服溶液包装 · 火箭插画",
+      "categorySlug": "packaging",
+      "summary": "以蓝白盾形色块、火箭剪影和跳色圆标组织盒装与条袋包装的视觉。",
+      "description": "将产品名称置于深蓝色区域，以火箭、人物剪影和向上箭头形成统一图形。两张效果图分别展示单盒立面，以及外盒与独立条袋的组合陈列。",
+      "files": [
+        "A001.png",
+        "A002.png"
+      ],
+      "coverFile": "A002.png",
+      "priority": 14.1
+    }
+  ],
+  "exclusions": []
+}

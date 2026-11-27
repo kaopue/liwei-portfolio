@@ -958,5 +958,70 @@
     "type": "海报与视觉传播",
     "featured": false,
     "priority": 33
+  },
+  {
+    "title": "「时光印记」纪念册设计",
+    "slug": "time-imprints-commemorative-album",
+    "category": "画册设计",
+    "categorySlug": "album-design",
+    "year": "",
+    "image": "/selected/time-imprints-commemorative-album/image-001-1600-90144d9344e0.webp",
+    "cover": "/selected/time-imprints-commemorative-album/image-001-1600-90144d9344e0.webp",
+    "summary": "以米白与浅金色串联活动、合影和人物照片，通过 23 个跨页编排共同回忆。",
+    "description": "以统一页眉和留白建立阅读节奏，交替使用整幅合影、照片网格与圆形组照。不同版式为集体活动、人物瞬间与风景留出各自的空间，按原册顺序展示全部 23 个跨页。",
+    "tags": [
+      "画册设计"
+    ],
+    "detailSections": [],
+    "images": [
+      "/selected/time-imprints-commemorative-album/image-001-1600-90144d9344e0.webp",
+      "/selected/time-imprints-commemorative-album/image-002-1600-a48b6cd2bc1b.webp",
+      "/selected/time-imprints-commemorative-album/image-003-1600-025c0493bbd3.webp",
+      "/selected/time-imprints-commemorative-album/image-004-1600-10461efd7994.webp",
+      "/selected/time-imprints-commemorative-album/image-005-1600-8da0009a0076.webp",
+      "/selected/time-imprints-commemorative-album/image-006-1600-c400bda1c141.webp",
+      "/selected/time-imprints-commemorative-album/image-007-1600-f7cf7a8ff96e.webp",
+      "/selected/time-imprints-commemorative-album/image-008-1600-030834d948f9.webp",
+      "/selected/time-imprints-commemorative-album/image-009-1600-2d509ba3d5e4.webp",
+      "/selected/time-imprints-commemorative-album/image-010-1600-4d29256c9e26.webp",
+      "/selected/time-imprints-commemorative-album/image-011-1600-c25752232f2a.webp",
+      "/selected/time-imprints-commemorative-album/image-012-1600-84295e2b93ce.webp",
+      "/selected/time-imprints-commemorative-album/image-013-1600-c1092435dac1.webp",
+      "/selected/time-imprints-commemorative-album/image-014-1600-34b970ef0e0e.webp",
+      "/selected/time-imprints-commemorative-album/image-015-1600-7cc255b51a3b.webp",
+      "/selected/time-imprints-commemorative-album/image-016-1600-2a69ae7331c6.webp",
+      "/selected/time-imprints-commemorative-album/image-017-1600-cee3ba121de1.webp",
+      "/selected/time-imprints-commemorative-album/image-018-1600-2cc7bd05f599.webp",
+      "/selected/time-imprints-commemorative-album/image-019-1600-818f5e2ffbf8.webp",
+      "/selected/time-imprints-commemorative-album/image-020-1600-038b071cf5eb.webp",
+      "/selected/time-imprints-commemorative-album/image-021-1600-4bb704be0d71.webp",
+      "/selected/time-imprints-commemorative-album/image-022-1600-2bb2c6ccd395.webp",
+      "/selected/time-imprints-commemorative-album/image-023-1600-b3e9b60c032b.webp"
+    ],
+    "type": "画册设计",
+    "featured": false,
+    "priority": 34
+  },
+  {
+    "title": "达儿乐葡萄糖酸钙锌口服溶液包装 · 火箭插画",
+    "slug": "daerle-calcium-zinc-rocket-packaging",
+    "category": "包装设计",
+    "categorySlug": "packaging",
+    "year": "",
+    "image": "/selected/daerle-calcium-zinc-rocket-packaging/image-002-1600-52f9221ea0a1.webp",
+    "cover": "/selected/daerle-calcium-zinc-rocket-packaging/image-002-1600-52f9221ea0a1.webp",
+    "summary": "以蓝白盾形色块、火箭剪影和跳色圆标组织盒装与条袋包装的视觉。",
+    "description": "将产品名称置于深蓝色区域，以火箭、人物剪影和向上箭头形成统一图形。两张效果图分别展示单盒立面，以及外盒与独立条袋的组合陈列。",
+    "tags": [
+      "包装设计"
+    ],
+    "detailSections": [],
+    "images": [
+      "/selected/daerle-calcium-zinc-rocket-packaging/image-001-1600-ba8d9a62cf10.webp",
+      "/selected/daerle-calcium-zinc-rocket-packaging/image-002-1600-52f9221ea0a1.webp"
+    ],
+    "type": "包装设计",
+    "featured": false,
+    "priority": 14.1
   }
 ]

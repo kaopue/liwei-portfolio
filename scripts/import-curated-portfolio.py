@@ -98,12 +98,22 @@ def prepare(source: Path, plan: dict[str, Any]) -> tuple[list[dict], list[dict],
     if not source.is_dir():
         raise ImportFailure(f"Source directory does not exist: {source}")
     directories = plan.get("sourceDirectories")
-    if directories is None:
+    filenames = plan.get("sourceFiles")
+    source_files = []
+    roots = []
+    if filenames is not None:
+        if directories is not None or not isinstance(filenames, list) or not filenames:
+            raise ImportFailure("sourceFiles must be a non-empty list of relative files without sourceDirectories")
+        source_files = [source / normalized_relative(name) for name in filenames]
+        if len(set(source_files)) != len(source_files) or any(
+            not path.is_file() or not path.resolve().is_relative_to(source) for path in source_files
+        ):
+            raise ImportFailure("sourceFiles contains a duplicate, missing or out-of-root file")
+    elif directories is None:
         roots = [source]
     else:
         if not isinstance(directories, list) or not directories:
             raise ImportFailure("sourceDirectories must be a non-empty list of relative directories")
-        roots = []
         for value in directories:
             directory = source / normalized_relative(value)
             resolved = directory.resolve()
@@ -112,7 +122,8 @@ def prepare(source: Path, plan: dict[str, Any]) -> tuple[list[dict], list[dict],
             if any(resolved.is_relative_to(root.resolve()) or root.resolve().is_relative_to(resolved) for root in roots):
                 raise ImportFailure(f"sourceDirectories overlap: {value}")
             roots.append(directory)
-    source_files = sorted((p for directory in roots for p in directory.rglob("*") if p.is_file()), key=lambda p: p.relative_to(source).as_posix())
+    source_files.extend(p for directory in roots for p in directory.rglob("*") if p.is_file())
+    source_files.sort(key=lambda p: p.relative_to(source).as_posix())
     actual = {p.relative_to(source).as_posix(): p for p in source_files}
     lookup = {name.casefold(): name for name in actual}
     if len(lookup) != len(actual):
@@ -446,7 +457,7 @@ def make_display(display: Display, actual: dict[str, Path]) -> dict:
 def cover_image(project: dict, actual: dict[str, Path], pdf_records: dict) -> tuple[Image.Image, Image.Image, dict]:
     name = project["coverFile"]
     if actual[name].suffix.lower() == ".pdf":
-        page = project.get("coverPage", 1)
+        page = project.get("listingCoverPage", project.get("coverPage", 1))
         if not isinstance(page, int) or not 1 <= page <= pdf_records[name]["pageCount"]:
             raise ImportFailure(f"Invalid coverPage for {project['slug']}")
         image = pdf_image(actual[name], page)
