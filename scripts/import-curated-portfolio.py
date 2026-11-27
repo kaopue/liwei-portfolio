@@ -457,7 +457,7 @@ def make_display(display: Display, actual: dict[str, Path]) -> dict:
 def cover_image(project: dict, actual: dict[str, Path], pdf_records: dict) -> tuple[Image.Image, Image.Image, dict]:
     name = project["coverFile"]
     if actual[name].suffix.lower() == ".pdf":
-        page = project.get("coverPage", 1)
+        page = project.get("listingCoverPage", project.get("coverPage", 1))
         if not isinstance(page, int) or not 1 <= page <= pdf_records[name]["pageCount"]:
             raise ImportFailure(f"Invalid coverPage for {project['slug']}")
         image = pdf_image(actual[name], page)

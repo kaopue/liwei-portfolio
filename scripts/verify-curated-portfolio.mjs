@@ -237,6 +237,11 @@ function verifyStatic() {
     if (!cover) {
       errors.push(`${context}: cover/hero-thumbnail metadata is missing.`);
     } else {
+      if (planned?.listingCoverPage !== undefined) {
+        const provenance = inventory.coverSources?.[project.slug];
+        check(provenance?.page === planned.listingCoverPage && provenance.image === cover.src,
+          `${context}: cover page does not match the reviewed plan.`);
+      }
       for (const [key, size] of [["src", { width: 960, height: 540 }], ["thumbSrc", { width: 320, height: 400 }], ["smallThumbSrc", { width: 160, height: 200 }]]) {
         check(assets.has(cover[key]), `${context}: ${key} is absent from inventory.assets: ${cover[key]}`);
         verifyImage(cover[key], size, `${context} ${key}`);

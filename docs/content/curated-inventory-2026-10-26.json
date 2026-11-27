@@ -9,7 +9,7 @@
   "displayCount": 325,
   "duplicateSourceCount": 4,
   "assetCount": 1074,
-  "assetBytes": 159263603,
+  "assetBytes": 159312399,
   "categories": [
     {
       "slug": "brand-identity",
@@ -7437,8 +7437,8 @@
     "time-imprints-commemorative-album": {
       "file": "时光印记纪念册内文.pdf",
       "mode": "contain",
-      "page": 1,
-      "image": "/selected/time-imprints-commemorative-album/cover-960-a16064e51944.webp"
+      "page": 4,
+      "image": "/selected/time-imprints-commemorative-album/cover-960-c8a02830e40c.webp"
     },
     "daerle-calcium-zinc-rocket-packaging": {
       "file": "A002.png",
@@ -10064,16 +10064,16 @@
       "bytes": 10642
     },
     {
-      "image": "/selected/time-imprints-commemorative-album/cover-160-ff7c75c5da5c.webp",
-      "bytes": 8070
+      "image": "/selected/time-imprints-commemorative-album/cover-160-978a0baeebf5.webp",
+      "bytes": 12170
     },
     {
-      "image": "/selected/time-imprints-commemorative-album/cover-320-aaa3dd276b7b.webp",
-      "bytes": 21270
+      "image": "/selected/time-imprints-commemorative-album/cover-320-679ad7e1e4df.webp",
+      "bytes": 36310
     },
     {
-      "image": "/selected/time-imprints-commemorative-album/cover-960-a16064e51944.webp",
-      "bytes": 79432
+      "image": "/selected/time-imprints-commemorative-album/cover-960-c8a02830e40c.webp",
+      "bytes": 109088
     },
     {
       "image": "/selected/time-imprints-commemorative-album/image-001-1600-90144d9344e0.webp",
@@ -11795,7 +11795,7 @@
     {
       "sourceRoot": "C:\\Users\\zhaoz\\Downloads",
       "plan": "docs/content/curated-plan-2026-11-27.json",
-      "planSha256": "635d2227b6cdd8d492486e95a617c27dc6a748c733fdc987fb4c728f7769c173",
+      "planSha256": "d067c210f7d519fcca8b71f3466f3a2a0eda45596a4d92f9567d725068cd7463",
       "projects": [
         "time-imprints-commemorative-album",
         "daerle-calcium-zinc-rocket-packaging"
