@@ -229,15 +229,15 @@
     "priority": 6
   },
   {
-    "title": "张顺堂喜茶礼盒包装",
+    "title": "张顺堂喜茶礼盒 · 龙凤呈祥",
     "slug": "zhangshuntang-wedding-tea-packaging",
     "category": "包装设计",
     "categorySlug": "packaging",
     "year": "",
     "image": "/selected/zhangshuntang-wedding-tea-packaging/image-001-1600-fb5597bbdd42.webp",
     "cover": "/selected/zhangshuntang-wedding-tea-packaging/image-001-1600-fb5597bbdd42.webp",
-    "summary": "围绕囍字、龙凤与花鸟纹样展开婚庆茶礼设计，以红橙双色延展礼盒与手提袋。",
-    "description": "同一茶礼项目包含龙凤呈祥、喜鹊花枝与喜结良缘等图案方向。红色和橙色配色分别应用于外盒、手提袋及独立茶包，保留各方案的整体展示与开盒画面。",
+    "summary": "以囍字为中心，将龙凤线描延展至茶礼盒与手提袋。",
+    "description": "同一款图案提供橙色和红色版本，展示礼盒正面、搭配手提袋的整体陈列及开盒后的独立茶包。",
     "tags": [
       "包装设计"
     ],
@@ -246,63 +246,203 @@
       "/selected/zhangshuntang-wedding-tea-packaging/image-001-1600-fb5597bbdd42.webp",
       "/selected/zhangshuntang-wedding-tea-packaging/image-002-1600-57112d838e0d.webp",
       "/selected/zhangshuntang-wedding-tea-packaging/image-003-1600-7f4562ceb148.webp",
-      "/selected/zhangshuntang-wedding-tea-packaging/image-004-1600-9afdfaf33497.webp",
-      "/selected/zhangshuntang-wedding-tea-packaging/image-005-1600-9f7efb9c3b4f.webp",
-      "/selected/zhangshuntang-wedding-tea-packaging/image-006-1600-85088cad8dd2.webp",
-      "/selected/zhangshuntang-wedding-tea-packaging/image-007-1600-4f8bfe852fec.webp",
-      "/selected/zhangshuntang-wedding-tea-packaging/image-008-1600-0a1f5ed8dad8.webp",
-      "/selected/zhangshuntang-wedding-tea-packaging/image-009-1600-06424ceb85aa.webp",
-      "/selected/zhangshuntang-wedding-tea-packaging/image-010-1600-bd708f9cb4a3.webp",
-      "/selected/zhangshuntang-wedding-tea-packaging/image-011-1600-4c1d7b56d1f6.webp",
-      "/selected/zhangshuntang-wedding-tea-packaging/image-012-1600-07f23b3ed77d.webp",
-      "/selected/zhangshuntang-wedding-tea-packaging/image-013-1600-0f7dc56e173e.webp",
-      "/selected/zhangshuntang-wedding-tea-packaging/image-014-1600-129c2866799a.webp",
-      "/selected/zhangshuntang-wedding-tea-packaging/image-015-1600-9a04b003a21e.webp",
-      "/selected/zhangshuntang-wedding-tea-packaging/image-016-1600-5e93638ace02.webp",
-      "/selected/zhangshuntang-wedding-tea-packaging/image-017-1600-5d2594b3de90.webp",
-      "/selected/zhangshuntang-wedding-tea-packaging/image-018-1600-f14153618bb1.webp"
+      "/selected/zhangshuntang-wedding-tea-packaging/image-004-1600-bd708f9cb4a3.webp",
+      "/selected/zhangshuntang-wedding-tea-packaging/image-005-1600-4c1d7b56d1f6.webp",
+      "/selected/zhangshuntang-wedding-tea-packaging/image-006-1600-07f23b3ed77d.webp"
     ],
     "type": "包装设计",
     "featured": true,
-    "priority": 7
+    "priority": 7.0
   },
   {
-    "title": "CAAA 航天主题纪念徽章",
-    "slug": "caaa-aerospace-badge-collection",
+    "title": "张顺堂喜茶礼盒 · 喜上眉梢",
+    "slug": "zhangshuntang-wedding-tea-packaging-magpies",
+    "category": "包装设计",
+    "categorySlug": "packaging",
+    "year": "",
+    "image": "/selected/zhangshuntang-wedding-tea-packaging-magpies/image-004-1600-0f7dc56e173e.webp",
+    "cover": "/selected/zhangshuntang-wedding-tea-packaging-magpies/image-004-1600-0f7dc56e173e.webp",
+    "summary": "以喜鹊、花枝与圆形留白呈现喜上眉梢的婚庆寓意。",
+    "description": "将花鸟插画与「喜上眉梢」字样分布在圆形图案中，红色和橙色版本均展示礼盒、手提袋及内装茶包。",
+    "tags": [
+      "包装设计"
+    ],
+    "detailSections": [],
+    "images": [
+      "/selected/zhangshuntang-wedding-tea-packaging-magpies/image-001-1600-9afdfaf33497.webp",
+      "/selected/zhangshuntang-wedding-tea-packaging-magpies/image-002-1600-9f7efb9c3b4f.webp",
+      "/selected/zhangshuntang-wedding-tea-packaging-magpies/image-003-1600-85088cad8dd2.webp",
+      "/selected/zhangshuntang-wedding-tea-packaging-magpies/image-004-1600-0f7dc56e173e.webp",
+      "/selected/zhangshuntang-wedding-tea-packaging-magpies/image-005-1600-129c2866799a.webp",
+      "/selected/zhangshuntang-wedding-tea-packaging-magpies/image-006-1600-9a04b003a21e.webp"
+    ],
+    "type": "包装设计",
+    "featured": false,
+    "priority": 7.1
+  },
+  {
+    "title": "张顺堂喜茶礼盒 · 喜结良缘",
+    "slug": "zhangshuntang-wedding-tea-packaging-wedding-blossoms",
+    "category": "包装设计",
+    "categorySlug": "packaging",
+    "year": "",
+    "image": "/selected/zhangshuntang-wedding-tea-packaging-wedding-blossoms/image-002-1600-0a1f5ed8dad8.webp",
+    "cover": "/selected/zhangshuntang-wedding-tea-packaging-wedding-blossoms/image-002-1600-0a1f5ed8dad8.webp",
+    "summary": "以鸳鸯、荷花和手写字样构成喜结良缘茶礼。",
+    "description": "以成双的鸳鸯和荷叶构成连续纹样，搭配「喜结良缘」字样。橙色、红色两版均包含礼盒外观、手提袋和开盒陈列。",
+    "tags": [
+      "包装设计"
+    ],
+    "detailSections": [],
+    "images": [
+      "/selected/zhangshuntang-wedding-tea-packaging-wedding-blossoms/image-001-1600-4f8bfe852fec.webp",
+      "/selected/zhangshuntang-wedding-tea-packaging-wedding-blossoms/image-002-1600-0a1f5ed8dad8.webp",
+      "/selected/zhangshuntang-wedding-tea-packaging-wedding-blossoms/image-003-1600-06424ceb85aa.webp",
+      "/selected/zhangshuntang-wedding-tea-packaging-wedding-blossoms/image-004-1600-5e93638ace02.webp",
+      "/selected/zhangshuntang-wedding-tea-packaging-wedding-blossoms/image-005-1600-5d2594b3de90.webp",
+      "/selected/zhangshuntang-wedding-tea-packaging-wedding-blossoms/image-006-1600-f14153618bb1.webp"
+    ],
+    "type": "包装设计",
+    "featured": false,
+    "priority": 7.2
+  },
+  {
+    "title": "CAAA 航天主题纪念徽章 · 龙纹字标",
+    "slug": "caaa-aerospace-badge-collection-dragon",
     "category": "徽章与文创",
     "categorySlug": "cultural-creative",
     "year": "",
-    "image": "/selected/caaa-aerospace-badge-collection/image-004-1600-88e374f842fa.webp",
-    "cover": "/selected/caaa-aerospace-badge-collection/image-004-1600-88e374f842fa.webp",
-    "summary": "飞行器、云纹与环绕轨迹相互交织，形成蓝金色为主的系列徽章与礼盒视觉。",
-    "description": "围绕中国航天空气动力技术研究院的文字标识与 CAAA 字母，结合飞行器轮廓、航天轨迹及云纹图形展开多组徽章造型。展示内容包含徽章近景、盒内陈列与外包装，呈现不同图形方案在同一礼盒体系中的变化。",
+    "image": "/selected/caaa-aerospace-badge-collection-dragon/image-002-1600-f7736927db50.webp",
+    "cover": "/selected/caaa-aerospace-badge-collection-dragon/image-002-1600-f7736927db50.webp",
+    "summary": "以龙纹与祥云环绕红金色 CAAA 字标，组合为横向纪念徽章。",
+    "description": "飞行器轮廓穿插在字标与云纹之间。三张图分别呈现红色外包装、盒内徽章特写及深色盒盖的陈列效果。",
     "tags": [
       "徽章与文创"
     ],
     "detailSections": [],
     "images": [
-      "/selected/caaa-aerospace-badge-collection/image-001-1600-d8f5b6486e02.webp",
-      "/selected/caaa-aerospace-badge-collection/image-002-1600-f7736927db50.webp",
-      "/selected/caaa-aerospace-badge-collection/image-003-1600-d116b3ea58a2.webp",
-      "/selected/caaa-aerospace-badge-collection/image-004-1600-88e374f842fa.webp",
-      "/selected/caaa-aerospace-badge-collection/image-005-1600-32dc96381a60.webp",
-      "/selected/caaa-aerospace-badge-collection/image-006-1600-7b7fbd9e1b37.webp",
-      "/selected/caaa-aerospace-badge-collection/image-007-1600-d83ddaa16e2c.webp",
-      "/selected/caaa-aerospace-badge-collection/image-008-1600-65c2f95050a0.webp",
-      "/selected/caaa-aerospace-badge-collection/image-009-1600-2c3bc6704339.webp",
-      "/selected/caaa-aerospace-badge-collection/image-010-1600-4d50095d3a00.webp",
-      "/selected/caaa-aerospace-badge-collection/image-011-1600-2b2921fd33cc.webp",
-      "/selected/caaa-aerospace-badge-collection/image-012-1600-38cd02bca2df.webp",
-      "/selected/caaa-aerospace-badge-collection/image-013-1600-b65c2ba3a3e6.webp",
-      "/selected/caaa-aerospace-badge-collection/image-014-1600-14e66ace1171.webp",
-      "/selected/caaa-aerospace-badge-collection/image-015-1600-5bdad7d29658.webp",
-      "/selected/caaa-aerospace-badge-collection/image-016-1600-91f24a504f9a.webp",
-      "/selected/caaa-aerospace-badge-collection/image-017-1600-2f3f4449c89c.webp",
-      "/selected/caaa-aerospace-badge-collection/image-018-1600-eb1002a2313f.webp"
+      "/selected/caaa-aerospace-badge-collection-dragon/image-001-1600-d8f5b6486e02.webp",
+      "/selected/caaa-aerospace-badge-collection-dragon/image-002-1600-f7736927db50.webp",
+      "/selected/caaa-aerospace-badge-collection-dragon/image-003-1600-d116b3ea58a2.webp"
+    ],
+    "type": "徽章与文创",
+    "featured": false,
+    "priority": 8.0
+  },
+  {
+    "title": "CAAA 航天主题纪念徽章 · 星形徽章",
+    "slug": "caaa-aerospace-badge-collection",
+    "category": "徽章与文创",
+    "categorySlug": "cultural-creative",
+    "year": "",
+    "image": "/selected/caaa-aerospace-badge-collection/image-001-1600-88e374f842fa.webp",
+    "cover": "/selected/caaa-aerospace-badge-collection/image-001-1600-88e374f842fa.webp",
+    "summary": "以中国航天标识为中心，向外展开星形结构与飞行器轮廓。",
+    "description": "蓝白红三色贯穿星形纪念徽章与盒面图形。详情包含蓝色包装、徽章近景和深色礼盒组合。",
+    "tags": [
+      "徽章与文创"
+    ],
+    "detailSections": [],
+    "images": [
+      "/selected/caaa-aerospace-badge-collection/image-001-1600-88e374f842fa.webp",
+      "/selected/caaa-aerospace-badge-collection/image-002-1600-32dc96381a60.webp",
+      "/selected/caaa-aerospace-badge-collection/image-003-1600-7b7fbd9e1b37.webp"
     ],
     "type": "徽章与文创",
     "featured": true,
-    "priority": 8
+    "priority": 8.1
+  },
+  {
+    "title": "CAAA 航天主题纪念徽章 · 蓝色云浪",
+    "slug": "caaa-aerospace-badge-collection-blue-waves",
+    "category": "徽章与文创",
+    "categorySlug": "cultural-creative",
+    "year": "",
+    "image": "/selected/caaa-aerospace-badge-collection-blue-waves/image-002-1600-65c2f95050a0.webp",
+    "cover": "/selected/caaa-aerospace-badge-collection-blue-waves/image-002-1600-65c2f95050a0.webp",
+    "summary": "以弧形蓝色云浪围合飞行器图形，延展同款礼盒。",
+    "description": "用多层蓝色线条形成云浪的层次，将飞行器轮廓、CAAA 字母和机构名称编排于徽章内。",
+    "tags": [
+      "徽章与文创"
+    ],
+    "detailSections": [],
+    "images": [
+      "/selected/caaa-aerospace-badge-collection-blue-waves/image-001-1600-d83ddaa16e2c.webp",
+      "/selected/caaa-aerospace-badge-collection-blue-waves/image-002-1600-65c2f95050a0.webp",
+      "/selected/caaa-aerospace-badge-collection-blue-waves/image-003-1600-2c3bc6704339.webp"
+    ],
+    "type": "徽章与文创",
+    "featured": false,
+    "priority": 8.2
+  },
+  {
+    "title": "CAAA 航天主题纪念徽章 · 蓝白轨道",
+    "slug": "caaa-aerospace-badge-collection-orbit-ring",
+    "category": "徽章与文创",
+    "categorySlug": "cultural-creative",
+    "year": "",
+    "image": "/selected/caaa-aerospace-badge-collection-orbit-ring/image-002-1600-2b2921fd33cc.webp",
+    "cover": "/selected/caaa-aerospace-badge-collection-orbit-ring/image-002-1600-2b2921fd33cc.webp",
+    "summary": "以蓝白同心环与局部红线组织轨道圆章。",
+    "description": "把飞行器和字标置于圆形构图中，用分段外圈和深浅蓝色区分图形层级，并展示对应的包装与盒内效果。",
+    "tags": [
+      "徽章与文创"
+    ],
+    "detailSections": [],
+    "images": [
+      "/selected/caaa-aerospace-badge-collection-orbit-ring/image-001-1600-4d50095d3a00.webp",
+      "/selected/caaa-aerospace-badge-collection-orbit-ring/image-002-1600-2b2921fd33cc.webp",
+      "/selected/caaa-aerospace-badge-collection-orbit-ring/image-003-1600-38cd02bca2df.webp"
+    ],
+    "type": "徽章与文创",
+    "featured": false,
+    "priority": 8.3
+  },
+  {
+    "title": "CAAA 航天主题纪念徽章 · 红环祥云",
+    "slug": "caaa-aerospace-badge-collection-red-cloud-ring",
+    "category": "徽章与文创",
+    "categorySlug": "cultural-creative",
+    "year": "",
+    "image": "/selected/caaa-aerospace-badge-collection-red-cloud-ring/image-002-1600-14e66ace1171.webp",
+    "cover": "/selected/caaa-aerospace-badge-collection-red-cloud-ring/image-002-1600-14e66ace1171.webp",
+    "summary": "以红色环带和祥云围合飞行器与蓝绿底图。",
+    "description": "将机构名称沿红色外环排布，以金边祥云和蓝绿中心图形形成色彩对比。三张图保留外盒、内托和徽章近景。",
+    "tags": [
+      "徽章与文创"
+    ],
+    "detailSections": [],
+    "images": [
+      "/selected/caaa-aerospace-badge-collection-red-cloud-ring/image-001-1600-b65c2ba3a3e6.webp",
+      "/selected/caaa-aerospace-badge-collection-red-cloud-ring/image-002-1600-14e66ace1171.webp",
+      "/selected/caaa-aerospace-badge-collection-red-cloud-ring/image-003-1600-5bdad7d29658.webp"
+    ],
+    "type": "徽章与文创",
+    "featured": false,
+    "priority": 8.4
+  },
+  {
+    "title": "CAAA 航天主题纪念徽章 · 星云圆章",
+    "slug": "caaa-aerospace-badge-collection-star-clouds",
+    "category": "徽章与文创",
+    "categorySlug": "cultural-creative",
+    "year": "",
+    "image": "/selected/caaa-aerospace-badge-collection-star-clouds/image-002-1600-2f3f4449c89c.webp",
+    "cover": "/selected/caaa-aerospace-badge-collection-star-clouds/image-002-1600-2f3f4449c89c.webp",
+    "summary": "以星空、放射线与多色祥云组成纪念圆章。",
+    "description": "用深蓝星空承托金色放射线和飞行器，外圈以青蓝、红色祥云收边，另有同图案的盒面与盒内展示。",
+    "tags": [
+      "徽章与文创"
+    ],
+    "detailSections": [],
+    "images": [
+      "/selected/caaa-aerospace-badge-collection-star-clouds/image-001-1600-91f24a504f9a.webp",
+      "/selected/caaa-aerospace-badge-collection-star-clouds/image-002-1600-2f3f4449c89c.webp",
+      "/selected/caaa-aerospace-badge-collection-star-clouds/image-003-1600-eb1002a2313f.webp"
+    ],
+    "type": "徽章与文创",
+    "featured": false,
+    "priority": 8.5
   },
   {
     "title": "天地鲟鳇鱼子酱品牌标志",
@@ -476,44 +616,84 @@
     "priority": 15
   },
   {
-    "title": "芸上康缘水凝胶眼贴包装",
-    "slug": "yunshang-kangyuan-eye-patch-packaging",
+    "title": "芸上康缘水凝胶眼贴包装 · 蓝白横版",
+    "slug": "yunshang-kangyuan-eye-patch-packaging-blue-white",
     "category": "包装设计",
     "categorySlug": "packaging",
     "year": "",
-    "image": "/selected/yunshang-kangyuan-eye-patch-packaging/image-006-1600-9813cf509e6d.webp",
-    "cover": "/selected/yunshang-kangyuan-eye-patch-packaging/image-006-1600-9813cf509e6d.webp",
-    "summary": "以蓝绿渐变、分子意象与简洁文字层级，呈现盒装及独立袋装的三组视觉方向。",
-    "description": "项目围绕水凝胶眼贴展开包装提案。蓝白色方案结合细密图案，蓝绿色方案突出产品轮廓，留白方案以细线与网点组织版面；各方向均展示外盒、袋装及眼贴本体。",
+    "image": "/selected/yunshang-kangyuan-eye-patch-packaging-blue-white/image-002-1600-c0fc1352fb2f.webp",
+    "cover": "/selected/yunshang-kangyuan-eye-patch-packaging-blue-white/image-002-1600-c0fc1352fb2f.webp",
+    "summary": "以横版蓝白分区和细密纹样组织盒面信息。",
+    "description": "将大字号英文品名与说明信息分置于包装两侧，以深蓝底带收束画面。三张图分别呈现外盒、盒袋组合与眼贴本体。",
     "tags": [
       "包装设计"
     ],
     "detailSections": [],
     "images": [
-      "/selected/yunshang-kangyuan-eye-patch-packaging/image-001-1600-afe8d94016f9.webp",
-      "/selected/yunshang-kangyuan-eye-patch-packaging/image-002-1600-c0fc1352fb2f.webp",
-      "/selected/yunshang-kangyuan-eye-patch-packaging/image-003-1600-b508b701b71c.webp",
-      "/selected/yunshang-kangyuan-eye-patch-packaging/image-004-1600-6c5c36b5806f.webp",
-      "/selected/yunshang-kangyuan-eye-patch-packaging/image-005-1600-48a9edcf4928.webp",
-      "/selected/yunshang-kangyuan-eye-patch-packaging/image-006-1600-9813cf509e6d.webp",
-      "/selected/yunshang-kangyuan-eye-patch-packaging/image-007-1600-2b0fba066f4e.webp",
-      "/selected/yunshang-kangyuan-eye-patch-packaging/image-008-1600-7876630fbeda.webp",
-      "/selected/yunshang-kangyuan-eye-patch-packaging/image-009-1600-b358868cc9b5.webp"
+      "/selected/yunshang-kangyuan-eye-patch-packaging-blue-white/image-001-1600-afe8d94016f9.webp",
+      "/selected/yunshang-kangyuan-eye-patch-packaging-blue-white/image-002-1600-c0fc1352fb2f.webp",
+      "/selected/yunshang-kangyuan-eye-patch-packaging-blue-white/image-003-1600-b508b701b71c.webp"
     ],
     "type": "包装设计",
     "featured": false,
-    "priority": 16
+    "priority": 16.0
   },
   {
-    "title": "张顺堂「顺茶」礼盒包装",
+    "title": "芸上康缘水凝胶眼贴包装 · 蓝绿渐变",
+    "slug": "yunshang-kangyuan-eye-patch-packaging",
+    "category": "包装设计",
+    "categorySlug": "packaging",
+    "year": "",
+    "image": "/selected/yunshang-kangyuan-eye-patch-packaging/image-003-1600-9813cf509e6d.webp",
+    "cover": "/selected/yunshang-kangyuan-eye-patch-packaging/image-003-1600-9813cf509e6d.webp",
+    "summary": "以蓝绿渐变和眼贴轮廓呈现纵向包装方案。",
+    "description": "蓝绿色由盒面上部向下渐淡，配合中英文字与眼贴图形形成纵向阅读顺序。图集展示外盒、独立袋和眼贴本体。",
+    "tags": [
+      "包装设计"
+    ],
+    "detailSections": [],
+    "images": [
+      "/selected/yunshang-kangyuan-eye-patch-packaging/image-001-1600-6c5c36b5806f.webp",
+      "/selected/yunshang-kangyuan-eye-patch-packaging/image-002-1600-48a9edcf4928.webp",
+      "/selected/yunshang-kangyuan-eye-patch-packaging/image-003-1600-9813cf509e6d.webp"
+    ],
+    "type": "包装设计",
+    "featured": false,
+    "priority": 16.1
+  },
+  {
+    "title": "芸上康缘水凝胶眼贴包装 · 白底细线",
+    "slug": "yunshang-kangyuan-eye-patch-packaging-fine-line",
+    "category": "包装设计",
+    "categorySlug": "packaging",
+    "year": "",
+    "image": "/selected/yunshang-kangyuan-eye-patch-packaging-fine-line/image-002-1600-7876630fbeda.webp",
+    "cover": "/selected/yunshang-kangyuan-eye-patch-packaging-fine-line/image-002-1600-7876630fbeda.webp",
+    "summary": "在白色底面上以横向细线与网点组织纵向版面。",
+    "description": "大面积留白衬托青蓝色文字，横向细线分隔信息与眼贴网点图形。三张图展示单盒、盒袋组合及眼贴本体。",
+    "tags": [
+      "包装设计"
+    ],
+    "detailSections": [],
+    "images": [
+      "/selected/yunshang-kangyuan-eye-patch-packaging-fine-line/image-001-1600-2b0fba066f4e.webp",
+      "/selected/yunshang-kangyuan-eye-patch-packaging-fine-line/image-002-1600-7876630fbeda.webp",
+      "/selected/yunshang-kangyuan-eye-patch-packaging-fine-line/image-003-1600-b358868cc9b5.webp"
+    ],
+    "type": "包装设计",
+    "featured": false,
+    "priority": 16.2
+  },
+  {
+    "title": "张顺堂「顺茶」礼盒包装 · 团叶插画",
     "slug": "zhangshuntang-shun-tea-gift-packaging",
     "category": "包装设计",
     "categorySlug": "packaging",
     "year": "",
     "image": "/selected/zhangshuntang-shun-tea-gift-packaging/image-001-1600-91eda43a566e.webp",
     "cover": "/selected/zhangshuntang-shun-tea-gift-packaging/image-001-1600-91eda43a566e.webp",
-    "summary": "以橙金色和叶形构图承载山水文化线描，统一外盒、手提袋与独立茶包。",
-    "description": "礼盒包含两组插画构图：一组将人物、古建、山水与花叶收拢于叶形中，另一组以流动的叶片轮廓组织景观。橙色基底贯穿礼盒、手提袋和茶包，并呈现闭盒与开盒组合。",
+    "summary": "以橙白配色将人物、建筑与山水线描收入团叶轮廓。",
+    "description": "将叶形插画置于盒面中央，并在手提袋和独立茶包上延续同一主题。展示包括盒面、礼盒与手提袋组合，以及内装陈列。",
     "tags": [
       "包装设计"
     ],
@@ -521,46 +701,126 @@
     "images": [
       "/selected/zhangshuntang-shun-tea-gift-packaging/image-001-1600-91eda43a566e.webp",
       "/selected/zhangshuntang-shun-tea-gift-packaging/image-002-1600-ed5d26e8a0e8.webp",
-      "/selected/zhangshuntang-shun-tea-gift-packaging/image-003-1600-42b1e5c6685e.webp",
-      "/selected/zhangshuntang-shun-tea-gift-packaging/image-004-1600-ba3e8393b023.webp",
-      "/selected/zhangshuntang-shun-tea-gift-packaging/image-005-1600-0a33f2688ea6.webp",
-      "/selected/zhangshuntang-shun-tea-gift-packaging/image-006-1600-c13810a6c9df.webp"
+      "/selected/zhangshuntang-shun-tea-gift-packaging/image-003-1600-42b1e5c6685e.webp"
     ],
     "type": "包装设计",
     "featured": false,
-    "priority": 17
+    "priority": 17.0
   },
   {
-    "title": "赛奥领科口崩片包装",
-    "slug": "zelle-link-orodispersible-packaging",
+    "title": "张顺堂「顺茶」礼盒包装 · 长叶线描",
+    "slug": "zhangshuntang-shun-tea-gift-packaging-long-leaf",
     "category": "包装设计",
     "categorySlug": "packaging",
     "year": "",
-    "image": "/selected/zelle-link-orodispersible-packaging/image-009-1600-73470300e12e.webp",
-    "cover": "/selected/zelle-link-orodispersible-packaging/image-009-1600-73470300e12e.webp",
-    "summary": "通过红蓝分区、晶体光效与几何符号探索四组包装方向，突出品名及规格层级。",
-    "description": "针对枸橼酸西地那非口崩片的包装提案，分别采用红白斜切、蓝色晶体、紫金字母和三角光束四组视觉语言。单盒、双盒与重复陈列画面呈现各方向在立体包装上的效果。",
+    "image": "/selected/zhangshuntang-shun-tea-gift-packaging-long-leaf/image-002-1600-0a33f2688ea6.webp",
+    "cover": "/selected/zhangshuntang-shun-tea-gift-packaging-long-leaf/image-002-1600-0a33f2688ea6.webp",
+    "summary": "以斜向伸展的长叶轮廓构成盒面主图。",
+    "description": "将山水与人物线描收进斜向叶片，用同色深浅拉开图案与橙色底面。图集包含礼盒正面、手提袋和开盒茶包。",
     "tags": [
       "包装设计"
     ],
     "detailSections": [],
     "images": [
-      "/selected/zelle-link-orodispersible-packaging/image-001-1600-a807ad510679.webp",
-      "/selected/zelle-link-orodispersible-packaging/image-002-1600-edb219fc6150.webp",
-      "/selected/zelle-link-orodispersible-packaging/image-003-1600-db1781ec9198.webp",
-      "/selected/zelle-link-orodispersible-packaging/image-004-1600-7a3e88d5ff16.webp",
-      "/selected/zelle-link-orodispersible-packaging/image-005-1600-69356a187672.webp",
-      "/selected/zelle-link-orodispersible-packaging/image-006-1600-4c7f0aa4b1ba.webp",
-      "/selected/zelle-link-orodispersible-packaging/image-007-1600-5ed9179d56eb.webp",
-      "/selected/zelle-link-orodispersible-packaging/image-008-1600-defc405b8cb6.webp",
-      "/selected/zelle-link-orodispersible-packaging/image-009-1600-73470300e12e.webp",
-      "/selected/zelle-link-orodispersible-packaging/image-010-1600-5cdbfeb62d0c.webp",
-      "/selected/zelle-link-orodispersible-packaging/image-011-1600-df7d0309c82b.webp",
-      "/selected/zelle-link-orodispersible-packaging/image-012-1600-d46c2d49c378.webp"
+      "/selected/zhangshuntang-shun-tea-gift-packaging-long-leaf/image-001-1600-ba3e8393b023.webp",
+      "/selected/zhangshuntang-shun-tea-gift-packaging-long-leaf/image-002-1600-0a33f2688ea6.webp",
+      "/selected/zhangshuntang-shun-tea-gift-packaging-long-leaf/image-003-1600-c13810a6c9df.webp"
     ],
     "type": "包装设计",
     "featured": false,
-    "priority": 18
+    "priority": 17.1
+  },
+  {
+    "title": "赛奥领科口崩片包装 · 红白斜切",
+    "slug": "zelle-link-orodispersible-packaging-red-diagonal",
+    "category": "包装设计",
+    "categorySlug": "packaging",
+    "year": "",
+    "image": "/selected/zelle-link-orodispersible-packaging-red-diagonal/image-001-1600-a807ad510679.webp",
+    "cover": "/selected/zelle-link-orodispersible-packaging-red-diagonal/image-001-1600-a807ad510679.webp",
+    "summary": "以红白斜切与暖色渐变区分正面信息区域。",
+    "description": "红色斜向光纹与白色区域形成对比，品名和规格分层排布。两张图展示双盒组合和重复陈列。",
+    "tags": [
+      "包装设计"
+    ],
+    "detailSections": [],
+    "images": [
+      "/selected/zelle-link-orodispersible-packaging-red-diagonal/image-001-1600-a807ad510679.webp",
+      "/selected/zelle-link-orodispersible-packaging-red-diagonal/image-002-1600-edb219fc6150.webp"
+    ],
+    "type": "包装设计",
+    "featured": false,
+    "priority": 18.0
+  },
+  {
+    "title": "赛奥领科口崩片包装 · 蓝色晶体",
+    "slug": "zelle-link-orodispersible-packaging-blue-crystal",
+    "category": "包装设计",
+    "categorySlug": "packaging",
+    "year": "",
+    "image": "/selected/zelle-link-orodispersible-packaging-blue-crystal/image-001-1600-db1781ec9198.webp",
+    "cover": "/selected/zelle-link-orodispersible-packaging-blue-crystal/image-001-1600-db1781ec9198.webp",
+    "summary": "以深蓝底色、晶体图形和青绿色信息条形成包装识别。",
+    "description": "以蓝色晶体为正面主图，在上方安排品名，下方保留规格信息。双盒与重复陈列展示不同视角下的盒面。",
+    "tags": [
+      "包装设计"
+    ],
+    "detailSections": [],
+    "images": [
+      "/selected/zelle-link-orodispersible-packaging-blue-crystal/image-001-1600-db1781ec9198.webp",
+      "/selected/zelle-link-orodispersible-packaging-blue-crystal/image-002-1600-7a3e88d5ff16.webp"
+    ],
+    "type": "包装设计",
+    "featured": false,
+    "priority": 18.1
+  },
+  {
+    "title": "赛奥领科口崩片包装 · 紫金字母",
+    "slug": "zelle-link-orodispersible-packaging-purple-gold",
+    "category": "包装设计",
+    "categorySlug": "packaging",
+    "year": "",
+    "image": "/selected/zelle-link-orodispersible-packaging-purple-gold/image-001-1600-69356a187672.webp",
+    "cover": "/selected/zelle-link-orodispersible-packaging-purple-gold/image-001-1600-69356a187672.webp",
+    "summary": "以紫色盒面衬托金色立体字母与星形细节。",
+    "description": "金色图形位于正面右侧，左侧集中排列品名和规格。图集保留单盒、组合和多盒陈列。",
+    "tags": [
+      "包装设计"
+    ],
+    "detailSections": [],
+    "images": [
+      "/selected/zelle-link-orodispersible-packaging-purple-gold/image-001-1600-69356a187672.webp",
+      "/selected/zelle-link-orodispersible-packaging-purple-gold/image-002-1600-4c7f0aa4b1ba.webp",
+      "/selected/zelle-link-orodispersible-packaging-purple-gold/image-003-1600-5ed9179d56eb.webp",
+      "/selected/zelle-link-orodispersible-packaging-purple-gold/image-004-1600-defc405b8cb6.webp"
+    ],
+    "type": "包装设计",
+    "featured": false,
+    "priority": 18.2
+  },
+  {
+    "title": "赛奥领科口崩片包装 · 三角光束",
+    "slug": "zelle-link-orodispersible-packaging",
+    "category": "包装设计",
+    "categorySlug": "packaging",
+    "year": "",
+    "image": "/selected/zelle-link-orodispersible-packaging/image-001-1600-73470300e12e.webp",
+    "cover": "/selected/zelle-link-orodispersible-packaging/image-001-1600-73470300e12e.webp",
+    "summary": "以三角光束和蓝紫橙色块组织正面版面。",
+    "description": "斜向三角光束连接渐变色块与金色标记，规整的文字排列与几何构图形成对照。图集包含单盒、双盒和重复陈列。",
+    "tags": [
+      "包装设计"
+    ],
+    "detailSections": [],
+    "images": [
+      "/selected/zelle-link-orodispersible-packaging/image-001-1600-73470300e12e.webp",
+      "/selected/zelle-link-orodispersible-packaging/image-002-1600-5cdbfeb62d0c.webp",
+      "/selected/zelle-link-orodispersible-packaging/image-003-1600-df7d0309c82b.webp",
+      "/selected/zelle-link-orodispersible-packaging/image-004-1600-d46c2d49c378.webp"
+    ],
+    "type": "包装设计",
+    "featured": false,
+    "priority": 18.3
   },
   {
     "title": "彩虹无人机企业形象墙",
@@ -626,27 +886,6 @@
     "type": "海报与视觉传播",
     "featured": false,
     "priority": 21
-  },
-  {
-    "title": "「心之颂·四季之歌」音乐会海报",
-    "slug": "song-gift-four-seasons-concert",
-    "category": "海报与视觉传播",
-    "categorySlug": "visual-communication",
-    "year": "",
-    "image": "/selected/song-gift-four-seasons-concert/image-001-1600-5c8654f862c4.webp",
-    "cover": "/selected/song-gift-four-seasons-concert/image-001-1600-5c8654f862c4.webp",
-    "summary": "将四季景物融入环形音乐意象，以轻盈留白和粉色文字组织竖版海报。",
-    "description": "白色画面中心以环形图像连接不同季节的色彩和自然细节，音符与花瓣围绕主体展开，形成适合电子传播的纵向构图。",
-    "tags": [
-      "海报与视觉传播"
-    ],
-    "detailSections": [],
-    "images": [
-      "/selected/song-gift-four-seasons-concert/image-001-1600-5c8654f862c4.webp"
-    ],
-    "type": "海报与视觉传播",
-    "featured": false,
-    "priority": 22
   },
   {
     "title": "安宁疗护交流会与沟通工作坊主视觉",
@@ -737,15 +976,15 @@
     "priority": 25
   },
   {
-    "title": "CH-4 主题徽章与配套物料",
+    "title": "CH-4 · 白马绿金徽章",
     "slug": "ch4-badges-and-accessories",
     "category": "徽章与文创",
     "categorySlug": "cultural-creative",
     "year": "",
     "image": "/selected/ch4-badges-and-accessories/image-002-1600-4e85b51d33a8.webp",
     "cover": "/selected/ch4-badges-and-accessories/image-002-1600-4e85b51d33a8.webp",
-    "summary": "以 CH-4 飞行器为视觉中心，将地域色彩与象征图形延展为徽章、织物吊牌和帽饰。",
-    "description": "以 CH-4 的机身轮廓连接旗帜色带、马、鹰与植物等图形，探索多组徽章构成。通过金属质感效果图、礼盒陈列、刺绣吊牌及帽饰展示同一主题在不同物料上的应用关系。",
+    "summary": "以白马、机身轮廓和绿金纹样构成徽章，搭配绿色礼盒。",
+    "description": "将白马、旭日与麦穗组织在机身图形周围，展示礼盒外观、盒内陈列与单枚金属质感效果。",
     "tags": [
       "徽章与文创"
     ],
@@ -753,24 +992,144 @@
     "images": [
       "/selected/ch4-badges-and-accessories/image-001-1600-823f057c2d64.webp",
       "/selected/ch4-badges-and-accessories/image-002-1600-4e85b51d33a8.webp",
-      "/selected/ch4-badges-and-accessories/image-003-1600-edc48743a9bf.webp",
-      "/selected/ch4-badges-and-accessories/image-004-1600-cdef8d16e6c9.webp",
-      "/selected/ch4-badges-and-accessories/image-005-1600-29d0366cabbd.webp",
-      "/selected/ch4-badges-and-accessories/image-006-1600-e0782d63d927.webp",
-      "/selected/ch4-badges-and-accessories/image-007-1600-fb5c7ebc0ba4.webp",
-      "/selected/ch4-badges-and-accessories/image-008-1600-375855314a53.webp",
-      "/selected/ch4-badges-and-accessories/image-009-1600-40d6c19ce413.webp",
-      "/selected/ch4-badges-and-accessories/image-010-1600-31e5e8d2f63b.webp",
-      "/selected/ch4-badges-and-accessories/image-011-1600-3dcacc0d5621.webp",
-      "/selected/ch4-badges-and-accessories/image-012-1600-5b0d72550f3f.webp",
-      "/selected/ch4-badges-and-accessories/image-013-1600-e84c28365a63.webp",
-      "/selected/ch4-badges-and-accessories/image-014-1600-1ef23c15f29e.webp",
-      "/selected/ch4-badges-and-accessories/image-015-1600-562f32786dba.webp",
-      "/selected/ch4-badges-and-accessories/image-016-1600-732d2b7d152f.webp"
+      "/selected/ch4-badges-and-accessories/image-003-1600-edc48743a9bf.webp"
     ],
     "type": "徽章与文创",
     "featured": false,
-    "priority": 26
+    "priority": 26.0
+  },
+  {
+    "title": "CH-4 · 红鹰花叶徽章",
+    "slug": "ch4-badges-and-accessories-red-eagle",
+    "category": "徽章与文创",
+    "categorySlug": "cultural-creative",
+    "year": "",
+    "image": "/selected/ch4-badges-and-accessories-red-eagle/image-003-1600-e0782d63d927.webp",
+    "cover": "/selected/ch4-badges-and-accessories-red-eagle/image-003-1600-e0782d63d927.webp",
+    "summary": "将展翼红鹰与黄色花叶融入金属徽章构图。",
+    "description": "以红鹰构成上半部轮廓，机身、盾形和花叶从中部向两侧展开。详情包括礼盒外观、内托和单枚展示。",
+    "tags": [
+      "徽章与文创"
+    ],
+    "detailSections": [],
+    "images": [
+      "/selected/ch4-badges-and-accessories-red-eagle/image-001-1600-cdef8d16e6c9.webp",
+      "/selected/ch4-badges-and-accessories-red-eagle/image-002-1600-29d0366cabbd.webp",
+      "/selected/ch4-badges-and-accessories-red-eagle/image-003-1600-e0782d63d927.webp"
+    ],
+    "type": "徽章与文创",
+    "featured": false,
+    "priority": 26.1
+  },
+  {
+    "title": "CH-4 · 红翼圆章",
+    "slug": "ch4-badges-and-accessories-red-wing",
+    "category": "徽章与文创",
+    "categorySlug": "cultural-creative",
+    "year": "",
+    "image": "/selected/ch4-badges-and-accessories-red-wing/image-002-1600-375855314a53.webp",
+    "cover": "/selected/ch4-badges-and-accessories-red-wing/image-002-1600-375855314a53.webp",
+    "summary": "以绿白圆环和红色展开的翼形衬托机身轮廓。",
+    "description": "红色翼形托起绿白圆环，使机身轮廓横跨徽章。两张图展示正面近景和不同摆放角度。",
+    "tags": [
+      "徽章与文创"
+    ],
+    "detailSections": [],
+    "images": [
+      "/selected/ch4-badges-and-accessories-red-wing/image-001-1600-fb5c7ebc0ba4.webp",
+      "/selected/ch4-badges-and-accessories-red-wing/image-002-1600-375855314a53.webp"
+    ],
+    "type": "徽章与文创",
+    "featured": false,
+    "priority": 26.2
+  },
+  {
+    "title": "CH-4 · 绿金盾形徽章",
+    "slug": "ch4-badges-and-accessories-green-shield",
+    "category": "徽章与文创",
+    "categorySlug": "cultural-creative",
+    "year": "",
+    "image": "/selected/ch4-badges-and-accessories-green-shield/image-002-1600-31e5e8d2f63b.webp",
+    "cover": "/selected/ch4-badges-and-accessories-green-shield/image-002-1600-31e5e8d2f63b.webp",
+    "summary": "以绿金盾形轮廓结合鹰形标记和机身图形。",
+    "description": "将绿白配色、鹰形标记与装饰纹样组织在盾形边缘内，配合机身图形和金色描边，通过两张效果图呈现构图与角度。",
+    "tags": [
+      "徽章与文创"
+    ],
+    "detailSections": [],
+    "images": [
+      "/selected/ch4-badges-and-accessories-green-shield/image-001-1600-40d6c19ce413.webp",
+      "/selected/ch4-badges-and-accessories-green-shield/image-002-1600-31e5e8d2f63b.webp"
+    ],
+    "type": "徽章与文创",
+    "featured": false,
+    "priority": 26.3
+  },
+  {
+    "title": "CH-4 · 刺绣臂章",
+    "slug": "ch4-badges-and-accessories-embroidered-patches",
+    "category": "徽章与文创",
+    "categorySlug": "cultural-creative",
+    "year": "",
+    "image": "/selected/ch4-badges-and-accessories-embroidered-patches/image-001-1600-3dcacc0d5621.webp",
+    "cover": "/selected/ch4-badges-and-accessories-embroidered-patches/image-001-1600-3dcacc0d5621.webp",
+    "summary": "两款臂章分别采用绿色盾形和红色鹰翼构图。",
+    "description": "保留绿白盾形、红鹰与机身等图形，分别展示两枚刺绣效果图的文字编排、线迹和包边。",
+    "tags": [
+      "徽章与文创"
+    ],
+    "detailSections": [],
+    "images": [
+      "/selected/ch4-badges-and-accessories-embroidered-patches/image-001-1600-3dcacc0d5621.webp",
+      "/selected/ch4-badges-and-accessories-embroidered-patches/image-002-1600-5b0d72550f3f.webp"
+    ],
+    "type": "徽章与文创",
+    "featured": false,
+    "priority": 26.4
+  },
+  {
+    "title": "CH-4 · 刺绣吊牌",
+    "slug": "ch4-badges-and-accessories-embroidered-tags",
+    "category": "徽章与文创",
+    "categorySlug": "cultural-creative",
+    "year": "",
+    "image": "/selected/ch4-badges-and-accessories-embroidered-tags/image-001-1600-e84c28365a63.webp",
+    "cover": "/selected/ch4-badges-and-accessories-embroidered-tags/image-001-1600-e84c28365a63.webp",
+    "summary": "以绿色和棕金两款织物吊牌展示机身、图形和双面文字。",
+    "description": "绿色款以机身轮廓与绿白图形编排，棕金款使用鹰纹和英文字样。画面同时展示吊牌两面及钥匙环搭配。",
+    "tags": [
+      "徽章与文创"
+    ],
+    "detailSections": [],
+    "images": [
+      "/selected/ch4-badges-and-accessories-embroidered-tags/image-001-1600-e84c28365a63.webp",
+      "/selected/ch4-badges-and-accessories-embroidered-tags/image-002-1600-1ef23c15f29e.webp"
+    ],
+    "type": "徽章与文创",
+    "featured": false,
+    "priority": 26.5
+  },
+  {
+    "title": "CH-4 · 棒球帽",
+    "slug": "ch4-badges-and-accessories-caps",
+    "category": "徽章与文创",
+    "categorySlug": "cultural-creative",
+    "year": "",
+    "image": "/selected/ch4-badges-and-accessories-caps/image-002-1600-732d2b7d152f.webp",
+    "cover": "/selected/ch4-badges-and-accessories-caps/image-002-1600-732d2b7d152f.webp",
+    "summary": "在黑色和深蓝帽面上呈现两款不同图案的帽饰。",
+    "description": "把机身和多色徽记缩小至帽面正中的应用尺度，分别展示黑色与深蓝棒球帽的正面效果。",
+    "tags": [
+      "徽章与文创"
+    ],
+    "detailSections": [],
+    "images": [
+      "/selected/ch4-badges-and-accessories-caps/image-001-1600-562f32786dba.webp",
+      "/selected/ch4-badges-and-accessories-caps/image-002-1600-732d2b7d152f.webp"
+    ],
+    "type": "徽章与文创",
+    "featured": false,
+    "priority": 26.6
   },
   {
     "title": "巴基斯坦主题徽章与钥匙扣",
@@ -797,52 +1156,112 @@
     "priority": 27
   },
   {
-    "title": "彩虹无人机航展系列徽章",
-    "slug": "rainbow-airshow-badge-series",
+    "title": "彩虹无人机航展徽章 · 中文标语",
+    "slug": "rainbow-airshow-badges-slogans",
     "category": "徽章与文创",
     "categorySlug": "cultural-creative",
     "year": "",
-    "image": "/selected/rainbow-airshow-badge-series/image-010-1600-620b8090f014.webp",
-    "cover": "/selected/rainbow-airshow-badge-series/image-010-1600-620b8090f014.webp",
-    "summary": "以型号、口号、传统意象和雷达图形展开四组视觉方向，呈现航展徽章的系列化表达。",
-    "description": "围绕彩虹无人机主题，将型号数字、汉字口号、传统动物意象及雷达刻度转化为徽章图形。不同组别各自形成独立配色与轮廓语言，并通过单枚近景、组合陈列及礼盒效果图呈现系列关系。",
+    "image": "/selected/rainbow-airshow-badges-slogans/image-003-1600-14f465300a2f.webp",
+    "cover": "/selected/rainbow-airshow-badges-slogans/image-003-1600-14f465300a2f.webp",
+    "summary": "以中文标语和型号数字为视觉重点，用四组配色区分同套徽章。",
+    "description": "将中文标语、型号数字与机身轮廓组合成四枚徽章，采用带有翼形边缘的外轮廓。详情展示深蓝礼盒、四枚组合及各枚徽章的近景。",
     "tags": [
       "徽章与文创"
     ],
     "detailSections": [],
     "images": [
-      "/selected/rainbow-airshow-badge-series/image-001-1600-8f1f0b466994.webp",
-      "/selected/rainbow-airshow-badge-series/image-002-1600-67a330c24e1d.webp",
-      "/selected/rainbow-airshow-badge-series/image-003-1600-73e9045fd2a5.webp",
-      "/selected/rainbow-airshow-badge-series/image-004-1600-bc5ca06a59a2.webp",
-      "/selected/rainbow-airshow-badge-series/image-005-1600-f9763de52cfa.webp",
-      "/selected/rainbow-airshow-badge-series/image-006-1600-b5feb1ce7608.webp",
-      "/selected/rainbow-airshow-badge-series/image-007-1600-08317f8b1776.webp",
-      "/selected/rainbow-airshow-badge-series/image-008-1600-3885dec04a93.webp",
-      "/selected/rainbow-airshow-badge-series/image-009-1600-282fec5f78dd.webp",
-      "/selected/rainbow-airshow-badge-series/image-010-1600-620b8090f014.webp",
-      "/selected/rainbow-airshow-badge-series/image-011-1600-c7ae37b9043f.webp",
-      "/selected/rainbow-airshow-badge-series/image-012-1600-090d33ba28ca.webp",
-      "/selected/rainbow-airshow-badge-series/image-013-1600-8fe834fc53b0.webp",
-      "/selected/rainbow-airshow-badge-series/image-014-1600-255563e958ce.webp",
-      "/selected/rainbow-airshow-badge-series/image-015-1600-826bcbfd0aa0.webp",
-      "/selected/rainbow-airshow-badge-series/image-016-1600-12ffb68a3dad.webp",
-      "/selected/rainbow-airshow-badge-series/image-017-1600-463a843fb649.webp",
-      "/selected/rainbow-airshow-badge-series/image-018-1600-e4e51c23ceb1.webp",
-      "/selected/rainbow-airshow-badge-series/image-019-1600-d8f0ee7fbdb0.webp",
-      "/selected/rainbow-airshow-badge-series/image-020-1600-886ad8e0d6ed.webp",
-      "/selected/rainbow-airshow-badge-series/image-021-1600-324d587fcf20.webp",
-      "/selected/rainbow-airshow-badge-series/image-022-1600-445face56079.webp",
-      "/selected/rainbow-airshow-badge-series/image-023-1600-9dbbf22be311.webp",
-      "/selected/rainbow-airshow-badge-series/image-024-1600-4c298a2c3564.webp",
-      "/selected/rainbow-airshow-badge-series/image-025-1600-2f428dde8e13.webp",
-      "/selected/rainbow-airshow-badge-series/image-026-1600-7f93afbc72a7.webp",
-      "/selected/rainbow-airshow-badge-series/image-027-1600-d377538df185.webp",
-      "/selected/rainbow-airshow-badge-series/image-028-1600-b249e7644be0.webp"
+      "/selected/rainbow-airshow-badges-slogans/image-001-1600-66e9caa0c43d.webp",
+      "/selected/rainbow-airshow-badges-slogans/image-002-1600-d5526bfa34de.webp",
+      "/selected/rainbow-airshow-badges-slogans/image-003-1600-14f465300a2f.webp",
+      "/selected/rainbow-airshow-badges-slogans/image-004-1600-e7f98e53f286.webp",
+      "/selected/rainbow-airshow-badges-slogans/image-005-1600-d0f5db82e470.webp",
+      "/selected/rainbow-airshow-badges-slogans/image-006-1600-68ea0e88e321.webp",
+      "/selected/rainbow-airshow-badges-slogans/image-007-1600-613a273c4da3.webp"
     ],
     "type": "徽章与文创",
     "featured": false,
     "priority": 28
+  },
+  {
+    "title": "彩虹无人机航展徽章 · 东方神兽",
+    "slug": "rainbow-airshow-badge-series",
+    "category": "徽章与文创",
+    "categorySlug": "cultural-creative",
+    "year": "",
+    "image": "/selected/rainbow-airshow-badge-series/image-003-1600-191a09830afb.webp",
+    "cover": "/selected/rainbow-airshow-badge-series/image-003-1600-191a09830afb.webp",
+    "summary": "将东方神兽、祥云与机身轮廓组合成四枚徽章，并延展到同主题礼盒。",
+    "description": "以礼盒上的「东方神兽」为主题，将神兽意象、云纹与机身轮廓融入徽章。通过浅蓝背景下的组合陈列、礼盒效果图和四枚近景展示不同图形与配色。",
+    "tags": [
+      "徽章与文创"
+    ],
+    "detailSections": [],
+    "images": [
+      "/selected/rainbow-airshow-badge-series/image-001-1600-fe2d8674ce70.webp",
+      "/selected/rainbow-airshow-badge-series/image-002-1600-a88ba6aefed6.webp",
+      "/selected/rainbow-airshow-badge-series/image-003-1600-191a09830afb.webp",
+      "/selected/rainbow-airshow-badge-series/image-004-1600-2590ebf2e961.webp",
+      "/selected/rainbow-airshow-badge-series/image-005-1600-686dfb7b1f9b.webp",
+      "/selected/rainbow-airshow-badge-series/image-006-1600-be872bdd29de.webp",
+      "/selected/rainbow-airshow-badge-series/image-007-1600-5e47d3f99b99.webp"
+    ],
+    "type": "徽章与文创",
+    "featured": false,
+    "priority": 28.25
+  },
+  {
+    "title": "彩虹无人机航展徽章 · 雷达刻度",
+    "slug": "rainbow-airshow-badges-radar",
+    "category": "徽章与文创",
+    "categorySlug": "cultural-creative",
+    "year": "",
+    "image": "/selected/rainbow-airshow-badges-radar/image-003-1600-2d926a876416.webp",
+    "cover": "/selected/rainbow-airshow-badges-radar/image-003-1600-2d926a876416.webp",
+    "summary": "以雷达刻度和同心圆组织徽章图形，搭配四种配色与机身轮廓。",
+    "description": "将同心圆、雷达刻度与机身轮廓叠合，形成以蓝、红、青、绿区分的一组徽章。黄色背景的效果图呈现组合与单枚细节，另有礼盒外观和内托陈列。",
+    "tags": [
+      "徽章与文创"
+    ],
+    "detailSections": [],
+    "images": [
+      "/selected/rainbow-airshow-badges-radar/image-001-1600-ab6ceeb54bfd.webp",
+      "/selected/rainbow-airshow-badges-radar/image-002-1600-35ca4f95794a.webp",
+      "/selected/rainbow-airshow-badges-radar/image-003-1600-2d926a876416.webp",
+      "/selected/rainbow-airshow-badges-radar/image-004-1600-2a21191482c3.webp",
+      "/selected/rainbow-airshow-badges-radar/image-005-1600-2369bbb3b829.webp",
+      "/selected/rainbow-airshow-badges-radar/image-006-1600-cdb14cae2570.webp",
+      "/selected/rainbow-airshow-badges-radar/image-007-1600-0ece2e6efd47.webp"
+    ],
+    "type": "徽章与文创",
+    "featured": false,
+    "priority": 28.5
+  },
+  {
+    "title": "彩虹无人机航展徽章 · 云纹航空",
+    "slug": "rainbow-airshow-badges-clouds",
+    "category": "徽章与文创",
+    "categorySlug": "cultural-creative",
+    "year": "",
+    "image": "/selected/rainbow-airshow-badges-clouds/image-003-1600-99feecabc455.webp",
+    "cover": "/selected/rainbow-airshow-badges-clouds/image-003-1600-99feecabc455.webp",
+    "summary": "以云纹与动物意象衬托机身剪影，配合深蓝礼盒呈现成套效果。",
+    "description": "将云纹、动物和植物纹样分别与机身轮廓结合。以四枚组合陈列串起各款细节，并展示深蓝礼盒的外观与内托。",
+    "tags": [
+      "徽章与文创"
+    ],
+    "detailSections": [],
+    "images": [
+      "/selected/rainbow-airshow-badges-clouds/image-001-1600-b53a1eb49f7b.webp",
+      "/selected/rainbow-airshow-badges-clouds/image-002-1600-d2fcd20a5d80.webp",
+      "/selected/rainbow-airshow-badges-clouds/image-003-1600-99feecabc455.webp",
+      "/selected/rainbow-airshow-badges-clouds/image-004-1600-1f8f23547e20.webp",
+      "/selected/rainbow-airshow-badges-clouds/image-005-1600-5ed6c7ea4943.webp",
+      "/selected/rainbow-airshow-badges-clouds/image-006-1600-576c4034238b.webp",
+      "/selected/rainbow-airshow-badges-clouds/image-007-1600-d4377654cd17.webp"
+    ],
+    "type": "徽章与文创",
+    "featured": false,
+    "priority": 28.75
   },
   {
     "title": "西沐 SiiMU 品牌字体组合",

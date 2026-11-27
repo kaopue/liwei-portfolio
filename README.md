@@ -1,6 +1,6 @@
 # 李维视觉设计作品集
 
-React + Vite 搭建的个人作品集网站。作品来自 `F:\作品集  精选文件` 及后续补充的本地作品，按实际画面整理为 35 个案例。
+React + Vite 搭建的个人作品集网站。作品来自 `F:\作品集  精选文件` 及后续补充的本地作品，按实际画面整理为 56 个案例。
 
 ## 作品维护
 
@@ -21,7 +21,7 @@ node scripts/verify-curated-portfolio.mjs
 
 以上导入命令按顺序重建完整作品库。补充批次通过 `sourceDirectories` 或 `sourceFiles` 指定目录或文件。`--append` 保留已有案例并拒绝重复导入，来源清单的 `imports` 记录各批次的计划、原始目录和项目归属。新增批次需使用新的计划文件。
 
-首屏使用 `enhance-82adf1f692a5f9fe-2x-80pc.mp4` 的静音副本（2560×1440、24 fps），联系区使用 `gemini_generated_video_7b4588df.mp4` 的静音副本（1280×720、24 fps）。两段素材均保留原始视频流，封面取自各自的首帧。当前资源记录在 `src/data/optimizedVideos.json` 和 `src/data/contactVideo.json`。
+首屏使用 `enhance-82adf1f692a5f9fe-2x-80pc.mp4` 的静音副本，联系区使用 `enhance-4bbe02e691dc34e0-2x-80pc.mp4` 的静音副本。两段素材均保留原始 2560×1440、24 fps 视频流，封面取自各自的首帧。当前资源记录在 `src/data/optimizedVideos.json` 和 `src/data/contactVideo.json`。
 
 ## 本地预览
 
