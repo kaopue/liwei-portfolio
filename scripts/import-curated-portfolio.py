@@ -530,7 +530,7 @@ def main() -> None:
         raise ImportFailure("--workers must be between 1 and 4")
     source = args.source.resolve()
     plan_path = args.plan if args.plan.is_absolute() else ROOT / args.plan
-    plan_bytes = plan_path.read_bytes()
+    plan_bytes = plan_path.read_bytes().replace(b"\r\n", b"\n")
     plan = json.loads(plan_bytes.decode("utf-8-sig"))
     existing = read_existing() if args.append else None
     projects, inventory, labels, actual, exclusions = prepare(source, plan)

@@ -187,8 +187,11 @@ function verifyStatic() {
     }
     const plan = readJson(batch.plan);
     if (!Array.isArray(plan.projects) || !Array.isArray(plan.categories)) throw new Error(`Malformed reviewed plan: ${batch.plan}`);
-    const planHash = createHash("sha256").update(fs.readFileSync(path.resolve(ROOT, batch.plan))).digest("hex");
-    check(batch.planSha256 === planHash, `Reviewed plan hash differs from inventory import: ${batch.plan}`);
+    const planText = fs.readFileSync(path.resolve(ROOT, batch.plan), "utf8").replaceAll("\r\n", "\n");
+    // Older inventories may have been generated from Windows checkouts.
+    const planHashes = [planText, planText.replaceAll("\n", "\r\n")]
+      .map((text) => createHash("sha256").update(text).digest("hex"));
+    check(planHashes.includes(batch.planSha256), `Reviewed plan hash differs from inventory import: ${batch.plan}`);
     const batchSlugs = new Set(batch.projects);
     check(batchSlugs.size === batch.projects.length && batchSlugs.size === plan.projects.length && plan.projects.every((project) => batchSlugs.has(project.slug)), `Import project slugs differ from reviewed plan: ${batch.plan}`);
     for (const category of plan.categories) {
