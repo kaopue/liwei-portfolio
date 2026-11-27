@@ -31,8 +31,6 @@ html { scrollbar-gutter: stable; }
   .about-portrait img { object-fit: contain; object-position: right bottom; }
   .about-identity { gap: clamp(20px, 1.666667vw, 32px); align-items: baseline; color: var(--text); font-size: 22px; line-height: 1.2; }
   .about-identity strong { color: var(--text); font-size: clamp(24px, 1.5625vw, 30px); font-weight: 700; transform: translateY(3px); }
-  .about-years { display: inline; color: var(--text); font-size: clamp(16px, 1.09375vw, 21px); font-weight: 500; letter-spacing: 0; }
-  .about-years sup { position: relative; top: -.15em; font-size: .65em; }
   .about-inner { padding-right: 0; }
   .about-lead { width: 57%; margin-top: 23px; }
   .about-lead .about-intro { padding-left: 3px; font-size: clamp(17px, 1.3125vw, 25.2px); font-weight: 700; line-height: clamp(32px, 2.25vw, 43.2px); }
@@ -48,9 +46,6 @@ html { scrollbar-gutter: stable; }
   .about-summary { width: 52%; max-width: 760px; margin-top: 43px; font-size: var(--type-body); line-height: 1.85; color: var(--muted); }
   .about-summary p:first-child { color: var(--muted); font-weight: 400; }
   .about-summary p + p { margin-top: 10px; }
-  .about-inner .about-specialties { margin-top: 18px; gap: 8px 20px; font-size: var(--type-label); color: var(--muted); }
-  .about-specialties li { min-width: 0; border: 0; border-radius: 0; padding: 0; line-height: 1.6; }
-  .about-specialties li + li::before { content: "/"; margin-right: 20px; color: var(--faint); }
   .about-career { width: 54%; margin-top: 41px; }
   .about-inner .about-career-label { margin-bottom: 18px; color: var(--muted); font-size: var(--type-label); font-weight: 600; letter-spacing: .08em; }
   .about-inner .about-timeline { width: 100%; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 26px; margin-top: 0; }
@@ -65,7 +60,6 @@ html { scrollbar-gutter: stable; }
   .about { padding-block: clamp(100px, 14svh, 119px) 24px; }
   .about-lead { margin-top: 16px; }
   .about-summary { margin-top: 24px; }
-  .about-inner .about-specialties { margin-top: 14px; }
   .about-career { margin-top: 26px; }
   .about-inner .about-career-label { margin-bottom: 14px; }
 }
@@ -88,7 +82,6 @@ html { scrollbar-gutter: stable; }
 @media (max-width: 760px) {
   .about-heading-row { align-items: baseline; gap: 12px 22px; }
   .about-heading-row .about-identity { min-height: 0; width: auto; flex-direction: row; align-items: baseline; gap: 16px; }
-  .about-heading-row .about-years { display: inline; font-size: 16px; font-weight: 600; }
   .about-lead { margin-top: 24px; }
   .about-lead .about-intro { margin-top: 10px; font-size: 18px; font-weight: 700; line-height: 1.7; }
   .about-inner .about-statement { margin-block: 18px; font-size: 20px; }
@@ -244,9 +237,6 @@ html { scrollbar-gutter: stable; }
   .about-inner .about-statement { margin: 0; font-size: 22px; line-height: 1.6; text-wrap: pretty; }
   .about-lead .about-intro { margin-top: 18px; font-size: 17px; font-weight: 500; color: var(--muted); }
   .about-summary { margin-top: 22px; font-size: 16px; }
-  .about-inner .about-specialties { margin-top: 22px; font-size: 13px; }
-  .about-specialties li { border: 0; padding: 0; }
-  .about-specialties li + li::before { content: "/"; margin-right: 8px; color: var(--faint); }
   .about-career { margin-top: 40px; }
   .about-inner .about-timeline { gap: 30px; }
   .about-timeline li { font-size: 15px; padding-left: 25px; }
