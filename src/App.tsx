@@ -1,5 +1,4 @@
 import {
-  type CSSProperties,
   lazy,
   Suspense,
   useEffect,
@@ -12,13 +11,9 @@ import {
   ArrowUpRight,
   ChevronUp,
   Mail,
-  Pause,
-  Play,
   Phone,
-  Send,
-  SquareArrowOutUpRight,
 } from "lucide-react";
-import { useHeroVideo } from "./useHeroVideo";
+import { useBackgroundVideo } from "./useBackgroundVideo";
 import { useCoverMotion } from "./useCoverMotion";
 import { WorkDetailBoundary } from "./WorkDetailBoundary";
 import { decodeHash } from "./hash";
@@ -34,13 +29,11 @@ import {
 import type { Project } from "./data/portfolio";
 import homepageImages from "./data/curatedCovers.json";
 import optimizedVideos from "./data/optimizedVideos.json";
+import contactVideo from "./data/contactVideo.json";
 import { getWorkBrowseState, saveWorkBrowseState } from "./workBrowsing";
 import workPreviews from "./data/workPreviews.json";
 
 const WorkDetailPage = lazy(() => import("./WorkDetailPage"));
-
-const revealDelay = (delay: string): CSSProperties =>
-  ({ "--reveal-delay": delay }) as CSSProperties;
 
 type HashRoute = { kind: "home" } | { kind: "work"; slug: string };
 
@@ -208,53 +201,57 @@ function SiteHeader() {
   );
 }
 
-function Hero() {
-  const {
-    heroRef, posterRef, videoRef, videoMode, videoReady,
-    userPaused, togglePlayback, onVideoPlaying, onVideoCanPlay, onVideoError,
-  } = useHeroVideo();
+function BackgroundMedia({ media, kind }: {
+  media: typeof optimizedVideos | typeof contactVideo;
+  kind: "hero" | "contact";
+}) {
+  const firstScreen = kind === "hero";
+  const { viewportRef, posterRef, videoRef, videoEnabled, videoReady, playIfAllowed, onVideoPlaying, onVideoError } =
+    useBackgroundVideo(firstScreen);
 
   return (
-    <section ref={heroRef} className="hero" id="top" aria-labelledby="hero-title">
-      <div className="hero-media" aria-hidden="true">
-        <picture>
-          <source media="(max-width: 767px)" type="image/webp" srcSet={optimizedVideos.posterMobile} />
-          <source type="image/webp" srcSet={optimizedVideos.posterWebp} />
-          <img
-            ref={posterRef}
-            className="hero-poster"
-            src={optimizedVideos.posterJpg}
-            alt=""
-            width={optimizedVideos.posterWidth}
-            height={optimizedVideos.posterHeight}
-            fetchPriority="high"
-          />
-        </picture>
-        {videoMode && (
-          <video
-            ref={videoRef}
-            key={videoMode}
-            className={`hero-video${videoReady ? " is-ready" : ""}`}
-            poster={videoMode === "mobile" ? optimizedVideos.posterMobile : optimizedVideos.posterWebp}
-            aria-hidden="true"
-            autoPlay
-            muted
-            loop
-            playsInline
-            preload="metadata"
-            onPlaying={onVideoPlaying}
-            onCanPlay={onVideoCanPlay}
-            onError={onVideoError}
-          >
-            <source src={optimizedVideos.videoMp4} type="video/mp4" />
-          </video>
+    <div ref={viewportRef} className={firstScreen ? "hero-media" : "contact-scenery"} aria-hidden="true">
+      <picture>
+        {"posterMobile" in media && (
+          <source media="(max-width: 767px)" type="image/webp" srcSet={media.posterMobile} />
         )}
-      </div>
+        {"posterJpg" in media && <source type="image/webp" srcSet={media.posterWebp} />}
+        <img
+          ref={posterRef}
+          className={`${kind}-poster`}
+          src={"posterJpg" in media ? media.posterJpg : media.posterWebp}
+          alt=""
+          width={media.posterWidth}
+          height={media.posterHeight}
+          fetchPriority={firstScreen ? "high" : undefined}
+          loading={firstScreen ? "eager" : "lazy"}
+          decoding={firstScreen ? "auto" : "async"}
+        />
+      </picture>
+      {videoEnabled && (
+        <video
+          ref={videoRef}
+          className={`background-video ${kind}-video${videoReady ? " is-ready" : ""}`}
+          src={media.videoMp4}
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="metadata"
+          onPlaying={onVideoPlaying}
+          onCanPlay={playIfAllowed}
+          onError={onVideoError}
+        />
+      )}
+    </div>
+  );
+}
+
+function Hero() {
+  return (
+    <section className="hero" id="top" aria-labelledby="hero-title">
+      <BackgroundMedia kind="hero" media={optimizedVideos} />
       <div className="hero-shade" aria-hidden="true" />
-      {videoReady && <button className="hero-playback" type="button" onClick={togglePlayback} aria-label={userPaused ? "播放背景视频" : "暂停背景视频"}>
-        {userPaused ? <Play size={14} aria-hidden="true" /> : <Pause size={14} aria-hidden="true" />}
-        {userPaused ? "播放背景" : "暂停背景"}
-      </button>}
       <div className="container hero-inner">
         <div className="hero-content">
           <h1 id="hero-title">
@@ -580,38 +577,22 @@ function Advantages() {
 function Contact() {
   return (
     <footer className="contact" id="contact" aria-labelledby="contact-title">
-      <picture className="contact-scenery" aria-hidden="true">
-        <img
-          className="contact-landscape"
-          src="/portfolio/contact-rider-original-98c28d4e7785.jpg"
-          alt=""
-          width={2720}
-          height={1554}
-          loading="lazy"
-          decoding="async"
-        />
-      </picture>
       <div className="container contact-inner">
-        <div className="contact-copy" data-reveal>
+        <div className="contact-copy">
           <h2 id="contact-title">期待下一次<br />有价值的商业视觉合作。</h2>
-        </div>
-        <div className="contact-panel" data-reveal style={revealDelay("140ms")}>
-          <a href={`mailto:${contacts.email}`}>
-            <span>{contacts.email}</span>
-            <Send size={20} />
-          </a>
-          <a href={`tel:${contacts.phone}`}>
-            <span>{contacts.phone}</span>
-            <Phone size={20} />
-          </a>
-          <a href={`https://${contacts.behance}`} target="_blank" rel="noopener noreferrer">
-            <span>{contacts.behance}</span>
-            <span className="sr-only">（在新标签页打开）</span>
-            <SquareArrowOutUpRight size={20} />
-          </a>
-          <p><span>{contacts.location}</span></p>
+          <div className="contact-panel">
+            <a href={`mailto:${contacts.email}`}>
+              <Mail size={19} aria-hidden="true" />
+              <span>{contacts.email}</span>
+            </a>
+            <a href={`tel:${contacts.phone}`}>
+              <Phone size={19} aria-hidden="true" />
+              <span>{contacts.phone}</span>
+            </a>
+          </div>
         </div>
       </div>
+      <BackgroundMedia kind="contact" media={contactVideo} />
     </footer>
   );
 }
