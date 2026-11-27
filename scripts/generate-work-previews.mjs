@@ -9,6 +9,7 @@ const [projects, images, covers] = await Promise.all([
 ]);
 const previews = {};
 for (const project of projects) {
+  if (covers[project.slug]?.layout === "triptych") continue;
   const hoverNumber = covers[project.slug]?.hoverImageNumber;
   const source = hoverNumber === undefined
     ? project.images.find((src) => src !== project.cover)

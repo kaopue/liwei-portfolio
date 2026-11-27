@@ -49,12 +49,61 @@
     "thumbSrc": "/selected/zhangshuntang-wedding-tea-packaging/cover-320-816bb26a44bc.webp",
     "smallThumbSrc": "/selected/zhangshuntang-wedding-tea-packaging/cover-160-6cf143ad6a85.webp"
   },
+  "zhangshuntang-wedding-tea-packaging-magpies": {
+    "src": "/selected/zhangshuntang-wedding-tea-packaging-magpies/cover-960-ba67e0069185.webp",
+    "width": 960,
+    "height": 540,
+    "thumbSrc": "/selected/zhangshuntang-wedding-tea-packaging-magpies/cover-320-4df2b05291bc.webp",
+    "smallThumbSrc": "/selected/zhangshuntang-wedding-tea-packaging-magpies/cover-160-c8f04e62f3a0.webp"
+  },
+  "zhangshuntang-wedding-tea-packaging-wedding-blossoms": {
+    "src": "/selected/zhangshuntang-wedding-tea-packaging-wedding-blossoms/cover-960-06d5a0cf30ea.webp",
+    "width": 960,
+    "height": 540,
+    "thumbSrc": "/selected/zhangshuntang-wedding-tea-packaging-wedding-blossoms/cover-320-d93d9e17fe73.webp",
+    "smallThumbSrc": "/selected/zhangshuntang-wedding-tea-packaging-wedding-blossoms/cover-160-9d53d679220c.webp"
+  },
+  "caaa-aerospace-badge-collection-dragon": {
+    "src": "/selected/caaa-aerospace-badge-collection-dragon/cover-960-78c99ecf2275.webp",
+    "width": 960,
+    "height": 540,
+    "thumbSrc": "/selected/caaa-aerospace-badge-collection-dragon/cover-320-3454cba90ff4.webp",
+    "smallThumbSrc": "/selected/caaa-aerospace-badge-collection-dragon/cover-160-8e06a0b96dc3.webp"
+  },
   "caaa-aerospace-badge-collection": {
     "src": "/selected/caaa-aerospace-badge-collection/cover-960-75edb3e61b54.webp",
     "width": 960,
     "height": 540,
     "thumbSrc": "/selected/caaa-aerospace-badge-collection/cover-320-15694c98882d.webp",
     "smallThumbSrc": "/selected/caaa-aerospace-badge-collection/cover-160-5c9eabb677de.webp"
+  },
+  "caaa-aerospace-badge-collection-blue-waves": {
+    "src": "/selected/caaa-aerospace-badge-collection-blue-waves/cover-960-c2c26e867695.webp",
+    "width": 960,
+    "height": 540,
+    "thumbSrc": "/selected/caaa-aerospace-badge-collection-blue-waves/cover-320-a04e4d75e35c.webp",
+    "smallThumbSrc": "/selected/caaa-aerospace-badge-collection-blue-waves/cover-160-2d075adf6ecb.webp"
+  },
+  "caaa-aerospace-badge-collection-orbit-ring": {
+    "src": "/selected/caaa-aerospace-badge-collection-orbit-ring/cover-960-bb251c445b2f.webp",
+    "width": 960,
+    "height": 540,
+    "thumbSrc": "/selected/caaa-aerospace-badge-collection-orbit-ring/cover-320-0243d31e312e.webp",
+    "smallThumbSrc": "/selected/caaa-aerospace-badge-collection-orbit-ring/cover-160-2e3ba6104cb7.webp"
+  },
+  "caaa-aerospace-badge-collection-red-cloud-ring": {
+    "src": "/selected/caaa-aerospace-badge-collection-red-cloud-ring/cover-960-52912f3bb14f.webp",
+    "width": 960,
+    "height": 540,
+    "thumbSrc": "/selected/caaa-aerospace-badge-collection-red-cloud-ring/cover-320-d2dbe64650e0.webp",
+    "smallThumbSrc": "/selected/caaa-aerospace-badge-collection-red-cloud-ring/cover-160-0a25c6486cc4.webp"
+  },
+  "caaa-aerospace-badge-collection-star-clouds": {
+    "src": "/selected/caaa-aerospace-badge-collection-star-clouds/cover-960-4c2a77c6fbe5.webp",
+    "width": 960,
+    "height": 540,
+    "thumbSrc": "/selected/caaa-aerospace-badge-collection-star-clouds/cover-320-43e9e1cc590f.webp",
+    "smallThumbSrc": "/selected/caaa-aerospace-badge-collection-star-clouds/cover-160-75f8f8950b3b.webp"
   },
   "tiandi-xunhuang-identity": {
     "src": "/selected/tiandi-xunhuang-identity/cover-960-86ffcb2c1656.webp",
@@ -105,6 +154,13 @@
     "thumbSrc": "/selected/liming-tianyao-care-packaging/cover-320-9b9e087c744c.webp",
     "smallThumbSrc": "/selected/liming-tianyao-care-packaging/cover-160-bbe825ce84fb.webp"
   },
+  "yunshang-kangyuan-eye-patch-packaging-blue-white": {
+    "src": "/selected/yunshang-kangyuan-eye-patch-packaging-blue-white/cover-960-6535ad23fe66.webp",
+    "width": 960,
+    "height": 540,
+    "thumbSrc": "/selected/yunshang-kangyuan-eye-patch-packaging-blue-white/cover-320-1fbaf726d01b.webp",
+    "smallThumbSrc": "/selected/yunshang-kangyuan-eye-patch-packaging-blue-white/cover-160-33daafd09165.webp"
+  },
   "yunshang-kangyuan-eye-patch-packaging": {
     "src": "/selected/yunshang-kangyuan-eye-patch-packaging/cover-960-06454ea62706.webp",
     "width": 960,
@@ -112,12 +168,47 @@
     "thumbSrc": "/selected/yunshang-kangyuan-eye-patch-packaging/cover-320-f1e3c5ce08ed.webp",
     "smallThumbSrc": "/selected/yunshang-kangyuan-eye-patch-packaging/cover-160-3c8cedc198c4.webp"
   },
+  "yunshang-kangyuan-eye-patch-packaging-fine-line": {
+    "src": "/selected/yunshang-kangyuan-eye-patch-packaging-fine-line/cover-960-31c6232669be.webp",
+    "width": 960,
+    "height": 540,
+    "thumbSrc": "/selected/yunshang-kangyuan-eye-patch-packaging-fine-line/cover-320-f22e5fed0a34.webp",
+    "smallThumbSrc": "/selected/yunshang-kangyuan-eye-patch-packaging-fine-line/cover-160-f1be4cdec176.webp"
+  },
   "zhangshuntang-shun-tea-gift-packaging": {
     "src": "/selected/zhangshuntang-shun-tea-gift-packaging/cover-960-3d4d46bf0703.webp",
     "width": 960,
     "height": 540,
     "thumbSrc": "/selected/zhangshuntang-shun-tea-gift-packaging/cover-320-7b1d5650be4b.webp",
     "smallThumbSrc": "/selected/zhangshuntang-shun-tea-gift-packaging/cover-160-50044e383f96.webp"
+  },
+  "zhangshuntang-shun-tea-gift-packaging-long-leaf": {
+    "src": "/selected/zhangshuntang-shun-tea-gift-packaging-long-leaf/cover-960-bcd2f2481918.webp",
+    "width": 960,
+    "height": 540,
+    "thumbSrc": "/selected/zhangshuntang-shun-tea-gift-packaging-long-leaf/cover-320-181fded9c139.webp",
+    "smallThumbSrc": "/selected/zhangshuntang-shun-tea-gift-packaging-long-leaf/cover-160-d7f8c5725deb.webp"
+  },
+  "zelle-link-orodispersible-packaging-red-diagonal": {
+    "src": "/selected/zelle-link-orodispersible-packaging-red-diagonal/cover-960-d9c778c3bf04.webp",
+    "width": 960,
+    "height": 540,
+    "thumbSrc": "/selected/zelle-link-orodispersible-packaging-red-diagonal/cover-320-3e768ed31311.webp",
+    "smallThumbSrc": "/selected/zelle-link-orodispersible-packaging-red-diagonal/cover-160-8b725a3e6d81.webp"
+  },
+  "zelle-link-orodispersible-packaging-blue-crystal": {
+    "src": "/selected/zelle-link-orodispersible-packaging-blue-crystal/cover-960-b4d1f0e728c5.webp",
+    "width": 960,
+    "height": 540,
+    "thumbSrc": "/selected/zelle-link-orodispersible-packaging-blue-crystal/cover-320-c8f85730f479.webp",
+    "smallThumbSrc": "/selected/zelle-link-orodispersible-packaging-blue-crystal/cover-160-5248773e7027.webp"
+  },
+  "zelle-link-orodispersible-packaging-purple-gold": {
+    "src": "/selected/zelle-link-orodispersible-packaging-purple-gold/cover-960-390d433ecdbf.webp",
+    "width": 960,
+    "height": 540,
+    "thumbSrc": "/selected/zelle-link-orodispersible-packaging-purple-gold/cover-320-b741ea150898.webp",
+    "smallThumbSrc": "/selected/zelle-link-orodispersible-packaging-purple-gold/cover-160-d9958f2739a8.webp"
   },
   "zelle-link-orodispersible-packaging": {
     "src": "/selected/zelle-link-orodispersible-packaging/cover-960-de7e96e725fa.webp",
@@ -127,18 +218,19 @@
     "smallThumbSrc": "/selected/zelle-link-orodispersible-packaging/cover-160-05d703e34e4a.webp"
   },
   "caihong-corporate-wall": {
-    "src": "/selected/caihong-corporate-wall/cover-960-1cfd8bdc4100.webp",
+    "src": "/selected/caihong-corporate-wall/cover-960-71a0d8e87a63.webp",
     "width": 960,
     "height": 540,
-    "thumbSrc": "/selected/caihong-corporate-wall/cover-320-702f177cfc41.webp",
-    "smallThumbSrc": "/selected/caihong-corporate-wall/cover-160-af2510cbce11.webp"
+    "thumbSrc": "/selected/caihong-corporate-wall/cover-320-e9daa3c1f462.webp",
+    "smallThumbSrc": "/selected/caihong-corporate-wall/cover-160-4d8a85c25cac.webp"
   },
   "aerospace-recruitment-posters": {
-    "src": "/selected/aerospace-recruitment-posters/cover-960-70e76c3779b8.webp",
+    "src": "/selected/aerospace-recruitment-posters/cover-960-a62b20fbb2fc.webp",
     "width": 960,
     "height": 540,
-    "thumbSrc": "/selected/aerospace-recruitment-posters/cover-320-988cd36442d0.webp",
-    "smallThumbSrc": "/selected/aerospace-recruitment-posters/cover-160-338350fb0bc3.webp"
+    "thumbSrc": "/selected/aerospace-recruitment-posters/cover-320-9a771afe0d00.webp",
+    "smallThumbSrc": "/selected/aerospace-recruitment-posters/cover-160-3ea1c97061be.webp",
+    "layout": "triptych"
   },
   "song-gift-wish-concert": {
     "src": "/selected/song-gift-wish-concert/cover-960-1192c4094070.webp",
@@ -146,13 +238,6 @@
     "height": 540,
     "thumbSrc": "/selected/song-gift-wish-concert/cover-320-cff27246535a.webp",
     "smallThumbSrc": "/selected/song-gift-wish-concert/cover-160-0955cca839fb.webp"
-  },
-  "song-gift-four-seasons-concert": {
-    "src": "/selected/song-gift-four-seasons-concert/cover-960-443af29cb51d.webp",
-    "width": 960,
-    "height": 540,
-    "thumbSrc": "/selected/song-gift-four-seasons-concert/cover-320-e2857137d459.webp",
-    "smallThumbSrc": "/selected/song-gift-four-seasons-concert/cover-160-fe86cba7e03f.webp"
   },
   "palliative-care-forum-visuals": {
     "src": "/selected/palliative-care-forum-visuals/cover-960-d1dcb90b6ded.webp",
@@ -182,6 +267,48 @@
     "thumbSrc": "/selected/ch4-badges-and-accessories/cover-320-e9875e86439b.webp",
     "smallThumbSrc": "/selected/ch4-badges-and-accessories/cover-160-9576e7510602.webp"
   },
+  "ch4-badges-and-accessories-red-eagle": {
+    "src": "/selected/ch4-badges-and-accessories-red-eagle/cover-960-b7c00c0d71ad.webp",
+    "width": 960,
+    "height": 540,
+    "thumbSrc": "/selected/ch4-badges-and-accessories-red-eagle/cover-320-d055bd5e372d.webp",
+    "smallThumbSrc": "/selected/ch4-badges-and-accessories-red-eagle/cover-160-0f4535ef31df.webp"
+  },
+  "ch4-badges-and-accessories-red-wing": {
+    "src": "/selected/ch4-badges-and-accessories-red-wing/cover-960-1d00eb4bb003.webp",
+    "width": 960,
+    "height": 540,
+    "thumbSrc": "/selected/ch4-badges-and-accessories-red-wing/cover-320-2519856f6cfa.webp",
+    "smallThumbSrc": "/selected/ch4-badges-and-accessories-red-wing/cover-160-86fae41bd636.webp"
+  },
+  "ch4-badges-and-accessories-green-shield": {
+    "src": "/selected/ch4-badges-and-accessories-green-shield/cover-960-4c38aeddf4c3.webp",
+    "width": 960,
+    "height": 540,
+    "thumbSrc": "/selected/ch4-badges-and-accessories-green-shield/cover-320-408f7322a256.webp",
+    "smallThumbSrc": "/selected/ch4-badges-and-accessories-green-shield/cover-160-e914a787dd4b.webp"
+  },
+  "ch4-badges-and-accessories-embroidered-patches": {
+    "src": "/selected/ch4-badges-and-accessories-embroidered-patches/cover-960-cf3380918d0b.webp",
+    "width": 960,
+    "height": 540,
+    "thumbSrc": "/selected/ch4-badges-and-accessories-embroidered-patches/cover-320-88150c514cb7.webp",
+    "smallThumbSrc": "/selected/ch4-badges-and-accessories-embroidered-patches/cover-160-bb4014581009.webp"
+  },
+  "ch4-badges-and-accessories-embroidered-tags": {
+    "src": "/selected/ch4-badges-and-accessories-embroidered-tags/cover-960-2979f0552793.webp",
+    "width": 960,
+    "height": 540,
+    "thumbSrc": "/selected/ch4-badges-and-accessories-embroidered-tags/cover-320-4bf99eab6fc8.webp",
+    "smallThumbSrc": "/selected/ch4-badges-and-accessories-embroidered-tags/cover-160-ebadddef6375.webp"
+  },
+  "ch4-badges-and-accessories-caps": {
+    "src": "/selected/ch4-badges-and-accessories-caps/cover-960-26a2af40b173.webp",
+    "width": 960,
+    "height": 540,
+    "thumbSrc": "/selected/ch4-badges-and-accessories-caps/cover-320-ad8b8ee8cfc5.webp",
+    "smallThumbSrc": "/selected/ch4-badges-and-accessories-caps/cover-160-c9e0dbf97853.webp"
+  },
   "pakistan-aircraft-badge-keychain": {
     "src": "/selected/pakistan-aircraft-badge-keychain/cover-960-6eb0b1cbadfd.webp",
     "width": 960,
@@ -189,12 +316,33 @@
     "thumbSrc": "/selected/pakistan-aircraft-badge-keychain/cover-320-4764a67ccd46.webp",
     "smallThumbSrc": "/selected/pakistan-aircraft-badge-keychain/cover-160-e90cacffa6db.webp"
   },
-  "rainbow-airshow-badge-series": {
-    "src": "/selected/rainbow-airshow-badge-series/cover-960-604a43156b7f.webp",
+  "rainbow-airshow-badges-slogans": {
+    "src": "/selected/rainbow-airshow-badges-slogans/cover-960-746ef6437f2f.webp",
     "width": 960,
     "height": 540,
-    "thumbSrc": "/selected/rainbow-airshow-badge-series/cover-320-fbbec3ca9b44.webp",
-    "smallThumbSrc": "/selected/rainbow-airshow-badge-series/cover-160-f8048582dfdb.webp"
+    "thumbSrc": "/selected/rainbow-airshow-badges-slogans/cover-320-2c071cb3bdd3.webp",
+    "smallThumbSrc": "/selected/rainbow-airshow-badges-slogans/cover-160-e67d15fc5146.webp"
+  },
+  "rainbow-airshow-badge-series": {
+    "src": "/selected/rainbow-airshow-badge-series/cover-960-2d3dc69eeb8e.webp",
+    "width": 960,
+    "height": 540,
+    "thumbSrc": "/selected/rainbow-airshow-badge-series/cover-320-bddfa0f3f78d.webp",
+    "smallThumbSrc": "/selected/rainbow-airshow-badge-series/cover-160-cc34cdf09ceb.webp"
+  },
+  "rainbow-airshow-badges-radar": {
+    "src": "/selected/rainbow-airshow-badges-radar/cover-960-def2ba455d44.webp",
+    "width": 960,
+    "height": 540,
+    "thumbSrc": "/selected/rainbow-airshow-badges-radar/cover-320-bd93225e174a.webp",
+    "smallThumbSrc": "/selected/rainbow-airshow-badges-radar/cover-160-878e33a1cadb.webp"
+  },
+  "rainbow-airshow-badges-clouds": {
+    "src": "/selected/rainbow-airshow-badges-clouds/cover-960-885945c2e04d.webp",
+    "width": 960,
+    "height": 540,
+    "thumbSrc": "/selected/rainbow-airshow-badges-clouds/cover-320-d3c3d89b1553.webp",
+    "smallThumbSrc": "/selected/rainbow-airshow-badges-clouds/cover-160-5b5982f2b75f.webp"
   },
   "simu-brand-typography": {
     "src": "/selected/simu-brand-typography/cover-960-cc243d1fac90.webp",

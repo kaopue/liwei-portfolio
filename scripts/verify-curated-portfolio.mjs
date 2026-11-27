@@ -13,7 +13,7 @@ import { createHash } from "node:crypto";
 import { fileURLToPath } from "node:url";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
-const EXPECTED = { projects: 35, sourceFiles: 230, displays: 325 };
+const EXPECTED = { projects: 56, sourceFiles: 231, displays: 324 };
 const errors = [];
 const warnings = [];
 const metadataCache = new Map();
@@ -181,6 +181,7 @@ function verifyStatic() {
   if (!Array.isArray(imports) || imports.length === 0) throw new Error("Inventory imports must be a non-empty array.");
   const categories = new Map();
   const planProjects = new Map();
+  const planOmissions = new Map();
   for (const batch of imports) {
     if (typeof batch.plan !== "string" || typeof batch.sourceRoot !== "string" || !Array.isArray(batch.projects)) {
       throw new Error("Inventory import is missing its plan, sourceRoot or project slugs.");
@@ -202,6 +203,10 @@ function verifyStatic() {
       check(!planProjects.has(project.slug), `Reviewed imports repeat project ${project.slug}.`);
       planProjects.set(project.slug, project);
     }
+    for (const omission of plan.omittedFiles ?? []) {
+      check(!planOmissions.has(omission.file), `Reviewed imports repeat omitted source ${omission.file}.`);
+      planOmissions.set(omission.file, omission.reason);
+    }
   }
   const projectMap = new Map(projects.map((project) => [project.slug, project]));
   check(projects.length === EXPECTED.projects && projectMap.size === EXPECTED.projects, `Expected ${EXPECTED.projects} unique projects; found ${projects.length} records / ${projectMap.size} unique slugs.`);
@@ -210,6 +215,9 @@ function verifyStatic() {
   check(inventory.displayCount === EXPECTED.displays && inventory.sourceDisplays.length === EXPECTED.displays, `Expected ${EXPECTED.displays} unique displays; inventory declares ${inventory.displayCount} and contains ${inventory.sourceDisplays.length}.`);
   const sourceMap = new Map(inventory.files.map((file) => [file.file, file]));
   check(sourceMap.size === inventory.files.length, "Inventory repeats a source file.");
+  const omittedSources = inventory.files.filter((file) => file.status === "omitted");
+  check(omittedSources.length === planOmissions.size && omittedSources.every((file) => planOmissions.get(file.file) === file.reason),
+    "Inventory omitted sources do not match the reviewed plans.");
   const displayMap = new Map(inventory.sourceDisplays.map((display) => [display.image, display]));
   check(displayMap.size === inventory.sourceDisplays.length, "Inventory repeats a generated display URL.");
   const assets = new Map(inventory.assets.map((asset) => [asset.image, asset]));
@@ -250,9 +258,16 @@ function verifyStatic() {
         const artwork = sourceMap.get(planned.coverArtwork);
         check(provenance?.file === planned.coverArtwork && provenance.image === cover.src &&
           artwork?.status === "cover" && artwork.project === project.slug,
-          `${context}: cover artwork does not match the reviewed plan.`);
+        `${context}: cover artwork does not match the reviewed plan.`);
       }
       check(cover.hoverImageNumber === planned?.hoverImageNumber, `${context}: hover image choice differs from the reviewed plan.`);
+      check(cover.layout === planned?.coverLayout, `${context}: cover layout does not match the reviewed plan.`);
+      if (cover.layout === "triptych") {
+        const provenance = inventory.coverSources?.[project.slug];
+        check(provenance?.mode === cover.layout && provenance.image === cover.src &&
+          JSON.stringify(provenance.files) === JSON.stringify(planned?.files),
+        `${context}: triptych must reference the three reviewed source images.`);
+      }
       for (const [key, size] of [["src", { width: 960, height: 540 }], ["thumbSrc", { width: 320, height: 400 }], ["smallThumbSrc", { width: 160, height: 200 }]]) {
         check(assets.has(cover[key]), `${context}: ${key} is absent from inventory.assets: ${cover[key]}`);
         verifyImage(cover[key], size, `${context} ${key}`);

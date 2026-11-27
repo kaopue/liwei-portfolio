@@ -176,10 +176,18 @@ def prepare(source: Path, plan: dict[str, Any]) -> tuple[list[dict], list[dict],
                 raise ImportFailure(f"Invalid or repeated cover artwork: {artwork}")
             project["coverArtwork"] = artwork
             cover_artworks[artwork] = slug
-        if "hoverImageNumber" in project:
-            hover_number = project["hoverImageNumber"]
-            if type(hover_number) is not int or hover_number < 1:
-                raise ImportFailure(f"hoverImageNumber must be a positive integer: {slug}")
+        hover_number = project.get("hoverImageNumber")
+        if hover_number is not None and (type(hover_number) is not int or hover_number < 1):
+            raise ImportFailure(f"hoverImageNumber must be a positive integer: {slug}")
+        cover_layout = project.get("coverLayout")
+        if cover_layout is not None and (
+            cover_layout != "triptych"
+            or "coverCrop" in project
+            or "coverArtwork" in project
+            or len(project["files"]) != 3
+            or any(actual[name].suffix.lower() not in RASTER_TYPES for name in project["files"])
+        ):
+            raise ImportFailure(f"A triptych cover requires three raster sources and no coverCrop: {slug}")
         for name in project["files"]:
             if name in assignments:
                 raise ImportFailure(f"Unexpected repeated source assignment: {name} ({assignments[name]} / {slug})")
@@ -214,7 +222,17 @@ def prepare(source: Path, plan: dict[str, Any]) -> tuple[list[dict], list[dict],
             raise ImportFailure(f"Every excluded source needs a review reason: {name}")
         exclusions[name] = {"file": name, "representedBy": represented, "reason": exclusion["reason"]}
 
-    missing = sorted(set(actual) - assignments.keys() - cover_artworks.keys() - exclusions.keys())
+    omitted = {}
+    for omission in plan.get("omittedFiles", []):
+        name = canonical(omission.get("file"))
+        if name in assignments or name in cover_artworks or name in exclusions or name in omitted:
+            raise ImportFailure(f"File is assigned more than once or is also excluded: {name}")
+        reason = omission.get("reason")
+        if not isinstance(reason, str) or not reason.strip():
+            raise ImportFailure(f"Every omitted source needs a review reason: {name}")
+        omitted[name] = reason
+
+    missing = sorted(set(actual) - assignments.keys() - cover_artworks.keys() - exclusions.keys() - omitted.keys())
     if missing:
         raise ImportFailure("Source files missing from plan:\n  " + "\n  ".join(missing))
     for name, exclusion in exclusions.items():
@@ -242,6 +260,8 @@ def prepare(source: Path, plan: dict[str, Any]) -> tuple[list[dict], list[dict],
             record.update(status="project", project=assignments[name])
         elif name in cover_artworks:
             record.update(status="cover", project=cover_artworks[name])
+        elif name in omitted:
+            record.update(status="omitted", reason=omitted[name])
         else:
             record.update(status="duplicate", **{key: value for key, value in exclusions[name].items() if key != "file"})
         inventory.append(record)
@@ -469,7 +489,33 @@ def make_display(display: Display, actual: dict[str, Path]) -> dict:
         image.close()
 
 
+def triptych_cover(files: list[str], actual: dict[str, Path]) -> tuple[Image.Image, Image.Image, dict]:
+    landscape = Image.new("RGB", (960, 540), "#060e20")
+    portrait = Image.new("RGB", (320, 400), "#060e20")
+    for index, name in enumerate(files):
+        artwork, _ = srgb_image(actual[name])
+        with artwork:
+            for canvas, margin, gutter, offset, center_share in (
+                (landscape, 18, 12, 14, 0.26),
+                (portrait, 8, 6, 8, 1 / 3),
+            ):
+                content_width = canvas.width - 2 * (margin + gutter)
+                center_width = round(content_width * center_share)
+                side_width = (content_width - center_width) // 2
+                widths = (side_width, center_width, side_width)
+                column_width = widths[index]
+                left = margin + sum(widths[:index]) + index * gutter
+                top = margin if index == 1 else margin + offset
+                panel_height = canvas.height - top - margin
+                with ImageOps.fit(artwork, (column_width, panel_height), Image.Resampling.LANCZOS, centering=(0.5, 0)) as panel:
+                    canvas.paste(panel, (left, top))
+    return landscape, portrait, {"files": files, "mode": "triptych"}
+
+
 def cover_image(project: dict, actual: dict[str, Path], pdf_records: dict) -> tuple[Image.Image, Image.Image, dict]:
+    if project.get("coverLayout") == "triptych":
+        return triptych_cover(project["files"], actual)
+
     name = project.get("coverArtwork", project["coverFile"])
     if actual[name].suffix.lower() == ".pdf":
         page = project.get("listingCoverPage", project.get("coverPage", 1))
@@ -569,7 +615,9 @@ def main() -> None:
             image.close()
             portrait.close()
         covers[project["slug"]] = {"src": url, "width": 960, "height": 540, **thumbnail_fields}
-        if "hoverImageNumber" in project:
+        if project.get("coverLayout") is not None:
+            covers[project["slug"]]["layout"] = project["coverLayout"]
+        if project.get("hoverImageNumber") is not None:
             covers[project["slug"]]["hoverImageNumber"] = project["hoverImageNumber"]
         cover_sources[project["slug"]] = {**treatment, "image": url}
         assets[url] = byte_count
