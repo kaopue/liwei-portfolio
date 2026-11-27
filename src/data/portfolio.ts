@@ -105,6 +105,11 @@ export const projectCategories: ProjectCategory[] = [
     "slug": "editorial",
     "label": "折页设计",
     "description": "商品手册与折页的信息编排。"
+  },
+  {
+    "slug": "album-design",
+    "label": "画册设计",
+    "description": "纪念册、照片书与画册的版式设计。"
   }
 ];
 

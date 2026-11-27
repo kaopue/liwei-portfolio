@@ -1,6 +1,6 @@
 # 李维视觉设计作品集
 
-React + Vite 搭建的个人作品集网站。作品来自 `F:\作品集  精选文件` 及后续补充的本地作品，按实际画面整理为 33 个案例。
+React + Vite 搭建的个人作品集网站。作品来自 `F:\作品集  精选文件` 及后续补充的本地作品，按实际画面整理为 35 个案例。
 
 ## 作品维护
 
@@ -8,15 +8,18 @@ React + Vite 搭建的个人作品集网站。作品来自 `F:\作品集  精选
 
 2026-11-22 补充 3 个案例、9 张图片，内容与来源见 [补充计划](docs/content/curated-plan-2026-11-22.json)。
 
+2026-11-27 新增纪念册与达儿乐火箭插画包装，见 [补充计划](docs/content/curated-plan-2026-11-27.json)。
+
 ```powershell
 python scripts/import-curated-portfolio.py --source 'F:\作品集  精选文件' --plan docs/content/curated-plan-2026-10-26.json
 python scripts/import-curated-portfolio.py --source 'C:\Users\zhaoz\Downloads' --plan docs/content/curated-plan-2026-11-22.json --append
+python scripts/import-curated-portfolio.py --source 'C:\Users\zhaoz\Downloads' --plan docs/content/curated-plan-2026-11-27.json --append
 node scripts/verify-curated-portfolio.mjs
 ```
 
 导入脚本需要 Pillow 与 PyMuPDF。它会核验全部源文件的归属、重复文件映射和 PDF 重复页，生成带哈希的响应式图片及来源清单，不修改原始作品。作品图片请通过此脚本更新。
 
-以上两条导入命令按顺序重建完整作品库。补充批次通过 `sourceDirectories` 仅检查计划列出的文件夹；`--append` 保留已有案例并拒绝重复导入，来源清单的 `imports` 记录各批次的计划、原始目录和项目归属。新增批次需使用新的计划文件。
+以上导入命令按顺序重建完整作品库。补充批次通过 `sourceDirectories` 或 `sourceFiles` 指定目录或文件。`--append` 保留已有案例并拒绝重复导入，来源清单的 `imports` 记录各批次的计划、原始目录和项目归属。新增批次需使用新的计划文件。
 
 首屏使用 `enhance-82adf1f692a5f9fe-2x-80pc.mp4` 的静音副本（2560×1440、24 fps），联系区使用 `gemini_generated_video_7b4588df.mp4` 的静音副本（1280×720、24 fps）。两段素材均保留原始视频流，封面取自各自的首帧。当前资源记录在 `src/data/optimizedVideos.json` 和 `src/data/contactVideo.json`。
 

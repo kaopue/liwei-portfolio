@@ -13,7 +13,7 @@ import { createHash } from "node:crypto";
 import { fileURLToPath } from "node:url";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
-const EXPECTED = { projects: 33, sourceFiles: 226, displays: 300 };
+const EXPECTED = { projects: 35, sourceFiles: 229, displays: 325 };
 const errors = [];
 const warnings = [];
 const metadataCache = new Map();

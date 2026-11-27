@@ -4,12 +4,12 @@
   "sourceRoot": "F:\\作品集  精选文件",
   "plan": "docs/content/curated-plan-2026-10-26.json",
   "planSha256": "d697aab97708b9bd68a5385558a74f58b8b514f649b5fd2bef9757d72a8bda4c",
-  "sourceFileCount": 226,
-  "projectCount": 33,
-  "displayCount": 300,
+  "sourceFileCount": 229,
+  "projectCount": 35,
+  "displayCount": 325,
   "duplicateSourceCount": 4,
-  "assetCount": 993,
-  "assetBytes": 143714509,
+  "assetCount": 1074,
+  "assetBytes": 159263603,
   "categories": [
     {
       "slug": "brand-identity",
@@ -21,7 +21,7 @@
       "slug": "packaging",
       "label": "包装设计",
       "description": "茶礼、食品、日用与健康产品包装。",
-      "count": 9
+      "count": 10
     },
     {
       "slug": "visual-communication",
@@ -45,6 +45,12 @@
       "slug": "editorial",
       "label": "折页设计",
       "description": "商品手册与折页的信息编排。",
+      "count": 1
+    },
+    {
+      "slug": "album-design",
+      "label": "画册设计",
+      "description": "纪念册、照片书与画册的版式设计。",
       "count": 1
     }
   ],
@@ -3420,6 +3426,161 @@
           "image": "/selected/tsinghua-energy-album-gift-box/image-004-1600-9fc15fdc31b6.webp"
         }
       ]
+    },
+    {
+      "file": "A001.png",
+      "sha256": "4845a5eb4ad36070fe272bfe91f1e0a4fef9d700eef8d12bd021f27fc55d50ca",
+      "bytes": 2820947,
+      "extension": ".png",
+      "status": "project",
+      "project": "daerle-calcium-zinc-rocket-packaging",
+      "displays": [
+        {
+          "image": "/selected/daerle-calcium-zinc-rocket-packaging/image-001-1600-ba8d9a62cf10.webp"
+        }
+      ]
+    },
+    {
+      "file": "A002.png",
+      "sha256": "c9b0429fd49f96ab3bf525f7ed584dcacb44fea044c57104c1d7998c8af434cf",
+      "bytes": 2979957,
+      "extension": ".png",
+      "status": "project",
+      "project": "daerle-calcium-zinc-rocket-packaging",
+      "displays": [
+        {
+          "image": "/selected/daerle-calcium-zinc-rocket-packaging/image-002-1600-52f9221ea0a1.webp"
+        }
+      ]
+    },
+    {
+      "file": "时光印记纪念册内文.pdf",
+      "sha256": "b0e07894dbee07710096336d453416d8151359b3f9c086f8a2a722130a922b29",
+      "bytes": 34101264,
+      "extension": ".pdf",
+      "status": "project",
+      "project": "time-imprints-commemorative-album",
+      "displays": [
+        {
+          "page": 1,
+          "image": "/selected/time-imprints-commemorative-album/image-001-1600-90144d9344e0.webp"
+        },
+        {
+          "page": 2,
+          "image": "/selected/time-imprints-commemorative-album/image-002-1600-a48b6cd2bc1b.webp"
+        },
+        {
+          "page": 3,
+          "image": "/selected/time-imprints-commemorative-album/image-003-1600-025c0493bbd3.webp"
+        },
+        {
+          "page": 4,
+          "image": "/selected/time-imprints-commemorative-album/image-004-1600-10461efd7994.webp"
+        },
+        {
+          "page": 5,
+          "image": "/selected/time-imprints-commemorative-album/image-005-1600-8da0009a0076.webp"
+        },
+        {
+          "page": 6,
+          "image": "/selected/time-imprints-commemorative-album/image-006-1600-c400bda1c141.webp"
+        },
+        {
+          "page": 7,
+          "image": "/selected/time-imprints-commemorative-album/image-007-1600-f7cf7a8ff96e.webp"
+        },
+        {
+          "page": 8,
+          "image": "/selected/time-imprints-commemorative-album/image-008-1600-030834d948f9.webp"
+        },
+        {
+          "page": 9,
+          "image": "/selected/time-imprints-commemorative-album/image-009-1600-2d509ba3d5e4.webp"
+        },
+        {
+          "page": 10,
+          "image": "/selected/time-imprints-commemorative-album/image-010-1600-4d29256c9e26.webp"
+        },
+        {
+          "page": 11,
+          "image": "/selected/time-imprints-commemorative-album/image-011-1600-c25752232f2a.webp"
+        },
+        {
+          "page": 12,
+          "image": "/selected/time-imprints-commemorative-album/image-012-1600-84295e2b93ce.webp"
+        },
+        {
+          "page": 13,
+          "image": "/selected/time-imprints-commemorative-album/image-013-1600-c1092435dac1.webp"
+        },
+        {
+          "page": 14,
+          "image": "/selected/time-imprints-commemorative-album/image-014-1600-34b970ef0e0e.webp"
+        },
+        {
+          "page": 15,
+          "image": "/selected/time-imprints-commemorative-album/image-015-1600-7cc255b51a3b.webp"
+        },
+        {
+          "page": 16,
+          "image": "/selected/time-imprints-commemorative-album/image-016-1600-2a69ae7331c6.webp"
+        },
+        {
+          "page": 17,
+          "image": "/selected/time-imprints-commemorative-album/image-017-1600-cee3ba121de1.webp"
+        },
+        {
+          "page": 18,
+          "image": "/selected/time-imprints-commemorative-album/image-018-1600-2cc7bd05f599.webp"
+        },
+        {
+          "page": 19,
+          "image": "/selected/time-imprints-commemorative-album/image-019-1600-818f5e2ffbf8.webp"
+        },
+        {
+          "page": 20,
+          "image": "/selected/time-imprints-commemorative-album/image-020-1600-038b071cf5eb.webp"
+        },
+        {
+          "page": 21,
+          "image": "/selected/time-imprints-commemorative-album/image-021-1600-4bb704be0d71.webp"
+        },
+        {
+          "page": 22,
+          "image": "/selected/time-imprints-commemorative-album/image-022-1600-2bb2c6ccd395.webp"
+        },
+        {
+          "page": 23,
+          "image": "/selected/time-imprints-commemorative-album/image-023-1600-b3e9b60c032b.webp"
+        }
+      ],
+      "pageCount": 23,
+      "displayedPages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23
+      ],
+      "duplicatePages": []
     }
   ],
   "sourceDisplays": [
@@ -6803,6 +6964,304 @@
       "sourceMode": "RGB",
       "colorConversion": "RGB assumed sRGB",
       "flattenedOnWhite": false
+    },
+    {
+      "file": "时光印记纪念册内文.pdf",
+      "project": "time-imprints-commemorative-album",
+      "image": "/selected/time-imprints-commemorative-album/image-001-1600-90144d9344e0.webp",
+      "index": 1,
+      "sourceWidth": 2400,
+      "sourceHeight": 1201,
+      "sourceMode": "PDF",
+      "colorConversion": "PyMuPDF device RGB",
+      "flattenedOnWhite": true,
+      "page": 1
+    },
+    {
+      "file": "时光印记纪念册内文.pdf",
+      "project": "time-imprints-commemorative-album",
+      "image": "/selected/time-imprints-commemorative-album/image-002-1600-a48b6cd2bc1b.webp",
+      "index": 2,
+      "sourceWidth": 2400,
+      "sourceHeight": 1201,
+      "sourceMode": "PDF",
+      "colorConversion": "PyMuPDF device RGB",
+      "flattenedOnWhite": true,
+      "page": 2
+    },
+    {
+      "file": "时光印记纪念册内文.pdf",
+      "project": "time-imprints-commemorative-album",
+      "image": "/selected/time-imprints-commemorative-album/image-003-1600-025c0493bbd3.webp",
+      "index": 3,
+      "sourceWidth": 2400,
+      "sourceHeight": 1201,
+      "sourceMode": "PDF",
+      "colorConversion": "PyMuPDF device RGB",
+      "flattenedOnWhite": true,
+      "page": 3
+    },
+    {
+      "file": "时光印记纪念册内文.pdf",
+      "project": "time-imprints-commemorative-album",
+      "image": "/selected/time-imprints-commemorative-album/image-004-1600-10461efd7994.webp",
+      "index": 4,
+      "sourceWidth": 2400,
+      "sourceHeight": 1201,
+      "sourceMode": "PDF",
+      "colorConversion": "PyMuPDF device RGB",
+      "flattenedOnWhite": true,
+      "page": 4
+    },
+    {
+      "file": "时光印记纪念册内文.pdf",
+      "project": "time-imprints-commemorative-album",
+      "image": "/selected/time-imprints-commemorative-album/image-005-1600-8da0009a0076.webp",
+      "index": 5,
+      "sourceWidth": 2400,
+      "sourceHeight": 1201,
+      "sourceMode": "PDF",
+      "colorConversion": "PyMuPDF device RGB",
+      "flattenedOnWhite": true,
+      "page": 5
+    },
+    {
+      "file": "时光印记纪念册内文.pdf",
+      "project": "time-imprints-commemorative-album",
+      "image": "/selected/time-imprints-commemorative-album/image-006-1600-c400bda1c141.webp",
+      "index": 6,
+      "sourceWidth": 2400,
+      "sourceHeight": 1201,
+      "sourceMode": "PDF",
+      "colorConversion": "PyMuPDF device RGB",
+      "flattenedOnWhite": true,
+      "page": 6
+    },
+    {
+      "file": "时光印记纪念册内文.pdf",
+      "project": "time-imprints-commemorative-album",
+      "image": "/selected/time-imprints-commemorative-album/image-007-1600-f7cf7a8ff96e.webp",
+      "index": 7,
+      "sourceWidth": 2400,
+      "sourceHeight": 1201,
+      "sourceMode": "PDF",
+      "colorConversion": "PyMuPDF device RGB",
+      "flattenedOnWhite": true,
+      "page": 7
+    },
+    {
+      "file": "时光印记纪念册内文.pdf",
+      "project": "time-imprints-commemorative-album",
+      "image": "/selected/time-imprints-commemorative-album/image-008-1600-030834d948f9.webp",
+      "index": 8,
+      "sourceWidth": 2400,
+      "sourceHeight": 1201,
+      "sourceMode": "PDF",
+      "colorConversion": "PyMuPDF device RGB",
+      "flattenedOnWhite": true,
+      "page": 8
+    },
+    {
+      "file": "时光印记纪念册内文.pdf",
+      "project": "time-imprints-commemorative-album",
+      "image": "/selected/time-imprints-commemorative-album/image-009-1600-2d509ba3d5e4.webp",
+      "index": 9,
+      "sourceWidth": 2400,
+      "sourceHeight": 1201,
+      "sourceMode": "PDF",
+      "colorConversion": "PyMuPDF device RGB",
+      "flattenedOnWhite": true,
+      "page": 9
+    },
+    {
+      "file": "时光印记纪念册内文.pdf",
+      "project": "time-imprints-commemorative-album",
+      "image": "/selected/time-imprints-commemorative-album/image-010-1600-4d29256c9e26.webp",
+      "index": 10,
+      "sourceWidth": 2400,
+      "sourceHeight": 1201,
+      "sourceMode": "PDF",
+      "colorConversion": "PyMuPDF device RGB",
+      "flattenedOnWhite": true,
+      "page": 10
+    },
+    {
+      "file": "时光印记纪念册内文.pdf",
+      "project": "time-imprints-commemorative-album",
+      "image": "/selected/time-imprints-commemorative-album/image-011-1600-c25752232f2a.webp",
+      "index": 11,
+      "sourceWidth": 2400,
+      "sourceHeight": 1201,
+      "sourceMode": "PDF",
+      "colorConversion": "PyMuPDF device RGB",
+      "flattenedOnWhite": true,
+      "page": 11
+    },
+    {
+      "file": "时光印记纪念册内文.pdf",
+      "project": "time-imprints-commemorative-album",
+      "image": "/selected/time-imprints-commemorative-album/image-012-1600-84295e2b93ce.webp",
+      "index": 12,
+      "sourceWidth": 2400,
+      "sourceHeight": 1201,
+      "sourceMode": "PDF",
+      "colorConversion": "PyMuPDF device RGB",
+      "flattenedOnWhite": true,
+      "page": 12
+    },
+    {
+      "file": "时光印记纪念册内文.pdf",
+      "project": "time-imprints-commemorative-album",
+      "image": "/selected/time-imprints-commemorative-album/image-013-1600-c1092435dac1.webp",
+      "index": 13,
+      "sourceWidth": 2400,
+      "sourceHeight": 1201,
+      "sourceMode": "PDF",
+      "colorConversion": "PyMuPDF device RGB",
+      "flattenedOnWhite": true,
+      "page": 13
+    },
+    {
+      "file": "时光印记纪念册内文.pdf",
+      "project": "time-imprints-commemorative-album",
+      "image": "/selected/time-imprints-commemorative-album/image-014-1600-34b970ef0e0e.webp",
+      "index": 14,
+      "sourceWidth": 2400,
+      "sourceHeight": 1201,
+      "sourceMode": "PDF",
+      "colorConversion": "PyMuPDF device RGB",
+      "flattenedOnWhite": true,
+      "page": 14
+    },
+    {
+      "file": "时光印记纪念册内文.pdf",
+      "project": "time-imprints-commemorative-album",
+      "image": "/selected/time-imprints-commemorative-album/image-015-1600-7cc255b51a3b.webp",
+      "index": 15,
+      "sourceWidth": 2400,
+      "sourceHeight": 1201,
+      "sourceMode": "PDF",
+      "colorConversion": "PyMuPDF device RGB",
+      "flattenedOnWhite": true,
+      "page": 15
+    },
+    {
+      "file": "时光印记纪念册内文.pdf",
+      "project": "time-imprints-commemorative-album",
+      "image": "/selected/time-imprints-commemorative-album/image-016-1600-2a69ae7331c6.webp",
+      "index": 16,
+      "sourceWidth": 2400,
+      "sourceHeight": 1201,
+      "sourceMode": "PDF",
+      "colorConversion": "PyMuPDF device RGB",
+      "flattenedOnWhite": true,
+      "page": 16
+    },
+    {
+      "file": "时光印记纪念册内文.pdf",
+      "project": "time-imprints-commemorative-album",
+      "image": "/selected/time-imprints-commemorative-album/image-017-1600-cee3ba121de1.webp",
+      "index": 17,
+      "sourceWidth": 2400,
+      "sourceHeight": 1201,
+      "sourceMode": "PDF",
+      "colorConversion": "PyMuPDF device RGB",
+      "flattenedOnWhite": true,
+      "page": 17
+    },
+    {
+      "file": "时光印记纪念册内文.pdf",
+      "project": "time-imprints-commemorative-album",
+      "image": "/selected/time-imprints-commemorative-album/image-018-1600-2cc7bd05f599.webp",
+      "index": 18,
+      "sourceWidth": 2400,
+      "sourceHeight": 1201,
+      "sourceMode": "PDF",
+      "colorConversion": "PyMuPDF device RGB",
+      "flattenedOnWhite": true,
+      "page": 18
+    },
+    {
+      "file": "时光印记纪念册内文.pdf",
+      "project": "time-imprints-commemorative-album",
+      "image": "/selected/time-imprints-commemorative-album/image-019-1600-818f5e2ffbf8.webp",
+      "index": 19,
+      "sourceWidth": 2400,
+      "sourceHeight": 1201,
+      "sourceMode": "PDF",
+      "colorConversion": "PyMuPDF device RGB",
+      "flattenedOnWhite": true,
+      "page": 19
+    },
+    {
+      "file": "时光印记纪念册内文.pdf",
+      "project": "time-imprints-commemorative-album",
+      "image": "/selected/time-imprints-commemorative-album/image-020-1600-038b071cf5eb.webp",
+      "index": 20,
+      "sourceWidth": 2400,
+      "sourceHeight": 1201,
+      "sourceMode": "PDF",
+      "colorConversion": "PyMuPDF device RGB",
+      "flattenedOnWhite": true,
+      "page": 20
+    },
+    {
+      "file": "时光印记纪念册内文.pdf",
+      "project": "time-imprints-commemorative-album",
+      "image": "/selected/time-imprints-commemorative-album/image-021-1600-4bb704be0d71.webp",
+      "index": 21,
+      "sourceWidth": 2400,
+      "sourceHeight": 1201,
+      "sourceMode": "PDF",
+      "colorConversion": "PyMuPDF device RGB",
+      "flattenedOnWhite": true,
+      "page": 21
+    },
+    {
+      "file": "时光印记纪念册内文.pdf",
+      "project": "time-imprints-commemorative-album",
+      "image": "/selected/time-imprints-commemorative-album/image-022-1600-2bb2c6ccd395.webp",
+      "index": 22,
+      "sourceWidth": 2400,
+      "sourceHeight": 1201,
+      "sourceMode": "PDF",
+      "colorConversion": "PyMuPDF device RGB",
+      "flattenedOnWhite": true,
+      "page": 22
+    },
+    {
+      "file": "时光印记纪念册内文.pdf",
+      "project": "time-imprints-commemorative-album",
+      "image": "/selected/time-imprints-commemorative-album/image-023-1600-b3e9b60c032b.webp",
+      "index": 23,
+      "sourceWidth": 2400,
+      "sourceHeight": 1201,
+      "sourceMode": "PDF",
+      "colorConversion": "PyMuPDF device RGB",
+      "flattenedOnWhite": true,
+      "page": 23
+    },
+    {
+      "file": "A001.png",
+      "project": "daerle-calcium-zinc-rocket-packaging",
+      "image": "/selected/daerle-calcium-zinc-rocket-packaging/image-001-1600-ba8d9a62cf10.webp",
+      "index": 1,
+      "sourceWidth": 1920,
+      "sourceHeight": 1080,
+      "sourceMode": "RGBA",
+      "colorConversion": "embedded ICC to sRGB",
+      "flattenedOnWhite": true
+    },
+    {
+      "file": "A002.png",
+      "project": "daerle-calcium-zinc-rocket-packaging",
+      "image": "/selected/daerle-calcium-zinc-rocket-packaging/image-002-1600-52f9221ea0a1.webp",
+      "index": 2,
+      "sourceWidth": 1920,
+      "sourceHeight": 1080,
+      "sourceMode": "RGBA",
+      "colorConversion": "embedded ICC to sRGB",
+      "flattenedOnWhite": true
     }
   ],
   "coverSources": {
@@ -6974,6 +7433,17 @@
       "file": "海医安宁 工作例会海报/主视觉 拷贝.jpg",
       "mode": "contain",
       "image": "/selected/haiyi-palliative-care-meeting-visuals/cover-960-eb883918f48e.webp"
+    },
+    "time-imprints-commemorative-album": {
+      "file": "时光印记纪念册内文.pdf",
+      "mode": "contain",
+      "page": 1,
+      "image": "/selected/time-imprints-commemorative-album/cover-960-a16064e51944.webp"
+    },
+    "daerle-calcium-zinc-rocket-packaging": {
+      "file": "A002.png",
+      "mode": "contain",
+      "image": "/selected/daerle-calcium-zinc-rocket-packaging/cover-960-e382f802e4de.webp"
     }
   },
   "assets": [
@@ -7800,6 +8270,42 @@
     {
       "image": "/selected/daerle-calcium-zinc-packaging/image-007-800-1deab92d37e4.webp",
       "bytes": 44294
+    },
+    {
+      "image": "/selected/daerle-calcium-zinc-rocket-packaging/cover-160-9b62fcb41590.webp",
+      "bytes": 7582
+    },
+    {
+      "image": "/selected/daerle-calcium-zinc-rocket-packaging/cover-320-f7a83293dec0.webp",
+      "bytes": 21214
+    },
+    {
+      "image": "/selected/daerle-calcium-zinc-rocket-packaging/cover-960-e382f802e4de.webp",
+      "bytes": 63490
+    },
+    {
+      "image": "/selected/daerle-calcium-zinc-rocket-packaging/image-001-1600-ba8d9a62cf10.webp",
+      "bytes": 77088
+    },
+    {
+      "image": "/selected/daerle-calcium-zinc-rocket-packaging/image-001-1920-107ce7b45c94.webp",
+      "bytes": 111354
+    },
+    {
+      "image": "/selected/daerle-calcium-zinc-rocket-packaging/image-001-800-14f7783ab0c9.webp",
+      "bytes": 24148
+    },
+    {
+      "image": "/selected/daerle-calcium-zinc-rocket-packaging/image-002-1600-52f9221ea0a1.webp",
+      "bytes": 133370
+    },
+    {
+      "image": "/selected/daerle-calcium-zinc-rocket-packaging/image-002-1920-162050405465.webp",
+      "bytes": 183720
+    },
+    {
+      "image": "/selected/daerle-calcium-zinc-rocket-packaging/image-002-800-040f607d324e.webp",
+      "bytes": 44338
     },
     {
       "image": "/selected/haiyi-palliative-care-meeting-visuals/cover-160-eed156358fb1.webp",
@@ -9558,6 +10064,294 @@
       "bytes": 10642
     },
     {
+      "image": "/selected/time-imprints-commemorative-album/cover-160-ff7c75c5da5c.webp",
+      "bytes": 8070
+    },
+    {
+      "image": "/selected/time-imprints-commemorative-album/cover-320-aaa3dd276b7b.webp",
+      "bytes": 21270
+    },
+    {
+      "image": "/selected/time-imprints-commemorative-album/cover-960-a16064e51944.webp",
+      "bytes": 79432
+    },
+    {
+      "image": "/selected/time-imprints-commemorative-album/image-001-1600-90144d9344e0.webp",
+      "bytes": 168166
+    },
+    {
+      "image": "/selected/time-imprints-commemorative-album/image-001-2400-fd0b3bec3cb3.webp",
+      "bytes": 291208
+    },
+    {
+      "image": "/selected/time-imprints-commemorative-album/image-001-800-5d93bc0d7b3e.webp",
+      "bytes": 54584
+    },
+    {
+      "image": "/selected/time-imprints-commemorative-album/image-002-1600-a48b6cd2bc1b.webp",
+      "bytes": 207444
+    },
+    {
+      "image": "/selected/time-imprints-commemorative-album/image-002-2400-ca72da2a7af6.webp",
+      "bytes": 367494
+    },
+    {
+      "image": "/selected/time-imprints-commemorative-album/image-002-800-eeea51268212.webp",
+      "bytes": 65940
+    },
+    {
+      "image": "/selected/time-imprints-commemorative-album/image-003-1600-025c0493bbd3.webp",
+      "bytes": 262090
+    },
+    {
+      "image": "/selected/time-imprints-commemorative-album/image-003-2400-075cf488cbe5.webp",
+      "bytes": 469218
+    },
+    {
+      "image": "/selected/time-imprints-commemorative-album/image-003-800-c16fdf376af8.webp",
+      "bytes": 75874
+    },
+    {
+      "image": "/selected/time-imprints-commemorative-album/image-004-1600-10461efd7994.webp",
+      "bytes": 239246
+    },
+    {
+      "image": "/selected/time-imprints-commemorative-album/image-004-2400-a85a153892ff.webp",
+      "bytes": 415848
+    },
+    {
+      "image": "/selected/time-imprints-commemorative-album/image-004-800-da1c37bce342.webp",
+      "bytes": 77918
+    },
+    {
+      "image": "/selected/time-imprints-commemorative-album/image-005-1600-8da0009a0076.webp",
+      "bytes": 236998
+    },
+    {
+      "image": "/selected/time-imprints-commemorative-album/image-005-2400-7e7b9f6a3962.webp",
+      "bytes": 417246
+    },
+    {
+      "image": "/selected/time-imprints-commemorative-album/image-005-800-32743cdb9638.webp",
+      "bytes": 74278
+    },
+    {
+      "image": "/selected/time-imprints-commemorative-album/image-006-1600-c400bda1c141.webp",
+      "bytes": 183600
+    },
+    {
+      "image": "/selected/time-imprints-commemorative-album/image-006-2400-5a9ce4790d09.webp",
+      "bytes": 315442
+    },
+    {
+      "image": "/selected/time-imprints-commemorative-album/image-006-800-ecaf360ea3b6.webp",
+      "bytes": 61084
+    },
+    {
+      "image": "/selected/time-imprints-commemorative-album/image-007-1600-f7cf7a8ff96e.webp",
+      "bytes": 172332
+    },
+    {
+      "image": "/selected/time-imprints-commemorative-album/image-007-2400-2ed74ee6bf2e.webp",
+      "bytes": 294024
+    },
+    {
+      "image": "/selected/time-imprints-commemorative-album/image-007-800-3a08b67ce5ad.webp",
+      "bytes": 58784
+    },
+    {
+      "image": "/selected/time-imprints-commemorative-album/image-008-1600-030834d948f9.webp",
+      "bytes": 215248
+    },
+    {
+      "image": "/selected/time-imprints-commemorative-album/image-008-2400-4c2d3efa94e9.webp",
+      "bytes": 382676
+    },
+    {
+      "image": "/selected/time-imprints-commemorative-album/image-008-800-15de3030a196.webp",
+      "bytes": 69762
+    },
+    {
+      "image": "/selected/time-imprints-commemorative-album/image-009-1600-2d509ba3d5e4.webp",
+      "bytes": 233884
+    },
+    {
+      "image": "/selected/time-imprints-commemorative-album/image-009-2400-4d6e0f5162e9.webp",
+      "bytes": 430704
+    },
+    {
+      "image": "/selected/time-imprints-commemorative-album/image-009-800-0f32662b3e36.webp",
+      "bytes": 73810
+    },
+    {
+      "image": "/selected/time-imprints-commemorative-album/image-010-1600-4d29256c9e26.webp",
+      "bytes": 207940
+    },
+    {
+      "image": "/selected/time-imprints-commemorative-album/image-010-2400-621f3be601c2.webp",
+      "bytes": 365684
+    },
+    {
+      "image": "/selected/time-imprints-commemorative-album/image-010-800-7810f0e38554.webp",
+      "bytes": 67668
+    },
+    {
+      "image": "/selected/time-imprints-commemorative-album/image-011-1600-c25752232f2a.webp",
+      "bytes": 207106
+    },
+    {
+      "image": "/selected/time-imprints-commemorative-album/image-011-2400-5c2b22fc3ed5.webp",
+      "bytes": 362532
+    },
+    {
+      "image": "/selected/time-imprints-commemorative-album/image-011-800-7b590a771afd.webp",
+      "bytes": 69384
+    },
+    {
+      "image": "/selected/time-imprints-commemorative-album/image-012-1600-84295e2b93ce.webp",
+      "bytes": 161692
+    },
+    {
+      "image": "/selected/time-imprints-commemorative-album/image-012-2400-867c155637ea.webp",
+      "bytes": 281670
+    },
+    {
+      "image": "/selected/time-imprints-commemorative-album/image-012-800-299348d87944.webp",
+      "bytes": 53524
+    },
+    {
+      "image": "/selected/time-imprints-commemorative-album/image-013-1600-c1092435dac1.webp",
+      "bytes": 185580
+    },
+    {
+      "image": "/selected/time-imprints-commemorative-album/image-013-2400-098edfc9977b.webp",
+      "bytes": 323346
+    },
+    {
+      "image": "/selected/time-imprints-commemorative-album/image-013-800-854d881decab.webp",
+      "bytes": 58708
+    },
+    {
+      "image": "/selected/time-imprints-commemorative-album/image-014-1600-34b970ef0e0e.webp",
+      "bytes": 227546
+    },
+    {
+      "image": "/selected/time-imprints-commemorative-album/image-014-2400-704a160846ed.webp",
+      "bytes": 401900
+    },
+    {
+      "image": "/selected/time-imprints-commemorative-album/image-014-800-93fc67b936fd.webp",
+      "bytes": 70358
+    },
+    {
+      "image": "/selected/time-imprints-commemorative-album/image-015-1600-7cc255b51a3b.webp",
+      "bytes": 200068
+    },
+    {
+      "image": "/selected/time-imprints-commemorative-album/image-015-2400-ac42dc3b4b10.webp",
+      "bytes": 348914
+    },
+    {
+      "image": "/selected/time-imprints-commemorative-album/image-015-800-ad8deb2e70ea.webp",
+      "bytes": 65646
+    },
+    {
+      "image": "/selected/time-imprints-commemorative-album/image-016-1600-2a69ae7331c6.webp",
+      "bytes": 123182
+    },
+    {
+      "image": "/selected/time-imprints-commemorative-album/image-016-2400-0aa9f59a1efd.webp",
+      "bytes": 202200
+    },
+    {
+      "image": "/selected/time-imprints-commemorative-album/image-016-800-314761d23e9f.webp",
+      "bytes": 45506
+    },
+    {
+      "image": "/selected/time-imprints-commemorative-album/image-017-1600-cee3ba121de1.webp",
+      "bytes": 156118
+    },
+    {
+      "image": "/selected/time-imprints-commemorative-album/image-017-2400-5733da0d1ff8.webp",
+      "bytes": 272266
+    },
+    {
+      "image": "/selected/time-imprints-commemorative-album/image-017-800-9e090c965e9e.webp",
+      "bytes": 52442
+    },
+    {
+      "image": "/selected/time-imprints-commemorative-album/image-018-1600-2cc7bd05f599.webp",
+      "bytes": 267434
+    },
+    {
+      "image": "/selected/time-imprints-commemorative-album/image-018-2400-d8002bc744e3.webp",
+      "bytes": 467068
+    },
+    {
+      "image": "/selected/time-imprints-commemorative-album/image-018-800-d2cd6cfcc762.webp",
+      "bytes": 84632
+    },
+    {
+      "image": "/selected/time-imprints-commemorative-album/image-019-1600-818f5e2ffbf8.webp",
+      "bytes": 231856
+    },
+    {
+      "image": "/selected/time-imprints-commemorative-album/image-019-2400-156f99acfb46.webp",
+      "bytes": 409012
+    },
+    {
+      "image": "/selected/time-imprints-commemorative-album/image-019-800-4937718c6f1d.webp",
+      "bytes": 74728
+    },
+    {
+      "image": "/selected/time-imprints-commemorative-album/image-020-1600-038b071cf5eb.webp",
+      "bytes": 225752
+    },
+    {
+      "image": "/selected/time-imprints-commemorative-album/image-020-2400-d29b25e7c2a8.webp",
+      "bytes": 427380
+    },
+    {
+      "image": "/selected/time-imprints-commemorative-album/image-020-800-b3c6aefb4b57.webp",
+      "bytes": 67280
+    },
+    {
+      "image": "/selected/time-imprints-commemorative-album/image-021-1600-4bb704be0d71.webp",
+      "bytes": 183780
+    },
+    {
+      "image": "/selected/time-imprints-commemorative-album/image-021-2400-906d2350dca2.webp",
+      "bytes": 319386
+    },
+    {
+      "image": "/selected/time-imprints-commemorative-album/image-021-800-137528e4ae61.webp",
+      "bytes": 60892
+    },
+    {
+      "image": "/selected/time-imprints-commemorative-album/image-022-1600-2bb2c6ccd395.webp",
+      "bytes": 143592
+    },
+    {
+      "image": "/selected/time-imprints-commemorative-album/image-022-2400-1b6e330bd9dc.webp",
+      "bytes": 259696
+    },
+    {
+      "image": "/selected/time-imprints-commemorative-album/image-022-800-a02835e3759c.webp",
+      "bytes": 44948
+    },
+    {
+      "image": "/selected/time-imprints-commemorative-album/image-023-1600-b3e9b60c032b.webp",
+      "bytes": 331310
+    },
+    {
+      "image": "/selected/time-imprints-commemorative-album/image-023-2400-85ba7223eb48.webp",
+      "bytes": 661612
+    },
+    {
+      "image": "/selected/time-imprints-commemorative-album/image-023-800-a75699390253.webp",
+      "bytes": 87778
+    },
+    {
       "image": "/selected/tsinghua-energy-album-gift-box/cover-160-1f8ab47d6293.webp",
       "bytes": 5756
     },
@@ -10996,6 +11790,15 @@
         "tsinghua-energy-album-gift-box",
         "ch4-pakistan-arm-patches",
         "haiyi-palliative-care-meeting-visuals"
+      ]
+    },
+    {
+      "sourceRoot": "C:\\Users\\zhaoz\\Downloads",
+      "plan": "docs/content/curated-plan-2026-11-27.json",
+      "planSha256": "635d2227b6cdd8d492486e95a617c27dc6a748c733fdc987fb4c728f7769c173",
+      "projects": [
+        "time-imprints-commemorative-album",
+        "daerle-calcium-zinc-rocket-packaging"
       ]
     }
   ]
