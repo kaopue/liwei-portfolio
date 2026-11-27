@@ -3,13 +3,13 @@
   "pipeline": "curated-v1-srgb-white-webp-88-90-90-jpeg94",
   "sourceRoot": "F:\\作品集  精选文件",
   "plan": "docs/content/curated-plan-2026-10-26.json",
-  "planSha256": "d697aab97708b9bd68a5385558a74f58b8b514f649b5fd2bef9757d72a8bda4c",
-  "sourceFileCount": 229,
+  "planSha256": "32e126b1b79bf581366ce3482b339b9e8b16d90486b341e24c4a518c9f9f52c4",
+  "sourceFileCount": 230,
   "projectCount": 35,
   "displayCount": 325,
   "duplicateSourceCount": 4,
   "assetCount": 1074,
-  "assetBytes": 159312399,
+  "assetBytes": 159320843,
   "categories": [
     {
       "slug": "brand-identity",
@@ -249,6 +249,14 @@
           "image": "/selected/zelle-link-identity/image-002-1600-5c1d26c824b2.webp"
         }
       ]
+    },
+    {
+      "file": "logo/芸上康缘VIS手册展示封面.jpg",
+      "sha256": "5738915e229ce073a271575b905d63961ed945cce1243c453dfc9149eb210c04",
+      "bytes": 2810712,
+      "extension": ".jpg",
+      "status": "cover",
+      "project": "yunshang-kangyuan-visual-identity"
     },
     {
       "file": "logo/芸上康缘VIS视觉识别系统手册-2026.03.24.ai",
@@ -7286,10 +7294,9 @@
       "image": "/selected/leebeer-craft-beer-packaging/cover-960-6f37b1d770b8.webp"
     },
     "yunshang-kangyuan-visual-identity": {
-      "file": "logo/芸上康缘VIS视觉识别系统手册-2026.03.24.pdf",
+      "file": "logo/芸上康缘VIS手册展示封面.jpg",
       "mode": "contain",
-      "page": 1,
-      "image": "/selected/yunshang-kangyuan-visual-identity/cover-960-a5da26593427.webp"
+      "image": "/selected/yunshang-kangyuan-visual-identity/cover-960-00258be8cac9.webp"
     },
     "song-gift-2025-concert": {
       "file": "海报/海医安宁/2025心之颂-音乐会安宁调频·生命的回声0403.pdf",
@@ -10616,16 +10623,16 @@
       "bytes": 23798
     },
     {
-      "image": "/selected/yunshang-kangyuan-visual-identity/cover-160-fd375e94d73a.webp",
-      "bytes": 4078
+      "image": "/selected/yunshang-kangyuan-visual-identity/cover-160-46a1e94771a0.webp",
+      "bytes": 4132
     },
     {
-      "image": "/selected/yunshang-kangyuan-visual-identity/cover-320-d2a8c43409d1.webp",
-      "bytes": 9924
+      "image": "/selected/yunshang-kangyuan-visual-identity/cover-320-9875fb9118cc.webp",
+      "bytes": 9994
     },
     {
-      "image": "/selected/yunshang-kangyuan-visual-identity/cover-960-a5da26593427.webp",
-      "bytes": 30796
+      "image": "/selected/yunshang-kangyuan-visual-identity/cover-960-00258be8cac9.webp",
+      "bytes": 39116
     },
     {
       "image": "/selected/yunshang-kangyuan-visual-identity/image-001-1600-cff8fb788065.webp",
@@ -11748,7 +11755,7 @@
     {
       "sourceRoot": "F:\\作品集  精选文件",
       "plan": "docs/content/curated-plan-2026-10-26.json",
-      "planSha256": "d697aab97708b9bd68a5385558a74f58b8b514f649b5fd2bef9757d72a8bda4c",
+      "planSha256": "32e126b1b79bf581366ce3482b339b9e8b16d90486b341e24c4a518c9f9f52c4",
       "projects": [
         "zhangshuntang-tea-tin-packaging",
         "yixinhe-agriculture-identity",
