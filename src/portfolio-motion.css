@@ -10,11 +10,6 @@
 @keyframes title-unveil { from { transform: translateY(110%) rotate(2deg); } to { transform: none; } }
 @keyframes hero-arrive { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
 
-.hero-scroll-cue { position: absolute; bottom: 32px; left: 40px; display: inline-flex; align-items: center; gap: 18px; min-height: 44px; color: var(--text); font-size: 9px; letter-spacing: .18em; }
-.scroll-cue-track { position: relative; overflow: hidden; width: 64px; height: 1px; background: var(--line-strong); }
-.scroll-cue-track::after { position: absolute; inset: 0; content: ""; background: var(--accent); transform: scaleX(.45); transform-origin: left; }
-.hero-scroll-cue:hover .scroll-cue-track::after { transform: scaleX(1); transition: transform 400ms ease; }
-
 /* Native timelines do not change the user's scroll speed. Older browsers keep the still composition. */
 @supports (animation-timeline: view()) {
   @media (prefers-reduced-motion: no-preference) and (min-width: 761px) {
@@ -230,11 +225,6 @@
 
 @media (max-width: 900px) {
   .strength-folders { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-}
-
-@media (max-width: 760px) {
-  .hero-scroll-cue { left: 20px; bottom: 15px; min-height: 36px; font-size: 8px; gap: 12px; }
-  .hero-inner { padding-bottom: 65px; }
 }
 
 @media (max-width: 510px) {

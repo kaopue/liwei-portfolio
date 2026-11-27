@@ -21,7 +21,6 @@ import {
   advantages,
   contacts,
   experiences,
-  focusAreas,
   navItems,
   projectCategories,
   projects,
@@ -274,9 +273,6 @@ function Hero() {
           </div>
         </div>
       </div>
-      <a className="hero-scroll-cue" href="#projects" aria-label="向下浏览作品">
-        <span>SCROLL TO EXPLORE</span><span className="scroll-cue-track" aria-hidden="true" />
-      </a>
     </section>
   );
 }
@@ -299,8 +295,7 @@ function About() {
         <div className="about-heading-row" data-reveal>
         <h2 id="about-title" className="about-section-title">关于我</h2>
         <p className="about-identity">
-          <strong>{contacts.name}</strong>
-          <span className="about-years">10<sup>+</sup> 工作经验</span>
+          <strong>10+ 工作经验</strong>
         </p>
         </div>
         <div className="about-lead" data-reveal>
@@ -312,9 +307,6 @@ function About() {
         <div className="about-summary">
           <p>习惯从商业逻辑出发，以克制的网格排版与精准的视觉语言解决传播问题，并结合 AI 创意工作流，确保项目从概念提案到印刷落地的全链路高水准交付。</p>
         </div>
-        <ul className="about-specialties" aria-label="设计方向">
-          {focusAreas.map((label) => <li key={label}>{label}</li>)}
-        </ul>
         <div className="about-career">
         <p className="about-career-label">职业经历</p>
         <ol className="about-timeline" aria-label="职业经历">

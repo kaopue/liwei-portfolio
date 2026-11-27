@@ -54,8 +54,6 @@ export const contacts = {
   behance: "www.behance.net/zhaozhao0812",
 };
 
-export const focusAreas = ["品牌VI", "商业包装", "高端画册", "AI创意"];
-
 export const experiences = [
   {
     period: "2013.10 — 2016.03",
@@ -67,11 +65,12 @@ export const experiences = [
     period: "2016.05 — 2025.10",
     company: "北京佳禾广告传媒股份有限公司",
     role: "资深视觉设计师",
-    description: "主导企业品牌全案（Logo/VI）、核心产品包装、高端画册及展览空间视觉设计，深度参与客户提案与商业视觉策略落地。",
+    description: "主导企业品牌全案（Logo/VI）、产品包装、高端画册，深度参与客户提案与商业视觉策略落地。",
   },
   {
-    period: "2025.11 — 至今",
-    company: "独立视觉设计师",
+    period: "2025.11 — 2026.11",
+    company: "北京莱恩瑞景品牌设计有限公司",
+    role: "资深视觉设计师",
     description: "专注品牌视觉升级、文创与消费品包装设计，探索传统美学、现代网格系统与 AI 视觉生成的商业融合。",
   },
 ];
