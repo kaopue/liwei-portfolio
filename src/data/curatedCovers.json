@@ -427,5 +427,12 @@
     "height": 540,
     "thumbSrc": "/selected/lingerie-lookbook/cover-320-dd4511bfbac4.webp",
     "smallThumbSrc": "/selected/lingerie-lookbook/cover-160-1e403f30ce54.webp"
+  },
+  "langfang-airport-economic-zone-brochure": {
+    "src": "/selected/langfang-airport-economic-zone-brochure/cover-960-b2a4e9dba18d.webp",
+    "width": 960,
+    "height": 540,
+    "thumbSrc": "/selected/langfang-airport-economic-zone-brochure/cover-320-8973590f50aa.webp",
+    "smallThumbSrc": "/selected/langfang-airport-economic-zone-brochure/cover-160-4340c072b70b.webp"
   }
 }

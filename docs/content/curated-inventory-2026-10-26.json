@@ -4,12 +4,12 @@
   "sourceRoot": "F:\\作品集  精选文件",
   "plan": "docs/content/curated-plan-2026-10-26.json",
   "planSha256": "18cb524b93fb9380468e9e33e4c8ec208365418e3b76f4e90665c0f94c7f3da8",
-  "sourceFileCount": 263,
-  "projectCount": 61,
-  "displayCount": 356,
+  "sourceFileCount": 282,
+  "projectCount": 62,
+  "displayCount": 375,
   "duplicateSourceCount": 4,
-  "assetCount": 1244,
-  "assetBytes": 175417835,
+  "assetCount": 1304,
+  "assetBytes": 180883935,
   "categories": [
     {
       "slug": "brand-identity",
@@ -51,7 +51,7 @@
       "slug": "album-design",
       "label": "画册设计",
       "description": "纪念册、照片书与画册的版式设计。",
-      "count": 6
+      "count": 7
     }
   ],
   "files": [
@@ -4006,6 +4006,253 @@
       "displays": [
         {
           "image": "/selected/hengshui-lake-periodical/image-001-1600-f0da06fecf47.webp"
+        }
+      ]
+    },
+    {
+      "file": "图片助手(ImageAssistant)_批量图片下载器/www.behance.net/临空经济区（廊坊）招商宣传册/10001.webp",
+      "sha256": "87871c2caffdc5150185c96a0afc895bfdb0a36b6df4570b085bb6da04c11827",
+      "bytes": 310398,
+      "extension": ".webp",
+      "status": "project",
+      "project": "langfang-airport-economic-zone-brochure",
+      "displays": [
+        {
+          "image": "/selected/langfang-airport-economic-zone-brochure/image-002-1600-0bbfc222bd5a.webp"
+        }
+      ]
+    },
+    {
+      "file": "图片助手(ImageAssistant)_批量图片下载器/www.behance.net/临空经济区（廊坊）招商宣传册/10002.webp",
+      "sha256": "1ad74db7a47c5d8b604917b850dd5f22d556a4b84e1487ff1f4c373b34450a2e",
+      "bytes": 130056,
+      "extension": ".webp",
+      "status": "project",
+      "project": "langfang-airport-economic-zone-brochure",
+      "displays": [
+        {
+          "image": "/selected/langfang-airport-economic-zone-brochure/image-003-1600-7c0bcb06d0d2.webp"
+        }
+      ]
+    },
+    {
+      "file": "图片助手(ImageAssistant)_批量图片下载器/www.behance.net/临空经济区（廊坊）招商宣传册/10003.webp",
+      "sha256": "bde08f6c2a00a3aa3a274145de50f17269757c4e5b32549064987ebe1ce6882e",
+      "bytes": 262950,
+      "extension": ".webp",
+      "status": "project",
+      "project": "langfang-airport-economic-zone-brochure",
+      "displays": [
+        {
+          "image": "/selected/langfang-airport-economic-zone-brochure/image-004-1600-9239154b2159.webp"
+        }
+      ]
+    },
+    {
+      "file": "图片助手(ImageAssistant)_批量图片下载器/www.behance.net/临空经济区（廊坊）招商宣传册/10004.webp",
+      "sha256": "8ff4065831be96492ee45acbcb51c96a11e328daa011886864d7bd062be7c4b5",
+      "bytes": 306284,
+      "extension": ".webp",
+      "status": "project",
+      "project": "langfang-airport-economic-zone-brochure",
+      "displays": [
+        {
+          "image": "/selected/langfang-airport-economic-zone-brochure/image-005-1600-e4d78ae1c0fc.webp"
+        }
+      ]
+    },
+    {
+      "file": "图片助手(ImageAssistant)_批量图片下载器/www.behance.net/临空经济区（廊坊）招商宣传册/10005.webp",
+      "sha256": "873d114b993519e0d4467415340a171a94474352e57417e978c68446a949f661",
+      "bytes": 252368,
+      "extension": ".webp",
+      "status": "project",
+      "project": "langfang-airport-economic-zone-brochure",
+      "displays": [
+        {
+          "image": "/selected/langfang-airport-economic-zone-brochure/image-006-1600-9adef451b100.webp"
+        }
+      ]
+    },
+    {
+      "file": "图片助手(ImageAssistant)_批量图片下载器/www.behance.net/临空经济区（廊坊）招商宣传册/10006.webp",
+      "sha256": "a4416339833605b89fd716f2f69533313b357f346a87b8f423a578715faaa9fa",
+      "bytes": 505026,
+      "extension": ".webp",
+      "status": "project",
+      "project": "langfang-airport-economic-zone-brochure",
+      "displays": [
+        {
+          "image": "/selected/langfang-airport-economic-zone-brochure/image-007-1600-336e6fba60e0.webp"
+        }
+      ]
+    },
+    {
+      "file": "图片助手(ImageAssistant)_批量图片下载器/www.behance.net/临空经济区（廊坊）招商宣传册/10007.webp",
+      "sha256": "6ea15151b3190333f18d0230dab3affe1d69cb018b0201ebb5ea4f911ab27896",
+      "bytes": 175872,
+      "extension": ".webp",
+      "status": "project",
+      "project": "langfang-airport-economic-zone-brochure",
+      "displays": [
+        {
+          "image": "/selected/langfang-airport-economic-zone-brochure/image-008-1600-5f641fe42d99.webp"
+        }
+      ]
+    },
+    {
+      "file": "图片助手(ImageAssistant)_批量图片下载器/www.behance.net/临空经济区（廊坊）招商宣传册/10008.webp",
+      "sha256": "647ffe96388248a943fecb458347144b5f183e8b05b719fa7516211dfcd77d53",
+      "bytes": 263306,
+      "extension": ".webp",
+      "status": "project",
+      "project": "langfang-airport-economic-zone-brochure",
+      "displays": [
+        {
+          "image": "/selected/langfang-airport-economic-zone-brochure/image-009-1600-cafe6da581aa.webp"
+        }
+      ]
+    },
+    {
+      "file": "图片助手(ImageAssistant)_批量图片下载器/www.behance.net/临空经济区（廊坊）招商宣传册/10009.webp",
+      "sha256": "542ca64f885d697784b263f9996ee50dc7434725357d2aa9876256c351fdf661",
+      "bytes": 212628,
+      "extension": ".webp",
+      "status": "project",
+      "project": "langfang-airport-economic-zone-brochure",
+      "displays": [
+        {
+          "image": "/selected/langfang-airport-economic-zone-brochure/image-010-1600-4511744b7764.webp"
+        }
+      ]
+    },
+    {
+      "file": "图片助手(ImageAssistant)_批量图片下载器/www.behance.net/临空经济区（廊坊）招商宣传册/10010.webp",
+      "sha256": "b7aec254722ab9197cfcd7a2138f234e9aaf44fbc872ef2a535f965a6eb9cb67",
+      "bytes": 189510,
+      "extension": ".webp",
+      "status": "project",
+      "project": "langfang-airport-economic-zone-brochure",
+      "displays": [
+        {
+          "image": "/selected/langfang-airport-economic-zone-brochure/image-011-1600-f6e0faba579c.webp"
+        }
+      ]
+    },
+    {
+      "file": "图片助手(ImageAssistant)_批量图片下载器/www.behance.net/临空经济区（廊坊）招商宣传册/10011.webp",
+      "sha256": "5c0c4d80d6b0693fe07987324b505be3d2c8eeb5879c0b9a08049d09c9f7d17c",
+      "bytes": 304908,
+      "extension": ".webp",
+      "status": "project",
+      "project": "langfang-airport-economic-zone-brochure",
+      "displays": [
+        {
+          "image": "/selected/langfang-airport-economic-zone-brochure/image-012-1600-8c9e77db0792.webp"
+        }
+      ]
+    },
+    {
+      "file": "图片助手(ImageAssistant)_批量图片下载器/www.behance.net/临空经济区（廊坊）招商宣传册/10012.webp",
+      "sha256": "09ca5b03e20e943e5c8ca90d5738341548f830f7030455b38fa1264dd4fc83e0",
+      "bytes": 263520,
+      "extension": ".webp",
+      "status": "project",
+      "project": "langfang-airport-economic-zone-brochure",
+      "displays": [
+        {
+          "image": "/selected/langfang-airport-economic-zone-brochure/image-013-1600-7d59ac7c8789.webp"
+        }
+      ]
+    },
+    {
+      "file": "图片助手(ImageAssistant)_批量图片下载器/www.behance.net/临空经济区（廊坊）招商宣传册/10013.webp",
+      "sha256": "236aadda14466ec063461af22c5bb6ce388019d9b2aaa83ff025e5fb1a7bfc40",
+      "bytes": 210040,
+      "extension": ".webp",
+      "status": "project",
+      "project": "langfang-airport-economic-zone-brochure",
+      "displays": [
+        {
+          "image": "/selected/langfang-airport-economic-zone-brochure/image-014-1600-857b307b10f6.webp"
+        }
+      ]
+    },
+    {
+      "file": "图片助手(ImageAssistant)_批量图片下载器/www.behance.net/临空经济区（廊坊）招商宣传册/10014.webp",
+      "sha256": "4640be6bc3cbaa1ce8ac59de23fbf7d1aca6723894a6e181cc6a7ac19a7ed825",
+      "bytes": 293444,
+      "extension": ".webp",
+      "status": "project",
+      "project": "langfang-airport-economic-zone-brochure",
+      "displays": [
+        {
+          "image": "/selected/langfang-airport-economic-zone-brochure/image-015-1600-6d8eec98e21a.webp"
+        }
+      ]
+    },
+    {
+      "file": "图片助手(ImageAssistant)_批量图片下载器/www.behance.net/临空经济区（廊坊）招商宣传册/10015.webp",
+      "sha256": "8556112f4ccc9e61b2dafc65570ca8ae82577c748f8ad3a98410d398a2efb5d8",
+      "bytes": 266878,
+      "extension": ".webp",
+      "status": "project",
+      "project": "langfang-airport-economic-zone-brochure",
+      "displays": [
+        {
+          "image": "/selected/langfang-airport-economic-zone-brochure/image-016-1600-6be7c6763fc6.webp"
+        }
+      ]
+    },
+    {
+      "file": "图片助手(ImageAssistant)_批量图片下载器/www.behance.net/临空经济区（廊坊）招商宣传册/10016.webp",
+      "sha256": "05dc050c7909d8b75513a46b253f35d0527be63b59aa37e5fc5b748e869d49f8",
+      "bytes": 201446,
+      "extension": ".webp",
+      "status": "project",
+      "project": "langfang-airport-economic-zone-brochure",
+      "displays": [
+        {
+          "image": "/selected/langfang-airport-economic-zone-brochure/image-017-1600-0386e4a06f06.webp"
+        }
+      ]
+    },
+    {
+      "file": "图片助手(ImageAssistant)_批量图片下载器/www.behance.net/临空经济区（廊坊）招商宣传册/10017.webp",
+      "sha256": "ef9ea827870bf8f562c9125243210e4a949985c9709de48fdbc2e521ee90235d",
+      "bytes": 172912,
+      "extension": ".webp",
+      "status": "project",
+      "project": "langfang-airport-economic-zone-brochure",
+      "displays": [
+        {
+          "image": "/selected/langfang-airport-economic-zone-brochure/image-018-1600-7dc7ceb4c91e.webp"
+        }
+      ]
+    },
+    {
+      "file": "图片助手(ImageAssistant)_批量图片下载器/www.behance.net/临空经济区（廊坊）招商宣传册/10018.webp",
+      "sha256": "1aeedc6ed73472d062e5bf2ead5aaa4da25b4e7b9a2ec6f6a5068905df84598c",
+      "bytes": 329026,
+      "extension": ".webp",
+      "status": "project",
+      "project": "langfang-airport-economic-zone-brochure",
+      "displays": [
+        {
+          "image": "/selected/langfang-airport-economic-zone-brochure/image-019-1600-558fa63d50a8.webp"
+        }
+      ]
+    },
+    {
+      "file": "图片助手(ImageAssistant)_批量图片下载器/www.behance.net/临空经济区（廊坊）招商宣传册/封面.webp",
+      "sha256": "42da7ba99b4264824a4a5992bb1a443b4275dab487cf3cab97d7bd13ad818428",
+      "bytes": 774788,
+      "extension": ".webp",
+      "status": "project",
+      "project": "langfang-airport-economic-zone-brochure",
+      "displays": [
+        {
+          "image": "/selected/langfang-airport-economic-zone-brochure/image-001-1600-53b2f01e4a51.webp"
         }
       ]
     }
@@ -8030,6 +8277,215 @@
       "sourceMode": "RGB",
       "colorConversion": "embedded ICC to sRGB",
       "flattenedOnWhite": false
+    },
+    {
+      "file": "图片助手(ImageAssistant)_批量图片下载器/www.behance.net/临空经济区（廊坊）招商宣传册/封面.webp",
+      "project": "langfang-airport-economic-zone-brochure",
+      "image": "/selected/langfang-airport-economic-zone-brochure/image-001-1600-53b2f01e4a51.webp",
+      "index": 1,
+      "sourceWidth": 2800,
+      "sourceHeight": 2100,
+      "sourceMode": "RGB",
+      "colorConversion": "RGB assumed sRGB",
+      "flattenedOnWhite": false
+    },
+    {
+      "file": "图片助手(ImageAssistant)_批量图片下载器/www.behance.net/临空经济区（廊坊）招商宣传册/10001.webp",
+      "project": "langfang-airport-economic-zone-brochure",
+      "image": "/selected/langfang-airport-economic-zone-brochure/image-002-1600-0bbfc222bd5a.webp",
+      "index": 2,
+      "sourceWidth": 3000,
+      "sourceHeight": 2250,
+      "sourceMode": "RGB",
+      "colorConversion": "RGB assumed sRGB",
+      "flattenedOnWhite": false
+    },
+    {
+      "file": "图片助手(ImageAssistant)_批量图片下载器/www.behance.net/临空经济区（廊坊）招商宣传册/10002.webp",
+      "project": "langfang-airport-economic-zone-brochure",
+      "image": "/selected/langfang-airport-economic-zone-brochure/image-003-1600-7c0bcb06d0d2.webp",
+      "index": 3,
+      "sourceWidth": 3000,
+      "sourceHeight": 2250,
+      "sourceMode": "RGB",
+      "colorConversion": "RGB assumed sRGB",
+      "flattenedOnWhite": false
+    },
+    {
+      "file": "图片助手(ImageAssistant)_批量图片下载器/www.behance.net/临空经济区（廊坊）招商宣传册/10003.webp",
+      "project": "langfang-airport-economic-zone-brochure",
+      "image": "/selected/langfang-airport-economic-zone-brochure/image-004-1600-9239154b2159.webp",
+      "index": 4,
+      "sourceWidth": 3000,
+      "sourceHeight": 2250,
+      "sourceMode": "RGB",
+      "colorConversion": "RGB assumed sRGB",
+      "flattenedOnWhite": false
+    },
+    {
+      "file": "图片助手(ImageAssistant)_批量图片下载器/www.behance.net/临空经济区（廊坊）招商宣传册/10004.webp",
+      "project": "langfang-airport-economic-zone-brochure",
+      "image": "/selected/langfang-airport-economic-zone-brochure/image-005-1600-e4d78ae1c0fc.webp",
+      "index": 5,
+      "sourceWidth": 3000,
+      "sourceHeight": 2250,
+      "sourceMode": "RGB",
+      "colorConversion": "RGB assumed sRGB",
+      "flattenedOnWhite": false
+    },
+    {
+      "file": "图片助手(ImageAssistant)_批量图片下载器/www.behance.net/临空经济区（廊坊）招商宣传册/10005.webp",
+      "project": "langfang-airport-economic-zone-brochure",
+      "image": "/selected/langfang-airport-economic-zone-brochure/image-006-1600-9adef451b100.webp",
+      "index": 6,
+      "sourceWidth": 3000,
+      "sourceHeight": 2250,
+      "sourceMode": "RGB",
+      "colorConversion": "RGB assumed sRGB",
+      "flattenedOnWhite": false
+    },
+    {
+      "file": "图片助手(ImageAssistant)_批量图片下载器/www.behance.net/临空经济区（廊坊）招商宣传册/10006.webp",
+      "project": "langfang-airport-economic-zone-brochure",
+      "image": "/selected/langfang-airport-economic-zone-brochure/image-007-1600-336e6fba60e0.webp",
+      "index": 7,
+      "sourceWidth": 3000,
+      "sourceHeight": 2250,
+      "sourceMode": "RGB",
+      "colorConversion": "RGB assumed sRGB",
+      "flattenedOnWhite": false
+    },
+    {
+      "file": "图片助手(ImageAssistant)_批量图片下载器/www.behance.net/临空经济区（廊坊）招商宣传册/10007.webp",
+      "project": "langfang-airport-economic-zone-brochure",
+      "image": "/selected/langfang-airport-economic-zone-brochure/image-008-1600-5f641fe42d99.webp",
+      "index": 8,
+      "sourceWidth": 3000,
+      "sourceHeight": 2250,
+      "sourceMode": "RGB",
+      "colorConversion": "RGB assumed sRGB",
+      "flattenedOnWhite": false
+    },
+    {
+      "file": "图片助手(ImageAssistant)_批量图片下载器/www.behance.net/临空经济区（廊坊）招商宣传册/10008.webp",
+      "project": "langfang-airport-economic-zone-brochure",
+      "image": "/selected/langfang-airport-economic-zone-brochure/image-009-1600-cafe6da581aa.webp",
+      "index": 9,
+      "sourceWidth": 3000,
+      "sourceHeight": 2250,
+      "sourceMode": "RGB",
+      "colorConversion": "RGB assumed sRGB",
+      "flattenedOnWhite": false
+    },
+    {
+      "file": "图片助手(ImageAssistant)_批量图片下载器/www.behance.net/临空经济区（廊坊）招商宣传册/10009.webp",
+      "project": "langfang-airport-economic-zone-brochure",
+      "image": "/selected/langfang-airport-economic-zone-brochure/image-010-1600-4511744b7764.webp",
+      "index": 10,
+      "sourceWidth": 3000,
+      "sourceHeight": 2250,
+      "sourceMode": "RGB",
+      "colorConversion": "RGB assumed sRGB",
+      "flattenedOnWhite": false
+    },
+    {
+      "file": "图片助手(ImageAssistant)_批量图片下载器/www.behance.net/临空经济区（廊坊）招商宣传册/10010.webp",
+      "project": "langfang-airport-economic-zone-brochure",
+      "image": "/selected/langfang-airport-economic-zone-brochure/image-011-1600-f6e0faba579c.webp",
+      "index": 11,
+      "sourceWidth": 3000,
+      "sourceHeight": 2250,
+      "sourceMode": "RGB",
+      "colorConversion": "RGB assumed sRGB",
+      "flattenedOnWhite": false
+    },
+    {
+      "file": "图片助手(ImageAssistant)_批量图片下载器/www.behance.net/临空经济区（廊坊）招商宣传册/10011.webp",
+      "project": "langfang-airport-economic-zone-brochure",
+      "image": "/selected/langfang-airport-economic-zone-brochure/image-012-1600-8c9e77db0792.webp",
+      "index": 12,
+      "sourceWidth": 3000,
+      "sourceHeight": 2250,
+      "sourceMode": "RGB",
+      "colorConversion": "RGB assumed sRGB",
+      "flattenedOnWhite": false
+    },
+    {
+      "file": "图片助手(ImageAssistant)_批量图片下载器/www.behance.net/临空经济区（廊坊）招商宣传册/10012.webp",
+      "project": "langfang-airport-economic-zone-brochure",
+      "image": "/selected/langfang-airport-economic-zone-brochure/image-013-1600-7d59ac7c8789.webp",
+      "index": 13,
+      "sourceWidth": 3000,
+      "sourceHeight": 2250,
+      "sourceMode": "RGB",
+      "colorConversion": "RGB assumed sRGB",
+      "flattenedOnWhite": false
+    },
+    {
+      "file": "图片助手(ImageAssistant)_批量图片下载器/www.behance.net/临空经济区（廊坊）招商宣传册/10013.webp",
+      "project": "langfang-airport-economic-zone-brochure",
+      "image": "/selected/langfang-airport-economic-zone-brochure/image-014-1600-857b307b10f6.webp",
+      "index": 14,
+      "sourceWidth": 3000,
+      "sourceHeight": 2250,
+      "sourceMode": "RGB",
+      "colorConversion": "RGB assumed sRGB",
+      "flattenedOnWhite": false
+    },
+    {
+      "file": "图片助手(ImageAssistant)_批量图片下载器/www.behance.net/临空经济区（廊坊）招商宣传册/10014.webp",
+      "project": "langfang-airport-economic-zone-brochure",
+      "image": "/selected/langfang-airport-economic-zone-brochure/image-015-1600-6d8eec98e21a.webp",
+      "index": 15,
+      "sourceWidth": 3000,
+      "sourceHeight": 2250,
+      "sourceMode": "RGB",
+      "colorConversion": "RGB assumed sRGB",
+      "flattenedOnWhite": false
+    },
+    {
+      "file": "图片助手(ImageAssistant)_批量图片下载器/www.behance.net/临空经济区（廊坊）招商宣传册/10015.webp",
+      "project": "langfang-airport-economic-zone-brochure",
+      "image": "/selected/langfang-airport-economic-zone-brochure/image-016-1600-6be7c6763fc6.webp",
+      "index": 16,
+      "sourceWidth": 3000,
+      "sourceHeight": 2250,
+      "sourceMode": "RGB",
+      "colorConversion": "RGB assumed sRGB",
+      "flattenedOnWhite": false
+    },
+    {
+      "file": "图片助手(ImageAssistant)_批量图片下载器/www.behance.net/临空经济区（廊坊）招商宣传册/10016.webp",
+      "project": "langfang-airport-economic-zone-brochure",
+      "image": "/selected/langfang-airport-economic-zone-brochure/image-017-1600-0386e4a06f06.webp",
+      "index": 17,
+      "sourceWidth": 3000,
+      "sourceHeight": 2250,
+      "sourceMode": "RGB",
+      "colorConversion": "RGB assumed sRGB",
+      "flattenedOnWhite": false
+    },
+    {
+      "file": "图片助手(ImageAssistant)_批量图片下载器/www.behance.net/临空经济区（廊坊）招商宣传册/10017.webp",
+      "project": "langfang-airport-economic-zone-brochure",
+      "image": "/selected/langfang-airport-economic-zone-brochure/image-018-1600-7dc7ceb4c91e.webp",
+      "index": 18,
+      "sourceWidth": 3000,
+      "sourceHeight": 2250,
+      "sourceMode": "RGB",
+      "colorConversion": "RGB assumed sRGB",
+      "flattenedOnWhite": false
+    },
+    {
+      "file": "图片助手(ImageAssistant)_批量图片下载器/www.behance.net/临空经济区（廊坊）招商宣传册/10018.webp",
+      "project": "langfang-airport-economic-zone-brochure",
+      "image": "/selected/langfang-airport-economic-zone-brochure/image-019-1600-558fa63d50a8.webp",
+      "index": 19,
+      "sourceWidth": 3000,
+      "sourceHeight": 2250,
+      "sourceMode": "RGB",
+      "colorConversion": "RGB assumed sRGB",
+      "flattenedOnWhite": false
     }
   ],
   "coverSources": {
@@ -8344,6 +8800,11 @@
       "file": "内衣画册/封面1.jpg",
       "mode": "contain",
       "image": "/selected/lingerie-lookbook/cover-960-52def1862d08.webp"
+    },
+    "langfang-airport-economic-zone-brochure": {
+      "file": "图片助手(ImageAssistant)_批量图片下载器/www.behance.net/临空经济区（廊坊）招商宣传册/封面.webp",
+      "mode": "contain",
+      "image": "/selected/langfang-airport-economic-zone-brochure/cover-960-b2a4e9dba18d.webp"
     }
   },
   "assets": [
@@ -9934,6 +10395,246 @@
     {
       "image": "/selected/home-palliative-care-team-presentation/image-018-800-2f0160f5262e.webp",
       "bytes": 32750
+    },
+    {
+      "image": "/selected/langfang-airport-economic-zone-brochure/cover-160-4340c072b70b.webp",
+      "bytes": 8962
+    },
+    {
+      "image": "/selected/langfang-airport-economic-zone-brochure/cover-320-8973590f50aa.webp",
+      "bytes": 24148
+    },
+    {
+      "image": "/selected/langfang-airport-economic-zone-brochure/cover-960-b2a4e9dba18d.webp",
+      "bytes": 77110
+    },
+    {
+      "image": "/selected/langfang-airport-economic-zone-brochure/image-001-1600-53b2f01e4a51.webp",
+      "bytes": 288638
+    },
+    {
+      "image": "/selected/langfang-airport-economic-zone-brochure/image-001-2400-6b1d215f6411.webp",
+      "bytes": 545080
+    },
+    {
+      "image": "/selected/langfang-airport-economic-zone-brochure/image-001-800-bd197c813e1a.webp",
+      "bytes": 85016
+    },
+    {
+      "image": "/selected/langfang-airport-economic-zone-brochure/image-002-1600-0bbfc222bd5a.webp",
+      "bytes": 88082
+    },
+    {
+      "image": "/selected/langfang-airport-economic-zone-brochure/image-002-2400-d44644b65c41.webp",
+      "bytes": 165960
+    },
+    {
+      "image": "/selected/langfang-airport-economic-zone-brochure/image-002-800-ce8e86d11558.webp",
+      "bytes": 26240
+    },
+    {
+      "image": "/selected/langfang-airport-economic-zone-brochure/image-003-1600-7c0bcb06d0d2.webp",
+      "bytes": 33244
+    },
+    {
+      "image": "/selected/langfang-airport-economic-zone-brochure/image-003-2400-a16741955db5.webp",
+      "bytes": 61486
+    },
+    {
+      "image": "/selected/langfang-airport-economic-zone-brochure/image-003-800-874ed043bb43.webp",
+      "bytes": 9520
+    },
+    {
+      "image": "/selected/langfang-airport-economic-zone-brochure/image-004-1600-9239154b2159.webp",
+      "bytes": 76136
+    },
+    {
+      "image": "/selected/langfang-airport-economic-zone-brochure/image-004-2400-5d68b41327e3.webp",
+      "bytes": 152810
+    },
+    {
+      "image": "/selected/langfang-airport-economic-zone-brochure/image-004-800-61e39b05489a.webp",
+      "bytes": 21158
+    },
+    {
+      "image": "/selected/langfang-airport-economic-zone-brochure/image-005-1600-e4d78ae1c0fc.webp",
+      "bytes": 94314
+    },
+    {
+      "image": "/selected/langfang-airport-economic-zone-brochure/image-005-2400-644474a8a310.webp",
+      "bytes": 182626
+    },
+    {
+      "image": "/selected/langfang-airport-economic-zone-brochure/image-005-800-0a5a71f52eb0.webp",
+      "bytes": 27326
+    },
+    {
+      "image": "/selected/langfang-airport-economic-zone-brochure/image-006-1600-9adef451b100.webp",
+      "bytes": 49320
+    },
+    {
+      "image": "/selected/langfang-airport-economic-zone-brochure/image-006-2400-5084f384c7af.webp",
+      "bytes": 127082
+    },
+    {
+      "image": "/selected/langfang-airport-economic-zone-brochure/image-006-800-b53be9560574.webp",
+      "bytes": 11484
+    },
+    {
+      "image": "/selected/langfang-airport-economic-zone-brochure/image-007-1600-336e6fba60e0.webp",
+      "bytes": 159372
+    },
+    {
+      "image": "/selected/langfang-airport-economic-zone-brochure/image-007-2400-46ffacdf2163.webp",
+      "bytes": 319272
+    },
+    {
+      "image": "/selected/langfang-airport-economic-zone-brochure/image-007-800-1228f3a57b60.webp",
+      "bytes": 38340
+    },
+    {
+      "image": "/selected/langfang-airport-economic-zone-brochure/image-008-1600-5f641fe42d99.webp",
+      "bytes": 53956
+    },
+    {
+      "image": "/selected/langfang-airport-economic-zone-brochure/image-008-2400-cd5c194ccd57.webp",
+      "bytes": 108202
+    },
+    {
+      "image": "/selected/langfang-airport-economic-zone-brochure/image-008-800-91eb6ab6429c.webp",
+      "bytes": 14220
+    },
+    {
+      "image": "/selected/langfang-airport-economic-zone-brochure/image-009-1600-cafe6da581aa.webp",
+      "bytes": 74696
+    },
+    {
+      "image": "/selected/langfang-airport-economic-zone-brochure/image-009-2400-6ae4c573911d.webp",
+      "bytes": 146628
+    },
+    {
+      "image": "/selected/langfang-airport-economic-zone-brochure/image-009-800-54e53005368f.webp",
+      "bytes": 21208
+    },
+    {
+      "image": "/selected/langfang-airport-economic-zone-brochure/image-010-1600-4511744b7764.webp",
+      "bytes": 55682
+    },
+    {
+      "image": "/selected/langfang-airport-economic-zone-brochure/image-010-2400-4cce2ee88867.webp",
+      "bytes": 112396
+    },
+    {
+      "image": "/selected/langfang-airport-economic-zone-brochure/image-010-800-88ffad8ab748.webp",
+      "bytes": 15870
+    },
+    {
+      "image": "/selected/langfang-airport-economic-zone-brochure/image-011-1600-f6e0faba579c.webp",
+      "bytes": 54964
+    },
+    {
+      "image": "/selected/langfang-airport-economic-zone-brochure/image-011-2400-c2512873c250.webp",
+      "bytes": 111994
+    },
+    {
+      "image": "/selected/langfang-airport-economic-zone-brochure/image-011-800-3e13acce66fd.webp",
+      "bytes": 16126
+    },
+    {
+      "image": "/selected/langfang-airport-economic-zone-brochure/image-012-1600-8c9e77db0792.webp",
+      "bytes": 85908
+    },
+    {
+      "image": "/selected/langfang-airport-economic-zone-brochure/image-012-2400-ac72d0b723f7.webp",
+      "bytes": 183202
+    },
+    {
+      "image": "/selected/langfang-airport-economic-zone-brochure/image-012-800-cc2071963b55.webp",
+      "bytes": 23226
+    },
+    {
+      "image": "/selected/langfang-airport-economic-zone-brochure/image-013-1600-7d59ac7c8789.webp",
+      "bytes": 80484
+    },
+    {
+      "image": "/selected/langfang-airport-economic-zone-brochure/image-013-2400-4cad86dfb4f9.webp",
+      "bytes": 161148
+    },
+    {
+      "image": "/selected/langfang-airport-economic-zone-brochure/image-013-800-d42068130bca.webp",
+      "bytes": 23314
+    },
+    {
+      "image": "/selected/langfang-airport-economic-zone-brochure/image-014-1600-857b307b10f6.webp",
+      "bytes": 59824
+    },
+    {
+      "image": "/selected/langfang-airport-economic-zone-brochure/image-014-2400-e12800d04a7b.webp",
+      "bytes": 125506
+    },
+    {
+      "image": "/selected/langfang-airport-economic-zone-brochure/image-014-800-7e29ffc30baf.webp",
+      "bytes": 16966
+    },
+    {
+      "image": "/selected/langfang-airport-economic-zone-brochure/image-015-1600-6d8eec98e21a.webp",
+      "bytes": 95226
+    },
+    {
+      "image": "/selected/langfang-airport-economic-zone-brochure/image-015-2400-4a9a289c7410.webp",
+      "bytes": 184580
+    },
+    {
+      "image": "/selected/langfang-airport-economic-zone-brochure/image-015-800-b751723e3415.webp",
+      "bytes": 27856
+    },
+    {
+      "image": "/selected/langfang-airport-economic-zone-brochure/image-016-1600-6be7c6763fc6.webp",
+      "bytes": 80116
+    },
+    {
+      "image": "/selected/langfang-airport-economic-zone-brochure/image-016-2400-63796e8f8a7f.webp",
+      "bytes": 150902
+    },
+    {
+      "image": "/selected/langfang-airport-economic-zone-brochure/image-016-800-09195f53003e.webp",
+      "bytes": 24270
+    },
+    {
+      "image": "/selected/langfang-airport-economic-zone-brochure/image-017-1600-0386e4a06f06.webp",
+      "bytes": 59218
+    },
+    {
+      "image": "/selected/langfang-airport-economic-zone-brochure/image-017-2400-179ce0e05eb9.webp",
+      "bytes": 118344
+    },
+    {
+      "image": "/selected/langfang-airport-economic-zone-brochure/image-017-800-fc193ce5e239.webp",
+      "bytes": 16578
+    },
+    {
+      "image": "/selected/langfang-airport-economic-zone-brochure/image-018-1600-7dc7ceb4c91e.webp",
+      "bytes": 51806
+    },
+    {
+      "image": "/selected/langfang-airport-economic-zone-brochure/image-018-2400-e14e24896ce5.webp",
+      "bytes": 105110
+    },
+    {
+      "image": "/selected/langfang-airport-economic-zone-brochure/image-018-800-d3810636a470.webp",
+      "bytes": 14722
+    },
+    {
+      "image": "/selected/langfang-airport-economic-zone-brochure/image-019-1600-558fa63d50a8.webp",
+      "bytes": 95954
+    },
+    {
+      "image": "/selected/langfang-airport-economic-zone-brochure/image-019-2400-4a7706e37cee.webp",
+      "bytes": 196312
+    },
+    {
+      "image": "/selected/langfang-airport-economic-zone-brochure/image-019-800-fd2043046f5f.webp",
+      "bytes": 26860
     },
     {
       "image": "/selected/leebeer-craft-beer-packaging/cover-160-4ca1f8afe30f.webp",
@@ -13412,6 +14113,14 @@
         "anniversary-special-issue",
         "hengshui-lake-periodical",
         "lingerie-lookbook"
+      ]
+    },
+    {
+      "sourceRoot": "C:\\Users\\zhaoz\\Downloads",
+      "plan": "docs/content/curated-plan-2026-11-28-langfang.json",
+      "planSha256": "01f6f481e8396c9eafd179ebd9c675a26b89e1bc24352376fb691ebfc163b6bd",
+      "projects": [
+        "langfang-airport-economic-zone-brochure"
       ]
     }
   ]
