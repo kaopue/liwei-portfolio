@@ -4,12 +4,12 @@
   "sourceRoot": "F:\\作品集  精选文件",
   "plan": "docs/content/curated-plan-2026-10-26.json",
   "planSha256": "18cb524b93fb9380468e9e33e4c8ec208365418e3b76f4e90665c0f94c7f3da8",
-  "sourceFileCount": 257,
+  "sourceFileCount": 263,
   "projectCount": 61,
-  "displayCount": 350,
+  "displayCount": 356,
   "duplicateSourceCount": 4,
-  "assetCount": 1227,
-  "assetBytes": 173968005,
+  "assetCount": 1244,
+  "assetBytes": 175417835,
   "categories": [
     {
       "slug": "brand-identity",
@@ -3854,80 +3854,158 @@
       ]
     },
     {
-      "file": "衡水湖期刊/杂志样机-平铺-衡水湖-2(1).jpg",
-      "sha256": "b84e49c99d77544b56693485a9df28c6b4f68177a881028f6e728b7d6cd803aa",
-      "bytes": 12486022,
-      "extension": ".jpg",
+      "file": "图片助手(ImageAssistant)_批量图片下载器/www.behance.net/衡水湖期刊_BehanceAdobe,_Inc.BehanceBehancesearchsearchAdobe,_Inc.Adobe,_Inc.Adobe,_Inc.BehancePinterestFacebookAdobe,_Inc/10002.webp",
+      "sha256": "15db0b2ca0b25d1bda64410ac7cb68334dc4e458fe43ae16e5812ccb70d923d3",
+      "bytes": 1860116,
+      "extension": ".webp",
       "status": "project",
       "project": "hengshui-lake-periodical",
       "displays": [
         {
-          "image": "/selected/hengshui-lake-periodical/image-005-1600-6db6bae6053b.webp"
+          "image": "/selected/hengshui-lake-periodical/image-002-1600-830d81bafcab.webp"
         }
       ]
     },
     {
-      "file": "衡水湖期刊/杂志样机-平铺-衡水湖-3(1).jpg",
-      "sha256": "a2012bfdb7964d8689df8365de8281de1220fd0c8ff432494b4d83dd93886b7a",
-      "bytes": 11936883,
-      "extension": ".jpg",
+      "file": "图片助手(ImageAssistant)_批量图片下载器/www.behance.net/衡水湖期刊_BehanceAdobe,_Inc.BehanceBehancesearchsearchAdobe,_Inc.Adobe,_Inc.Adobe,_Inc.BehancePinterestFacebookAdobe,_Inc/10003.webp",
+      "sha256": "88b62a03e395f5d8142c047ca9dc66f37d6fee924279876d2be7561d9c84a119",
+      "bytes": 1638680,
+      "extension": ".webp",
       "status": "project",
       "project": "hengshui-lake-periodical",
       "displays": [
         {
-          "image": "/selected/hengshui-lake-periodical/image-006-1600-b505f24fce90.webp"
+          "image": "/selected/hengshui-lake-periodical/image-003-1600-c91c8901509b.webp"
         }
       ]
     },
     {
-      "file": "衡水湖期刊/杂志样机-平铺-衡水湖-第二期 拷贝-1(1).jpg",
-      "sha256": "b50c67671a955fb05bac1db900aedde7c3455fe75f7cc047da6f526f50bc9f08",
-      "bytes": 10513514,
-      "extension": ".jpg",
+      "file": "图片助手(ImageAssistant)_批量图片下载器/www.behance.net/衡水湖期刊_BehanceAdobe,_Inc.BehanceBehancesearchsearchAdobe,_Inc.Adobe,_Inc.Adobe,_Inc.BehancePinterestFacebookAdobe,_Inc/10004.webp",
+      "sha256": "ecf91e7e803a7eb867f80eee528d1d2af2221e2f009d544e59712bdc821372c5",
+      "bytes": 244062,
+      "extension": ".webp",
       "status": "project",
       "project": "hengshui-lake-periodical",
       "displays": [
         {
-          "image": "/selected/hengshui-lake-periodical/image-002-1600-75b6b9b111e2.webp"
+          "image": "/selected/hengshui-lake-periodical/image-004-1600-47db0b2e5f24.webp"
         }
       ]
     },
     {
-      "file": "衡水湖期刊/杂志样机-平铺-衡水湖-第二期 拷贝-2(1).jpg",
-      "sha256": "ef0b57d3b335ce0c885614a0467a34c8e6ed42db34783d261589c88cb73d8ebc",
-      "bytes": 8942658,
-      "extension": ".jpg",
+      "file": "图片助手(ImageAssistant)_批量图片下载器/www.behance.net/衡水湖期刊_BehanceAdobe,_Inc.BehanceBehancesearchsearchAdobe,_Inc.Adobe,_Inc.Adobe,_Inc.BehancePinterestFacebookAdobe,_Inc/10005.webp",
+      "sha256": "2b402b8ab0e5aa2da40643127996a3583da9c9e566342cf146a2d8356ab5594d",
+      "bytes": 171630,
+      "extension": ".webp",
       "status": "project",
       "project": "hengshui-lake-periodical",
       "displays": [
         {
-          "image": "/selected/hengshui-lake-periodical/image-003-1600-05553ca6c203.webp"
+          "image": "/selected/hengshui-lake-periodical/image-005-1600-d63999437a6b.webp"
         }
       ]
     },
     {
-      "file": "衡水湖期刊/杂志样机-衡水湖封面 拷贝(1).jpg",
-      "sha256": "547e1b7e7c27f85808473564d7ee6ebfdcb2b203929303511cd57bbf6fea7bd4",
-      "bytes": 2420090,
-      "extension": ".jpg",
+      "file": "图片助手(ImageAssistant)_批量图片下载器/www.behance.net/衡水湖期刊_BehanceAdobe,_Inc.BehanceBehancesearchsearchAdobe,_Inc.Adobe,_Inc.Adobe,_Inc.BehancePinterestFacebookAdobe,_Inc/10006.webp",
+      "sha256": "b21168692b4e58f8dff572cd393a4c0bc4ecec9080593171ea0bc0c3da080e8f",
+      "bytes": 188646,
+      "extension": ".webp",
       "status": "project",
       "project": "hengshui-lake-periodical",
       "displays": [
         {
-          "image": "/selected/hengshui-lake-periodical/image-001-1600-2381f92ea17d.webp"
+          "image": "/selected/hengshui-lake-periodical/image-006-1600-123da1e81707.webp"
         }
       ]
     },
     {
-      "file": "衡水湖期刊/杂志样机-衡水湖封面-第3 4 5期 拷贝(1).jpg",
-      "sha256": "fbc6e3c49b0d8539727aa920855270de8b0579327d57d901a393b0c2d5acbfa1",
-      "bytes": 2483905,
-      "extension": ".jpg",
+      "file": "图片助手(ImageAssistant)_批量图片下载器/www.behance.net/衡水湖期刊_BehanceAdobe,_Inc.BehanceBehancesearchsearchAdobe,_Inc.Adobe,_Inc.Adobe,_Inc.BehancePinterestFacebookAdobe,_Inc/10007.webp",
+      "sha256": "7f357ba308a4cd778f31451b2b39d1c57929dcfaee596d37179ab61ee228d3e4",
+      "bytes": 202500,
+      "extension": ".webp",
       "status": "project",
       "project": "hengshui-lake-periodical",
       "displays": [
         {
-          "image": "/selected/hengshui-lake-periodical/image-004-1600-ba29a48fd6ea.webp"
+          "image": "/selected/hengshui-lake-periodical/image-007-1600-06b24be9b56d.webp"
+        }
+      ]
+    },
+    {
+      "file": "图片助手(ImageAssistant)_批量图片下载器/www.behance.net/衡水湖期刊_BehanceAdobe,_Inc.BehanceBehancesearchsearchAdobe,_Inc.Adobe,_Inc.Adobe,_Inc.BehancePinterestFacebookAdobe,_Inc/10008.webp",
+      "sha256": "cbcbfca7d3b0f7a3a865dffcf0ae4d2f461cb5e8f8b1a1472df29ce5a9def75c",
+      "bytes": 196266,
+      "extension": ".webp",
+      "status": "project",
+      "project": "hengshui-lake-periodical",
+      "displays": [
+        {
+          "image": "/selected/hengshui-lake-periodical/image-008-1600-7a74e2e10509.webp"
+        }
+      ]
+    },
+    {
+      "file": "图片助手(ImageAssistant)_批量图片下载器/www.behance.net/衡水湖期刊_BehanceAdobe,_Inc.BehanceBehancesearchsearchAdobe,_Inc.Adobe,_Inc.Adobe,_Inc.BehancePinterestFacebookAdobe,_Inc/10009.webp",
+      "sha256": "4730c61dad5373d87b02a4a7ee9a31676abd2299f3a78bf91f331acb97ddc3ad",
+      "bytes": 186812,
+      "extension": ".webp",
+      "status": "project",
+      "project": "hengshui-lake-periodical",
+      "displays": [
+        {
+          "image": "/selected/hengshui-lake-periodical/image-009-1600-e93cce8b8dd5.webp"
+        }
+      ]
+    },
+    {
+      "file": "图片助手(ImageAssistant)_批量图片下载器/www.behance.net/衡水湖期刊_BehanceAdobe,_Inc.BehanceBehancesearchsearchAdobe,_Inc.Adobe,_Inc.Adobe,_Inc.BehancePinterestFacebookAdobe,_Inc/10010.webp",
+      "sha256": "92b49fcba3c1aad48c11860b458158bd83b484cb2ea1eceb1ef3766f1b5a12ee",
+      "bytes": 167616,
+      "extension": ".webp",
+      "status": "project",
+      "project": "hengshui-lake-periodical",
+      "displays": [
+        {
+          "image": "/selected/hengshui-lake-periodical/image-010-1600-70ad240d6f93.webp"
+        }
+      ]
+    },
+    {
+      "file": "图片助手(ImageAssistant)_批量图片下载器/www.behance.net/衡水湖期刊_BehanceAdobe,_Inc.BehanceBehancesearchsearchAdobe,_Inc.Adobe,_Inc.Adobe,_Inc.BehancePinterestFacebookAdobe,_Inc/10011.webp",
+      "sha256": "94f0d487e03ded465c0e414529b48354501ef8606520509df4f01b38ad973197",
+      "bytes": 226006,
+      "extension": ".webp",
+      "status": "project",
+      "project": "hengshui-lake-periodical",
+      "displays": [
+        {
+          "image": "/selected/hengshui-lake-periodical/image-011-1600-55121ebb1e5c.webp"
+        }
+      ]
+    },
+    {
+      "file": "图片助手(ImageAssistant)_批量图片下载器/www.behance.net/衡水湖期刊_BehanceAdobe,_Inc.BehanceBehancesearchsearchAdobe,_Inc.Adobe,_Inc.Adobe,_Inc.BehancePinterestFacebookAdobe,_Inc/10012.webp",
+      "sha256": "5dd1f7a084b415a5fdb894db08f65251d6a24588bc37132d8e0e26dd96d8d9b9",
+      "bytes": 108834,
+      "extension": ".webp",
+      "status": "project",
+      "project": "hengshui-lake-periodical",
+      "displays": [
+        {
+          "image": "/selected/hengshui-lake-periodical/image-012-1400-841f6db4e2d1.webp"
+        }
+      ]
+    },
+    {
+      "file": "图片助手(ImageAssistant)_批量图片下载器/www.behance.net/衡水湖期刊_BehanceAdobe,_Inc.BehanceBehancesearchsearchAdobe,_Inc.Adobe,_Inc.Adobe,_Inc.BehancePinterestFacebookAdobe,_Inc/封面.webp",
+      "sha256": "cd683738a12aafed2c2f5cc47751f047cedb68bc3097c5f64be354eaaae6149a",
+      "bytes": 1605418,
+      "extension": ".webp",
+      "status": "project",
+      "project": "hengshui-lake-periodical",
+      "displays": [
+        {
+          "image": "/selected/hengshui-lake-periodical/image-001-1600-f0da06fecf47.webp"
         }
       ]
     }
@@ -7778,67 +7856,133 @@
       "flattenedOnWhite": false
     },
     {
-      "file": "衡水湖期刊/杂志样机-衡水湖封面 拷贝(1).jpg",
+      "file": "图片助手(ImageAssistant)_批量图片下载器/www.behance.net/衡水湖期刊_BehanceAdobe,_Inc.BehanceBehancesearchsearchAdobe,_Inc.Adobe,_Inc.Adobe,_Inc.BehancePinterestFacebookAdobe,_Inc/封面.webp",
       "project": "hengshui-lake-periodical",
-      "image": "/selected/hengshui-lake-periodical/image-001-1600-2381f92ea17d.webp",
+      "image": "/selected/hengshui-lake-periodical/image-001-1600-f0da06fecf47.webp",
       "index": 1,
-      "sourceWidth": 4000,
-      "sourceHeight": 2667,
+      "sourceWidth": 3840,
+      "sourceHeight": 2880,
       "sourceMode": "RGB",
       "colorConversion": "embedded ICC to sRGB",
       "flattenedOnWhite": false
     },
     {
-      "file": "衡水湖期刊/杂志样机-平铺-衡水湖-第二期 拷贝-1(1).jpg",
+      "file": "图片助手(ImageAssistant)_批量图片下载器/www.behance.net/衡水湖期刊_BehanceAdobe,_Inc.BehanceBehancesearchsearchAdobe,_Inc.Adobe,_Inc.Adobe,_Inc.BehancePinterestFacebookAdobe,_Inc/10002.webp",
       "project": "hengshui-lake-periodical",
-      "image": "/selected/hengshui-lake-periodical/image-002-1600-75b6b9b111e2.webp",
+      "image": "/selected/hengshui-lake-periodical/image-002-1600-830d81bafcab.webp",
       "index": 2,
-      "sourceWidth": 5000,
-      "sourceHeight": 3750,
+      "sourceWidth": 3840,
+      "sourceHeight": 2880,
       "sourceMode": "RGB",
       "colorConversion": "embedded ICC to sRGB",
       "flattenedOnWhite": false
     },
     {
-      "file": "衡水湖期刊/杂志样机-平铺-衡水湖-第二期 拷贝-2(1).jpg",
+      "file": "图片助手(ImageAssistant)_批量图片下载器/www.behance.net/衡水湖期刊_BehanceAdobe,_Inc.BehanceBehancesearchsearchAdobe,_Inc.Adobe,_Inc.Adobe,_Inc.BehancePinterestFacebookAdobe,_Inc/10003.webp",
       "project": "hengshui-lake-periodical",
-      "image": "/selected/hengshui-lake-periodical/image-003-1600-05553ca6c203.webp",
+      "image": "/selected/hengshui-lake-periodical/image-003-1600-c91c8901509b.webp",
       "index": 3,
-      "sourceWidth": 5000,
-      "sourceHeight": 3750,
+      "sourceWidth": 3840,
+      "sourceHeight": 2880,
       "sourceMode": "RGB",
       "colorConversion": "embedded ICC to sRGB",
       "flattenedOnWhite": false
     },
     {
-      "file": "衡水湖期刊/杂志样机-衡水湖封面-第3 4 5期 拷贝(1).jpg",
+      "file": "图片助手(ImageAssistant)_批量图片下载器/www.behance.net/衡水湖期刊_BehanceAdobe,_Inc.BehanceBehancesearchsearchAdobe,_Inc.Adobe,_Inc.Adobe,_Inc.BehancePinterestFacebookAdobe,_Inc/10004.webp",
       "project": "hengshui-lake-periodical",
-      "image": "/selected/hengshui-lake-periodical/image-004-1600-ba29a48fd6ea.webp",
+      "image": "/selected/hengshui-lake-periodical/image-004-1600-47db0b2e5f24.webp",
       "index": 4,
-      "sourceWidth": 4000,
-      "sourceHeight": 2667,
+      "sourceWidth": 2000,
+      "sourceHeight": 1500,
       "sourceMode": "RGB",
       "colorConversion": "embedded ICC to sRGB",
       "flattenedOnWhite": false
     },
     {
-      "file": "衡水湖期刊/杂志样机-平铺-衡水湖-2(1).jpg",
+      "file": "图片助手(ImageAssistant)_批量图片下载器/www.behance.net/衡水湖期刊_BehanceAdobe,_Inc.BehanceBehancesearchsearchAdobe,_Inc.Adobe,_Inc.Adobe,_Inc.BehancePinterestFacebookAdobe,_Inc/10005.webp",
       "project": "hengshui-lake-periodical",
-      "image": "/selected/hengshui-lake-periodical/image-005-1600-6db6bae6053b.webp",
+      "image": "/selected/hengshui-lake-periodical/image-005-1600-d63999437a6b.webp",
       "index": 5,
-      "sourceWidth": 5000,
-      "sourceHeight": 3750,
+      "sourceWidth": 2000,
+      "sourceHeight": 1500,
       "sourceMode": "RGB",
       "colorConversion": "embedded ICC to sRGB",
       "flattenedOnWhite": false
     },
     {
-      "file": "衡水湖期刊/杂志样机-平铺-衡水湖-3(1).jpg",
+      "file": "图片助手(ImageAssistant)_批量图片下载器/www.behance.net/衡水湖期刊_BehanceAdobe,_Inc.BehanceBehancesearchsearchAdobe,_Inc.Adobe,_Inc.Adobe,_Inc.BehancePinterestFacebookAdobe,_Inc/10006.webp",
       "project": "hengshui-lake-periodical",
-      "image": "/selected/hengshui-lake-periodical/image-006-1600-b505f24fce90.webp",
+      "image": "/selected/hengshui-lake-periodical/image-006-1600-123da1e81707.webp",
       "index": 6,
-      "sourceWidth": 5000,
-      "sourceHeight": 3750,
+      "sourceWidth": 2000,
+      "sourceHeight": 1500,
+      "sourceMode": "RGB",
+      "colorConversion": "embedded ICC to sRGB",
+      "flattenedOnWhite": false
+    },
+    {
+      "file": "图片助手(ImageAssistant)_批量图片下载器/www.behance.net/衡水湖期刊_BehanceAdobe,_Inc.BehanceBehancesearchsearchAdobe,_Inc.Adobe,_Inc.Adobe,_Inc.BehancePinterestFacebookAdobe,_Inc/10007.webp",
+      "project": "hengshui-lake-periodical",
+      "image": "/selected/hengshui-lake-periodical/image-007-1600-06b24be9b56d.webp",
+      "index": 7,
+      "sourceWidth": 2000,
+      "sourceHeight": 1500,
+      "sourceMode": "RGB",
+      "colorConversion": "embedded ICC to sRGB",
+      "flattenedOnWhite": false
+    },
+    {
+      "file": "图片助手(ImageAssistant)_批量图片下载器/www.behance.net/衡水湖期刊_BehanceAdobe,_Inc.BehanceBehancesearchsearchAdobe,_Inc.Adobe,_Inc.Adobe,_Inc.BehancePinterestFacebookAdobe,_Inc/10008.webp",
+      "project": "hengshui-lake-periodical",
+      "image": "/selected/hengshui-lake-periodical/image-008-1600-7a74e2e10509.webp",
+      "index": 8,
+      "sourceWidth": 2000,
+      "sourceHeight": 1500,
+      "sourceMode": "RGB",
+      "colorConversion": "embedded ICC to sRGB",
+      "flattenedOnWhite": false
+    },
+    {
+      "file": "图片助手(ImageAssistant)_批量图片下载器/www.behance.net/衡水湖期刊_BehanceAdobe,_Inc.BehanceBehancesearchsearchAdobe,_Inc.Adobe,_Inc.Adobe,_Inc.BehancePinterestFacebookAdobe,_Inc/10009.webp",
+      "project": "hengshui-lake-periodical",
+      "image": "/selected/hengshui-lake-periodical/image-009-1600-e93cce8b8dd5.webp",
+      "index": 9,
+      "sourceWidth": 2000,
+      "sourceHeight": 1500,
+      "sourceMode": "RGB",
+      "colorConversion": "embedded ICC to sRGB",
+      "flattenedOnWhite": false
+    },
+    {
+      "file": "图片助手(ImageAssistant)_批量图片下载器/www.behance.net/衡水湖期刊_BehanceAdobe,_Inc.BehanceBehancesearchsearchAdobe,_Inc.Adobe,_Inc.Adobe,_Inc.BehancePinterestFacebookAdobe,_Inc/10010.webp",
+      "project": "hengshui-lake-periodical",
+      "image": "/selected/hengshui-lake-periodical/image-010-1600-70ad240d6f93.webp",
+      "index": 10,
+      "sourceWidth": 1920,
+      "sourceHeight": 1440,
+      "sourceMode": "RGB",
+      "colorConversion": "embedded ICC to sRGB",
+      "flattenedOnWhite": false
+    },
+    {
+      "file": "图片助手(ImageAssistant)_批量图片下载器/www.behance.net/衡水湖期刊_BehanceAdobe,_Inc.BehanceBehancesearchsearchAdobe,_Inc.Adobe,_Inc.Adobe,_Inc.BehancePinterestFacebookAdobe,_Inc/10011.webp",
+      "project": "hengshui-lake-periodical",
+      "image": "/selected/hengshui-lake-periodical/image-011-1600-55121ebb1e5c.webp",
+      "index": 11,
+      "sourceWidth": 2000,
+      "sourceHeight": 1500,
+      "sourceMode": "RGB",
+      "colorConversion": "embedded ICC to sRGB",
+      "flattenedOnWhite": false
+    },
+    {
+      "file": "图片助手(ImageAssistant)_批量图片下载器/www.behance.net/衡水湖期刊_BehanceAdobe,_Inc.BehanceBehancesearchsearchAdobe,_Inc.Adobe,_Inc.Adobe,_Inc.BehancePinterestFacebookAdobe,_Inc/10012.webp",
+      "project": "hengshui-lake-periodical",
+      "image": "/selected/hengshui-lake-periodical/image-012-1400-841f6db4e2d1.webp",
+      "index": 12,
+      "sourceWidth": 1400,
+      "sourceHeight": 1050,
       "sourceMode": "RGB",
       "colorConversion": "embedded ICC to sRGB",
       "flattenedOnWhite": false
@@ -8192,9 +8336,9 @@
       "image": "/selected/anniversary-special-issue/cover-960-54c8e849bb03.webp"
     },
     "hengshui-lake-periodical": {
-      "file": "衡水湖期刊/杂志样机-衡水湖封面 拷贝(1).jpg",
+      "file": "图片助手(ImageAssistant)_批量图片下载器/www.behance.net/衡水湖期刊_BehanceAdobe,_Inc.BehanceBehancesearchsearchAdobe,_Inc.Adobe,_Inc.Adobe,_Inc.BehancePinterestFacebookAdobe,_Inc/封面.webp",
       "mode": "contain",
-      "image": "/selected/hengshui-lake-periodical/cover-960-f23738e6b4a4.webp"
+      "image": "/selected/hengshui-lake-periodical/cover-960-8dd511b81f5c.webp"
     },
     "lingerie-lookbook": {
       "file": "内衣画册/封面1.jpg",
@@ -9308,88 +9452,156 @@
       "bytes": 140914
     },
     {
-      "image": "/selected/hengshui-lake-periodical/cover-160-1393eab53f26.webp",
-      "bytes": 7062
+      "image": "/selected/hengshui-lake-periodical/cover-160-2e07fab1f562.webp",
+      "bytes": 8128
     },
     {
-      "image": "/selected/hengshui-lake-periodical/cover-320-3cd72729f294.webp",
-      "bytes": 19742
+      "image": "/selected/hengshui-lake-periodical/cover-320-bdba1caa326b.webp",
+      "bytes": 24874
     },
     {
-      "image": "/selected/hengshui-lake-periodical/cover-960-f23738e6b4a4.webp",
-      "bytes": 37716
+      "image": "/selected/hengshui-lake-periodical/cover-960-8dd511b81f5c.webp",
+      "bytes": 72808
     },
     {
-      "image": "/selected/hengshui-lake-periodical/image-001-1600-2381f92ea17d.webp",
-      "bytes": 107456
+      "image": "/selected/hengshui-lake-periodical/image-001-1600-f0da06fecf47.webp",
+      "bytes": 304004
     },
     {
-      "image": "/selected/hengshui-lake-periodical/image-001-2400-1ed5600e0bde.webp",
-      "bytes": 207796
+      "image": "/selected/hengshui-lake-periodical/image-001-2400-eee9282859ce.webp",
+      "bytes": 634314
     },
     {
-      "image": "/selected/hengshui-lake-periodical/image-001-800-1dcd2da7b0eb.webp",
-      "bytes": 32880
+      "image": "/selected/hengshui-lake-periodical/image-001-800-c9589ae4e269.webp",
+      "bytes": 81388
     },
     {
-      "image": "/selected/hengshui-lake-periodical/image-002-1600-75b6b9b111e2.webp",
-      "bytes": 286916
+      "image": "/selected/hengshui-lake-periodical/image-002-1600-830d81bafcab.webp",
+      "bytes": 336134
     },
     {
-      "image": "/selected/hengshui-lake-periodical/image-002-2400-69e9bb82a4a0.webp",
-      "bytes": 584136
+      "image": "/selected/hengshui-lake-periodical/image-002-2400-c6cf513226b9.webp",
+      "bytes": 728834
     },
     {
-      "image": "/selected/hengshui-lake-periodical/image-002-800-5f863dfe4061.webp",
-      "bytes": 83908
+      "image": "/selected/hengshui-lake-periodical/image-002-800-6d11a50966b5.webp",
+      "bytes": 86362
     },
     {
-      "image": "/selected/hengshui-lake-periodical/image-003-1600-05553ca6c203.webp",
-      "bytes": 269298
+      "image": "/selected/hengshui-lake-periodical/image-003-1600-c91c8901509b.webp",
+      "bytes": 310774
     },
     {
-      "image": "/selected/hengshui-lake-periodical/image-003-2400-0beeb820b832.webp",
-      "bytes": 540566
+      "image": "/selected/hengshui-lake-periodical/image-003-2400-8d13706b030d.webp",
+      "bytes": 655976
     },
     {
-      "image": "/selected/hengshui-lake-periodical/image-003-800-ff4fcef9bdd5.webp",
-      "bytes": 78338
+      "image": "/selected/hengshui-lake-periodical/image-003-800-52817c1a4409.webp",
+      "bytes": 85906
     },
     {
-      "image": "/selected/hengshui-lake-periodical/image-004-1600-ba29a48fd6ea.webp",
-      "bytes": 118528
+      "image": "/selected/hengshui-lake-periodical/image-004-1600-47db0b2e5f24.webp",
+      "bytes": 140290
     },
     {
-      "image": "/selected/hengshui-lake-periodical/image-004-2400-1a0856d81b9c.webp",
-      "bytes": 221942
+      "image": "/selected/hengshui-lake-periodical/image-004-2000-5d550e435847.webp",
+      "bytes": 234548
     },
     {
-      "image": "/selected/hengshui-lake-periodical/image-004-800-fd45a9a81d56.webp",
-      "bytes": 36178
+      "image": "/selected/hengshui-lake-periodical/image-004-800-cf1c34dd8e51.webp",
+      "bytes": 31406
     },
     {
-      "image": "/selected/hengshui-lake-periodical/image-005-1600-6db6bae6053b.webp",
-      "bytes": 303600
+      "image": "/selected/hengshui-lake-periodical/image-005-1600-d63999437a6b.webp",
+      "bytes": 91344
     },
     {
-      "image": "/selected/hengshui-lake-periodical/image-005-2400-33f75377283b.webp",
-      "bytes": 640276
+      "image": "/selected/hengshui-lake-periodical/image-005-2000-17cf0b6f6792.webp",
+      "bytes": 154254
     },
     {
-      "image": "/selected/hengshui-lake-periodical/image-005-800-061a8bf5ff0f.webp",
-      "bytes": 85398
+      "image": "/selected/hengshui-lake-periodical/image-005-800-c992b0bab9a5.webp",
+      "bytes": 25152
     },
     {
-      "image": "/selected/hengshui-lake-periodical/image-006-1600-b505f24fce90.webp",
-      "bytes": 293602
+      "image": "/selected/hengshui-lake-periodical/image-006-1600-123da1e81707.webp",
+      "bytes": 112024
     },
     {
-      "image": "/selected/hengshui-lake-periodical/image-006-2400-29c2958ec282.webp",
-      "bytes": 621582
+      "image": "/selected/hengshui-lake-periodical/image-006-2000-22b54c223e3c.webp",
+      "bytes": 180172
     },
     {
-      "image": "/selected/hengshui-lake-periodical/image-006-800-8c7b96124563.webp",
-      "bytes": 80868
+      "image": "/selected/hengshui-lake-periodical/image-006-800-ad7502ea3894.webp",
+      "bytes": 29396
+    },
+    {
+      "image": "/selected/hengshui-lake-periodical/image-007-1600-06b24be9b56d.webp",
+      "bytes": 111250
+    },
+    {
+      "image": "/selected/hengshui-lake-periodical/image-007-2000-2482b21293c4.webp",
+      "bytes": 185680
+    },
+    {
+      "image": "/selected/hengshui-lake-periodical/image-007-800-7689c8248508.webp",
+      "bytes": 31096
+    },
+    {
+      "image": "/selected/hengshui-lake-periodical/image-008-1600-7a74e2e10509.webp",
+      "bytes": 112556
+    },
+    {
+      "image": "/selected/hengshui-lake-periodical/image-008-2000-1122ced2369b.webp",
+      "bytes": 180728
+    },
+    {
+      "image": "/selected/hengshui-lake-periodical/image-008-800-16edbfaf3d71.webp",
+      "bytes": 30908
+    },
+    {
+      "image": "/selected/hengshui-lake-periodical/image-009-1600-e93cce8b8dd5.webp",
+      "bytes": 107414
+    },
+    {
+      "image": "/selected/hengshui-lake-periodical/image-009-2000-5bf5b1eead34.webp",
+      "bytes": 178146
+    },
+    {
+      "image": "/selected/hengshui-lake-periodical/image-009-800-9218432a42a7.webp",
+      "bytes": 28898
+    },
+    {
+      "image": "/selected/hengshui-lake-periodical/image-010-1600-70ad240d6f93.webp",
+      "bytes": 108702
+    },
+    {
+      "image": "/selected/hengshui-lake-periodical/image-010-1920-19eb4a4fa0a9.webp",
+      "bytes": 157786
+    },
+    {
+      "image": "/selected/hengshui-lake-periodical/image-010-800-606c6bf718cc.webp",
+      "bytes": 27986
+    },
+    {
+      "image": "/selected/hengshui-lake-periodical/image-011-1600-55121ebb1e5c.webp",
+      "bytes": 133428
+    },
+    {
+      "image": "/selected/hengshui-lake-periodical/image-011-2000-e09a04ea9e56.webp",
+      "bytes": 213914
+    },
+    {
+      "image": "/selected/hengshui-lake-periodical/image-011-800-d277432cf84b.webp",
+      "bytes": 36690
+    },
+    {
+      "image": "/selected/hengshui-lake-periodical/image-012-1400-841f6db4e2d1.webp",
+      "bytes": 101574
+    },
+    {
+      "image": "/selected/hengshui-lake-periodical/image-012-800-0841cf53dad9.webp",
+      "bytes": 32774
     },
     {
       "image": "/selected/home-palliative-care-event/cover-160-3906860373d6.webp",
@@ -13193,7 +13405,7 @@
     {
       "sourceRoot": "C:\\Users\\zhaoz\\Downloads",
       "plan": "docs/content/curated-plan-2026-11-28.json",
-      "planSha256": "394bc6b7cefe00668b89abff4163ee3471d0b222680a56745502fb168f645e16",
+      "planSha256": "66017d95c0ee2711f7eb98813eb6aa3b5e66a443dd10a1235454f0c6d25e2b97",
       "projects": [
         "tsinghua-classmates-album",
         "zhongzi-intelligence-brochure",
