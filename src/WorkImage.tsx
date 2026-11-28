@@ -5,7 +5,7 @@ export function WorkImage({ src, alt, loading = "lazy", sizes, onOpen }: {
   alt: string;
   loading?: "eager" | "lazy";
   sizes: string;
-  onOpen?: () => void;
+  onOpen?: (trigger: HTMLAnchorElement) => void;
 }) {
   const image = optimizedImages[src as keyof typeof optimizedImages];
 
@@ -17,9 +17,9 @@ export function WorkImage({ src, alt, loading = "lazy", sizes, onOpen }: {
       rel="noreferrer"
       aria-label={`查看大图：${alt}`}
       onClick={onOpen ? (event) => {
-        if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+        if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
         event.preventDefault();
-        onOpen();
+        onOpen(event.currentTarget);
       } : undefined}
     >
       <img
@@ -32,6 +32,7 @@ export function WorkImage({ src, alt, loading = "lazy", sizes, onOpen }: {
         height={image?.height}
         alt={alt}
         loading={loading}
+        fetchPriority={loading === "eager" ? "high" : undefined}
         decoding="async"
       />
     </a>

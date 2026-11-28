@@ -1,6 +1,8 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
+import { portfolioPages } from "./scripts/portfolio-pages";
 
 export default defineConfig({
-  plugins: [react()],
+  appType: "mpa",
+  plugins: [react(), portfolioPages()],
 });

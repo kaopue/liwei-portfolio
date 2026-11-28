@@ -2,5 +2,9 @@
   "videoMp4": "/hero/optimized/contact-enhance-4bbe02e6-silent-98ef18c11d2d.mp4",
   "posterWebp": "/hero/optimized/contact-enhance-4bbe02e6-poster-1920-05fc937f36dd.webp",
   "posterWidth": 1920,
-  "posterHeight": 1080
+  "posterHeight": 1080,
+  "videoMp4Mobile": "/hero/optimized/contact-enhance-4bbe02e6-silent-mobile-1280-730b61792526.mp4",
+  "posterMobile": "/hero/optimized/contactVideo-poster-960-547683835d86.webp",
+  "posterMobileWidth": 960,
+  "posterMobileHeight": 540
 }

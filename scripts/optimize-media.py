@@ -330,6 +330,7 @@ def optimize_videos(ffmpeg: Path, source: Path, report_dir: Path, webm_crf: int 
     write_json(report_dir / "video-report.json", report)
     write_json(ROOT / "src/data/optimizedVideos.json", {
         "videoMp4": records["desktopMp4"]["src"],
+        "videoMp4Mobile": records["mobileMp4"]["src"],
         **{key: value["src"] for key, value in records.items()},
         **{key: value["src"] for key, value in posters.items()},
         "posterWidth": posters["posterWebp"]["width"],
@@ -340,10 +341,82 @@ def optimize_videos(ffmpeg: Path, source: Path, report_dir: Path, webm_crf: int 
     return report
 
 
+
+# Framing is for the homepage only. The original artwork remains in its gallery.
+COVER_CROPS = {
+    "zhengfei-construction-identity": (120, 67, 840, 472),
+    "yipinfang-identity": (120, 67, 840, 472),
+    "sklvb-vegetable-laboratory-identity": (120, 67, 840, 472),
+    "zelle-link-identity": (120, 67, 840, 472),
+    "liulichang-gift-guide": (448, 116, 960, 404),
+}
+
+
+def optimize_case_covers() -> None:
+    covers = json.loads((ROOT / "src/data/curatedCovers.json").read_text(encoding="utf-8"))
+    results = {}
+    for slug, cover in covers.items():
+        source_url = cover["src"]
+        source = PUBLIC / source_url.lstrip("/")
+        with Image.open(source) as original:
+            if original.size != (960, 540):
+                raise ValueError(f"Cover layout expects 960 by 540 pixels: {source}")
+            image = original.convert("RGB")
+            if crop := COVER_CROPS.get(slug):
+                image = image.crop(crop)
+                framed = image.resize((960, 540), Image.Resampling.LANCZOS)
+                source_url = save_poster(framed, source.parent, "cover-framed-960", ".webp",
+                                         format="WEBP", quality=91, method=6)["src"]
+            small = image.resize((480, 270), Image.Resampling.LANCZOS)
+            results[slug] = {
+                "src": source_url,
+                "smallSrc": save_poster(small, source.parent, "cover-landscape-480", ".webp",
+                                        format="WEBP", quality=84, method=6)["src"],
+            }
+    write_json(ROOT / "src/data/mobileCovers.json", results)
+    print(f"Created {len(results)} responsive case cover variants", flush=True)
+
+
+def optimize_portfolio_backgrounds(ffmpeg: Path, report_dir: Path, width: int, crf: int, poster_width: int) -> None:
+    report_dir.mkdir(parents=True, exist_ok=True)
+    for name in ("optimizedVideos", "contactVideo"):
+        config = ROOT / f"src/data/{name}.json"
+        media = json.loads(config.read_text(encoding="utf-8"))
+        source = PUBLIC / media["videoMp4"].lstrip("/")
+        source_info = inspect_video(ffmpeg, source, report_dir)
+        mobile_width = min(source_info["width"], width) // 2 * 2
+        temporary = report_dir / f"{name}-mobile.mp4"
+        subprocess.run([
+            str(ffmpeg), "-y", "-hide_banner", "-loglevel", "error", "-threads", "2", "-i", str(source),
+            "-map", "0:v:0", "-an", "-sn", "-dn", "-map_metadata", "-1",
+            "-vf", f"scale={mobile_width}:-2:flags=lanczos,setsar=1",
+            "-c:v", "libx264", "-preset", "slow", "-crf", str(crf), "-pix_fmt", "yuv420p",
+            "-threads", "2", "-movflags", "+faststart", "-fps_mode", "passthrough", str(temporary),
+        ], check=True)
+        output_info = verify_video(ffmpeg, temporary, source_info, report_dir)
+        data = temporary.read_bytes()
+        output = source.parent / f"{source.stem.rsplit('-', 1)[0]}-mobile-{mobile_width}-{content_hash(data)}.mp4"
+        output.write_bytes(data)
+        media["videoMp4Mobile"] = "/" + output.relative_to(PUBLIC).as_posix()
+        if "posterMobile" not in media:
+            with Image.open(PUBLIC / media["posterWebp"].lstrip("/")) as original:
+                size = min(poster_width, original.width)
+                mobile = original.convert("RGB").resize((size, round(original.height * size / original.width)),
+                                                         Image.Resampling.LANCZOS)
+                poster = save_poster(mobile, source.parent, f"{name}-poster-{size}", ".webp",
+                                     format="WEBP", quality=84, method=6)
+            media.update(posterMobile=poster["src"], posterMobileWidth=poster["width"],
+                         posterMobileHeight=poster["height"])
+        write_json(config, media)
+        print(json.dumps({name: output_info}, ensure_ascii=False), flush=True)
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--images", action="store_true", help="Create responsive project images and manifest")
     parser.add_argument("--videos", action="store_true", help="Create and verify optimized Hero videos")
+    parser.add_argument("--case-covers", action="store_true", help="Create 16:9 responsive gallery covers")
+    parser.add_argument("--portfolio-backgrounds", action="store_true", help="Make mobile copies of the current homepage and contact videos")
     parser.add_argument("--video-source", type=Path, default=PUBLIC / "hero/hero-rooftop-loop-1080p.mp4", help="Original complete Hero loop to optimize; its timing is preserved")
     parser.add_argument("--report-dir", type=Path, default=REPORT_DIR, help="Directory for video metadata, decode logs, and visual contact sheet")
     parser.add_argument("--desktop-width", type=int, default=1920)
@@ -363,13 +436,17 @@ def main() -> None:
     if min(args.desktop_width, args.mobile_width, args.mobile_poster_width) < 2:
         parser.error("Video widths must be at least 2 pixels")
     REPORT_DIR.mkdir(parents=True, exist_ok=True)
-    if not (args.images or args.videos):
-        parser.error("Select --images, --videos, or both")
+    if not (args.images or args.videos or args.case_covers or args.portfolio_backgrounds):
+        parser.error("Select --images, --videos, --case-covers, or --portfolio-backgrounds")
     if args.images:
         optimize_images()
+    if args.case_covers:
+        optimize_case_covers()
+    if (args.videos or args.portfolio_backgrounds) and not args.ffmpeg.is_file():
+        raise FileNotFoundError("Provide an FFmpeg executable with --ffmpeg or FFMPEG_BINARY")
+    if args.portfolio_backgrounds:
+        optimize_portfolio_backgrounds(args.ffmpeg, args.report_dir, args.mobile_width, args.mobile_mp4_crf, args.mobile_poster_width)
     if args.videos:
-        if not args.ffmpeg.is_file():
-            raise FileNotFoundError("Provide an FFmpeg executable with --ffmpeg or FFMPEG_BINARY")
         optimize_videos(args.ffmpeg, args.video_source, args.report_dir, args.webm_crf, args.mp4_crf, args.mobile_mp4_crf, args.desktop_width, args.mobile_width, args.desktop_webm_only, args.mobile_poster_width, args.mobile_poster_quality)
 
 

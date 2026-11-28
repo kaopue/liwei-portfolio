@@ -167,8 +167,10 @@ function verifyStatic() {
   const projects = readJson("src/data/curatedProjects.json");
   const images = readJson("src/data/curatedImages.json");
   const covers = readJson("src/data/curatedCovers.json");
+  const responsiveCovers = readJson("src/data/mobileCovers.json");
   const inventory = readJson("docs/content/curated-inventory-2026-10-26.json");
   const videos = readJson("src/data/optimizedVideos.json");
+  const contactVideo = readJson("src/data/contactVideo.json");
   if (!Array.isArray(projects) || !Array.isArray(inventory.files) || !Array.isArray(inventory.sourceDisplays) || !Array.isArray(inventory.assets)) {
     throw new Error("Curated projects and inventory arrays are malformed.");
   }
@@ -327,6 +329,24 @@ function verifyStatic() {
     "/hero/about-liwei-profile-small.webp",
   ];
   for (const url of necessary) verifyImage(url, null, "Required non-work image");
+  const responsiveAssets = new Set();
+  check(Object.keys(responsiveCovers).length === projects.length, "Responsive cover count must match the project count.");
+  for (const { slug } of projects) {
+    const cover = responsiveCovers[slug];
+    check(Boolean(cover), "Missing responsive cover: " + slug);
+    if (!cover) continue;
+    verifyImage(cover.smallSrc, { width: 480, height: 270 }, slug + " responsive cover");
+    verifyImage(cover.src, { width: 960, height: 540 }, slug + " landscape cover");
+    responsiveAssets.add(cover.smallSrc);
+    responsiveAssets.add(cover.src);
+  }
+  for (const media of [videos, contactVideo]) {
+    verifyImage(media.posterMobile, { width: media.posterMobileWidth, height: media.posterMobileHeight }, "Mobile background poster");
+    const video = publicPath(media.videoMp4Mobile);
+    check(fs.existsSync(video) && fs.statSync(video).size > 0, "Missing mobile background video: " + media.videoMp4Mobile);
+    responsiveAssets.add(media.posterMobile);
+    responsiveAssets.add(media.videoMp4Mobile);
+  }
   for (const [url, asset] of assets) {
     const actual = verifyImage(url, null, "Inventory asset");
     if (actual) check(actual.bytes === asset.bytes, `Asset byte count differs: ${url}, inventory ${asset.bytes}, actual ${actual.bytes}.`);
@@ -335,14 +355,14 @@ function verifyStatic() {
   const distExists = fs.existsSync(path.join(ROOT, "dist/index.html"));
   if (distExists) {
     verifyNoLegacy("dist");
-    for (const url of [...assets.keys(), ...necessary]) {
+    for (const url of new Set([...assets.keys(), ...necessary, ...responsiveAssets])) {
       const filename = publicPath(url, "dist");
       check(fs.existsSync(filename), `Built asset missing: dist${url}. Run npm run build after the latest import.`);
     }
   } else {
     warnings.push("dist/index.html is absent; build-output legacy and asset checks were skipped. Run npm run build and verify again before deployment.");
   }
-  return { projects, inventory, assets, necessary, distChecked: distExists };
+  return { projects, inventory, assets, necessary: [...new Set([...necessary, ...responsiveAssets])], distChecked: distExists };
 }
 
 async function verifyNetwork(baseUrl, state) {
