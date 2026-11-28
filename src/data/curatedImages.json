@@ -3238,5 +3238,265 @@
     "smallHeight": 450,
     "largeSrc": "/selected/daerle-calcium-zinc-rocket-packaging/image-002-1920-162050405465.webp",
     "aspectRatio": 1.7777777777777777
+  },
+  "/selected/tsinghua-classmates-album/image-001-1600-a32e22edf3d0.webp": {
+    "src": "/selected/tsinghua-classmates-album/image-001-1600-a32e22edf3d0.webp",
+    "smallSrc": "/selected/tsinghua-classmates-album/image-001-800-5f1fa4dfe7ff.webp",
+    "width": 1600,
+    "height": 900,
+    "smallWidth": 800,
+    "smallHeight": 450,
+    "largeSrc": "/selected/tsinghua-classmates-album/image-001-2400-dc1c9e57d72a.webp",
+    "aspectRatio": 1.7772511848341233
+  },
+  "/selected/tsinghua-classmates-album/image-002-1600-99474331ecbd.webp": {
+    "src": "/selected/tsinghua-classmates-album/image-002-1600-99474331ecbd.webp",
+    "smallSrc": "/selected/tsinghua-classmates-album/image-002-800-61eaa40e5c67.webp",
+    "width": 1600,
+    "height": 1120,
+    "smallWidth": 800,
+    "smallHeight": 560,
+    "largeSrc": "/selected/tsinghua-classmates-album/image-002-2400-c45ca71dc6f8.webp",
+    "aspectRatio": 1.4285714285714286
+  },
+  "/selected/tsinghua-classmates-album/image-003-1600-961ba01c4d13.webp": {
+    "src": "/selected/tsinghua-classmates-album/image-003-1600-961ba01c4d13.webp",
+    "smallSrc": "/selected/tsinghua-classmates-album/image-003-800-8d8de83480f5.webp",
+    "width": 1600,
+    "height": 1120,
+    "smallWidth": 800,
+    "smallHeight": 560,
+    "largeSrc": "/selected/tsinghua-classmates-album/image-003-2400-9937e67f6983.webp",
+    "aspectRatio": 1.4285714285714286
+  },
+  "/selected/zhongzi-intelligence-brochure/image-001-1600-f2c07d4e8afb.webp": {
+    "src": "/selected/zhongzi-intelligence-brochure/image-001-1600-f2c07d4e8afb.webp",
+    "smallSrc": "/selected/zhongzi-intelligence-brochure/image-001-800-be9ba477ca63.webp",
+    "width": 1600,
+    "height": 1280,
+    "smallWidth": 800,
+    "smallHeight": 640,
+    "largeSrc": "/selected/zhongzi-intelligence-brochure/image-001-2400-429ca4e0b21b.webp",
+    "aspectRatio": 1.25
+  },
+  "/selected/zhongzi-intelligence-brochure/image-002-1600-2790056a65f4.webp": {
+    "src": "/selected/zhongzi-intelligence-brochure/image-002-1600-2790056a65f4.webp",
+    "smallSrc": "/selected/zhongzi-intelligence-brochure/image-002-800-e15f41917ff9.webp",
+    "width": 1600,
+    "height": 992,
+    "smallWidth": 800,
+    "smallHeight": 496,
+    "largeSrc": "/selected/zhongzi-intelligence-brochure/image-002-2400-f0be1e53390a.webp",
+    "aspectRatio": 1.6129032258064515
+  },
+  "/selected/zhongzi-intelligence-brochure/image-003-1600-40c53e4f786a.webp": {
+    "src": "/selected/zhongzi-intelligence-brochure/image-003-1600-40c53e4f786a.webp",
+    "smallSrc": "/selected/zhongzi-intelligence-brochure/image-003-800-98da077ec7c4.webp",
+    "width": 1600,
+    "height": 992,
+    "smallWidth": 800,
+    "smallHeight": 496,
+    "largeSrc": "/selected/zhongzi-intelligence-brochure/image-003-2400-73a56458ddc6.webp",
+    "aspectRatio": 1.6129032258064515
+  },
+  "/selected/zhongzi-intelligence-brochure/image-004-1600-45a641e17d76.webp": {
+    "src": "/selected/zhongzi-intelligence-brochure/image-004-1600-45a641e17d76.webp",
+    "smallSrc": "/selected/zhongzi-intelligence-brochure/image-004-800-2ef3a3a8e148.webp",
+    "width": 1600,
+    "height": 992,
+    "smallWidth": 800,
+    "smallHeight": 496,
+    "largeSrc": "/selected/zhongzi-intelligence-brochure/image-004-2400-b763efabaebd.webp",
+    "aspectRatio": 1.6129032258064515
+  },
+  "/selected/zhongzi-intelligence-brochure/image-005-1600-05fc49f4b891.webp": {
+    "src": "/selected/zhongzi-intelligence-brochure/image-005-1600-05fc49f4b891.webp",
+    "smallSrc": "/selected/zhongzi-intelligence-brochure/image-005-800-c9f8e1308864.webp",
+    "width": 1600,
+    "height": 1067,
+    "smallWidth": 800,
+    "smallHeight": 533,
+    "largeSrc": "/selected/zhongzi-intelligence-brochure/image-005-2400-caced31d3993.webp",
+    "aspectRatio": 1.5
+  },
+  "/selected/zhongzi-intelligence-brochure/image-006-1600-0eca2a5b6be6.webp": {
+    "src": "/selected/zhongzi-intelligence-brochure/image-006-1600-0eca2a5b6be6.webp",
+    "smallSrc": "/selected/zhongzi-intelligence-brochure/image-006-800-150d1b5654c7.webp",
+    "width": 1600,
+    "height": 992,
+    "smallWidth": 800,
+    "smallHeight": 496,
+    "largeSrc": "/selected/zhongzi-intelligence-brochure/image-006-2400-5ea7edfd9528.webp",
+    "aspectRatio": 1.6129032258064515
+  },
+  "/selected/zhongzi-intelligence-brochure/image-007-1600-dc1eefd4412d.webp": {
+    "src": "/selected/zhongzi-intelligence-brochure/image-007-1600-dc1eefd4412d.webp",
+    "smallSrc": "/selected/zhongzi-intelligence-brochure/image-007-800-f666cc44a93c.webp",
+    "width": 1600,
+    "height": 992,
+    "smallWidth": 800,
+    "smallHeight": 496,
+    "largeSrc": "/selected/zhongzi-intelligence-brochure/image-007-2400-4618a99b4654.webp",
+    "aspectRatio": 1.6129032258064515
+  },
+  "/selected/zhongzi-intelligence-brochure/image-008-1600-2d9c65be816b.webp": {
+    "src": "/selected/zhongzi-intelligence-brochure/image-008-1600-2d9c65be816b.webp",
+    "smallSrc": "/selected/zhongzi-intelligence-brochure/image-008-800-76eb1fe68f81.webp",
+    "width": 1600,
+    "height": 992,
+    "smallWidth": 800,
+    "smallHeight": 496,
+    "largeSrc": "/selected/zhongzi-intelligence-brochure/image-008-2400-4ae5a3f0cc67.webp",
+    "aspectRatio": 1.6129032258064515
+  },
+  "/selected/anniversary-special-issue/image-001-1600-5642451b1718.webp": {
+    "src": "/selected/anniversary-special-issue/image-001-1600-5642451b1718.webp",
+    "smallSrc": "/selected/anniversary-special-issue/image-001-800-bab0eb6cd1f8.webp",
+    "width": 1600,
+    "height": 900,
+    "smallWidth": 800,
+    "smallHeight": 450,
+    "largeSrc": "/selected/anniversary-special-issue/image-001-2400-569d1670d82d.webp",
+    "aspectRatio": 1.7772511848341233
+  },
+  "/selected/anniversary-special-issue/image-002-1600-ba9d20dbbc9e.webp": {
+    "src": "/selected/anniversary-special-issue/image-002-1600-ba9d20dbbc9e.webp",
+    "smallSrc": "/selected/anniversary-special-issue/image-002-800-cf10ca381b69.webp",
+    "width": 1600,
+    "height": 1200,
+    "smallWidth": 800,
+    "smallHeight": 600,
+    "largeSrc": "/selected/anniversary-special-issue/image-002-2400-bd268221264a.webp",
+    "aspectRatio": 1.3333333333333333
+  },
+  "/selected/anniversary-special-issue/image-003-1600-c777fa92a7b3.webp": {
+    "src": "/selected/anniversary-special-issue/image-003-1600-c777fa92a7b3.webp",
+    "smallSrc": "/selected/anniversary-special-issue/image-003-800-ce79286dc51b.webp",
+    "width": 1600,
+    "height": 1200,
+    "smallWidth": 800,
+    "smallHeight": 600,
+    "largeSrc": "/selected/anniversary-special-issue/image-003-2400-655b8035cdfc.webp",
+    "aspectRatio": 1.3333333333333333
+  },
+  "/selected/anniversary-special-issue/image-004-1600-67ac99d92a3c.webp": {
+    "src": "/selected/anniversary-special-issue/image-004-1600-67ac99d92a3c.webp",
+    "smallSrc": "/selected/anniversary-special-issue/image-004-800-04c87df25c65.webp",
+    "width": 1600,
+    "height": 1200,
+    "smallWidth": 800,
+    "smallHeight": 600,
+    "largeSrc": "/selected/anniversary-special-issue/image-004-2400-56440bec01ac.webp",
+    "aspectRatio": 1.3333333333333333
+  },
+  "/selected/anniversary-special-issue/image-005-1600-f6912a6da342.webp": {
+    "src": "/selected/anniversary-special-issue/image-005-1600-f6912a6da342.webp",
+    "smallSrc": "/selected/anniversary-special-issue/image-005-800-fc689bb6bf76.webp",
+    "width": 1600,
+    "height": 1200,
+    "smallWidth": 800,
+    "smallHeight": 600,
+    "largeSrc": "/selected/anniversary-special-issue/image-005-2400-6f8f63420df2.webp",
+    "aspectRatio": 1.3333333333333333
+  },
+  "/selected/hengshui-lake-periodical/image-001-1600-2381f92ea17d.webp": {
+    "src": "/selected/hengshui-lake-periodical/image-001-1600-2381f92ea17d.webp",
+    "smallSrc": "/selected/hengshui-lake-periodical/image-001-800-1dcd2da7b0eb.webp",
+    "width": 1600,
+    "height": 1067,
+    "smallWidth": 800,
+    "smallHeight": 533,
+    "largeSrc": "/selected/hengshui-lake-periodical/image-001-2400-1ed5600e0bde.webp",
+    "aspectRatio": 1.4998125234345707
+  },
+  "/selected/hengshui-lake-periodical/image-002-1600-75b6b9b111e2.webp": {
+    "src": "/selected/hengshui-lake-periodical/image-002-1600-75b6b9b111e2.webp",
+    "smallSrc": "/selected/hengshui-lake-periodical/image-002-800-5f863dfe4061.webp",
+    "width": 1600,
+    "height": 1200,
+    "smallWidth": 800,
+    "smallHeight": 600,
+    "largeSrc": "/selected/hengshui-lake-periodical/image-002-2400-69e9bb82a4a0.webp",
+    "aspectRatio": 1.3333333333333333
+  },
+  "/selected/hengshui-lake-periodical/image-003-1600-05553ca6c203.webp": {
+    "src": "/selected/hengshui-lake-periodical/image-003-1600-05553ca6c203.webp",
+    "smallSrc": "/selected/hengshui-lake-periodical/image-003-800-ff4fcef9bdd5.webp",
+    "width": 1600,
+    "height": 1200,
+    "smallWidth": 800,
+    "smallHeight": 600,
+    "largeSrc": "/selected/hengshui-lake-periodical/image-003-2400-0beeb820b832.webp",
+    "aspectRatio": 1.3333333333333333
+  },
+  "/selected/hengshui-lake-periodical/image-004-1600-ba29a48fd6ea.webp": {
+    "src": "/selected/hengshui-lake-periodical/image-004-1600-ba29a48fd6ea.webp",
+    "smallSrc": "/selected/hengshui-lake-periodical/image-004-800-fd45a9a81d56.webp",
+    "width": 1600,
+    "height": 1067,
+    "smallWidth": 800,
+    "smallHeight": 533,
+    "largeSrc": "/selected/hengshui-lake-periodical/image-004-2400-1a0856d81b9c.webp",
+    "aspectRatio": 1.4998125234345707
+  },
+  "/selected/hengshui-lake-periodical/image-005-1600-6db6bae6053b.webp": {
+    "src": "/selected/hengshui-lake-periodical/image-005-1600-6db6bae6053b.webp",
+    "smallSrc": "/selected/hengshui-lake-periodical/image-005-800-061a8bf5ff0f.webp",
+    "width": 1600,
+    "height": 1200,
+    "smallWidth": 800,
+    "smallHeight": 600,
+    "largeSrc": "/selected/hengshui-lake-periodical/image-005-2400-33f75377283b.webp",
+    "aspectRatio": 1.3333333333333333
+  },
+  "/selected/hengshui-lake-periodical/image-006-1600-b505f24fce90.webp": {
+    "src": "/selected/hengshui-lake-periodical/image-006-1600-b505f24fce90.webp",
+    "smallSrc": "/selected/hengshui-lake-periodical/image-006-800-8c7b96124563.webp",
+    "width": 1600,
+    "height": 1200,
+    "smallWidth": 800,
+    "smallHeight": 600,
+    "largeSrc": "/selected/hengshui-lake-periodical/image-006-2400-29c2958ec282.webp",
+    "aspectRatio": 1.3333333333333333
+  },
+  "/selected/lingerie-lookbook/image-001-1600-a461e8d151f9.webp": {
+    "src": "/selected/lingerie-lookbook/image-001-1600-a461e8d151f9.webp",
+    "smallSrc": "/selected/lingerie-lookbook/image-001-800-55e8e9b95981.webp",
+    "width": 1600,
+    "height": 900,
+    "smallWidth": 800,
+    "smallHeight": 450,
+    "largeSrc": "/selected/lingerie-lookbook/image-001-2400-4db9e52fa18d.webp",
+    "aspectRatio": 1.7772511848341233
+  },
+  "/selected/lingerie-lookbook/image-002-1600-bb1a42c6fd08.webp": {
+    "src": "/selected/lingerie-lookbook/image-002-1600-bb1a42c6fd08.webp",
+    "smallSrc": "/selected/lingerie-lookbook/image-002-800-33ab78788e7f.webp",
+    "width": 1600,
+    "height": 1067,
+    "smallWidth": 800,
+    "smallHeight": 533,
+    "largeSrc": "/selected/lingerie-lookbook/image-002-2400-c69906056179.webp",
+    "aspectRatio": 1.5
+  },
+  "/selected/lingerie-lookbook/image-003-1600-905410da1e67.webp": {
+    "src": "/selected/lingerie-lookbook/image-003-1600-905410da1e67.webp",
+    "smallSrc": "/selected/lingerie-lookbook/image-003-800-bbd41610c7d4.webp",
+    "width": 1600,
+    "height": 1067,
+    "smallWidth": 800,
+    "smallHeight": 533,
+    "largeSrc": "/selected/lingerie-lookbook/image-003-2400-0948a6284b5d.webp",
+    "aspectRatio": 1.5
+  },
+  "/selected/lingerie-lookbook/image-004-1600-55d83eb456e6.webp": {
+    "src": "/selected/lingerie-lookbook/image-004-1600-55d83eb456e6.webp",
+    "smallSrc": "/selected/lingerie-lookbook/image-004-800-275300f472eb.webp",
+    "width": 1600,
+    "height": 1067,
+    "smallWidth": 800,
+    "smallHeight": 533,
+    "largeSrc": "/selected/lingerie-lookbook/image-004-2400-f96d602fa620.webp",
+    "aspectRatio": 1.5
   }
 }

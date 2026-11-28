@@ -4,12 +4,12 @@
   "sourceRoot": "F:\\作品集  精选文件",
   "plan": "docs/content/curated-plan-2026-10-26.json",
   "planSha256": "18cb524b93fb9380468e9e33e4c8ec208365418e3b76f4e90665c0f94c7f3da8",
-  "sourceFileCount": 231,
-  "projectCount": 56,
-  "displayCount": 324,
+  "sourceFileCount": 257,
+  "projectCount": 61,
+  "displayCount": 350,
   "duplicateSourceCount": 4,
-  "assetCount": 1134,
-  "assetBytes": 160956141,
+  "assetCount": 1227,
+  "assetBytes": 173968005,
   "categories": [
     {
       "slug": "brand-identity",
@@ -51,7 +51,7 @@
       "slug": "album-design",
       "label": "画册设计",
       "description": "纪念册、照片书与画册的版式设计。",
-      "count": 1
+      "count": 6
     }
   ],
   "files": [
@@ -3592,6 +3592,344 @@
         23
       ],
       "duplicatePages": []
+    },
+    {
+      "file": "中自智能 画册/10.jpg",
+      "sha256": "066bc8530de5f7cd2b506ef4f2cbada2edfcf3a81f500cde7c2cac6022e6d3ff",
+      "bytes": 1206679,
+      "extension": ".jpg",
+      "status": "project",
+      "project": "zhongzi-intelligence-brochure",
+      "displays": [
+        {
+          "image": "/selected/zhongzi-intelligence-brochure/image-007-1600-dc1eefd4412d.webp"
+        }
+      ]
+    },
+    {
+      "file": "中自智能 画册/11 (2).jpg",
+      "sha256": "d900df999fc1c7ec435bb915cdc9db45f0c5a4dd660ae4f5cbcc5d4b1353afb9",
+      "bytes": 1168257,
+      "extension": ".jpg",
+      "status": "project",
+      "project": "zhongzi-intelligence-brochure",
+      "displays": [
+        {
+          "image": "/selected/zhongzi-intelligence-brochure/image-008-1600-2d9c65be816b.webp"
+        }
+      ]
+    },
+    {
+      "file": "中自智能 画册/2(1).jpg",
+      "sha256": "5d277ba3608e64840f4647c7fd9a223a6828590a80b68543583c1515f6540568",
+      "bytes": 1463457,
+      "extension": ".jpg",
+      "status": "project",
+      "project": "zhongzi-intelligence-brochure",
+      "displays": [
+        {
+          "image": "/selected/zhongzi-intelligence-brochure/image-002-1600-2790056a65f4.webp"
+        }
+      ]
+    },
+    {
+      "file": "中自智能 画册/3.jpg",
+      "sha256": "cf1d68d5de551085c60dc0ba0082b4b9dbd702411137ccbba672c57167ea1e50",
+      "bytes": 1168331,
+      "extension": ".jpg",
+      "status": "project",
+      "project": "zhongzi-intelligence-brochure",
+      "displays": [
+        {
+          "image": "/selected/zhongzi-intelligence-brochure/image-003-1600-40c53e4f786a.webp"
+        }
+      ]
+    },
+    {
+      "file": "中自智能 画册/4.jpg",
+      "sha256": "d9230aa394caeea53b2d0c38177c70faa4e4d7e917dfdf2032a1d98b6dad2e9b",
+      "bytes": 1194599,
+      "extension": ".jpg",
+      "status": "project",
+      "project": "zhongzi-intelligence-brochure",
+      "displays": [
+        {
+          "image": "/selected/zhongzi-intelligence-brochure/image-004-1600-45a641e17d76.webp"
+        }
+      ]
+    },
+    {
+      "file": "中自智能 画册/5(1).jpg",
+      "sha256": "db5a6db9a3b9fb71fc80a62062ed620847cfa86a8a33c92681e20dc02b593613",
+      "bytes": 1151817,
+      "extension": ".jpg",
+      "status": "project",
+      "project": "zhongzi-intelligence-brochure",
+      "displays": [
+        {
+          "image": "/selected/zhongzi-intelligence-brochure/image-005-1600-05fc49f4b891.webp"
+        }
+      ]
+    },
+    {
+      "file": "中自智能 画册/7.jpg",
+      "sha256": "449195e1b2dbe65dddc0f09102f0894d475eb9196d170926061b1e529b3ff9c5",
+      "bytes": 1406627,
+      "extension": ".jpg",
+      "status": "project",
+      "project": "zhongzi-intelligence-brochure",
+      "displays": [
+        {
+          "image": "/selected/zhongzi-intelligence-brochure/image-006-1600-0eca2a5b6be6.webp"
+        }
+      ]
+    },
+    {
+      "file": "中自智能 画册/封面.jpg",
+      "sha256": "b4b0779d77d89f70350b6d7613f75833357b613214db28c559ba8a351708ca30",
+      "bytes": 2552728,
+      "extension": ".jpg",
+      "status": "project",
+      "project": "zhongzi-intelligence-brochure",
+      "displays": [
+        {
+          "image": "/selected/zhongzi-intelligence-brochure/image-001-1600-f2c07d4e8afb.webp"
+        }
+      ]
+    },
+    {
+      "file": "内衣画册/33.jpg",
+      "sha256": "77317af2dd797f0199fb1cfae02b76276fbee734fd1930babc6464f64cd8c64e",
+      "bytes": 9891119,
+      "extension": ".jpg",
+      "status": "project",
+      "project": "lingerie-lookbook",
+      "displays": [
+        {
+          "image": "/selected/lingerie-lookbook/image-004-1600-55d83eb456e6.webp"
+        }
+      ]
+    },
+    {
+      "file": "内衣画册/A4 MAGAZINE BROCHURE MOCKUP 拷贝-1.jpg",
+      "sha256": "6cb749115d8b2e783d6c277e10fd3202f108c314c6b98444bd30ab79ee331707",
+      "bytes": 10148197,
+      "extension": ".jpg",
+      "status": "project",
+      "project": "lingerie-lookbook",
+      "displays": [
+        {
+          "image": "/selected/lingerie-lookbook/image-003-1600-905410da1e67.webp"
+        }
+      ]
+    },
+    {
+      "file": "内衣画册/A4 MAGAZINE BROCHURE MOCKUP 拷贝.jpg",
+      "sha256": "da82db189d19ef221e83f047a43c2abe251c36dbe3700a4b86f57fcc9dd22720",
+      "bytes": 9979919,
+      "extension": ".jpg",
+      "status": "project",
+      "project": "lingerie-lookbook",
+      "displays": [
+        {
+          "image": "/selected/lingerie-lookbook/image-002-1600-bb1a42c6fd08.webp"
+        }
+      ]
+    },
+    {
+      "file": "内衣画册/封面1.jpg",
+      "sha256": "84d55d04dc2bce5b17764a355b392dc88ff1466234e04c2b4a6d1d529b5b2c3e",
+      "bytes": 4722503,
+      "extension": ".jpg",
+      "status": "project",
+      "project": "lingerie-lookbook",
+      "displays": [
+        {
+          "image": "/selected/lingerie-lookbook/image-001-1600-a461e8d151f9.webp"
+        }
+      ]
+    },
+    {
+      "file": "周年特刊/1.jpg",
+      "sha256": "691be507a926b41775f74f9fc7e688ef20d9bcf35ac93c7787f8a299c9670751",
+      "bytes": 3521070,
+      "extension": ".jpg",
+      "status": "project",
+      "project": "anniversary-special-issue",
+      "displays": [
+        {
+          "image": "/selected/anniversary-special-issue/image-004-1600-67ac99d92a3c.webp"
+        }
+      ]
+    },
+    {
+      "file": "周年特刊/5.jpg",
+      "sha256": "dac789791e72af1318a190bbddca9bdc2942fed5783f50ea0f2c00fe186e1bf7",
+      "bytes": 3758787,
+      "extension": ".jpg",
+      "status": "project",
+      "project": "anniversary-special-issue",
+      "displays": [
+        {
+          "image": "/selected/anniversary-special-issue/image-005-1600-f6912a6da342.webp"
+        }
+      ]
+    },
+    {
+      "file": "周年特刊/Free_Book_Mockup_4 拷贝.jpg",
+      "sha256": "3bf328a5d5bf834f5cd6faaba80385366d3e5cd1e4797ecac62634775b0ce8da",
+      "bytes": 2522781,
+      "extension": ".jpg",
+      "status": "project",
+      "project": "anniversary-special-issue",
+      "displays": [
+        {
+          "image": "/selected/anniversary-special-issue/image-002-1600-ba9d20dbbc9e.webp"
+        }
+      ]
+    },
+    {
+      "file": "周年特刊/Free_Book_Mockup_7 拷贝.jpg",
+      "sha256": "c72f21abc77d7fa486e008d87040e6ddafab16f418c8dac1cc5ae127a871e53b",
+      "bytes": 2561306,
+      "extension": ".jpg",
+      "status": "project",
+      "project": "anniversary-special-issue",
+      "displays": [
+        {
+          "image": "/selected/anniversary-special-issue/image-003-1600-c777fa92a7b3.webp"
+        }
+      ]
+    },
+    {
+      "file": "周年特刊/封面 (2).jpg",
+      "sha256": "4a3c146d47ad752c54df18a7f6c5234f4289b058abd85054288f8c4ca6a86d08",
+      "bytes": 2647863,
+      "extension": ".jpg",
+      "status": "project",
+      "project": "anniversary-special-issue",
+      "displays": [
+        {
+          "image": "/selected/anniversary-special-issue/image-001-1600-5642451b1718.webp"
+        }
+      ]
+    },
+    {
+      "file": "清华大学 再同学画册/2.jpg",
+      "sha256": "f0dbac7e8e5ab0fc9a34ae8181e6e88faf79fdb47b22d85b34becea15eff942d",
+      "bytes": 2178019,
+      "extension": ".jpg",
+      "status": "project",
+      "project": "tsinghua-classmates-album",
+      "displays": [
+        {
+          "image": "/selected/tsinghua-classmates-album/image-002-1600-99474331ecbd.webp"
+        }
+      ]
+    },
+    {
+      "file": "清华大学 再同学画册/Square_Book_Mockup_5 拷贝.jpg",
+      "sha256": "3317dd30284240e3af25633abcb3e06f370e6a582892ddce8c0b67df713dd375",
+      "bytes": 1690478,
+      "extension": ".jpg",
+      "status": "project",
+      "project": "tsinghua-classmates-album",
+      "displays": [
+        {
+          "image": "/selected/tsinghua-classmates-album/image-003-1600-961ba01c4d13.webp"
+        }
+      ]
+    },
+    {
+      "file": "清华大学 再同学画册/封面 (2).jpg",
+      "sha256": "56476cc499b613fd59d8cccff216dd60ed731a2f9d37246791d5bb7195b2b1c7",
+      "bytes": 1469795,
+      "extension": ".jpg",
+      "status": "project",
+      "project": "tsinghua-classmates-album",
+      "displays": [
+        {
+          "image": "/selected/tsinghua-classmates-album/image-001-1600-a32e22edf3d0.webp"
+        }
+      ]
+    },
+    {
+      "file": "衡水湖期刊/杂志样机-平铺-衡水湖-2(1).jpg",
+      "sha256": "b84e49c99d77544b56693485a9df28c6b4f68177a881028f6e728b7d6cd803aa",
+      "bytes": 12486022,
+      "extension": ".jpg",
+      "status": "project",
+      "project": "hengshui-lake-periodical",
+      "displays": [
+        {
+          "image": "/selected/hengshui-lake-periodical/image-005-1600-6db6bae6053b.webp"
+        }
+      ]
+    },
+    {
+      "file": "衡水湖期刊/杂志样机-平铺-衡水湖-3(1).jpg",
+      "sha256": "a2012bfdb7964d8689df8365de8281de1220fd0c8ff432494b4d83dd93886b7a",
+      "bytes": 11936883,
+      "extension": ".jpg",
+      "status": "project",
+      "project": "hengshui-lake-periodical",
+      "displays": [
+        {
+          "image": "/selected/hengshui-lake-periodical/image-006-1600-b505f24fce90.webp"
+        }
+      ]
+    },
+    {
+      "file": "衡水湖期刊/杂志样机-平铺-衡水湖-第二期 拷贝-1(1).jpg",
+      "sha256": "b50c67671a955fb05bac1db900aedde7c3455fe75f7cc047da6f526f50bc9f08",
+      "bytes": 10513514,
+      "extension": ".jpg",
+      "status": "project",
+      "project": "hengshui-lake-periodical",
+      "displays": [
+        {
+          "image": "/selected/hengshui-lake-periodical/image-002-1600-75b6b9b111e2.webp"
+        }
+      ]
+    },
+    {
+      "file": "衡水湖期刊/杂志样机-平铺-衡水湖-第二期 拷贝-2(1).jpg",
+      "sha256": "ef0b57d3b335ce0c885614a0467a34c8e6ed42db34783d261589c88cb73d8ebc",
+      "bytes": 8942658,
+      "extension": ".jpg",
+      "status": "project",
+      "project": "hengshui-lake-periodical",
+      "displays": [
+        {
+          "image": "/selected/hengshui-lake-periodical/image-003-1600-05553ca6c203.webp"
+        }
+      ]
+    },
+    {
+      "file": "衡水湖期刊/杂志样机-衡水湖封面 拷贝(1).jpg",
+      "sha256": "547e1b7e7c27f85808473564d7ee6ebfdcb2b203929303511cd57bbf6fea7bd4",
+      "bytes": 2420090,
+      "extension": ".jpg",
+      "status": "project",
+      "project": "hengshui-lake-periodical",
+      "displays": [
+        {
+          "image": "/selected/hengshui-lake-periodical/image-001-1600-2381f92ea17d.webp"
+        }
+      ]
+    },
+    {
+      "file": "衡水湖期刊/杂志样机-衡水湖封面-第3 4 5期 拷贝(1).jpg",
+      "sha256": "fbc6e3c49b0d8539727aa920855270de8b0579327d57d901a393b0c2d5acbfa1",
+      "bytes": 2483905,
+      "extension": ".jpg",
+      "status": "project",
+      "project": "hengshui-lake-periodical",
+      "displays": [
+        {
+          "image": "/selected/hengshui-lake-periodical/image-004-1600-ba29a48fd6ea.webp"
+        }
+      ]
     }
   ],
   "sourceDisplays": [
@@ -7262,6 +7600,292 @@
       "sourceMode": "RGBA",
       "colorConversion": "embedded ICC to sRGB",
       "flattenedOnWhite": true
+    },
+    {
+      "file": "清华大学 再同学画册/封面 (2).jpg",
+      "project": "tsinghua-classmates-album",
+      "image": "/selected/tsinghua-classmates-album/image-001-1600-a32e22edf3d0.webp",
+      "index": 1,
+      "sourceWidth": 3000,
+      "sourceHeight": 1688,
+      "sourceMode": "RGB",
+      "colorConversion": "embedded ICC to sRGB",
+      "flattenedOnWhite": false
+    },
+    {
+      "file": "清华大学 再同学画册/2.jpg",
+      "project": "tsinghua-classmates-album",
+      "image": "/selected/tsinghua-classmates-album/image-002-1600-99474331ecbd.webp",
+      "index": 2,
+      "sourceWidth": 2800,
+      "sourceHeight": 1960,
+      "sourceMode": "RGB",
+      "colorConversion": "embedded ICC to sRGB",
+      "flattenedOnWhite": false
+    },
+    {
+      "file": "清华大学 再同学画册/Square_Book_Mockup_5 拷贝.jpg",
+      "project": "tsinghua-classmates-album",
+      "image": "/selected/tsinghua-classmates-album/image-003-1600-961ba01c4d13.webp",
+      "index": 3,
+      "sourceWidth": 2800,
+      "sourceHeight": 1960,
+      "sourceMode": "RGB",
+      "colorConversion": "embedded ICC to sRGB",
+      "flattenedOnWhite": false
+    },
+    {
+      "file": "中自智能 画册/封面.jpg",
+      "project": "zhongzi-intelligence-brochure",
+      "image": "/selected/zhongzi-intelligence-brochure/image-001-1600-f2c07d4e8afb.webp",
+      "index": 1,
+      "sourceWidth": 3000,
+      "sourceHeight": 2400,
+      "sourceMode": "RGB",
+      "colorConversion": "embedded ICC to sRGB",
+      "flattenedOnWhite": false
+    },
+    {
+      "file": "中自智能 画册/2(1).jpg",
+      "project": "zhongzi-intelligence-brochure",
+      "image": "/selected/zhongzi-intelligence-brochure/image-002-1600-2790056a65f4.webp",
+      "index": 2,
+      "sourceWidth": 3000,
+      "sourceHeight": 1860,
+      "sourceMode": "RGB",
+      "colorConversion": "embedded ICC to sRGB",
+      "flattenedOnWhite": false
+    },
+    {
+      "file": "中自智能 画册/3.jpg",
+      "project": "zhongzi-intelligence-brochure",
+      "image": "/selected/zhongzi-intelligence-brochure/image-003-1600-40c53e4f786a.webp",
+      "index": 3,
+      "sourceWidth": 3000,
+      "sourceHeight": 1860,
+      "sourceMode": "RGB",
+      "colorConversion": "embedded ICC to sRGB",
+      "flattenedOnWhite": false
+    },
+    {
+      "file": "中自智能 画册/4.jpg",
+      "project": "zhongzi-intelligence-brochure",
+      "image": "/selected/zhongzi-intelligence-brochure/image-004-1600-45a641e17d76.webp",
+      "index": 4,
+      "sourceWidth": 3000,
+      "sourceHeight": 1860,
+      "sourceMode": "RGB",
+      "colorConversion": "embedded ICC to sRGB",
+      "flattenedOnWhite": false
+    },
+    {
+      "file": "中自智能 画册/5(1).jpg",
+      "project": "zhongzi-intelligence-brochure",
+      "image": "/selected/zhongzi-intelligence-brochure/image-005-1600-05fc49f4b891.webp",
+      "index": 5,
+      "sourceWidth": 3000,
+      "sourceHeight": 2000,
+      "sourceMode": "RGB",
+      "colorConversion": "embedded ICC to sRGB",
+      "flattenedOnWhite": false
+    },
+    {
+      "file": "中自智能 画册/7.jpg",
+      "project": "zhongzi-intelligence-brochure",
+      "image": "/selected/zhongzi-intelligence-brochure/image-006-1600-0eca2a5b6be6.webp",
+      "index": 6,
+      "sourceWidth": 3000,
+      "sourceHeight": 1860,
+      "sourceMode": "RGB",
+      "colorConversion": "embedded ICC to sRGB",
+      "flattenedOnWhite": false
+    },
+    {
+      "file": "中自智能 画册/10.jpg",
+      "project": "zhongzi-intelligence-brochure",
+      "image": "/selected/zhongzi-intelligence-brochure/image-007-1600-dc1eefd4412d.webp",
+      "index": 7,
+      "sourceWidth": 3000,
+      "sourceHeight": 1860,
+      "sourceMode": "RGB",
+      "colorConversion": "embedded ICC to sRGB",
+      "flattenedOnWhite": false
+    },
+    {
+      "file": "中自智能 画册/11 (2).jpg",
+      "project": "zhongzi-intelligence-brochure",
+      "image": "/selected/zhongzi-intelligence-brochure/image-008-1600-2d9c65be816b.webp",
+      "index": 8,
+      "sourceWidth": 3000,
+      "sourceHeight": 1860,
+      "sourceMode": "RGB",
+      "colorConversion": "embedded ICC to sRGB",
+      "flattenedOnWhite": false
+    },
+    {
+      "file": "周年特刊/封面 (2).jpg",
+      "project": "anniversary-special-issue",
+      "image": "/selected/anniversary-special-issue/image-001-1600-5642451b1718.webp",
+      "index": 1,
+      "sourceWidth": 3000,
+      "sourceHeight": 1688,
+      "sourceMode": "RGB",
+      "colorConversion": "RGB assumed sRGB",
+      "flattenedOnWhite": false
+    },
+    {
+      "file": "周年特刊/Free_Book_Mockup_4 拷贝.jpg",
+      "project": "anniversary-special-issue",
+      "image": "/selected/anniversary-special-issue/image-002-1600-ba9d20dbbc9e.webp",
+      "index": 2,
+      "sourceWidth": 3000,
+      "sourceHeight": 2250,
+      "sourceMode": "RGB",
+      "colorConversion": "RGB assumed sRGB",
+      "flattenedOnWhite": false
+    },
+    {
+      "file": "周年特刊/Free_Book_Mockup_7 拷贝.jpg",
+      "project": "anniversary-special-issue",
+      "image": "/selected/anniversary-special-issue/image-003-1600-c777fa92a7b3.webp",
+      "index": 3,
+      "sourceWidth": 3000,
+      "sourceHeight": 2250,
+      "sourceMode": "RGB",
+      "colorConversion": "RGB assumed sRGB",
+      "flattenedOnWhite": false
+    },
+    {
+      "file": "周年特刊/1.jpg",
+      "project": "anniversary-special-issue",
+      "image": "/selected/anniversary-special-issue/image-004-1600-67ac99d92a3c.webp",
+      "index": 4,
+      "sourceWidth": 3000,
+      "sourceHeight": 2250,
+      "sourceMode": "RGB",
+      "colorConversion": "RGB assumed sRGB",
+      "flattenedOnWhite": false
+    },
+    {
+      "file": "周年特刊/5.jpg",
+      "project": "anniversary-special-issue",
+      "image": "/selected/anniversary-special-issue/image-005-1600-f6912a6da342.webp",
+      "index": 5,
+      "sourceWidth": 3000,
+      "sourceHeight": 2250,
+      "sourceMode": "RGB",
+      "colorConversion": "RGB assumed sRGB",
+      "flattenedOnWhite": false
+    },
+    {
+      "file": "衡水湖期刊/杂志样机-衡水湖封面 拷贝(1).jpg",
+      "project": "hengshui-lake-periodical",
+      "image": "/selected/hengshui-lake-periodical/image-001-1600-2381f92ea17d.webp",
+      "index": 1,
+      "sourceWidth": 4000,
+      "sourceHeight": 2667,
+      "sourceMode": "RGB",
+      "colorConversion": "embedded ICC to sRGB",
+      "flattenedOnWhite": false
+    },
+    {
+      "file": "衡水湖期刊/杂志样机-平铺-衡水湖-第二期 拷贝-1(1).jpg",
+      "project": "hengshui-lake-periodical",
+      "image": "/selected/hengshui-lake-periodical/image-002-1600-75b6b9b111e2.webp",
+      "index": 2,
+      "sourceWidth": 5000,
+      "sourceHeight": 3750,
+      "sourceMode": "RGB",
+      "colorConversion": "embedded ICC to sRGB",
+      "flattenedOnWhite": false
+    },
+    {
+      "file": "衡水湖期刊/杂志样机-平铺-衡水湖-第二期 拷贝-2(1).jpg",
+      "project": "hengshui-lake-periodical",
+      "image": "/selected/hengshui-lake-periodical/image-003-1600-05553ca6c203.webp",
+      "index": 3,
+      "sourceWidth": 5000,
+      "sourceHeight": 3750,
+      "sourceMode": "RGB",
+      "colorConversion": "embedded ICC to sRGB",
+      "flattenedOnWhite": false
+    },
+    {
+      "file": "衡水湖期刊/杂志样机-衡水湖封面-第3 4 5期 拷贝(1).jpg",
+      "project": "hengshui-lake-periodical",
+      "image": "/selected/hengshui-lake-periodical/image-004-1600-ba29a48fd6ea.webp",
+      "index": 4,
+      "sourceWidth": 4000,
+      "sourceHeight": 2667,
+      "sourceMode": "RGB",
+      "colorConversion": "embedded ICC to sRGB",
+      "flattenedOnWhite": false
+    },
+    {
+      "file": "衡水湖期刊/杂志样机-平铺-衡水湖-2(1).jpg",
+      "project": "hengshui-lake-periodical",
+      "image": "/selected/hengshui-lake-periodical/image-005-1600-6db6bae6053b.webp",
+      "index": 5,
+      "sourceWidth": 5000,
+      "sourceHeight": 3750,
+      "sourceMode": "RGB",
+      "colorConversion": "embedded ICC to sRGB",
+      "flattenedOnWhite": false
+    },
+    {
+      "file": "衡水湖期刊/杂志样机-平铺-衡水湖-3(1).jpg",
+      "project": "hengshui-lake-periodical",
+      "image": "/selected/hengshui-lake-periodical/image-006-1600-b505f24fce90.webp",
+      "index": 6,
+      "sourceWidth": 5000,
+      "sourceHeight": 3750,
+      "sourceMode": "RGB",
+      "colorConversion": "embedded ICC to sRGB",
+      "flattenedOnWhite": false
+    },
+    {
+      "file": "内衣画册/封面1.jpg",
+      "project": "lingerie-lookbook",
+      "image": "/selected/lingerie-lookbook/image-001-1600-a461e8d151f9.webp",
+      "index": 1,
+      "sourceWidth": 3000,
+      "sourceHeight": 1688,
+      "sourceMode": "RGB",
+      "colorConversion": "embedded ICC to sRGB",
+      "flattenedOnWhite": false
+    },
+    {
+      "file": "内衣画册/A4 MAGAZINE BROCHURE MOCKUP 拷贝.jpg",
+      "project": "lingerie-lookbook",
+      "image": "/selected/lingerie-lookbook/image-002-1600-bb1a42c6fd08.webp",
+      "index": 2,
+      "sourceWidth": 4500,
+      "sourceHeight": 3000,
+      "sourceMode": "RGB",
+      "colorConversion": "embedded ICC to sRGB",
+      "flattenedOnWhite": false
+    },
+    {
+      "file": "内衣画册/A4 MAGAZINE BROCHURE MOCKUP 拷贝-1.jpg",
+      "project": "lingerie-lookbook",
+      "image": "/selected/lingerie-lookbook/image-003-1600-905410da1e67.webp",
+      "index": 3,
+      "sourceWidth": 4500,
+      "sourceHeight": 3000,
+      "sourceMode": "RGB",
+      "colorConversion": "embedded ICC to sRGB",
+      "flattenedOnWhite": false
+    },
+    {
+      "file": "内衣画册/33.jpg",
+      "project": "lingerie-lookbook",
+      "image": "/selected/lingerie-lookbook/image-004-1600-55d83eb456e6.webp",
+      "index": 4,
+      "sourceWidth": 4500,
+      "sourceHeight": 3000,
+      "sourceMode": "RGB",
+      "colorConversion": "embedded ICC to sRGB",
+      "flattenedOnWhite": false
     }
   ],
   "coverSources": {
@@ -7551,6 +8175,31 @@
       "file": "A002.png",
       "mode": "contain",
       "image": "/selected/daerle-calcium-zinc-rocket-packaging/cover-960-e382f802e4de.webp"
+    },
+    "tsinghua-classmates-album": {
+      "file": "清华大学 再同学画册/封面 (2).jpg",
+      "mode": "contain",
+      "image": "/selected/tsinghua-classmates-album/cover-960-a847c092bfc1.webp"
+    },
+    "zhongzi-intelligence-brochure": {
+      "file": "中自智能 画册/封面.jpg",
+      "mode": "contain",
+      "image": "/selected/zhongzi-intelligence-brochure/cover-960-ffd20a1387e3.webp"
+    },
+    "anniversary-special-issue": {
+      "file": "周年特刊/封面 (2).jpg",
+      "mode": "contain",
+      "image": "/selected/anniversary-special-issue/cover-960-54c8e849bb03.webp"
+    },
+    "hengshui-lake-periodical": {
+      "file": "衡水湖期刊/杂志样机-衡水湖封面 拷贝(1).jpg",
+      "mode": "contain",
+      "image": "/selected/hengshui-lake-periodical/cover-960-f23738e6b4a4.webp"
+    },
+    "lingerie-lookbook": {
+      "file": "内衣画册/封面1.jpg",
+      "mode": "contain",
+      "image": "/selected/lingerie-lookbook/cover-960-52def1862d08.webp"
     }
   },
   "assets": [
@@ -7597,6 +8246,78 @@
     {
       "image": "/selected/aerospace-recruitment-posters/image-003-full-1440-faf319c6dffd.jpg",
       "bytes": 9763772
+    },
+    {
+      "image": "/selected/anniversary-special-issue/cover-160-068070538916.webp",
+      "bytes": 5416
+    },
+    {
+      "image": "/selected/anniversary-special-issue/cover-320-e471af2ae3ce.webp",
+      "bytes": 15090
+    },
+    {
+      "image": "/selected/anniversary-special-issue/cover-960-54c8e849bb03.webp",
+      "bytes": 40970
+    },
+    {
+      "image": "/selected/anniversary-special-issue/image-001-1600-5642451b1718.webp",
+      "bytes": 140956
+    },
+    {
+      "image": "/selected/anniversary-special-issue/image-001-2400-569d1670d82d.webp",
+      "bytes": 385524
+    },
+    {
+      "image": "/selected/anniversary-special-issue/image-001-800-bab0eb6cd1f8.webp",
+      "bytes": 23632
+    },
+    {
+      "image": "/selected/anniversary-special-issue/image-002-1600-ba9d20dbbc9e.webp",
+      "bytes": 77862
+    },
+    {
+      "image": "/selected/anniversary-special-issue/image-002-2400-bd268221264a.webp",
+      "bytes": 249890
+    },
+    {
+      "image": "/selected/anniversary-special-issue/image-002-800-cf10ca381b69.webp",
+      "bytes": 15376
+    },
+    {
+      "image": "/selected/anniversary-special-issue/image-003-1600-c777fa92a7b3.webp",
+      "bytes": 78892
+    },
+    {
+      "image": "/selected/anniversary-special-issue/image-003-2400-655b8035cdfc.webp",
+      "bytes": 171228
+    },
+    {
+      "image": "/selected/anniversary-special-issue/image-003-800-ce79286dc51b.webp",
+      "bytes": 22200
+    },
+    {
+      "image": "/selected/anniversary-special-issue/image-004-1600-67ac99d92a3c.webp",
+      "bytes": 159668
+    },
+    {
+      "image": "/selected/anniversary-special-issue/image-004-2400-56440bec01ac.webp",
+      "bytes": 474982
+    },
+    {
+      "image": "/selected/anniversary-special-issue/image-004-800-04c87df25c65.webp",
+      "bytes": 31782
+    },
+    {
+      "image": "/selected/anniversary-special-issue/image-005-1600-f6912a6da342.webp",
+      "bytes": 155778
+    },
+    {
+      "image": "/selected/anniversary-special-issue/image-005-2400-6f8f63420df2.webp",
+      "bytes": 472002
+    },
+    {
+      "image": "/selected/anniversary-special-issue/image-005-800-fc689bb6bf76.webp",
+      "bytes": 33092
     },
     {
       "image": "/selected/caaa-aerospace-badge-collection-blue-waves/cover-160-2d075adf6ecb.webp",
@@ -8587,6 +9308,90 @@
       "bytes": 140914
     },
     {
+      "image": "/selected/hengshui-lake-periodical/cover-160-1393eab53f26.webp",
+      "bytes": 7062
+    },
+    {
+      "image": "/selected/hengshui-lake-periodical/cover-320-3cd72729f294.webp",
+      "bytes": 19742
+    },
+    {
+      "image": "/selected/hengshui-lake-periodical/cover-960-f23738e6b4a4.webp",
+      "bytes": 37716
+    },
+    {
+      "image": "/selected/hengshui-lake-periodical/image-001-1600-2381f92ea17d.webp",
+      "bytes": 107456
+    },
+    {
+      "image": "/selected/hengshui-lake-periodical/image-001-2400-1ed5600e0bde.webp",
+      "bytes": 207796
+    },
+    {
+      "image": "/selected/hengshui-lake-periodical/image-001-800-1dcd2da7b0eb.webp",
+      "bytes": 32880
+    },
+    {
+      "image": "/selected/hengshui-lake-periodical/image-002-1600-75b6b9b111e2.webp",
+      "bytes": 286916
+    },
+    {
+      "image": "/selected/hengshui-lake-periodical/image-002-2400-69e9bb82a4a0.webp",
+      "bytes": 584136
+    },
+    {
+      "image": "/selected/hengshui-lake-periodical/image-002-800-5f863dfe4061.webp",
+      "bytes": 83908
+    },
+    {
+      "image": "/selected/hengshui-lake-periodical/image-003-1600-05553ca6c203.webp",
+      "bytes": 269298
+    },
+    {
+      "image": "/selected/hengshui-lake-periodical/image-003-2400-0beeb820b832.webp",
+      "bytes": 540566
+    },
+    {
+      "image": "/selected/hengshui-lake-periodical/image-003-800-ff4fcef9bdd5.webp",
+      "bytes": 78338
+    },
+    {
+      "image": "/selected/hengshui-lake-periodical/image-004-1600-ba29a48fd6ea.webp",
+      "bytes": 118528
+    },
+    {
+      "image": "/selected/hengshui-lake-periodical/image-004-2400-1a0856d81b9c.webp",
+      "bytes": 221942
+    },
+    {
+      "image": "/selected/hengshui-lake-periodical/image-004-800-fd45a9a81d56.webp",
+      "bytes": 36178
+    },
+    {
+      "image": "/selected/hengshui-lake-periodical/image-005-1600-6db6bae6053b.webp",
+      "bytes": 303600
+    },
+    {
+      "image": "/selected/hengshui-lake-periodical/image-005-2400-33f75377283b.webp",
+      "bytes": 640276
+    },
+    {
+      "image": "/selected/hengshui-lake-periodical/image-005-800-061a8bf5ff0f.webp",
+      "bytes": 85398
+    },
+    {
+      "image": "/selected/hengshui-lake-periodical/image-006-1600-b505f24fce90.webp",
+      "bytes": 293602
+    },
+    {
+      "image": "/selected/hengshui-lake-periodical/image-006-2400-29c2958ec282.webp",
+      "bytes": 621582
+    },
+    {
+      "image": "/selected/hengshui-lake-periodical/image-006-800-8c7b96124563.webp",
+      "bytes": 80868
+    },
+    {
       "image": "/selected/home-palliative-care-event/cover-160-3906860373d6.webp",
       "bytes": 6650
     },
@@ -9253,6 +10058,66 @@
     {
       "image": "/selected/liming-tianyao-care-packaging/image-012-800-38e7c6587b2f.webp",
       "bytes": 23400
+    },
+    {
+      "image": "/selected/lingerie-lookbook/cover-160-1e403f30ce54.webp",
+      "bytes": 4976
+    },
+    {
+      "image": "/selected/lingerie-lookbook/cover-320-dd4511bfbac4.webp",
+      "bytes": 24188
+    },
+    {
+      "image": "/selected/lingerie-lookbook/cover-960-52def1862d08.webp",
+      "bytes": 121548
+    },
+    {
+      "image": "/selected/lingerie-lookbook/image-001-1600-a461e8d151f9.webp",
+      "bytes": 395612
+    },
+    {
+      "image": "/selected/lingerie-lookbook/image-001-2400-4db9e52fa18d.webp",
+      "bytes": 950920
+    },
+    {
+      "image": "/selected/lingerie-lookbook/image-001-800-55e8e9b95981.webp",
+      "bytes": 61026
+    },
+    {
+      "image": "/selected/lingerie-lookbook/image-002-1600-bb1a42c6fd08.webp",
+      "bytes": 73854
+    },
+    {
+      "image": "/selected/lingerie-lookbook/image-002-2400-c69906056179.webp",
+      "bytes": 214390
+    },
+    {
+      "image": "/selected/lingerie-lookbook/image-002-800-33ab78788e7f.webp",
+      "bytes": 19300
+    },
+    {
+      "image": "/selected/lingerie-lookbook/image-003-1600-905410da1e67.webp",
+      "bytes": 82398
+    },
+    {
+      "image": "/selected/lingerie-lookbook/image-003-2400-0948a6284b5d.webp",
+      "bytes": 233334
+    },
+    {
+      "image": "/selected/lingerie-lookbook/image-003-800-bbd41610c7d4.webp",
+      "bytes": 21808
+    },
+    {
+      "image": "/selected/lingerie-lookbook/image-004-1600-55d83eb456e6.webp",
+      "bytes": 80994
+    },
+    {
+      "image": "/selected/lingerie-lookbook/image-004-2400-f96d602fa620.webp",
+      "bytes": 232568
+    },
+    {
+      "image": "/selected/lingerie-lookbook/image-004-800-275300f472eb.webp",
+      "bytes": 19138
     },
     {
       "image": "/selected/liulichang-gift-guide/cover-160-1db373f73837.webp",
@@ -10601,6 +11466,54 @@
     {
       "image": "/selected/time-imprints-commemorative-album/image-023-800-a75699390253.webp",
       "bytes": 87778
+    },
+    {
+      "image": "/selected/tsinghua-classmates-album/cover-160-2c12507c5858.webp",
+      "bytes": 4762
+    },
+    {
+      "image": "/selected/tsinghua-classmates-album/cover-320-588659c0283d.webp",
+      "bytes": 12028
+    },
+    {
+      "image": "/selected/tsinghua-classmates-album/cover-960-a847c092bfc1.webp",
+      "bytes": 29810
+    },
+    {
+      "image": "/selected/tsinghua-classmates-album/image-001-1600-a32e22edf3d0.webp",
+      "bytes": 60606
+    },
+    {
+      "image": "/selected/tsinghua-classmates-album/image-001-2400-dc1c9e57d72a.webp",
+      "bytes": 104818
+    },
+    {
+      "image": "/selected/tsinghua-classmates-album/image-001-800-5f1fa4dfe7ff.webp",
+      "bytes": 20510
+    },
+    {
+      "image": "/selected/tsinghua-classmates-album/image-002-1600-99474331ecbd.webp",
+      "bytes": 92102
+    },
+    {
+      "image": "/selected/tsinghua-classmates-album/image-002-2400-c45ca71dc6f8.webp",
+      "bytes": 185806
+    },
+    {
+      "image": "/selected/tsinghua-classmates-album/image-002-800-61eaa40e5c67.webp",
+      "bytes": 24844
+    },
+    {
+      "image": "/selected/tsinghua-classmates-album/image-003-1600-961ba01c4d13.webp",
+      "bytes": 108120
+    },
+    {
+      "image": "/selected/tsinghua-classmates-album/image-003-2400-9937e67f6983.webp",
+      "bytes": 206958
+    },
+    {
+      "image": "/selected/tsinghua-classmates-album/image-003-800-8d8de83480f5.webp",
+      "bytes": 30770
     },
     {
       "image": "/selected/tsinghua-energy-album-gift-box/cover-160-1f8ab47d6293.webp",
@@ -12089,6 +13002,114 @@
     {
       "image": "/selected/zhengfei-construction-identity/image-003-800-d4af9df59147.webp",
       "bytes": 7720
+    },
+    {
+      "image": "/selected/zhongzi-intelligence-brochure/cover-160-72ce995ddcb7.webp",
+      "bytes": 4382
+    },
+    {
+      "image": "/selected/zhongzi-intelligence-brochure/cover-320-b510141045ec.webp",
+      "bytes": 10934
+    },
+    {
+      "image": "/selected/zhongzi-intelligence-brochure/cover-960-ffd20a1387e3.webp",
+      "bytes": 19872
+    },
+    {
+      "image": "/selected/zhongzi-intelligence-brochure/image-001-1600-f2c07d4e8afb.webp",
+      "bytes": 86936
+    },
+    {
+      "image": "/selected/zhongzi-intelligence-brochure/image-001-2400-429ca4e0b21b.webp",
+      "bytes": 246124
+    },
+    {
+      "image": "/selected/zhongzi-intelligence-brochure/image-001-800-be9ba477ca63.webp",
+      "bytes": 21840
+    },
+    {
+      "image": "/selected/zhongzi-intelligence-brochure/image-002-1600-2790056a65f4.webp",
+      "bytes": 107840
+    },
+    {
+      "image": "/selected/zhongzi-intelligence-brochure/image-002-2400-f0be1e53390a.webp",
+      "bytes": 222002
+    },
+    {
+      "image": "/selected/zhongzi-intelligence-brochure/image-002-800-e15f41917ff9.webp",
+      "bytes": 27544
+    },
+    {
+      "image": "/selected/zhongzi-intelligence-brochure/image-003-1600-40c53e4f786a.webp",
+      "bytes": 79086
+    },
+    {
+      "image": "/selected/zhongzi-intelligence-brochure/image-003-2400-73a56458ddc6.webp",
+      "bytes": 155674
+    },
+    {
+      "image": "/selected/zhongzi-intelligence-brochure/image-003-800-98da077ec7c4.webp",
+      "bytes": 23858
+    },
+    {
+      "image": "/selected/zhongzi-intelligence-brochure/image-004-1600-45a641e17d76.webp",
+      "bytes": 76954
+    },
+    {
+      "image": "/selected/zhongzi-intelligence-brochure/image-004-2400-b763efabaebd.webp",
+      "bytes": 158004
+    },
+    {
+      "image": "/selected/zhongzi-intelligence-brochure/image-004-800-2ef3a3a8e148.webp",
+      "bytes": 20622
+    },
+    {
+      "image": "/selected/zhongzi-intelligence-brochure/image-005-1600-05fc49f4b891.webp",
+      "bytes": 82182
+    },
+    {
+      "image": "/selected/zhongzi-intelligence-brochure/image-005-2400-caced31d3993.webp",
+      "bytes": 159472
+    },
+    {
+      "image": "/selected/zhongzi-intelligence-brochure/image-005-800-c9f8e1308864.webp",
+      "bytes": 25884
+    },
+    {
+      "image": "/selected/zhongzi-intelligence-brochure/image-006-1600-0eca2a5b6be6.webp",
+      "bytes": 104008
+    },
+    {
+      "image": "/selected/zhongzi-intelligence-brochure/image-006-2400-5ea7edfd9528.webp",
+      "bytes": 217088
+    },
+    {
+      "image": "/selected/zhongzi-intelligence-brochure/image-006-800-150d1b5654c7.webp",
+      "bytes": 27910
+    },
+    {
+      "image": "/selected/zhongzi-intelligence-brochure/image-007-1600-dc1eefd4412d.webp",
+      "bytes": 79672
+    },
+    {
+      "image": "/selected/zhongzi-intelligence-brochure/image-007-2400-4618a99b4654.webp",
+      "bytes": 160548
+    },
+    {
+      "image": "/selected/zhongzi-intelligence-brochure/image-007-800-f666cc44a93c.webp",
+      "bytes": 21004
+    },
+    {
+      "image": "/selected/zhongzi-intelligence-brochure/image-008-1600-2d9c65be816b.webp",
+      "bytes": 71672
+    },
+    {
+      "image": "/selected/zhongzi-intelligence-brochure/image-008-2400-4ae5a3f0cc67.webp",
+      "bytes": 152900
+    },
+    {
+      "image": "/selected/zhongzi-intelligence-brochure/image-008-800-76eb1fe68f81.webp",
+      "bytes": 18536
     }
   ],
   "imports": [
@@ -12167,6 +13188,18 @@
       "projects": [
         "time-imprints-commemorative-album",
         "daerle-calcium-zinc-rocket-packaging"
+      ]
+    },
+    {
+      "sourceRoot": "C:\\Users\\zhaoz\\Downloads",
+      "plan": "docs/content/curated-plan-2026-11-28.json",
+      "planSha256": "394bc6b7cefe00668b89abff4163ee3471d0b222680a56745502fb168f645e16",
+      "projects": [
+        "tsinghua-classmates-album",
+        "zhongzi-intelligence-brochure",
+        "anniversary-special-issue",
+        "hengshui-lake-periodical",
+        "lingerie-lookbook"
       ]
     }
   ]

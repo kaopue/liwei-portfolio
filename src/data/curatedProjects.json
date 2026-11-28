@@ -1442,5 +1442,131 @@
     "type": "包装设计",
     "featured": false,
     "priority": 14.1
+  },
+  {
+    "title": "清华大学《再同学》画册",
+    "slug": "tsinghua-classmates-album",
+    "category": "画册设计",
+    "categorySlug": "album-design",
+    "year": "",
+    "image": "/selected/tsinghua-classmates-album/image-001-1600-a32e22edf3d0.webp",
+    "cover": "/selected/tsinghua-classmates-album/image-001-1600-a32e22edf3d0.webp",
+    "summary": "紫色封面搭配金色字样，内页以图文跨页呈现。",
+    "description": "封面以大面积紫色衬托金色字样，并用细线图形丰富底纹。内页以双栏文字与照片组合，展示平铺和翻阅两种视角。",
+    "tags": [
+      "画册设计"
+    ],
+    "detailSections": [],
+    "images": [
+      "/selected/tsinghua-classmates-album/image-001-1600-a32e22edf3d0.webp",
+      "/selected/tsinghua-classmates-album/image-002-1600-99474331ecbd.webp",
+      "/selected/tsinghua-classmates-album/image-003-1600-961ba01c4d13.webp"
+    ],
+    "type": "画册设计",
+    "featured": false,
+    "priority": 35
+  },
+  {
+    "title": "中自智能画册",
+    "slug": "zhongzi-intelligence-brochure",
+    "category": "画册设计",
+    "categorySlug": "album-design",
+    "year": "",
+    "image": "/selected/zhongzi-intelligence-brochure/image-001-1600-f2c07d4e8afb.webp",
+    "cover": "/selected/zhongzi-intelligence-brochure/image-001-1600-f2c07d4e8afb.webp",
+    "summary": "以深蓝与白色统领企业画册，串联建筑摄影、图表与文字信息。",
+    "description": "深蓝封面配合简洁的英文标题。内页交替使用整版照片、图标、流程图与文字栏，展示不同信息密度下的版式。",
+    "tags": [
+      "画册设计"
+    ],
+    "detailSections": [],
+    "images": [
+      "/selected/zhongzi-intelligence-brochure/image-001-1600-f2c07d4e8afb.webp",
+      "/selected/zhongzi-intelligence-brochure/image-002-1600-2790056a65f4.webp",
+      "/selected/zhongzi-intelligence-brochure/image-003-1600-40c53e4f786a.webp",
+      "/selected/zhongzi-intelligence-brochure/image-004-1600-45a641e17d76.webp",
+      "/selected/zhongzi-intelligence-brochure/image-005-1600-05fc49f4b891.webp",
+      "/selected/zhongzi-intelligence-brochure/image-006-1600-0eca2a5b6be6.webp",
+      "/selected/zhongzi-intelligence-brochure/image-007-1600-dc1eefd4412d.webp",
+      "/selected/zhongzi-intelligence-brochure/image-008-1600-2d9c65be816b.webp"
+    ],
+    "type": "画册设计",
+    "featured": false,
+    "priority": 36
+  },
+  {
+    "title": "周年特刊",
+    "slug": "anniversary-special-issue",
+    "category": "画册设计",
+    "categorySlug": "album-design",
+    "year": "",
+    "image": "/selected/anniversary-special-issue/image-001-1600-5642451b1718.webp",
+    "cover": "/selected/anniversary-special-issue/image-001-1600-5642451b1718.webp",
+    "summary": "以浅色封面、红色细线与金色标题组织特刊视觉。",
+    "description": "封面用红色等高线式纹样和金色标题建立识别，跨页在文字、照片与留白之间切换。画面展示封面、扉页与内文。",
+    "tags": [
+      "画册设计"
+    ],
+    "detailSections": [],
+    "images": [
+      "/selected/anniversary-special-issue/image-001-1600-5642451b1718.webp",
+      "/selected/anniversary-special-issue/image-002-1600-ba9d20dbbc9e.webp",
+      "/selected/anniversary-special-issue/image-003-1600-c777fa92a7b3.webp",
+      "/selected/anniversary-special-issue/image-004-1600-67ac99d92a3c.webp",
+      "/selected/anniversary-special-issue/image-005-1600-f6912a6da342.webp"
+    ],
+    "type": "画册设计",
+    "featured": false,
+    "priority": 37
+  },
+  {
+    "title": "衡水湖期刊",
+    "slug": "hengshui-lake-periodical",
+    "category": "画册设计",
+    "categorySlug": "album-design",
+    "year": "",
+    "image": "/selected/hengshui-lake-periodical/image-001-1600-2381f92ea17d.webp",
+    "cover": "/selected/hengshui-lake-periodical/image-001-1600-2381f92ea17d.webp",
+    "summary": "以湖景、自然摄影和图文跨页呈现系列期刊的封面与内文。",
+    "description": "各期封面沿用刊名字形与版面框架，通过不同主题图片区分期号。内页以图文混排呈现风景、观察与专题内容。",
+    "tags": [
+      "画册设计"
+    ],
+    "detailSections": [],
+    "images": [
+      "/selected/hengshui-lake-periodical/image-001-1600-2381f92ea17d.webp",
+      "/selected/hengshui-lake-periodical/image-002-1600-75b6b9b111e2.webp",
+      "/selected/hengshui-lake-periodical/image-003-1600-05553ca6c203.webp",
+      "/selected/hengshui-lake-periodical/image-004-1600-ba29a48fd6ea.webp",
+      "/selected/hengshui-lake-periodical/image-005-1600-6db6bae6053b.webp",
+      "/selected/hengshui-lake-periodical/image-006-1600-b505f24fce90.webp"
+    ],
+    "type": "画册设计",
+    "featured": false,
+    "priority": 38
+  },
+  {
+    "title": "内衣画册",
+    "slug": "lingerie-lookbook",
+    "category": "画册设计",
+    "categorySlug": "album-design",
+    "year": "",
+    "image": "/selected/lingerie-lookbook/image-001-1600-a461e8d151f9.webp",
+    "cover": "/selected/lingerie-lookbook/image-001-1600-a461e8d151f9.webp",
+    "summary": "以浅色留白和暖调摄影编排内衣产品画册。",
+    "description": "封面在浅色材质上保留简洁品牌字样，内页通过整页摄影与组图交替展示产品。跨页样机呈现了不同的图片比例与留白处理。",
+    "tags": [
+      "画册设计"
+    ],
+    "detailSections": [],
+    "images": [
+      "/selected/lingerie-lookbook/image-001-1600-a461e8d151f9.webp",
+      "/selected/lingerie-lookbook/image-002-1600-bb1a42c6fd08.webp",
+      "/selected/lingerie-lookbook/image-003-1600-905410da1e67.webp",
+      "/selected/lingerie-lookbook/image-004-1600-55d83eb456e6.webp"
+    ],
+    "type": "画册设计",
+    "featured": false,
+    "priority": 39
   }
 ]
