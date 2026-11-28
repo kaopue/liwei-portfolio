@@ -298,17 +298,17 @@ function About() {
           <p>习惯从商业逻辑出发，以克制的网格排版与精准的视觉语言解决传播问题，并结合 AI 创意工作流，确保项目从概念提案到印刷落地的全链路高水准交付。</p>
         </div>
         <div className="about-career">
-        <p className="about-career-label">职业经历</p>
-        <ol className="about-timeline" aria-label="职业经历">
-          {experiences.map(({ period, company, role, description }) => (
-            <li key={period}>
-              <p className="about-period">{period}</p>
-              <h3>{company}</h3>
-              {role && <p className="about-role">{role}</p>}
-              <p className="about-experience-copy">{description}</p>
-            </li>
-          ))}
-        </ol>
+          <p className="about-career-label" id="career-label">职业经历</p>
+          <ol className="about-timeline" aria-labelledby="career-label">
+            {experiences.map(({ period, company, role, description }) => (
+              <li key={period}>
+                <p className="about-period">{period}</p>
+                <h3 className="about-role">{role}</h3>
+                <p className="about-company">{company}</p>
+                <p className="about-experience-copy">{description}</p>
+              </li>
+            ))}
+          </ol>
         </div>
       </div>
     </section>
