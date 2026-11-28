@@ -329,34 +329,6 @@ main {
 
 .hero-copy span { display: block; }
 
-.hero-actions {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 12px;
-  margin-top: 26px;
-}
-
-.hero-button {
-  display: inline-flex;
-  min-height: 48px;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  padding: 0 20px;
-  border: 1px solid rgba(255, 255, 255, .28);
-  border-radius: 7px;
-  font-size: 14px;
-  font-weight: 650;
-  transition: transform 180ms ease, background 180ms ease;
-}
-
-.hero-button-primary { background: #091a25; color: #9bd5e5; }
-.hero-button-secondary { background: #e4edf0; color: #132833; }
-.hero-button:hover { transform: translateY(-3px); }
-.hero-button-primary:hover { background: #153342; }
-.hero-button-secondary:hover { background: #fff; }
-
 .hero-note {
   margin: 0;
   border: 1px solid rgba(255, 255, 255, .25);
@@ -417,7 +389,6 @@ main {
 
 @media (min-width: 901px) and (max-width: 1180px) {
   .hero-inner { padding-top: 136px; gap: 32px; }
-  .hero-actions { max-width: 510px; }
   .hero-note { flex-basis: auto; }
   .hero-work-strip { gap: 10px; }
 }
@@ -435,7 +406,6 @@ main {
   }
   .hero h1, .about .about-statement { line-height: 1.18; }
   .hero-copy { margin-top: 18px; max-width: 600px; font-size: 14px; line-height: 1.8; }
-  .hero-actions { gap: 10px; margin-top: 18px; }
   .hero-note { padding: 8px 12px; }
   .hero-work-strip {
     display: flex;
@@ -457,7 +427,6 @@ main {
   .hero-copy { font-size: 15px; line-height: 1.85; max-width: 360px; }
   .hero-copy span { display: inline; }
   .hero-copy span + span::before { content: " "; }
-  .hero-button { min-height: 44px; padding-inline: 17px; font-size: 13px; }
   .hero-note { flex-basis: auto; font-size: 10px; }
   .hero-work-card { flex-basis: 56%; }
   .hero-work-card > span { display: none; }
@@ -467,8 +436,6 @@ main {
   :root { --intro-copy-size: 15px; }
   .hero-inner { padding-block: 90px 14px; gap: 14px; }
   .hero-copy { margin-top: 18px; font-size: 15px; }
-  .hero-actions { margin-top: 14px; gap: 8px; }
-  .hero-button { min-height: 44px; }
   .hero-note { font-size: 9px; padding-block: 6px; }
 }
 
@@ -483,13 +450,12 @@ main {
   .hero-content { min-width: 0; }
   .hero h1, .about .about-statement { font-size: clamp(26px, 3.8vw, 34px); }
   .hero-copy { margin-top: 14px; font-size: 15px; line-height: 1.7; }
-  .hero-actions { gap: 8px; margin-top: 14px; }
   .hero-note { font-size: 10px; padding: 6px 10px; }
   .hero-work-strip { min-width: 0; margin-inline: 0; padding: 8px 4px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .hero-work-card:is(:hover, :focus-visible), .hero-button:hover { transform: none; }
+  .hero-work-card:is(:hover, :focus-visible) { transform: none; }
 }
 
 .advantages {

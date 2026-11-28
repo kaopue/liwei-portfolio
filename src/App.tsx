@@ -262,15 +262,6 @@ function Hero() {
             <span>擅长在商业目标、视觉美感与落地执行之间建立秩序，</span>
             <span>让设计不仅好看，也能被理解、被传播、被使用。</span>
           </p>
-          <div className="hero-actions">
-            <a href="#projects" className="hero-button hero-button-primary">
-              查看项目 <ArrowUpRight size={17} aria-hidden="true" />
-            </a>
-            <a href={`https://${contacts.behance}`} className="hero-button hero-button-secondary" target="_blank" rel="noopener noreferrer">
-              Behance <ArrowUpRight size={17} aria-hidden="true" />
-              <span className="sr-only">（在新窗口打开）</span>
-            </a>
-          </div>
         </div>
       </div>
     </section>
