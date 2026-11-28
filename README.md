@@ -1,6 +1,6 @@
 # 李维视觉设计作品集
 
-React + Vite 搭建的个人作品集网站。作品来自 `F:\作品集  精选文件` 及后续补充的本地作品，按实际画面整理为 61 个案例。
+React + Vite 搭建的个人作品集网站。作品来自 `F:\作品集  精选文件` 及后续补充的本地作品，按实际画面整理为 62 个案例。
 
 ## 作品维护
 
@@ -15,6 +15,7 @@ python scripts/import-curated-portfolio.py --source 'F:\作品集  精选文件'
 python scripts/import-curated-portfolio.py --source 'C:\Users\zhaoz\Downloads' --plan docs/content/curated-plan-2026-11-22.json --append
 python scripts/import-curated-portfolio.py --source 'C:\Users\zhaoz\Downloads' --plan docs/content/curated-plan-2026-11-27.json --append
 python scripts/import-curated-portfolio.py --source 'C:\Users\zhaoz\Downloads' --plan docs/content/curated-plan-2026-11-28.json --append
+python scripts/import-curated-portfolio.py --source 'C:\Users\zhaoz\Downloads' --plan docs/content/curated-plan-2026-11-28-langfang.json --append
 node scripts/verify-curated-portfolio.mjs
 ```
 

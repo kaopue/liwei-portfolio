@@ -1,0 +1,45 @@
+{
+  "sourceDirectories": [
+    "图片助手(ImageAssistant)_批量图片下载器/www.behance.net/临空经济区（廊坊）招商宣传册"
+  ],
+  "categories": [
+    {
+      "slug": "album-design",
+      "label": "画册设计",
+      "description": "纪念册、照片书与画册的版式设计。"
+    }
+  ],
+  "projects": [
+    {
+      "slug": "langfang-airport-economic-zone-brochure",
+      "title": "临空经济区（廊坊）招商宣传册",
+      "categorySlug": "album-design",
+      "summary": "以深蓝色贯穿招商宣传册，结合地图、园区鸟瞰和建筑摄影介绍临空经济区。",
+      "description": "深蓝底页用于封面与章节起始页，白底跨页用地图、图文网格和大幅照片呈现区位与园区空间。图集依次展示封面组合、翻阅样机与连续内页。",
+      "files": [
+        "图片助手(ImageAssistant)_批量图片下载器/www.behance.net/临空经济区（廊坊）招商宣传册/封面.webp",
+        "图片助手(ImageAssistant)_批量图片下载器/www.behance.net/临空经济区（廊坊）招商宣传册/10001.webp",
+        "图片助手(ImageAssistant)_批量图片下载器/www.behance.net/临空经济区（廊坊）招商宣传册/10002.webp",
+        "图片助手(ImageAssistant)_批量图片下载器/www.behance.net/临空经济区（廊坊）招商宣传册/10003.webp",
+        "图片助手(ImageAssistant)_批量图片下载器/www.behance.net/临空经济区（廊坊）招商宣传册/10004.webp",
+        "图片助手(ImageAssistant)_批量图片下载器/www.behance.net/临空经济区（廊坊）招商宣传册/10005.webp",
+        "图片助手(ImageAssistant)_批量图片下载器/www.behance.net/临空经济区（廊坊）招商宣传册/10006.webp",
+        "图片助手(ImageAssistant)_批量图片下载器/www.behance.net/临空经济区（廊坊）招商宣传册/10007.webp",
+        "图片助手(ImageAssistant)_批量图片下载器/www.behance.net/临空经济区（廊坊）招商宣传册/10008.webp",
+        "图片助手(ImageAssistant)_批量图片下载器/www.behance.net/临空经济区（廊坊）招商宣传册/10009.webp",
+        "图片助手(ImageAssistant)_批量图片下载器/www.behance.net/临空经济区（廊坊）招商宣传册/10010.webp",
+        "图片助手(ImageAssistant)_批量图片下载器/www.behance.net/临空经济区（廊坊）招商宣传册/10011.webp",
+        "图片助手(ImageAssistant)_批量图片下载器/www.behance.net/临空经济区（廊坊）招商宣传册/10012.webp",
+        "图片助手(ImageAssistant)_批量图片下载器/www.behance.net/临空经济区（廊坊）招商宣传册/10013.webp",
+        "图片助手(ImageAssistant)_批量图片下载器/www.behance.net/临空经济区（廊坊）招商宣传册/10014.webp",
+        "图片助手(ImageAssistant)_批量图片下载器/www.behance.net/临空经济区（廊坊）招商宣传册/10015.webp",
+        "图片助手(ImageAssistant)_批量图片下载器/www.behance.net/临空经济区（廊坊）招商宣传册/10016.webp",
+        "图片助手(ImageAssistant)_批量图片下载器/www.behance.net/临空经济区（廊坊）招商宣传册/10017.webp",
+        "图片助手(ImageAssistant)_批量图片下载器/www.behance.net/临空经济区（廊坊）招商宣传册/10018.webp"
+      ],
+      "coverFile": "图片助手(ImageAssistant)_批量图片下载器/www.behance.net/临空经济区（廊坊）招商宣传册/封面.webp",
+      "priority": 0
+    }
+  ],
+  "exclusions": []
+}

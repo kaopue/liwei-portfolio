@@ -1574,5 +1574,44 @@
     "type": "画册设计",
     "featured": false,
     "priority": 39
+  },
+  {
+    "title": "临空经济区（廊坊）招商宣传册",
+    "slug": "langfang-airport-economic-zone-brochure",
+    "category": "画册设计",
+    "categorySlug": "album-design",
+    "year": "",
+    "image": "/selected/langfang-airport-economic-zone-brochure/image-001-1600-53b2f01e4a51.webp",
+    "cover": "/selected/langfang-airport-economic-zone-brochure/image-001-1600-53b2f01e4a51.webp",
+    "summary": "以深蓝色贯穿招商宣传册，结合地图、园区鸟瞰和建筑摄影介绍临空经济区。",
+    "description": "深蓝底页用于封面与章节起始页，白底跨页用地图、图文网格和大幅照片呈现区位与园区空间。图集依次展示封面组合、翻阅样机与连续内页。",
+    "tags": [
+      "画册设计"
+    ],
+    "detailSections": [],
+    "images": [
+      "/selected/langfang-airport-economic-zone-brochure/image-001-1600-53b2f01e4a51.webp",
+      "/selected/langfang-airport-economic-zone-brochure/image-002-1600-0bbfc222bd5a.webp",
+      "/selected/langfang-airport-economic-zone-brochure/image-003-1600-7c0bcb06d0d2.webp",
+      "/selected/langfang-airport-economic-zone-brochure/image-004-1600-9239154b2159.webp",
+      "/selected/langfang-airport-economic-zone-brochure/image-005-1600-e4d78ae1c0fc.webp",
+      "/selected/langfang-airport-economic-zone-brochure/image-006-1600-9adef451b100.webp",
+      "/selected/langfang-airport-economic-zone-brochure/image-007-1600-336e6fba60e0.webp",
+      "/selected/langfang-airport-economic-zone-brochure/image-008-1600-5f641fe42d99.webp",
+      "/selected/langfang-airport-economic-zone-brochure/image-009-1600-cafe6da581aa.webp",
+      "/selected/langfang-airport-economic-zone-brochure/image-010-1600-4511744b7764.webp",
+      "/selected/langfang-airport-economic-zone-brochure/image-011-1600-f6e0faba579c.webp",
+      "/selected/langfang-airport-economic-zone-brochure/image-012-1600-8c9e77db0792.webp",
+      "/selected/langfang-airport-economic-zone-brochure/image-013-1600-7d59ac7c8789.webp",
+      "/selected/langfang-airport-economic-zone-brochure/image-014-1600-857b307b10f6.webp",
+      "/selected/langfang-airport-economic-zone-brochure/image-015-1600-6d8eec98e21a.webp",
+      "/selected/langfang-airport-economic-zone-brochure/image-016-1600-6be7c6763fc6.webp",
+      "/selected/langfang-airport-economic-zone-brochure/image-017-1600-0386e4a06f06.webp",
+      "/selected/langfang-airport-economic-zone-brochure/image-018-1600-7dc7ceb4c91e.webp",
+      "/selected/langfang-airport-economic-zone-brochure/image-019-1600-558fa63d50a8.webp"
+    ],
+    "type": "画册设计",
+    "featured": false,
+    "priority": 0
   }
 ]
