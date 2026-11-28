@@ -1,0 +1,100 @@
+{
+  "sourceDirectories": [
+    "清华大学 再同学画册",
+    "中自智能 画册",
+    "周年特刊",
+    "衡水湖期刊",
+    "内衣画册"
+  ],
+  "categories": [
+    {
+      "slug": "album-design",
+      "label": "画册设计",
+      "description": "纪念册、照片书与画册的版式设计。"
+    }
+  ],
+  "projects": [
+    {
+      "slug": "tsinghua-classmates-album",
+      "title": "清华大学《再同学》画册",
+      "summary": "紫色封面搭配金色字样，内页以图文跨页呈现。",
+      "description": "封面以大面积紫色衬托金色字样，并用细线图形丰富底纹。内页以双栏文字与照片组合，展示平铺和翻阅两种视角。",
+      "categorySlug": "album-design",
+      "files": [
+        "清华大学 再同学画册/封面 (2).jpg",
+        "清华大学 再同学画册/2.jpg",
+        "清华大学 再同学画册/Square_Book_Mockup_5 拷贝.jpg"
+      ],
+      "coverFile": "清华大学 再同学画册/封面 (2).jpg",
+      "priority": 35
+    },
+    {
+      "slug": "zhongzi-intelligence-brochure",
+      "title": "中自智能画册",
+      "summary": "以深蓝与白色统领企业画册，串联建筑摄影、图表与文字信息。",
+      "description": "深蓝封面配合简洁的英文标题。内页交替使用整版照片、图标、流程图与文字栏，展示不同信息密度下的版式。",
+      "categorySlug": "album-design",
+      "files": [
+        "中自智能 画册/封面.jpg",
+        "中自智能 画册/2(1).jpg",
+        "中自智能 画册/3.jpg",
+        "中自智能 画册/4.jpg",
+        "中自智能 画册/5(1).jpg",
+        "中自智能 画册/7.jpg",
+        "中自智能 画册/10.jpg",
+        "中自智能 画册/11 (2).jpg"
+      ],
+      "coverFile": "中自智能 画册/封面.jpg",
+      "priority": 36
+    },
+    {
+      "slug": "anniversary-special-issue",
+      "title": "周年特刊",
+      "summary": "以浅色封面、红色细线与金色标题组织特刊视觉。",
+      "description": "封面用红色等高线式纹样和金色标题建立识别，跨页在文字、照片与留白之间切换。画面展示封面、扉页与内文。",
+      "categorySlug": "album-design",
+      "files": [
+        "周年特刊/封面 (2).jpg",
+        "周年特刊/Free_Book_Mockup_4 拷贝.jpg",
+        "周年特刊/Free_Book_Mockup_7 拷贝.jpg",
+        "周年特刊/1.jpg",
+        "周年特刊/5.jpg"
+      ],
+      "coverFile": "周年特刊/封面 (2).jpg",
+      "priority": 37
+    },
+    {
+      "slug": "hengshui-lake-periodical",
+      "title": "衡水湖期刊",
+      "summary": "以湖景、自然摄影和图文跨页呈现系列期刊的封面与内文。",
+      "description": "各期封面沿用刊名字形与版面框架，通过不同主题图片区分期号。内页以图文混排呈现风景、观察与专题内容。",
+      "categorySlug": "album-design",
+      "files": [
+        "衡水湖期刊/杂志样机-衡水湖封面 拷贝(1).jpg",
+        "衡水湖期刊/杂志样机-平铺-衡水湖-第二期 拷贝-1(1).jpg",
+        "衡水湖期刊/杂志样机-平铺-衡水湖-第二期 拷贝-2(1).jpg",
+        "衡水湖期刊/杂志样机-衡水湖封面-第3 4 5期 拷贝(1).jpg",
+        "衡水湖期刊/杂志样机-平铺-衡水湖-2(1).jpg",
+        "衡水湖期刊/杂志样机-平铺-衡水湖-3(1).jpg"
+      ],
+      "coverFile": "衡水湖期刊/杂志样机-衡水湖封面 拷贝(1).jpg",
+      "priority": 38
+    },
+    {
+      "slug": "lingerie-lookbook",
+      "title": "内衣画册",
+      "summary": "以浅色留白和暖调摄影编排内衣产品画册。",
+      "description": "封面在浅色材质上保留简洁品牌字样，内页通过整页摄影与组图交替展示产品。跨页样机呈现了不同的图片比例与留白处理。",
+      "categorySlug": "album-design",
+      "files": [
+        "内衣画册/封面1.jpg",
+        "内衣画册/A4 MAGAZINE BROCHURE MOCKUP 拷贝.jpg",
+        "内衣画册/A4 MAGAZINE BROCHURE MOCKUP 拷贝-1.jpg",
+        "内衣画册/33.jpg"
+      ],
+      "coverFile": "内衣画册/封面1.jpg",
+      "priority": 39
+    }
+  ],
+  "exclusions": []
+}
