@@ -4,9 +4,8 @@
 .hero-title-line { overflow: clip; padding-bottom: .1em; margin-bottom: -.1em; }
 .hero h1 .hero-title-line > span { margin: 0; animation: title-unveil 1s cubic-bezier(.16,1,.3,1) both; }
 .hero h1 .hero-title-line + .hero-title-line > span { animation-delay: 140ms; }
-.hero-copy, .hero-actions { animation: hero-arrive 900ms cubic-bezier(.16,1,.3,1) both; }
+.hero-copy { animation: hero-arrive 900ms cubic-bezier(.16,1,.3,1) both; }
 .hero-copy { animation-delay: 260ms; }
-.hero-actions { animation-delay: 380ms; }
 @keyframes title-unveil { from { transform: translateY(110%) rotate(2deg); } to { transform: none; } }
 @keyframes hero-arrive { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
 
@@ -27,8 +26,8 @@
   .visual-project-card .project-image.is-tracking { transition-duration: 110ms; }
   .visual-project-card .project-image::after { position: absolute; z-index: 2; inset: 0; content: ""; pointer-events: none; border: 1px solid rgba(var(--accent-rgb), .24); border-radius: inherit; background: radial-gradient(340px circle at var(--light-x, 50%) var(--light-y, 50%), rgba(var(--highlight), .15), transparent 65%); opacity: 0; transition: opacity 240ms ease; }
   .visual-project-link:hover .project-image::after { opacity: 1; }
-  .hero-button svg, .header-cta svg { transition: transform 250ms ease; }
-  .hero-button:hover svg, .header-cta:hover svg { transform: translate(2px, -2px); }
+  .header-cta svg { transition: transform 250ms ease; }
+  .header-cta:hover svg { transform: translate(2px, -2px); }
 }
 
 /* Card Folder: the front, back and artwork move within a fixed card. */
@@ -233,7 +232,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .hero h1 .hero-title-line > span, .hero-copy, .hero-actions, .hero-content, .hero-media { animation: none; opacity: 1; transform: none; }
+  .hero h1 .hero-title-line > span, .hero-copy, .hero-content, .hero-media { animation: none; opacity: 1; transform: none; }
   .strength-folder-art, .strength-folder-front, .strength-folder-back::after, .strength-folder-toggle svg,
   .visual-project-card .project-image { transition: none; }
 }
