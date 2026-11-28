@@ -258,9 +258,8 @@ function Hero() {
             <span className="hero-title-line"><span>用情绪建立感知。</span></span>
           </h1>
           <p className="hero-copy">
-            <span>专注品牌视觉、包装设计、活动主视觉与 AI 辅助创意表达。</span>
-            <span>擅长在商业目标、视觉美感与落地执行之间建立秩序，</span>
-            <span>让设计不仅好看，也能被理解、被传播、被使用。</span>
+            <span>品牌视觉、包装设计、活动主视觉与 AI 创意。</span>
+            <span>兼顾商业目标、视觉美感与落地执行。</span>
           </p>
         </div>
       </div>

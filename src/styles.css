@@ -424,9 +424,7 @@ main {
 @media (max-width: 600px) {
   :root { --intro-copy-size: 15px; --intro-heading-size: clamp(28px, 8.2vw, 45px); }
   .hero-inner { width: calc(100% - 36px); gap: 18px; }
-  .hero-copy { font-size: 15px; line-height: 1.85; max-width: 360px; }
-  .hero-copy span { display: inline; }
-  .hero-copy span + span::before { content: " "; }
+  .hero-copy { font-size: clamp(13px, 4vw, 15px); line-height: 1.85; max-width: 360px; }
   .hero-note { flex-basis: auto; font-size: 10px; }
   .hero-work-card { flex-basis: 56%; }
   .hero-work-card > span { display: none; }
@@ -435,7 +433,7 @@ main {
 @media (max-width: 600px) and (max-height: 740px) {
   :root { --intro-copy-size: 15px; }
   .hero-inner { padding-block: 90px 14px; gap: 14px; }
-  .hero-copy { margin-top: 18px; font-size: 15px; }
+  .hero-copy { margin-top: 18px; }
   .hero-note { font-size: 9px; padding-block: 6px; }
 }
 
