@@ -39,8 +39,8 @@ export type Advantage = {
 };
 
 export const navItems = [
-  { label: "经历", href: "#about" },
-  { label: "项目", href: "#projects" },
+  { label: "作品", href: "#projects" },
+  { label: "关于", href: "#about" },
   { label: "优势", href: "#advantages" },
   { label: "联系", href: "#contact" },
 ];

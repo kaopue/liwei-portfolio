@@ -5,6 +5,10 @@ type NetworkInformation = EventTarget & {
   effectiveType?: string;
 };
 
+function getNetworkInformation() {
+  return (navigator as Navigator & { connection?: NetworkInformation }).connection;
+}
+
 export function useBackgroundVideo(waitForPoster = false) {
   const viewportRef = useRef<HTMLDivElement>(null);
   const posterRef = useRef<HTMLImageElement>(null);
@@ -12,6 +16,7 @@ export function useBackgroundVideo(waitForPoster = false) {
   const playbackAllowed = useRef(false);
   const [videoEnabled, setVideoEnabled] = useState(false);
   const [videoReady, setVideoReady] = useState(false);
+  const [lowBandwidth, setLowBandwidth] = useState(() => getNetworkInformation()?.effectiveType === "3g");
 
   const playIfAllowed = useCallback(() => {
     const video = videoRef.current;
@@ -24,7 +29,7 @@ export function useBackgroundVideo(waitForPoster = false) {
     const section = viewportRef.current;
     if (!section) return;
     const motion = window.matchMedia("(prefers-reduced-motion: reduce)");
-    const connection = (navigator as Navigator & { connection?: NetworkInformation }).connection;
+    const connection = getNetworkInformation();
     let cancelled = false;
     let ready = !waitForPoster;
     let idleHandle: number | undefined;
@@ -83,10 +88,15 @@ export function useBackgroundVideo(waitForPoster = false) {
     if (observer) observer.observe(section);
     else window.addEventListener("scroll", measure, { passive: true });
 
+    const onNetworkChange = () => {
+      setLowBandwidth(connection?.effectiveType === "3g");
+      update();
+    };
+
     document.addEventListener("visibilitychange", update);
     window.addEventListener("pageshow", measure);
     motion.addEventListener("change", update);
-    connection?.addEventListener("change", update);
+    connection?.addEventListener("change", onNetworkChange);
     update();
 
     return () => {
@@ -100,7 +110,7 @@ export function useBackgroundVideo(waitForPoster = false) {
       document.removeEventListener("visibilitychange", update);
       window.removeEventListener("pageshow", measure);
       motion.removeEventListener("change", update);
-      connection?.removeEventListener("change", update);
+      connection?.removeEventListener("change", onNetworkChange);
     };
   }, [playIfAllowed, waitForPoster]);
 
@@ -111,5 +121,8 @@ export function useBackgroundVideo(waitForPoster = false) {
 
   const onVideoError = useCallback(() => setVideoReady(false), []);
 
-  return { viewportRef, posterRef, videoRef, videoEnabled, videoReady, playIfAllowed, onVideoPlaying, onVideoError };
+  return {
+    viewportRef, posterRef, videoRef, lowBandwidth, playIfAllowed, onVideoPlaying, onVideoError,
+    videoEnabled, videoReady,
+  };
 }

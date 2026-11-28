@@ -28,6 +28,9 @@
   --advantage-shadow: 0 24px 66px rgba(0, 0, 0, 0.34);
   --site-max-width: 1440px;
   --site-gutter: 15px;
+  --site-header-top: 24px;
+  --site-header-height: 64px;
+  --site-header-bottom: calc(var(--site-header-top) + var(--site-header-height));
   --site-content-width: min(var(--site-max-width), calc(100% - 2 * var(--site-gutter)));
   --intro-copy-size: clamp(15px, 1.05vw, 17px);
   --intro-heading-size: clamp(40px, 4.55vw, 88px);
@@ -56,6 +59,25 @@ body {
   background: var(--accent);
   color: var(--selection-text);
 }
+
+.skip-link {
+  position: fixed;
+  z-index: 30;
+  inset-block-start: var(--site-header-top);
+  inset-inline-start: max(var(--site-gutter), (100% - var(--site-max-width)) / 2);
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding-inline: 16px;
+  border-radius: 7px;
+  background: var(--accent);
+  color: var(--selection-text);
+  font-size: 14px;
+  font-weight: 650;
+  transform: translateY(calc(-100% - var(--site-header-top) - 8px));
+}
+
+.skip-link:focus { transform: none; }
 
 :focus-visible {
   outline: 2px solid var(--accent);
@@ -139,13 +161,6 @@ main {
   z-index: 1;
 }
 
-#about,
-#projects,
-#advantages,
-#contact {
-  scroll-margin-top: 112px;
-}
-
 .container,
 .site-header {
   width: var(--site-content-width);
@@ -162,10 +177,10 @@ main {
 .site-header {
   position: fixed;
   z-index: 20;
-  top: 24px;
+  top: var(--site-header-top);
   left: 50%;
   display: grid;
-  height: 64px;
+  height: var(--site-header-height);
   grid-template-columns: 120px minmax(0, 1fr) auto;
   align-items: center;
   border: 1px solid var(--line);
@@ -202,13 +217,15 @@ main {
   justify-content: center;
   gap: 52px;
   font-size: 14px;
-  color: var(--muted);
+  color: rgba(var(--ink), .8);
 }
 
 .nav-links a {
   display: inline-flex;
   min-height: 44px;
   align-items: center;
+  justify-content: center;
+  white-space: nowrap;
   transition: color 180ms ease;
 }
 
@@ -318,6 +335,7 @@ main {
   font-weight: 900;
   letter-spacing: -.035em;
   line-height: 1.2;
+  text-wrap: balance;
   text-shadow: 0 3px 24px rgba(0, 0, 0, .2);
 }
 
@@ -429,7 +447,7 @@ main {
 @media (max-width: 600px) {
   :root { --intro-copy-size: 15px; --intro-heading-size: clamp(28px, 8.2vw, 45px); }
   .hero-inner { gap: 18px; }
-  .hero-copy { font-size: clamp(13px, 4vw, 15px); line-height: 1.85; max-width: 360px; }
+  .hero-copy { font-size: clamp(14px, 4vw, 15px); line-height: 1.7; max-width: 360px; }
   .hero-note { flex-basis: auto; font-size: 10px; }
   .hero-work-card { flex-basis: 56%; }
   .hero-work-card > span { display: none; }
@@ -505,8 +523,6 @@ main {
   }
 }
 
-#about.about { scroll-margin-top: 0; }
-
 .about-portrait {
   position: absolute;
   inset: 0;
@@ -527,7 +543,7 @@ main {
 }
 
 .about-inner { min-width: 0; }
-.about-inner :is(p, h2, h3, ul, ol) { margin: 0; }
+.about-inner :is(p, h2, h3, h4, ul, ol) { margin: 0; }
 
 .about-identity {
   display: flex;
@@ -1202,10 +1218,8 @@ main {
   z-index: -1;
   pointer-events: none;
   content: "";
-  background: linear-gradient(90deg, rgba(var(--bg-rgb), .52), rgba(var(--bg-rgb), .30) 32%, rgba(var(--bg-rgb), .08) 55%, transparent 70%);
+  background: linear-gradient(90deg, rgba(var(--bg-rgb), .76), rgba(var(--bg-rgb), .58) 34%, rgba(var(--bg-rgb), .24) 55%, transparent 76%);
 }
-
-#contact.contact { scroll-margin-top: 0; }
 
 .contact-inner {
   padding-block: clamp(106px, 13vw, 150px) 84px;
@@ -1314,18 +1328,14 @@ main {
     padding: 76px 0;
   }
 
-  #about,
-  #projects,
-  #advantages,
-  #contact {
-    scroll-margin-top: 86px;
+  :root {
+    --site-header-top: 12px;
+    --site-header-height: 54px;
   }
 
   .site-header {
-    top: 12px;
-    height: auto;
-    min-height: 54px;
     grid-template-columns: 48px minmax(0, 1fr) 44px;
+    background: rgba(var(--bg-rgb), .92);
   }
 
   .brand-logo {
@@ -1344,11 +1354,13 @@ main {
   }
 
   .nav-links {
-    justify-content: center;
-    gap: clamp(10px, 3vw, 20px);
-    padding-inline: 8px;
-    font-size: 12px;
+    gap: clamp(2px, 1.7vw, 14px);
+    padding-inline: 4px;
+    font-size: 13px;
   }
+
+  .nav-links a { min-width: 44px; }
+  .advantages { padding-block-start: calc(var(--site-header-bottom) + 26px); }
 
   .section-head p {
     font-size: 15px;
@@ -1523,7 +1535,10 @@ main {
   }
 
   .contact { align-items: end; }
-  .contact-inner { padding-block: 86px clamp(32px, 8svh, 70px); }
+  .contact::before {
+    background: linear-gradient(0deg, rgba(var(--bg-rgb), .94), rgba(var(--bg-rgb), .72) 29%, rgba(var(--bg-rgb), .14) 62%, transparent 78%);
+  }
+  .contact-inner { padding-block: 86px clamp(32px, 7svh, 60px); }
   .contact-copy { width: 100%; }
 
   .contact h2 {
@@ -1558,12 +1573,10 @@ html { scrollbar-color: #65717a var(--bg); }
   .hero-inner { padding-bottom: 36px; }
 }
 @media (max-width: 760px) {
-  .nav-links { gap: clamp(12px, 3.4vw, 24px); font-size: 13px; padding-inline: 8px; }
   .advantage-grid { grid-template-columns: minmax(0, 1fr); }
   .section-label { margin-bottom: 32px; }
 }
 @media (max-width: 360px) {
-  .site-header { grid-template-columns: 44px minmax(0, 1fr) 40px; }
-  .header-cta { width: 40px; }
-  .nav-links { gap: 10px; padding-inline: 6px; }
+  .site-header { grid-template-columns: 44px minmax(0, 1fr) 44px; }
+  .nav-links { gap: 1px; }
 }

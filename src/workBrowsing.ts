@@ -1,22 +1,36 @@
-type WorkBrowseState = { hash: string; scrollY: number; slug: string };
-const key = "liwei-work-browse-v1";
-let lastBrowse: WorkBrowseState | null = null;
+import type { MouseEvent } from "react";
+import {
+  getPortfolioHistory,
+  homeHref,
+  isPlainLinkClick,
+  navigatePortfolio,
+  replacePortfolioHistory,
+  type BrowseOrigin,
+} from "./workRoutes";
 
-export function saveWorkBrowseState(slug: string, fromHero = false) {
-  lastBrowse = {
-    hash: !fromHero && window.location.hash.startsWith("#category/") ? window.location.hash : "#projects",
-    scrollY: fromHero ? Math.max(0, (document.getElementById("projects")?.offsetTop ?? 0) - 100) : window.scrollY,
-    slug,
+export function followWorkFrom(
+  event: MouseEvent<HTMLAnchorElement>,
+  options: Pick<BrowseOrigin, "href" | "filterScroll" | "expandedProjects">,
+) {
+  if (!isPlainLinkClick(event)) return;
+
+  const origin: BrowseOrigin = {
+    ...options,
+    focusId: event.currentTarget.id,
+    scrollY: window.scrollY,
   };
-  try { sessionStorage.setItem(key, JSON.stringify(lastBrowse)); } catch { /* Browsing also works without storage. */ }
+  replacePortfolioHistory({ restore: origin });
+  navigatePortfolio(event, { origin });
 }
 
-export function getWorkBrowseState(): WorkBrowseState | null {
-  if (lastBrowse) return lastBrowse;
-  try {
-    const saved = JSON.parse(sessionStorage.getItem(key) ?? "null");
-    if (saved && typeof saved.hash === "string" && /^#(projects$|category\/[-a-z]+$)/.test(saved.hash)
-      && Number.isFinite(saved.scrollY) && saved.scrollY >= 0 && typeof saved.slug === "string") return saved;
-  } catch { /* Ignore unavailable or stale storage. */ }
-  return null;
+export function getWorkReturnHref() {
+  return getPortfolioHistory().origin?.href ?? homeHref("#projects");
+}
+
+export function getWorkReturnLabel() {
+  return getWorkReturnHref() === homeHref("#advantages") ? "返回个人优势" : "返回作品";
+}
+
+export function returnToWorkBrowse(event: MouseEvent<HTMLAnchorElement>) {
+  navigatePortfolio(event, { restore: getPortfolioHistory().origin });
 }
